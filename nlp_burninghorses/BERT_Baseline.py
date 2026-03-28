@@ -1,4 +1,3 @@
-# Import required libraries (e.g. transformers, datasets, torch, etc.)
 from datasets import load_dataset
 from transformers import (AutoTokenizer, AutoModelForTokenClassification, DataCollatorForTokenClassification, AutoConfig, set_seed)
 import torch
@@ -6,6 +5,11 @@ from torch.utils.data import DataLoader
 import random
 import evaluate
 from tqdm.auto import tqdm
+
+
+# ----------------------------------------------------------------------------
+# Load data and hyperparameters
+# ----------------------------------------------------------------------------
 
 # Set random seeds
 set_seed(42)
@@ -16,10 +20,34 @@ learning_rate = 2e-5
 num_train_epochs = 3
 model_name = "google-bert/bert-base-cased"
 
+# Data percentage variable - OADA paper uses 5, 10, 20 & 50 %
+data_percentage = 5 
 
-# Load the dataset using load_dataset
-dataset_name = "conll2003"
+
+# Load the dataset
+dataset_name = "conll2003" # 
 raw_datasets = load_dataset(dataset_name, trust_remote_code=True)
+
+# ----------------------------------------------------------------------------
+# Few-Shot Sampling logic
+# ----------------------------------------------------------------------------
+
+# Calculate the requested percentage
+total_train_examples = len(raw_datasets["train"])
+num_few_shot_examples = int(total_train_examples * (data_percentage / 100.0))
+
+print(f"Total original training examples: {total_train_examples}")
+print(f"Sampling {data_percentage}% of the data: {num_few_shot_examples} examples")
+
+# Shuffle the training data (using the fixed seed for reproducibility) and select the top N examples
+few_shot_train = raw_datasets["train"].shuffle(seed=42).select(range(num_few_shot_examples))
+
+# Overwrite the original train set in the dataset dictionary
+raw_datasets["train"] = few_shot_train
+
+# ----------------------------------------------------------------------------
+# Labels
+# ----------------------------------------------------------------------------
 
 # Identify Text and Label Columns
 # For CoNLL-2003, the text column is typically tokens and the label column is ner_tags.
@@ -97,7 +125,10 @@ def tokenize_and_align_labels(examples):
     # 4) Return the updated dictionary
     return tokenized_inputs
 
+# ----------------------------------------------------------------------------
 # Process the Dataset
+# ----------------------------------------------------------------------------
+
 # Apply the tokenization and label alignment function, removing original columns to keep only model inputs.
 # Map the tokenize_and_align_labels function to the raw datasets
 processed_raw_datasets = raw_datasets.map(
@@ -131,7 +162,7 @@ data_collator = DataCollatorForTokenClassification(tokenizer)
 train_dataloader = DataLoader(train_dataset, shuffle=True, collate_fn=data_collator, batch_size=8)
 eval_dataloader = DataLoader(eval_dataset, collate_fn=data_collator, batch_size=8)
 
-#Optimizer
+# Optimizer
 # Initialize an optimizer.
 # Move model to device (CPU/GPU)
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -140,7 +171,10 @@ model.to(device)
 # Create optimizer (e.g. AdamW)
 optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
 
+# ----------------------------------------------------------------------------
 # Training Loop
+# ----------------------------------------------------------------------------
+
 for epoch in range(num_train_epochs):
     model.train()
     total_loss = 0
@@ -178,6 +212,10 @@ for epoch in range(num_train_epochs):
     avg_loss = total_loss / len(train_dataloader)
     print(f"Epoch {epoch+1} - Average training loss: {avg_loss:.4f}")
 
+
+# ----------------------------------------------------------------------------
+# Evaluation
+# ----------------------------------------------------------------------------
 
 # Define Metric Calculation
 # For example, use seqeval to evaluate precision, recall, and F1 on the named entity labels.
@@ -237,6 +275,10 @@ for step, batch in enumerate(eval_dataloader):
 validation_metrics = compute_metrics(all_predictions, all_labels)
 validation_metrics
 
+# ----------------------------------------------------------------------------
+# Save model
+# ----------------------------------------------------------------------------
 
-model.save_pretrained("./models/bert-ner-baseline")
-tokenizer.save_pretrained("./models/bert-ner-baseline")
+# REMEMBER TO CHANGE MODEL NAME BASED ON DATA PERCENTAGE VARIABLE!!!!!!
+model.save_pretrained("./models/baseline_5")
+tokenizer.save_pretrained("./models/baseline_5")
