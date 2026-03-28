@@ -1,10 +1,15 @@
 from datasets import load_dataset
+import os
+import sys
+import subprocess
+import csv
 from transformers import (AutoTokenizer, AutoModelForTokenClassification, DataCollatorForTokenClassification, AutoConfig, set_seed)
 import torch
 from torch.utils.data import DataLoader
 import random
 import evaluate
 from tqdm.auto import tqdm
+import span_f1
 
 
 # ----------------------------------------------------------------------------
@@ -20,8 +25,8 @@ learning_rate = 2e-5
 num_train_epochs = 3
 model_name = "google-bert/bert-base-cased"
 
-# Data percentage variable - OADA paper uses 5, 10, 20 & 50 %
-data_percentage = 5 
+# Data percentage variable - OADA paper uses 10 %
+data_percentage = 10
 
 
 # Load the dataset
@@ -29,7 +34,7 @@ dataset_name = "conll2003" #
 raw_datasets = load_dataset(dataset_name, trust_remote_code=True)
 
 # ----------------------------------------------------------------------------
-# Few-Shot Sampling logic
+# Data percentage logic
 # ----------------------------------------------------------------------------
 
 # Calculate the requested percentage
@@ -275,10 +280,166 @@ for step, batch in enumerate(eval_dataloader):
 validation_metrics = compute_metrics(all_predictions, all_labels)
 validation_metrics
 
+
 # ----------------------------------------------------------------------------
 # Save model
 # ----------------------------------------------------------------------------
 
-# REMEMBER TO CHANGE MODEL NAME BASED ON DATA PERCENTAGE VARIABLE!!!!!!
-model.save_pretrained("./models/baseline_5")
-tokenizer.save_pretrained("./models/baseline_5")
+model_dir = f"./models/baseline_{data_percentage}"
+model.save_pretrained(model_dir)
+tokenizer.save_pretrained(model_dir)
+print(f"Model saved to {model_dir}")
+
+
+# =====================================================================
+# Format data for Span f1 
+# =====================================================================
+
+def export_for_span_f1(dataset, predictions, true_labels, gold_file="gold.txt", pred_file="pred.txt"):
+    """
+    Writes the gold and predicted labels to tab-separated text files 
+    compatible with the span_f1.py script.
+    """
+    print(f"Exporting results to {gold_file} and {pred_file}...")
+    
+    with open(gold_file, "w", encoding="utf-8") as fg, open(pred_file, "w", encoding="utf-8") as fp:
+        for i in range(len(dataset)):
+            # Get original words from the dataset
+            tokens = dataset[i][text_column_name] 
+            
+            # Get the aligned labels for this sentence
+            sentence_true_tags = true_labels[i]
+            sentence_pred_tags = predictions[i]
+            
+            # Sanity check: ensure truncation hasn't caused mismatched lengths
+            min_len = min(len(tokens), len(sentence_true_tags), len(sentence_pred_tags))
+            tokens = tokens[:min_len]
+            sentence_true_tags = sentence_true_tags[:min_len]
+            sentence_pred_tags = sentence_pred_tags[:min_len]
+            
+            for token, true_tag, pred_tag in zip(tokens, sentence_true_tags, sentence_pred_tags):
+                # The script expects the tag at index 2. 
+                # Format: [Word] \t [DummyColumn] \t [Tag]
+                fg.write(f"{token}\t-\t{true_tag}\n")
+                fp.write(f"{token}\t-\t{pred_tag}\n")
+            
+            # Add an empty line to signal the end of the sentence
+            fg.write("\n")
+            fp.write("\n")
+
+
+
+
+# =====================================================================
+# Export results
+# =====================================================================
+
+# Define target directory 
+output_dir = f"data/processed/baseline_{data_percentage}"
+os.makedirs(output_dir, exist_ok=True)
+
+gold_file_path = os.path.join(output_dir, "gold.txt")
+pred_file_path = os.path.join(output_dir, "pred.txt")
+
+export_for_span_f1(
+    dataset=raw_datasets["validation"], 
+    predictions=all_predictions, 
+    true_labels=all_labels,
+    gold_file=gold_file_path,
+    pred_file=pred_file_path
+)
+
+print("Calculating span metrics natively...")
+
+# Use the module you imported at the top of your script!
+gold_ners = span_f1.readNlu(gold_file_path)
+pred_ners = span_f1.readNlu(pred_file_path)
+
+tp = 0; fp = 0; fn = 0
+recall_loose_tp = 0; recall_loose_fn = 0
+precision_loose_tp = 0; precision_loose_fp = 0
+tp_ul = 0; fp_ul = 0; fn_ul = 0 
+
+for gold_ner, pred_ner in zip(gold_ners, pred_ners):
+    gold_spans = span_f1.toSpans(gold_ner)
+    pred_spans = span_f1.toSpans(pred_ner)
+    
+    # Strict
+    overlap = len(gold_spans.intersection(pred_spans))
+    tp += overlap
+    fp += len(pred_spans) - overlap
+    fn += len(gold_spans) - overlap
+    
+    # Unlabeled
+    overlap_ul = span_f1.getUnlabeled(gold_spans, pred_spans)
+    tp_ul += overlap_ul
+    fp_ul += len(pred_spans) - overlap_ul
+    fn_ul += len(gold_spans) - overlap_ul
+
+    # Loose
+    overlap_loose_rec = span_f1.getLooseOverlap(gold_spans, pred_spans)
+    recall_loose_tp += overlap_loose_rec
+    recall_loose_fn += len(gold_spans) - overlap_loose_rec
+
+    overlap_loose_prec = span_f1.getLooseOverlap(pred_spans, gold_spans)
+    precision_loose_tp += overlap_loose_prec
+    precision_loose_fp += len(pred_spans) - overlap_loose_prec
+
+# Calculate final percentages
+prec = 0.0 if tp+fp == 0 else tp/(tp+fp)
+rec = 0.0 if tp+fn == 0 else tp/(tp+fn)
+strict_f1 = 0.0 if prec+rec == 0.0 else 2 * (prec * rec) / (prec + rec)
+
+prec_ul = 0.0 if tp_ul+fp_ul == 0 else tp_ul/(tp_ul+fp_ul)
+rec_ul = 0.0 if tp_ul+fn_ul == 0 else tp_ul/(tp_ul+fn_ul)
+ul_f1 = 0.0 if prec_ul+rec_ul == 0.0 else 2 * (prec_ul * rec_ul) / (prec_ul + rec_ul)
+
+prec_l = 0.0 if precision_loose_tp + precision_loose_fp == 0 else precision_loose_tp/(precision_loose_tp+precision_loose_fp)
+rec_l = 0.0 if recall_loose_tp+recall_loose_fn == 0 else recall_loose_tp/(recall_loose_tp+recall_loose_fn)
+loose_f1 = 0.0 if prec_l+rec_l == 0.0 else 2 * (prec_l * rec_l) / (prec_l + rec_l)
+
+print(f"Strict F1: {strict_f1:.4f} | Unlabeled F1: {ul_f1:.4f} | Loose F1: {loose_f1:.4f}")
+
+# Combine Hugging Face token metrics and the Span metrics into one row
+combined_metrics = {
+    "Data_Percentage": data_percentage,
+    
+    # Hugging Face Token-Level Metrics (from seqeval)
+    "HF_Token_Precision": validation_metrics["Precision"],
+    "HF_Token_Recall": validation_metrics["Recall"],
+    "HF_Token_F1": validation_metrics["F1"],
+    "HF_Token_Accuracy": validation_metrics["Accuracy"],
+    
+    # Span-Level Strict Metrics
+    "Span_Strict_Precision": prec,
+    "Span_Strict_Recall": rec,
+    "Span_Strict_F1": strict_f1,
+    
+    # Span-Level Unlabeled Metrics
+    "Span_Unlabeled_Precision": prec_ul,
+    "Span_Unlabeled_Recall": rec_ul,
+    "Span_Unlabeled_F1": ul_f1,
+    
+    # Span-Level Loose Metrics
+    "Span_Loose_Precision": prec_l,
+    "Span_Loose_Recall": rec_l,
+    "Span_Loose_F1": loose_f1
+}
+
+# Append above row to master CSV file
+reports_dir = "reports"
+os.makedirs(reports_dir, exist_ok=True)
+csv_file_path = os.path.join(reports_dir, "baseline_results.csv")
+
+# Check if file exists
+file_exists = os.path.isfile(csv_file_path)
+
+with open(csv_file_path, mode="a", newline="", encoding="utf-8") as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=combined_metrics.keys())
+    
+    if not file_exists:
+        writer.writeheader()  # Write column names on the very first run
+        
+    writer.writerow(combined_metrics)
+
+print(f"Metrics successfully appended to {csv_file_path}")
