@@ -1,7 +1,7 @@
-from datasets import load_dataset
+# English EWT (Universal NER / UD-style IOB2): train on data/raw/en_ewt-ud-train.iob2, dev on en_ewt-ud-dev.iob2.
+# From repo root: ./venv/bin/python nlp_burninghorses/BERT_Baseline_en_ewt_ud.py
+from datasets import ClassLabel, Dataset, DatasetDict, Features, Sequence, Value
 import os
-import sys
-import subprocess
 import csv
 from transformers import (AutoTokenizer, AutoModelForTokenClassification, DataCollatorForTokenClassification, AutoConfig, set_seed)
 import torch
@@ -12,6 +12,74 @@ from tqdm.auto import tqdm
 import span_f1
 
 
+def _repo_root() -> str:
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def parse_en_ewt_ud_iob2(path: str):
+    """Read Universal NER IOB2: tab lines index, token, NER, …; # comments and blank lines separate sentences."""
+    sentences_tokens, sentences_tags, label_set = [], [], set()
+    current_tokens, current_tags = [], []
+
+    def flush():
+        nonlocal current_tokens, current_tags
+        if current_tokens:
+            sentences_tokens.append(current_tokens)
+            sentences_tags.append(current_tags)
+            current_tokens, current_tags = [], []
+
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.rstrip("\n")
+            if line.startswith("#"):
+                flush()
+                continue
+            if not line.strip():
+                flush()
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                continue
+            current_tokens.append(parts[1])
+            current_tags.append(parts[2])
+            label_set.add(parts[2])
+        flush()
+    return sentences_tokens, sentences_tags, label_set
+
+
+def load_en_ewt_ud_iob2_datasets(root: str) -> DatasetDict:
+    train_path = os.path.join(root, "data", "raw", "en_ewt-ud-train.iob2")
+    dev_path = os.path.join(root, "data", "raw", "en_ewt-ud-dev.iob2")
+    tr_tok, tr_tag, s_train = parse_en_ewt_ud_iob2(train_path)
+    dv_tok, dv_tag, s_dev = parse_en_ewt_ud_iob2(dev_path)
+    label_names = sorted(s_train | s_dev)
+    if "O" in label_names:
+        label_names.remove("O")
+        label_list = ["O"] + label_names
+    else:
+        label_list = label_names
+    label_to_id = {l: i for i, l in enumerate(label_list)}
+
+    def encode_tags(tag_seqs):
+        return [[label_to_id[t] for t in sent] for sent in tag_seqs]
+
+    features = Features(
+        {
+            "tokens": Sequence(Value("string")),
+            "ner_tags": Sequence(ClassLabel(names=label_list)),
+        }
+    )
+    train_ds = Dataset.from_dict(
+        {"tokens": tr_tok, "ner_tags": encode_tags(tr_tag)},
+        features=features,
+    )
+    val_ds = Dataset.from_dict(
+        {"tokens": dv_tok, "ner_tags": encode_tags(dv_tag)},
+        features=features,
+    )
+    return DatasetDict(train=train_ds, validation=val_ds)
+
+
 # ----------------------------------------------------------------------------
 # Load data and hyperparameters
 # ----------------------------------------------------------------------------
@@ -19,8 +87,7 @@ import span_f1
 # Set random seeds
 set_seed(42)
 
-# Define hyperparameters (e.g., learning_rate, num_train_epochs, model_name)
-dataset_name = "conll2003"
+# Define hyperparameters
 learning_rate = 2e-5
 num_train_epochs = 3
 model_name = "google-bert/bert-base-cased"
@@ -29,13 +96,10 @@ model_name = "google-bert/bert-base-cased"
 data_percentage = 10
 
 
-# Load the dataset
-dataset_name = "conll2003" # 
-raw_datasets = load_dataset(dataset_name, trust_remote_code=True)
+# Load the dataset (local IOB2 files under data/raw/)
+raw_datasets = load_en_ewt_ud_iob2_datasets(_repo_root())
 
-
-# set output filename
-results_filename = "BERT_conll_results.csv"
+results_filename = "BERT_en_ewt_ud_results.csv"
 
 # ----------------------------------------------------------------------------
 # Data percentage logic
@@ -289,7 +353,7 @@ validation_metrics
 # Save model
 # ----------------------------------------------------------------------------
 
-model_dir = f"./models/baseline_{data_percentage}"
+model_dir = f"./models/en_ewt_ud_baseline_{data_percentage}"
 model.save_pretrained(model_dir)
 tokenizer.save_pretrained(model_dir)
 print(f"Model saved to {model_dir}")
@@ -339,7 +403,7 @@ def export_for_span_f1(dataset, predictions, true_labels, gold_file="gold.txt", 
 # =====================================================================
 
 # Define target directory 
-output_dir = f"data/processed/baseline_{data_percentage}"
+output_dir = f"data/processed/en_ewt_ud_baseline_{data_percentage}"
 os.makedirs(output_dir, exist_ok=True)
 
 gold_file_path = os.path.join(output_dir, "gold.txt")

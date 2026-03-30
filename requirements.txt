@@ -1,4 +1,19 @@
+# Development / tooling
 pip
 python-dotenv
 ruff
+
+# BERT_* baseline scripts (HF datasets, models, metrics)
+torch>=2.1.0
+transformers>=4.38.0
+datasets>=2.18.0
+evaluate>=0.4.2
+tqdm>=4.66.0
+seqeval>=1.2.2
+pyarrow>=15.0.0
+
+# ACL_scrape.py
+acl-anthology>=0.5.4
+rank-bm25>=0.2.2
+
 -e .

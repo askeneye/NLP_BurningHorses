@@ -1,3 +1,5 @@
+# Copy of BERT_Baseline_conll.py for recent `datasets`: loads CoNLL-2003 via BramVanroy/conll2003 (Parquet), no Hub dataset scripts.
+# From repo root use the project venv (system `python3` has no deps): ./venv/bin/python nlp_burninghorses/BERT_Baseline_conll_parquet.py
 from datasets import load_dataset
 import os
 import sys
@@ -20,7 +22,7 @@ import span_f1
 set_seed(42)
 
 # Define hyperparameters (e.g., learning_rate, num_train_epochs, model_name)
-dataset_name = "conll2003"
+dataset_name = "BramVanroy/conll2003"
 learning_rate = 2e-5
 num_train_epochs = 3
 model_name = "google-bert/bert-base-cased"
@@ -30,12 +32,10 @@ data_percentage = 10
 
 
 # Load the dataset
-dataset_name = "conll2003" # 
-raw_datasets = load_dataset(dataset_name, trust_remote_code=True)
-
+raw_datasets = load_dataset(dataset_name)
 
 # set output filename
-results_filename = "BERT_conll_results.csv"
+results_filename = "BERT_conll__parquet_results.csv"
 
 # ----------------------------------------------------------------------------
 # Data percentage logic
