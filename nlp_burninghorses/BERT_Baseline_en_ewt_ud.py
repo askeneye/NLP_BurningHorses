@@ -93,13 +93,13 @@ num_train_epochs = 3
 model_name = "google-bert/bert-base-cased"
 
 # Data percentage variable - OADA paper uses 10 %
-data_percentage = 10
+data_percentage = 100
 
 
 # Load the dataset (local IOB2 files under data/raw/)
 raw_datasets = load_en_ewt_ud_iob2_datasets(_repo_root())
 
-results_filename = "BERT_en_ewt_ud_results.csv"
+results_filename = "BERT_en_ewt_ud_full_results.csv"
 
 # ----------------------------------------------------------------------------
 # Data percentage logic
