@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 import random
 import evaluate
 from tqdm.auto import tqdm
-import span_f1
+import nlp_burninghorses.utils.span_f1 as span_f1
 
 
 # ----------------------------------------------------------------------------

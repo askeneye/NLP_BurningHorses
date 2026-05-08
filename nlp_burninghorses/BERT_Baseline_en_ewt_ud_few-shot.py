@@ -15,7 +15,7 @@ from typing import Any, Dict, List, Mapping, Optional
 
 import datasets as hf_datasets
 import evaluate
-import span_f1
+import nlp_burninghorses.utils.span_f1 as span_f1
 import torch
 from datasets import ClassLabel, Dataset, DatasetDict, Features, Sequence, Value
 from torch.utils.data import DataLoader
