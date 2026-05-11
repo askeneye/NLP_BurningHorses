@@ -11,5 +11,7 @@ pairs = oada_an.make_oada_pairs(example, entity_types)
 
 
 print(len(pairs))
+print(" --------------------------------- ")
 print(pairs[0])
+print(" --------------------------------- ")
 print(pairs[1])

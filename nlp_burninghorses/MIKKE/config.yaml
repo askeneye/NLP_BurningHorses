@@ -1,0 +1,22 @@
+# nlp_burninghorses/MIKKE/config.yaml
+
+project:
+  name: "oada_replication"
+  author: "MIKKE"
+
+paths:
+  # Reference shared data from within the MIKKE folder
+  raw_data: "../../data/raw/conll2003"
+  processed_data: "./data/processed"
+  checkpoints: "./checkpoints"
+  logs: "./logs"
+
+model:
+  name: "facebook/bart-base"
+  max_length: 128
+
+training:
+  k_shot: 5 # [5, 10, 20, 50]
+  permutations: 24 # Use 24 for CoNLL-2003
+  learning_rate: 2e-5
+  annealing_steps: 1000 # For OADA-XE tau schedule
