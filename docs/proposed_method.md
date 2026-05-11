@@ -58,9 +58,13 @@ Loss function consider the label of the first subtoken in each word.
 **Final scoring**
 The BERT model trained on raw few-shot data is compared to the distilled model trained on soft labels.
 
-## Other Comparisons
+---
 
-* **Standard BERT** vs **BERT distilled from p-dist labels** vs **BERT distilled from hard labels**
+
+
+## Other scores to report
+
+* **Standard BERT** vs **BERT distilled from soft labels** vs **BERT distilled from hard labels**
 * **F1 score** as a function of **k-value**
 
 ## Ablation studies
@@ -158,7 +162,7 @@ The Student is trained to mimic the **Ensemble's probability distribution** (Sof
 1. **Data Parsing & Splitting**
 2. **Pre-Tokenization and Truncation**
    Each sentence is truncated to 256 tokens (including pattern wrapping). *(PET heuristics)*
-3. **Pattern Wrapping & Target Generation**
+3. **Pattern Wrapping + OADA permutation & Target Generation**
 
 ## Data processing at runtime
 
@@ -198,3 +202,11 @@ The training set is augmented with OADA / PET into baked data set unique to each
 * **Purpose:** **Final Report.** The "Gold Standard" evaluation for official model scoring. This represents the final generalization power of the distilled model.
 * **Size:** Full (Exclusive) official Test Set (e.g., all 3,453 sentences in CoNLL-2003).
 * **Sampling Method:** **Untouched.** Remained strictly unseen and locked until all training parameters and models are final.
+
+---
+
+## Thoughts
+
+- **Early stopping**
+  Assigning validation data to detect early stopping, is valuable in academic research.
+  In applied few-shot situations you would have to rely on heuristics.
