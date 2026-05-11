@@ -1,5 +1,14 @@
 # To Do
 
+
+**ANEY**
+
+Preprocessing: 
+
+1. K-splits: Test in top folder, Validation and mini validation in top folder, train splits in sub-folders.
+2. Format for BERT
+3. Run BERT FEW shot
+
 ## Baseline
 
     1.1 Set up a standard BERT model

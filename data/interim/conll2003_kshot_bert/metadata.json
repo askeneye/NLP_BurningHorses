@@ -1,0 +1,32 @@
+{
+  "dataset": "conll2003",
+  "num_validation_sentences": 3250,
+  "num_test_sentences": 3453,
+  "num_mini_eval_sentences": 100,
+  "mini_eval_source": "validation",
+  "mini_eval_seed": 42,
+  "label_list": [
+    "O",
+    "B-PER",
+    "I-PER",
+    "B-ORG",
+    "I-ORG",
+    "B-LOC",
+    "I-LOC",
+    "B-MISC",
+    "I-MISC"
+  ],
+  "id_to_label": {
+    "0": "O",
+    "1": "B-PER",
+    "2": "I-PER",
+    "3": "B-ORG",
+    "4": "I-ORG",
+    "5": "B-LOC",
+    "6": "I-LOC",
+    "7": "B-MISC",
+    "8": "I-MISC"
+  },
+  "text_column": "tokens",
+  "label_column": "ner_tags"
+}
