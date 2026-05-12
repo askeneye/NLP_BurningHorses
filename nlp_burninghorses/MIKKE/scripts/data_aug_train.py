@@ -11,6 +11,7 @@ PERMUTATION_SAMPLE_SIZE = 20
 DEFAULT_DATASET = "conll2003"
 DEFAULT_FEWSHOT_DIR = "data/interim/conll2003_kshot_bert/k5_seed242"
 DEFAULT_OUTPUT_BASE_DIR = "data/interim/conll2003_kshot_pet_oada"
+DEFAULT_PATTERN_SECTION = "patterns"
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -217,8 +218,17 @@ def load_yaml(filepath: str | Path) -> dict:
         return yaml.safe_load(input_file)
 
 
-def _iter_pattern_bank(pattern_bank: dict) -> list[dict[str, str]]:
-    patterns = pattern_bank.get("patterns", pattern_bank)
+def _iter_pattern_bank(
+    pattern_bank: dict | list[dict[str, str]],
+    pattern_section: str = DEFAULT_PATTERN_SECTION,
+) -> list[dict[str, str]]:
+    if isinstance(pattern_bank, list):
+        patterns = pattern_bank
+    else:
+        patterns = pattern_bank.get(
+            pattern_section,
+            pattern_bank.get(DEFAULT_PATTERN_SECTION, pattern_bank),
+        )
 
     if isinstance(patterns, dict):
         return [
@@ -235,6 +245,7 @@ def main_orchestrator(
     pattern_bank: dict,
     schema: list[str],
     id_to_string_map: dict,
+    pattern_section: str = DEFAULT_PATTERN_SECTION,
 ) -> dict[str, int]:
     """Run augmentation for every PET pattern in the pattern bank."""
     output_path = Path(output_dir)
@@ -242,7 +253,7 @@ def main_orchestrator(
     input_data = load_jsonl(Path(input_dir) / "train.jsonl")
     rows_by_pattern: dict[str, int] = {}
 
-    for pattern in _iter_pattern_bank(pattern_bank):
+    for pattern in _iter_pattern_bank(pattern_bank, pattern_section):
         pattern_id = pattern["id"]
         pattern_output_path = output_path / f"{pattern_id}.jsonl"
         rows_by_pattern[pattern_id] = augment_data(
@@ -258,7 +269,7 @@ def main_orchestrator(
 
 
 def _default_output_dir(input_dir: Path) -> Path:
-    return PROJECT_ROOT / DEFAULT_OUTPUT_BASE_DIR / f"{input_dir.name}_aug"
+    return PROJECT_ROOT / DEFAULT_OUTPUT_BASE_DIR / "train" / f"{input_dir.name}_aug"
 
 
 def main() -> None:
@@ -271,6 +282,7 @@ def main() -> None:
     patterns_path = Path(os.environ.get("AUG_PATTERNS_PATH", SCRIPT_DIR / "patterns.yaml"))
     mapping_path = Path(os.environ.get("AUG_MAPPING_PATH", SCRIPT_DIR.parent / "mapping.yaml"))
     dataset_name = os.environ.get("AUG_DATASET", DEFAULT_DATASET)
+    pattern_section = os.environ.get("AUG_PATTERN_SECTION", DEFAULT_PATTERN_SECTION)
 
     pattern_bank = load_yaml(patterns_path)
     dataset_mapping = load_yaml(mapping_path)[dataset_name]
@@ -283,6 +295,7 @@ def main() -> None:
         pattern_bank=pattern_bank,
         schema=schema,
         id_to_string_map=id_to_string_map,
+        pattern_section=pattern_section,
     )
 
     total_rows = sum(rows_by_pattern.values())

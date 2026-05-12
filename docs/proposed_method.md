@@ -200,8 +200,23 @@ The training set is augmented with OADA / PET into baked data set unique to each
 
 ---
 
+| **Sequence Type**                                      | **ID**                               | **Template Structure**                                                  |
+| ------------------------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------- |
+| **1. Instr**$\to$**SEN**$\to$**Order** | `pattern_1_instr_SEN_order`              | "List all entities in this sentence: {SEN} Order: {PERM}"                     |
+|                                                              | `pattern_2_instr_SEN_order_encapsulated` | "For the text                                                                 |
+| **2. Instr**$\to$**Order**$\to$**SEN** | `pattern_3_instr_order_SEN`              | "Extract the entities using the following order: {PERM}                       |
+|                                                              | `pattern_4_instr_order_SEN_list`         | "List the entities using the order: {PERM} for the following sentence: {SEN}" |
+| **3. SEN**$\to$**Instr**$\to$**Order** | `pattern_5_SEN_instr_order`              | "In this sentence: {SEN} List the entities in the following order: {PERM}"    |
+|                                                              | `pattern_6_SEN_instr_order_separator`    | "{SEN}                                                                        |
+| **4. SEN**$\to$**Order**$\to$**Instr** | `pattern_7_SEN_order_instr`              | "{SEN}                                                                        |
+|                                                              | `pattern_8_SEN_order_instr_basic`        | "Text: {SEN} Order: {PERM} Please list the entities based on the above."      |
+| **5. Order**$\to$**Instr**$\to$**SEN** | `pattern_9_order_instr_SEN`              | "Using the order: {PERM}, list the entities in this sentence: {SEN}"          |
+|                                                              | `pattern_10_order_instr_SEN_brackets`    | "[ Order: {PERM} ] Extract entities from the text: {SEN}"                     |
+| **6. Order**$\to$**SEN**$\to$**Instr** | `pattern_11_order_SEN_instr`             | "Order: {PERM}                                                                |
+|                                                              | `pattern_12_order_SEN_instr_brackets`    | "[ {PERM} ]                                                                   |
+
 ## Thoughts
 
 - **Early stopping**
   Assigning validation data to detect early stopping, is valuable in academic research.
-  In applied few-shot situations you would have to rely on heuristics.
+  In real world few-shot situations you would not have the data overhead for automatic early stopping.

@@ -52,3 +52,4 @@ patterns:
   - id: "pattern_12_order_SEN_instr_brackets"
     template: "[ {PERM} ] || Text: {SEN} || Extract the entities."
     type: "order-SEN-instr"
+
