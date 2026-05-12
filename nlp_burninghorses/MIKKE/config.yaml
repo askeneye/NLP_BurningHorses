@@ -1,9 +1,5 @@
 # nlp_burninghorses/MIKKE/config.yaml
 
-project:
-  name: "oada_replication"
-  author: "MIKKE"
-
 paths:
   # Reference shared data from within the MIKKE folder
   raw_data: "../../data/raw/conll2003"

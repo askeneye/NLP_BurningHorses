@@ -1,6 +1,7 @@
 # Development / tooling
 pip
 python-dotenv
+PyYAML
 ruff
 
 # BERT_* baseline scripts (HF datasets, models, metrics)

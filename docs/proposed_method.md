@@ -60,8 +60,6 @@ The BERT model trained on raw few-shot data is compared to the distilled model t
 
 ---
 
-
-
 ## Other scores to report
 
 * **Standard BERT** vs **BERT distilled from soft labels** vs **BERT distilled from hard labels**
@@ -154,7 +152,6 @@ The Student is trained to mimic the **Ensemble's probability distribution** (Sof
   - **Sequence length:** Truncated to 256 tokens. Matching PET research parameters.
 * **Sub-Token Alignment**: soft labels are aligned with first sub-token, inter-tokens are ignored during Loss calculation.
 
-
 ---
 
 ## Data preprocessing
@@ -168,8 +165,6 @@ The Student is trained to mimic the **Ensemble's probability distribution** (Sof
 
 1. **Tokenization & Collation**
    Batch is padded to equal length
-2. 
-
 
 ## Data Splitting
 
