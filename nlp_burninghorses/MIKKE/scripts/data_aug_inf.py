@@ -14,6 +14,7 @@ if __package__:
         detokenize_tokens,
         load_jsonl,
         load_yaml,
+        repo_relative_path,
     )
 else:
     from data_aug_train import (
@@ -27,13 +28,16 @@ else:
         detokenize_tokens,
         load_jsonl,
         load_yaml,
+        repo_relative_path,
     )
 
 
-LEFT_TO_RIGHT_ORDER = "left to right"
+FIRST_TO_LAST_ORDER = "first to last"
+DEFAULT_INFERENCE_PATTERN_ID = "pattern_1_instr_SEN_order"
+DEFAULT_INFERENCE_OUTPUT_DIR = "inference/first_to_last"
 DEFAULT_SPLIT_FILES = {
-    "mini-val": "data/interim/conll2003_kshot_bert/mini_val.jsonl",
-    "val": "data/interim/conll2003_kshot_bert/validation.jsonl",
+    "mini_val": "data/interim/conll2003_kshot_bert/mini_val.jsonl",
+    "validation": "data/interim/conll2003_kshot_bert/validation.jsonl",
     "test": "data/interim/conll2003_kshot_bert/test.jsonl",
 }
 
@@ -91,56 +95,65 @@ def apply_inference_pet_wrapper(sentence_text: str, pattern_template: str) -> st
     """Inject the sentence and the fixed inference order into a PET pattern."""
     return pattern_template.format(
         SEN=sentence_text,
-        PERM=LEFT_TO_RIGHT_ORDER,
+        PERM=FIRST_TO_LAST_ORDER,
         sentence_text=sentence_text,
-        order=LEFT_TO_RIGHT_ORDER,
+        order=FIRST_TO_LAST_ORDER,
     )
+
+
+def select_inference_pattern(
+    pattern_bank: dict,
+    pattern_section: str,
+    pattern_id: str,
+) -> dict[str, str]:
+    for pattern in _iter_pattern_bank(pattern_bank, pattern_section):
+        if pattern["id"] == pattern_id:
+            return pattern
+
+    raise ValueError(f"Could not find inference pattern id: {pattern_id}")
 
 
 def augment_inference_split(
     input_filepath: str,
     split_name: str,
-    pattern_bank: list[dict[str, str]],
+    pattern: dict[str, str],
     id_to_string_map: dict,
     base_output_dir: str,
-) -> dict[str, int]:
-    """Write one inference JSONL file per PET pattern for a split."""
+) -> dict[str, object]:
+    """Write one shared first-to-last inference JSONL file for a split."""
     input_data = load_jsonl(input_filepath)
-    split_output_dir = Path(base_output_dir) / split_name
-    split_output_dir.mkdir(parents=True, exist_ok=True)
-    rows_by_pattern: dict[str, int] = {}
+    output_dir = Path(base_output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"{split_name}.jsonl"
+    rows_written = 0
 
-    for pattern in pattern_bank:
-        pattern_id = pattern["id"]
-        pattern_output_path = split_output_dir / f"{pattern_id}.jsonl"
-        rows_written = 0
+    with output_path.open("w", encoding="utf-8") as output_file:
+        for example in input_data:
+            tokens = example["tokens"]
+            ner_tags = example["ner_tags"]
+            sentence_text = detokenize_tokens(tokens)
+            sequential_entities = extract_entities_left_to_right(
+                tokens,
+                ner_tags,
+                id_to_string_map,
+            )
+            row = {
+                "input_text": apply_inference_pet_wrapper(
+                    sentence_text,
+                    pattern["template"],
+                ),
+                "target_text": generate_inference_target(sequential_entities),
+            }
+            output_file.write(json.dumps(row, ensure_ascii=False) + "\n")
+            rows_written += 1
 
-        with pattern_output_path.open("w", encoding="utf-8") as output_file:
-            for example in input_data:
-                tokens = example["tokens"]
-                ner_tags = example["ner_tags"]
-                sentence_text = detokenize_tokens(tokens)
-                sequential_entities = extract_entities_left_to_right(
-                    tokens,
-                    ner_tags,
-                    id_to_string_map,
-                )
-                row = {
-                    "input_text": apply_inference_pet_wrapper(
-                        sentence_text,
-                        pattern["template"],
-                    ),
-                    "target_text": generate_inference_target(sequential_entities),
-                }
-                output_file.write(json.dumps(row, ensure_ascii=False) + "\n")
-                rows_written += 1
-
-        rows_by_pattern[pattern_id] = rows_written
-        print(
-            f"{split_name}/{pattern_id}: wrote {rows_written} rows to {pattern_output_path}"
-        )
-
-    return rows_by_pattern
+    print(f"{split_name}: wrote {rows_written} rows to {output_path}")
+    return {
+        "source_file": repo_relative_path(input_filepath),
+        "output_file": repo_relative_path(output_path),
+        "source_rows": len(input_data),
+        "generated_rows": rows_written,
+    }
 
 
 def main_orchestrator(
@@ -149,33 +162,45 @@ def main_orchestrator(
     pattern_bank: dict,
     id_to_string_map: dict,
     pattern_section: str = DEFAULT_PATTERN_SECTION,
-) -> dict[str, dict[str, int]]:
+) -> dict[str, dict[str, object]]:
     """Run inference augmentation for each configured evaluation split."""
-    patterns = _iter_pattern_bank(pattern_bank, pattern_section)
-    rows_by_split: dict[str, dict[str, int]] = {}
+    pattern_id = os.environ.get("AUG_INF_PATTERN_ID", DEFAULT_INFERENCE_PATTERN_ID)
+    pattern = select_inference_pattern(pattern_bank, pattern_section, pattern_id)
+    manifest: dict[str, object] = {
+        "inference_order": FIRST_TO_LAST_ORDER,
+        "source_pattern_id": pattern["id"],
+        "source_pattern_type": pattern.get("type"),
+        "source_template": pattern["template"],
+        "splits": {},
+    }
 
     for split_name, input_filepath in split_files.items():
-        rows_by_split[split_name] = augment_inference_split(
+        manifest["splits"][split_name] = augment_inference_split(
             input_filepath=input_filepath,
             split_name=split_name,
-            pattern_bank=patterns,
+            pattern=pattern,
             id_to_string_map=id_to_string_map,
             base_output_dir=base_output_dir,
         )
 
-    return rows_by_split
+    manifest_path = Path(base_output_dir) / "manifest.json"
+    with manifest_path.open("w", encoding="utf-8") as output_file:
+        json.dump(manifest, output_file, indent=2, ensure_ascii=False)
+    print(f"Wrote manifest to {manifest_path}")
+
+    return manifest["splits"]
 
 
 def _default_output_dir() -> Path:
-    return PROJECT_ROOT / DEFAULT_OUTPUT_BASE_DIR
+    return PROJECT_ROOT / DEFAULT_OUTPUT_BASE_DIR / DEFAULT_INFERENCE_OUTPUT_DIR
 
 
 def _split_files_from_env() -> dict[str, str]:
     return {
         split_name: os.environ.get(env_name, str(PROJECT_ROOT / default_filepath))
         for split_name, env_name, default_filepath in [
-            ("mini-val", "AUG_INF_MINI_VAL_FILE", DEFAULT_SPLIT_FILES["mini-val"]),
-            ("val", "AUG_INF_VAL_FILE", DEFAULT_SPLIT_FILES["val"]),
+            ("mini_val", "AUG_INF_MINI_VAL_FILE", DEFAULT_SPLIT_FILES["mini_val"]),
+            ("validation", "AUG_INF_VAL_FILE", DEFAULT_SPLIT_FILES["validation"]),
             ("test", "AUG_INF_TEST_FILE", DEFAULT_SPLIT_FILES["test"]),
         ]
     }
@@ -198,8 +223,8 @@ def main() -> None:
         pattern_section=pattern_section,
     )
 
-    total_rows = sum(sum(rows_by_pattern.values()) for rows_by_pattern in rows_by_split.values())
-    total_files = sum(len(rows_by_pattern) for rows_by_pattern in rows_by_split.values())
+    total_rows = sum(split_record["generated_rows"] for split_record in rows_by_split.values())
+    total_files = len(rows_by_split)
     print(f"Finished inference augmentation: {total_rows} rows across {total_files} files.")
 
 

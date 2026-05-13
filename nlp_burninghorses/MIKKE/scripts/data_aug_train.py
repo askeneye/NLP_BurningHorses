@@ -1,17 +1,18 @@
 import itertools
 import json
 import os
-import random
 from pathlib import Path
+import random
 
 import yaml
-
 
 PERMUTATION_SAMPLE_SIZE = 20
 DEFAULT_DATASET = "conll2003"
 DEFAULT_FEWSHOT_DIR = "data/interim/conll2003_kshot_bert/k5_seed242"
-DEFAULT_OUTPUT_BASE_DIR = "data/interim/conll2003_kshot_pet_oada"
+DEFAULT_OUTPUT_BASE_DIR = "data/interim/conll2003_kshot_seq2seq"
+DEFAULT_TRAIN_METHOD = "pet_oada"
 DEFAULT_PATTERN_SECTION = "patterns"
+OADA_PATTERN_COUNT = 1
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -25,6 +26,18 @@ def find_project_root(start_path: Path) -> Path:
 
 
 PROJECT_ROOT = find_project_root(SCRIPT_DIR)
+
+
+def canonical_pattern_id(pattern_index: int) -> str:
+    return f"pattern_{pattern_index:02d}"
+
+
+def repo_relative_path(path: str | Path) -> str:
+    resolved_path = Path(path).resolve()
+    try:
+        return resolved_path.relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return str(resolved_path)
 
 
 def get_oada_permutations(entity_schema: list[str]) -> list[tuple[str, ...]]:
@@ -245,16 +258,23 @@ def main_orchestrator(
     pattern_bank: dict,
     schema: list[str],
     id_to_string_map: dict,
+    train_method: str,
     pattern_section: str = DEFAULT_PATTERN_SECTION,
 ) -> dict[str, int]:
     """Run augmentation for every PET pattern in the pattern bank."""
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
-    input_data = load_jsonl(Path(input_dir) / "train.jsonl")
+    train_input_path = Path(input_dir) / "train.jsonl"
+    input_data = load_jsonl(train_input_path)
     rows_by_pattern: dict[str, int] = {}
+    manifest: dict[str, dict[str, object]] = {}
+    patterns = _iter_pattern_bank(pattern_bank, pattern_section)
+    if train_method == "oada":
+        patterns = patterns[:OADA_PATTERN_COUNT]
 
-    for pattern in _iter_pattern_bank(pattern_bank, pattern_section):
-        pattern_id = pattern["id"]
+    for pattern_index, pattern in enumerate(patterns, start=1):
+        pattern_id = canonical_pattern_id(pattern_index)
+        source_pattern_id = pattern["id"]
         pattern_output_path = output_path / f"{pattern_id}.jsonl"
         rows_by_pattern[pattern_id] = augment_data(
             input_data=input_data,
@@ -264,12 +284,27 @@ def main_orchestrator(
             id_to_string_map=id_to_string_map,
             output_filepath=str(pattern_output_path),
         )
+        manifest[pattern_id] = {
+            "source_pattern_id": source_pattern_id,
+            "source_pattern_type": pattern.get("type"),
+            "source_template": pattern["template"],
+            "source_train_file": repo_relative_path(train_input_path),
+            "output_file": repo_relative_path(pattern_output_path),
+            "method": train_method,
+            "source_rows": len(input_data),
+            "generated_rows": rows_by_pattern[pattern_id],
+        }
+
+    manifest_path = output_path / "manifest.json"
+    with manifest_path.open("w", encoding="utf-8") as output_file:
+        json.dump(manifest, output_file, indent=2, ensure_ascii=False)
+    print(f"Wrote manifest to {manifest_path}")
 
     return rows_by_pattern
 
 
-def _default_output_dir(input_dir: Path) -> Path:
-    return PROJECT_ROOT / DEFAULT_OUTPUT_BASE_DIR / "train" / f"{input_dir.name}_aug"
+def _default_output_dir(input_dir: Path, train_method: str) -> Path:
+    return PROJECT_ROOT / DEFAULT_OUTPUT_BASE_DIR / "train" / train_method / input_dir.name
 
 
 def main() -> None:
@@ -278,7 +313,11 @@ def main() -> None:
         random.seed(int(seed))
 
     input_dir = Path(os.environ.get("AUG_INPUT_DIR", PROJECT_ROOT / DEFAULT_FEWSHOT_DIR))
-    output_dir = Path(os.environ.get("AUG_OUTPUT_DIR", _default_output_dir(input_dir)))
+    train_method = os.environ.get("AUG_TRAIN_METHOD", DEFAULT_TRAIN_METHOD)
+    if train_method not in {"pet_oada", "oada"}:
+        raise ValueError("AUG_TRAIN_METHOD must be one of: pet_oada, oada")
+
+    output_dir = Path(os.environ.get("AUG_OUTPUT_DIR", _default_output_dir(input_dir, train_method)))
     patterns_path = Path(os.environ.get("AUG_PATTERNS_PATH", SCRIPT_DIR / "patterns.yaml"))
     mapping_path = Path(os.environ.get("AUG_MAPPING_PATH", SCRIPT_DIR.parent / "mapping.yaml"))
     dataset_name = os.environ.get("AUG_DATASET", DEFAULT_DATASET)
@@ -295,6 +334,7 @@ def main() -> None:
         pattern_bank=pattern_bank,
         schema=schema,
         id_to_string_map=id_to_string_map,
+        train_method=train_method,
         pattern_section=pattern_section,
     )
 
