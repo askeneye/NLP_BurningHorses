@@ -14,7 +14,6 @@ from torch.utils.data import DataLoader, Dataset
 from tqdm.auto import tqdm
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 
@@ -32,8 +31,14 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from nlp_burninghorses.utils import span_f1  # noqa: E402
 
-
 MODEL_NAME = "facebook/bart-base"
+DEFAULT_DATASET = "conll2003"
+DEFAULT_TASK = "kshot_seq2seq_ner"
+DEFAULT_MODEL_FAMILY = "bart_base"
+DEFAULT_METHOD = "pet_oada"
+DEFAULT_KSHOT_SPLIT = "k5_seed242"
+DEFAULT_PATTERN = "pattern_01"
+DEFAULT_SOURCE_PATTERN_ID = "pattern_1_instr_SEN_order"
 MAX_SOURCE_LENGTH = 128
 MAX_TARGET_LENGTH = 128
 MAX_GENERATION_LENGTH = 128
@@ -47,25 +52,39 @@ EARLY_STOPPING_PATIENCE = 5
 MIN_STEPS_BEFORE_STOPPING = 1000
 
 DEFAULT_TRAIN_FILE = (
-    "data/interim/conll2003_kshot_pet_oada/train/k5_seed242_aug/"
-    "pattern_1_instr_SEN_order.jsonl"
+    "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k5_seed242/pattern_01.jsonl"
 )
 DEFAULT_MINI_VAL_FILE = (
-    "data/interim/conll2003_kshot_pet_oada/mini-val/pattern_1_instr_SEN_order.jsonl"
+    "data/interim/conll2003_kshot_seq2seq/inference/first_to_last/mini_val.jsonl"
 )
 DEFAULT_MINI_VAL_GOLD_FILE = "data/interim/conll2003_kshot_bert/mini_val.jsonl"
+DEFAULT_VALIDATION_FILE = (
+    "data/interim/conll2003_kshot_seq2seq/inference/first_to_last/validation.jsonl"
+)
+DEFAULT_VALIDATION_GOLD_FILE = "data/interim/conll2003_kshot_bert/validation.jsonl"
 DEFAULT_METADATA_FILE = "data/interim/conll2003_kshot_bert/metadata.json"
-DEFAULT_OUTPUT_DIR = "models/bart_pet_oada_mvp/pattern_1_instr_SEN_order"
+DEFAULT_OUTPUT_DIR = (
+    "models/conll2003_kshot_seq2seq/bart_base/pet_oada/k5_seed242/pattern_01"
+)
 
 BRACKETED_ENTITY_RE = re.compile(r"\[([^\]]+)\]\s*([A-Za-z][A-Za-z0-9_-]*)")
 
 
 @dataclass(frozen=True)
 class BartRunConfig:
+    dataset: str
+    task: str
+    model_family: str
+    method: str
+    kshot_split: str
+    pattern: str
+    source_pattern_id: str
     model_name: str
     train_file: Path
     mini_val_file: Path
     mini_val_gold_file: Path
+    validation_file: Path
+    validation_gold_file: Path
     metadata_file: Path
     output_dir: Path
     max_source_length: int
@@ -107,6 +126,14 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
 def read_json(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as input_file:
         return json.load(input_file)
+
+
+def repo_relative_path(path: str | Path) -> str:
+    resolved_path = Path(path).resolve()
+    try:
+        return resolved_path.relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return str(resolved_path)
 
 
 def require_columns(rows: list[dict[str, Any]], required_columns: set[str], source_name: str) -> None:
@@ -337,8 +364,8 @@ def make_seq2seq_collate_fn(tokenizer, max_source_length: int, max_target_length
 def evaluate_bart_generation(
     model,
     tokenizer,
-    mini_val_rows: list[dict[str, Any]],
-    mini_val_gold_rows: list[dict[str, Any]],
+    eval_rows: list[dict[str, Any]],
+    eval_gold_rows: list[dict[str, Any]],
     id_to_label: dict[int, str],
     entity_types: set[str],
     config: BartRunConfig,
@@ -348,9 +375,9 @@ def evaluate_bart_generation(
     gold_tags_per_sentence: list[list[str]] = []
     pred_tags_per_sentence: list[list[str]] = []
 
-    for batch_start in range(0, len(mini_val_rows), config.eval_batch_size):
-        batch = mini_val_rows[batch_start : batch_start + config.eval_batch_size]
-        gold_batch = mini_val_gold_rows[batch_start : batch_start + config.eval_batch_size]
+    for batch_start in range(0, len(eval_rows), config.eval_batch_size):
+        batch = eval_rows[batch_start : batch_start + config.eval_batch_size]
+        gold_batch = eval_gold_rows[batch_start : batch_start + config.eval_batch_size]
         input_texts = [row["input_text"] for row in batch]
         tokenized = tokenizer(
             input_texts,
@@ -386,19 +413,32 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
     train_rows = read_jsonl(config.train_file)
     mini_val_rows = read_jsonl(config.mini_val_file)
     mini_val_gold_rows = read_jsonl(config.mini_val_gold_file)
+    validation_rows = read_jsonl(config.validation_file)
+    validation_gold_rows = read_jsonl(config.validation_gold_file)
     metadata = read_json(config.metadata_file)
 
     require_columns(train_rows, {"input_text", "target_text"}, str(config.train_file))
     require_columns(mini_val_rows, {"input_text", "target_text"}, str(config.mini_val_file))
+    require_columns(validation_rows, {"input_text", "target_text"}, str(config.validation_file))
     require_columns(
         mini_val_gold_rows,
         {"tokens", "ner_tags"},
         str(config.mini_val_gold_file),
     )
+    require_columns(
+        validation_gold_rows,
+        {"tokens", "ner_tags"},
+        str(config.validation_gold_file),
+    )
     if len(mini_val_rows) != len(mini_val_gold_rows):
         raise ValueError(
             "Mini-val generated rows and raw gold rows must have the same length: "
             f"{len(mini_val_rows)} != {len(mini_val_gold_rows)}"
+        )
+    if len(validation_rows) != len(validation_gold_rows):
+        raise ValueError(
+            "Validation generated rows and raw gold rows must have the same length: "
+            f"{len(validation_rows)} != {len(validation_gold_rows)}"
         )
 
     label_list = metadata["label_list"]
@@ -475,8 +515,8 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         span_metrics = evaluate_bart_generation(
             model=model,
             tokenizer=tokenizer,
-            mini_val_rows=mini_val_rows,
-            mini_val_gold_rows=mini_val_gold_rows,
+            eval_rows=mini_val_rows,
+            eval_gold_rows=mini_val_gold_rows,
             id_to_label=id_to_label,
             entity_types=entity_types,
             config=config,
@@ -532,8 +572,18 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
     final_metrics = evaluate_bart_generation(
         model=final_model,
         tokenizer=tokenizer,
-        mini_val_rows=mini_val_rows,
-        mini_val_gold_rows=mini_val_gold_rows,
+        eval_rows=mini_val_rows,
+        eval_gold_rows=mini_val_gold_rows,
+        id_to_label=id_to_label,
+        entity_types=entity_types,
+        config=config,
+        device=device,
+    )
+    validation_metrics = evaluate_bart_generation(
+        model=final_model,
+        tokenizer=tokenizer,
+        eval_rows=validation_rows,
+        eval_gold_rows=validation_gold_rows,
         id_to_label=id_to_label,
         entity_types=entity_types,
         config=config,
@@ -543,10 +593,31 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
 
     summary = {
         "model_name": config.model_name,
-        "train_file": str(config.train_file),
-        "mini_val_file": str(config.mini_val_file),
-        "mini_val_gold_file": str(config.mini_val_gold_file),
-        "output_dir": str(config.output_dir),
+        "experiment": {
+            "dataset": config.dataset,
+            "task": config.task,
+            "model_family": config.model_family,
+            "hf_model_name": config.model_name,
+            "method": config.method,
+            "kshot_split": config.kshot_split,
+            "pattern": config.pattern,
+            "source_pattern_id": config.source_pattern_id,
+            "seed": config.seed,
+        },
+        "train_file": repo_relative_path(config.train_file),
+        "mini_val_file": repo_relative_path(config.mini_val_file),
+        "mini_val_gold_file": repo_relative_path(config.mini_val_gold_file),
+        "validation_file": repo_relative_path(config.validation_file),
+        "validation_gold_file": repo_relative_path(config.validation_gold_file),
+        "metadata_file": repo_relative_path(config.metadata_file),
+        "output_dir": repo_relative_path(config.output_dir),
+        "data_stats": {
+            "train_rows": len(train_rows),
+            "mini_val_rows": len(mini_val_rows),
+            "mini_val_gold_rows": len(mini_val_gold_rows),
+            "validation_rows": len(validation_rows),
+            "validation_gold_rows": len(validation_gold_rows),
+        },
         "steps_trained": global_step,
         "total_training_seconds": total_training_seconds,
         "total_training_minutes": total_training_seconds / 60,
@@ -555,9 +626,10 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         "best_span_strict_f1": best_span_f1,
         "early_stopped": early_stopped,
         "num_evals": num_evals,
-        "eval_history_file": str(eval_history_path),
+        "eval_history_file": repo_relative_path(eval_history_path),
         "eval_history": eval_history,
-        "final_best_model_metrics": final_metrics,
+        "final_best_model_mini_val_metrics": final_metrics,
+        "final_best_model_validation_metrics": validation_metrics,
     }
 
     with (config.output_dir / "training_summary.json").open("w", encoding="utf-8") as output_file:
@@ -576,12 +648,24 @@ def _path_from_env(name: str, default_relative_path: str) -> Path:
 
 def load_config_from_env() -> BartRunConfig:
     return BartRunConfig(
+        dataset=os.environ.get("BART_DATASET", DEFAULT_DATASET),
+        task=os.environ.get("BART_TASK", DEFAULT_TASK),
+        model_family=os.environ.get("BART_MODEL_FAMILY", DEFAULT_MODEL_FAMILY),
+        method=os.environ.get("BART_METHOD", DEFAULT_METHOD),
+        kshot_split=os.environ.get("BART_KSHOT_SPLIT", DEFAULT_KSHOT_SPLIT),
+        pattern=os.environ.get("BART_PATTERN", DEFAULT_PATTERN),
+        source_pattern_id=os.environ.get("BART_SOURCE_PATTERN_ID", DEFAULT_SOURCE_PATTERN_ID),
         model_name=os.environ.get("BART_MODEL_NAME", MODEL_NAME),
         train_file=_path_from_env("BART_TRAIN_FILE", DEFAULT_TRAIN_FILE),
         mini_val_file=_path_from_env("BART_MINI_VAL_FILE", DEFAULT_MINI_VAL_FILE),
         mini_val_gold_file=_path_from_env(
             "BART_MINI_VAL_GOLD_FILE",
             DEFAULT_MINI_VAL_GOLD_FILE,
+        ),
+        validation_file=_path_from_env("BART_VALIDATION_FILE", DEFAULT_VALIDATION_FILE),
+        validation_gold_file=_path_from_env(
+            "BART_VALIDATION_GOLD_FILE",
+            DEFAULT_VALIDATION_GOLD_FILE,
         ),
         metadata_file=_path_from_env("BART_METADATA_FILE", DEFAULT_METADATA_FILE),
         output_dir=_path_from_env("BART_OUTPUT_DIR", DEFAULT_OUTPUT_DIR),
@@ -607,7 +691,7 @@ def main() -> None:
     config = load_config_from_env()
     summary = train_one_bart_model(config)
     print(
-        "Finished BART MVP training: "
+        "Finished BART training: "
         f"steps={summary['steps_trained']} "
         f"best_step={summary['best_step']} "
         f"best_mini_span_f1={summary['best_span_strict_f1']:.4f} "
