@@ -54,6 +54,36 @@ def dataset_to_examples(dataset) -> List[Mapping]:
     ]
 
 
+def strip_labels(rows: List[Mapping]) -> List[Mapping]:
+    return [{TEXT_COLUMN: row[TEXT_COLUMN]} for row in rows]
+
+
+def split_mini_eval(
+    validation_rows: List[Mapping],
+    mini_eval_size: int,
+    seed: int,
+) -> tuple[List[Mapping], List[Mapping]]:
+    rng = random.Random(seed)
+    mini_eval = rng.sample(validation_rows, k=min(mini_eval_size, len(validation_rows)))
+    mini_eval_keys = {
+        (
+            tuple(example[TEXT_COLUMN]),
+            tuple(example[LABEL_COLUMN]),
+        )
+        for example in mini_eval
+    }
+    filtered_validation = [
+        example
+        for example in validation_rows
+        if (
+            tuple(example[TEXT_COLUMN]),
+            tuple(example[LABEL_COLUMN]),
+        )
+        not in mini_eval_keys
+    ]
+    return mini_eval, filtered_validation
+
+
 def write_jsonl(path: Path, rows: List[Mapping]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as f:
@@ -83,12 +113,15 @@ def main() -> None:
 
     # Shared top-level splits
     mini_eval_seed = 42
-    mini_eval_size = 100
+    mini_eval_size = 200
 
-    rng = random.Random(mini_eval_seed)
-    mini_eval = rng.sample(validation, k=min(mini_eval_size, len(validation)))
+    mini_eval, filtered_validation = split_mini_eval(
+        validation,
+        mini_eval_size,
+        mini_eval_seed,
+    )
 
-    write_jsonl(out_root / "validation.jsonl", validation)
+    write_jsonl(out_root / "validation.jsonl", filtered_validation)
     write_jsonl(out_root / "test.jsonl", test)
     write_jsonl(out_root / "mini_val.jsonl", mini_eval)
 
@@ -96,11 +129,14 @@ def main() -> None:
         out_root / "metadata.json",
         {
             "dataset": dataset_name,
-            "num_validation_sentences": len(validation),
+            "num_raw_validation_sentences": len(validation),
+            "num_validation_sentences": len(filtered_validation),
             "num_test_sentences": len(test),
             "num_mini_eval_sentences": len(mini_eval),
             "mini_eval_source": "validation",
             "mini_eval_seed": mini_eval_seed,
+            "mini_eval_requested_size": mini_eval_size,
+            "validation_excludes_mini_eval": True,
             "label_list": label_list,
             "id_to_label": id_to_label,
             "text_column": TEXT_COLUMN,
@@ -123,7 +159,7 @@ def main() -> None:
             split_dir = out_root / f"k{k}_seed{seed}"
 
             write_jsonl(split_dir / "train.jsonl", support)
-            write_jsonl(split_dir / "unlabeled_pool.jsonl", rest)
+            write_jsonl(split_dir / "unlabeled_pool.jsonl", strip_labels(rest))
 
             metadata = {
                 "dataset": dataset_name,
@@ -132,6 +168,7 @@ def main() -> None:
                 "run_index": run_index,
                 "num_train_support_sentences": len(support),
                 "num_unlabeled_pool_sentences": len(rest),
+                "unlabeled_pool_contains_gold_labels": False,
                 "shared_validation_path": "../validation.jsonl",
                 "shared_test_path": "../test.jsonl",
                 "shared_mini_eval_path": "../mini_eval.jsonl",

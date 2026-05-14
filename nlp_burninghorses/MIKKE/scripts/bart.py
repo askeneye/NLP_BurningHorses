@@ -38,18 +38,22 @@ DEFAULT_MODEL_FAMILY = "bart_base"
 DEFAULT_METHOD = "pet_oada"
 DEFAULT_KSHOT_SPLIT = "k5_seed242"
 DEFAULT_PATTERN = "pattern_01"
-DEFAULT_SOURCE_PATTERN_ID = "pattern_1_instr_SEN_order"
+DEFAULT_SOURCE_PATTERN_ID = "pattern_1_oada_original"
 MAX_SOURCE_LENGTH = 128
 MAX_TARGET_LENGTH = 128
 MAX_GENERATION_LENGTH = 128
 
-TRAIN_BATCH_SIZE = 16
-EVAL_BATCH_SIZE = 16
+TRAIN_BATCH_SIZE = 32
+EVAL_BATCH_SIZE = 32
 LEARNING_RATE = 2e-5
-MAX_STEPS = 5000
+MAX_STEPS = 10000
 EVAL_STEPS = 200
-EARLY_STOPPING_PATIENCE = 5
+EARLY_STOPPING_PATIENCE = 10
 MIN_STEPS_BEFORE_STOPPING = 1000
+USE_MIXED_PRECISION = True
+USE_TF32 = True
+PIN_MEMORY = True
+NO_REPEAT_NGRAM_SIZE = 0
 
 DEFAULT_TRAIN_FILE = (
     "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k5_seed242/pattern_01.jsonl"
@@ -98,6 +102,10 @@ class BartRunConfig:
     early_stopping_patience: int
     min_steps_before_stopping: int
     seed: int
+    use_mixed_precision: bool
+    use_tf32: bool
+    pin_memory: bool
+    no_repeat_ngram_size: int
 
 
 class JsonlSeq2SeqDataset(Dataset):
@@ -392,6 +400,7 @@ def evaluate_bart_generation(
                 input_ids=tokenized["input_ids"],
                 attention_mask=tokenized["attention_mask"],
                 max_length=config.max_generation_length,
+                no_repeat_ngram_size=config.no_repeat_ngram_size,
             )
 
         generated_texts = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
@@ -447,15 +456,24 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
 
     tokenizer = AutoTokenizer.from_pretrained(config.model_name)
     model = AutoModelForSeq2SeqLM.from_pretrained(config.model_name)
+    tokenizer.model_max_length = config.max_source_length
+    model.generation_config.no_repeat_ngram_size = config.no_repeat_ngram_size
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    use_amp = config.use_mixed_precision and device.type == "cuda"
+    if device.type == "cuda" and config.use_tf32:
+        torch.backends.cuda.matmul.allow_tf32 = True
+        torch.backends.cudnn.allow_tf32 = True
+        torch.set_float32_matmul_precision("high")
     model.to(device)
+    scaler = torch.amp.GradScaler("cuda", enabled=use_amp)
 
     train_dataset = JsonlSeq2SeqDataset(train_rows)
     train_dataloader = DataLoader(
         train_dataset,
         batch_size=config.train_batch_size,
         shuffle=True,
+        pin_memory=config.pin_memory and device.type == "cuda",
         collate_fn=make_seq2seq_collate_fn(
             tokenizer,
             config.max_source_length,
@@ -494,10 +512,12 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         batch = {key: value.to(device) for key, value in batch.items()}
 
         optimizer.zero_grad()
-        outputs = model(**batch)
-        loss = outputs.loss
-        loss.backward()
-        optimizer.step()
+        with torch.amp.autocast("cuda", enabled=use_amp):
+            outputs = model(**batch)
+            loss = outputs.loss
+        scaler.scale(loss).backward()
+        scaler.step(optimizer)
+        scaler.update()
 
         last_loss = loss.item()
         total_loss += last_loss
@@ -568,6 +588,7 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         best_step = global_step
 
     final_model = AutoModelForSeq2SeqLM.from_pretrained(best_model_dir)
+    final_model.generation_config.no_repeat_ngram_size = config.no_repeat_ngram_size
     final_model.to(device)
     final_metrics = evaluate_bart_generation(
         model=final_model,
@@ -618,6 +639,22 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
             "validation_rows": len(validation_rows),
             "validation_gold_rows": len(validation_gold_rows),
         },
+        "runtime_config": {
+            "device": str(device),
+            "train_batch_size": config.train_batch_size,
+            "eval_batch_size": config.eval_batch_size,
+            "max_source_length": config.max_source_length,
+            "max_target_length": config.max_target_length,
+            "max_generation_length": config.max_generation_length,
+            "max_steps": config.max_steps,
+            "eval_steps": config.eval_steps,
+            "early_stopping_patience": config.early_stopping_patience,
+            "min_steps_before_stopping": config.min_steps_before_stopping,
+            "use_mixed_precision": use_amp,
+            "use_tf32": config.use_tf32 and device.type == "cuda",
+            "pin_memory": config.pin_memory and device.type == "cuda",
+            "no_repeat_ngram_size": config.no_repeat_ngram_size,
+        },
         "steps_trained": global_step,
         "total_training_seconds": total_training_seconds,
         "total_training_minutes": total_training_seconds / 60,
@@ -644,6 +681,13 @@ def _path_from_env(name: str, default_relative_path: str) -> Path:
         return Path(value).expanduser().resolve()
 
     return PROJECT_ROOT / default_relative_path
+
+
+def _bool_from_env(name: str, default: bool) -> bool:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "y", "on"}
 
 
 def load_config_from_env() -> BartRunConfig:
@@ -684,20 +728,57 @@ def load_config_from_env() -> BartRunConfig:
             os.environ.get("BART_MIN_STEPS_BEFORE_STOPPING", MIN_STEPS_BEFORE_STOPPING)
         ),
         seed=int(os.environ.get("BART_SEED", 42)),
+        use_mixed_precision=_bool_from_env("BART_USE_MIXED_PRECISION", USE_MIXED_PRECISION),
+        use_tf32=_bool_from_env("BART_USE_TF32", USE_TF32),
+        pin_memory=_bool_from_env("BART_PIN_MEMORY", PIN_MEMORY),
+        no_repeat_ngram_size=int(os.environ.get("BART_NO_REPEAT_NGRAM_SIZE", NO_REPEAT_NGRAM_SIZE)),
     )
+
+
+def print_final_report(summary: dict[str, Any], output_dir: Path, recent_eval_count: int = 10) -> None:
+    validation_metrics = summary["final_best_model_validation_metrics"]
+    mini_val_metrics = summary["final_best_model_mini_val_metrics"]
+    eval_history = summary["eval_history"]
+
+    print("\nFinal BART training report")
+    print(f"  output_dir: {output_dir}")
+    print(
+        "  training: "
+        f"steps={summary['steps_trained']} "
+        f"best_step={summary['best_step']} "
+        f"early_stopped={summary['early_stopped']} "
+        f"time_min={summary['total_training_minutes']:.2f}"
+    )
+    print(
+        "  mini_val: "
+        f"strict_f1={mini_val_metrics['Span_Strict_F1']:.4f} "
+        f"unlabeled_f1={mini_val_metrics['Span_Unlabeled_F1']:.4f} "
+        f"loose_f1={mini_val_metrics['Span_Loose_F1']:.4f}"
+    )
+    print(
+        "  validation: "
+        f"strict_f1={validation_metrics['Span_Strict_F1']:.4f} "
+        f"unlabeled_f1={validation_metrics['Span_Unlabeled_F1']:.4f} "
+        f"loose_f1={validation_metrics['Span_Loose_F1']:.4f}"
+    )
+    print(f"  recent evals (last {min(recent_eval_count, len(eval_history))}):")
+    for record in eval_history[-recent_eval_count:]:
+        print(
+            "    "
+            f"step={record['step']} "
+            f"strict_f1={record['Span_Strict_F1']:.4f} "
+            f"best={record['best_span_strict_f1']:.4f}@{record['best_step']} "
+            f"patience_left={record['patience_left']} "
+            f"loss={record['last_loss']:.4g} "
+            f"new_best={record['is_new_best']}"
+        )
+    print(f"  summary: {output_dir / 'training_summary.json'}")
 
 
 def main() -> None:
     config = load_config_from_env()
     summary = train_one_bart_model(config)
-    print(
-        "Finished BART training: "
-        f"steps={summary['steps_trained']} "
-        f"best_step={summary['best_step']} "
-        f"best_mini_span_f1={summary['best_span_strict_f1']:.4f} "
-        f"time_min={summary['total_training_minutes']:.2f}"
-    )
-    print(f"Summary written to: {config.output_dir / 'training_summary.json'}")
+    print_final_report(summary, config.output_dir)
 
 
 if __name__ == "__main__":

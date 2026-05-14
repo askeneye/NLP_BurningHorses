@@ -1,6 +1,5 @@
 {"tokens": ["CRICKET", "-", "LEICESTERSHIRE", "TAKE", "OVER", "AT", "TOP", "AFTER", "INNINGS", "VICTORY", "."], "ner_tags": [0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["LONDON", "1996-08-30"], "ner_tags": [5, 0]}
-{"tokens": ["West", "Indian", "all-rounder", "Phil", "Simmons", "took", "four", "for", "38", "on", "Friday", "as", "Leicestershire", "beat", "Somerset", "by", "an", "innings", "and", "39", "runs", "in", "two", "days", "to", "take", "over", "at", "the", "head", "of", "the", "county", "championship", "."], "ner_tags": [7, 8, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Their", "stay", "on", "top", ",", "though", ",", "may", "be", "short-lived", "as", "title", "rivals", "Essex", ",", "Derbyshire", "and", "Surrey", "all", "closed", "in", "on", "victory", "while", "Kent", "made", "up", "for", "lost", "time", "in", "their", "rain-affected", "match", "against", "Nottinghamshire", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0]}
 {"tokens": ["After", "bowling", "Somerset", "out", "for", "83", "on", "the", "opening", "morning", "at", "Grace", "Road", ",", "Leicestershire", "extended", "their", "first", "innings", "by", "94", "runs", "before", "being", "bowled", "out", "for", "296", "with", "England", "discard", "Andy", "Caddick", "taking", "three", "for", "83", "."], "ner_tags": [0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 2, 0, 0, 0, 0, 0]}
 {"tokens": ["Trailing", "by", "213", ",", "Somerset", "got", "a", "solid", "start", "to", "their", "second", "innings", "before", "Simmons", "stepped", "in", "to", "bundle", "them", "out", "for", "174", "."], "ner_tags": [0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -11,7 +10,6 @@
 {"tokens": ["He", "was", "well", "backed", "by", "England", "hopeful", "Mark", "Butcher", "who", "made", "70", "as", "Surrey", "closed", "on", "429", "for", "seven", ",", "a", "lead", "of", "234", "."], "ner_tags": [0, 0, 0, 0, 0, 5, 0, 1, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Derbyshire", "kept", "up", "the", "hunt", "for", "their", "first", "championship", "title", "since", "1936", "by", "reducing", "Worcestershire", "to", "133", "for", "five", "in", "their", "second", "innings", ",", "still", "100", "runs", "away", "from", "avoiding", "an", "innings", "defeat", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Australian", "Tom", "Moody", "took", "six", "for", "82", "but", "Chris", "Adams", ",", "123", ",", "and", "Tim", "O'Gorman", ",", "109", ",", "took", "Derbyshire", "to", "471", "and", "a", "first", "innings", "lead", "of", "233", "."], "ner_tags": [7, 1, 2, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["After", "the", "frustration", "of", "seeing", "the", "opening", "day", "of", "their", "match", "badly", "affected", "by", "the", "weather", ",", "Kent", "stepped", "up", "a", "gear", "to", "dismiss", "Nottinghamshire", "for", "214", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0]}
 {"tokens": ["They", "were", "held", "up", "by", "a", "gritty", "84", "from", "Paul", "Johnson", "but", "ex-England", "fast", "bowler", "Martin", "McCague", "took", "four", "for", "55", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 7, 0, 0, 1, 2, 0, 0, 0, 0, 0]}
 {"tokens": ["By", "stumps", "Kent", "had", "reached", "108", "for", "three", "."], "ner_tags": [0, 0, 3, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["CRICKET", "-", "ENGLISH", "COUNTY", "CHAMPIONSHIP", "SCORES", "."], "ner_tags": [0, 0, 7, 8, 8, 0, 0]}
@@ -44,7 +42,6 @@
 {"tokens": ["May", "14", "Practice", "at", "Lord", "'s"], "ner_tags": [0, 0, 0, 0, 5, 6]}
 {"tokens": ["May", "15", "v", "Duke", "of", "Norfolk", "'s", "XI", "(", "at", "Arundel", ")"], "ner_tags": [0, 0, 0, 3, 4, 4, 4, 4, 0, 0, 5, 0]}
 {"tokens": ["May", "17", "v", "Northampton"], "ner_tags": [0, 0, 0, 3]}
-{"tokens": ["May", "18", "v", "Worcestershire"], "ner_tags": [0, 0, 0, 3]}
 {"tokens": ["May", "20", "v", "Durham"], "ner_tags": [0, 0, 0, 3]}
 {"tokens": ["May", "22", "First", "one-day", "international", "(", "at", "Headingley", ","], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["Leeds", ")"], "ner_tags": [3, 0]}
@@ -76,7 +73,6 @@
 {"tokens": ["SOCCER", "-", "SHEARER", "NAMED", "AS", "ENGLAND", "CAPTAIN", "."], "ner_tags": [0, 0, 1, 0, 0, 5, 0, 0]}
 {"tokens": ["LONDON", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["The", "world", "'s", "costliest", "footballer", "Alan", "Shearer", "was", "named", "as", "the", "new", "England", "captain", "on", "Friday", "."], "ner_tags": [0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0]}
-{"tokens": ["The", "26-year-old", ",", "who", "joined", "Newcastle", "for", "15", "million", "pounds", "sterling", "(", "$", "23.4", "million", ")", ",", "takes", "over", "from", "Tony", "Adams", ",", "who", "led", "the", "side", "during", "the", "European", "championship", "in", "June", ",", "and", "former", "captain", "David", "Platt", "."], "ner_tags": [0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0]}
 {"tokens": ["Adams", "and", "Platt", "are", "both", "injured", "and", "will", "miss", "England", "'s", "opening", "World", "Cup", "qualifier", "against", "Moldova", "on", "Sunday", "."], "ner_tags": [1, 0, 1, 0, 0, 0, 0, 0, 0, 5, 0, 0, 7, 8, 0, 0, 5, 0, 0, 0]}
 {"tokens": ["Shearer", "takes", "the", "captaincy", "on", "a", "trial", "basis", ",", "but", "new", "coach", "Glenn", "Hoddle", "said", "he", "saw", "no", "reason", "why", "the", "former", "Blackburn", "and", "Southampton", "skipper", "should", "not", "make", "the", "post", "his", "own", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "I", "'m", "sure", "there", "wo", "n't", "be", "a", "problem", ",", "I", "'m", "sure", "Alan", "is", "the", "man", "for", "the", "job", ",", "\"", "Hoddle", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]}
@@ -124,7 +120,6 @@
 {"tokens": ["2", "-", "Rodney", "Eyles", "(", "Australia", ")", "beat", "Derek", "Ryan", "(", "Ireland", ")", "15-6", "15-9", "11-15", "15-10", "."], "ner_tags": [0, 0, 1, 2, 0, 5, 0, 0, 1, 2, 0, 5, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["SOCCER", "-", "RESULTS", "OF", "SOUTH", "KOREAN", "PRO-SOCCER", "GAMES", "."], "ner_tags": [0, 0, 0, 0, 7, 8, 0, 0, 0]}
 {"tokens": ["SEOUL", "1996-08-30"], "ner_tags": [5, 0]}
-{"tokens": ["games", "played", "on", "Thursday", "."], "ner_tags": [0, 0, 0, 0, 0]}
 {"tokens": ["Pohang", "3", "Ulsan", "2", "(", "halftime", "1-0", ")"], "ner_tags": [3, 0, 3, 0, 0, 0, 0, 0]}
 {"tokens": ["Puchon", "2", "Chonbuk", "1", "(", "halftime", "1-1", ")"], "ner_tags": [3, 0, 3, 0, 0, 0, 0, 0]}
 {"tokens": ["Standings", "after", "games", "played", "on", "Thursday", "(", "tabulate", "under", "-"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -162,7 +157,6 @@
 {"tokens": ["LG", "46", "5", "59", ".441", "17"], "ner_tags": [3, 0, 0, 0, 0, 0]}
 {"tokens": ["OB", "42", "6", "62", ".409", "20", "1/2"], "ner_tags": [3, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["TENNIS", "-", "FRIDAY", "'S", "RESULTS", "FROM", "THE", "U.S.", "OPEN", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 7, 8, 0]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["Results", "from", "the", "U.S.", "Open", "Tennis", "Championships", "at", "the", "National", "Tennis", "Centre", "on", "Friday", "(", "prefix", "number", "denotes", "seeding", ")", ":"], "ner_tags": [0, 0, 0, 7, 8, 8, 8, 0, 0, 5, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Women", "'s", "singles", ",", "third", "round"], "ner_tags": [0, 0, 0, 0, 0, 0]}
 {"tokens": ["Sandrine", "Testud", "(", "France", ")", "beat", "Ines", "Gorrochategui", "(", "Argentina", ")", "4-6", "6-2", "6-1"], "ner_tags": [1, 2, 0, 5, 0, 0, 1, 2, 0, 5, 0, 0, 0, 0]}
@@ -183,7 +177,6 @@
 {"tokens": ["Add", "Women", "'s", "singles", ",", "third", "round", "Lisa", "Raymond", "(", "U.S.", ")", "beat", "Kimberly", "Po", "(", "U.S.", ")", "6-3", "6-2"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 5, 0, 0, 1, 2, 0, 5, 0, 0, 0]}
 {"tokens": [":"], "ner_tags": [0]}
 {"tokens": ["Add", "men", "'s", "singles", ",", "second", "round"], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Hendrik", "Dreekmann", "(", "Germany", ")", "beat", "Thomas", "Johansson", "(", "Sweden", ")"], "ner_tags": [1, 2, 0, 5, 0, 0, 1, 2, 0, 5, 0]}
 {"tokens": ["7-6", "(", "7-1", ")", "6-2", "4-6", "6-1"], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Andrei", "Medvedev", "(", "Ukraine", ")", "beat", "Jan", "Kroslak", "(", "Slovakia", ")", "6-4", "6-3"], "ner_tags": [1, 2, 0, 5, 0, 0, 1, 2, 0, 5, 0, 0, 0]}
 {"tokens": ["6-2"], "ner_tags": [0]}
@@ -195,12 +188,10 @@
 {"tokens": [":"], "ner_tags": [0]}
 {"tokens": ["Add", "men", "'s", "singles", ",", "second", "round", "12", "-", "Todd", "Martin", "(", "U.S.", ")", "beat", "Andrea", "Gaudenzi", "(", "Italy", ")", "6-3", "6-2", "6-2", "Stefan", "Edberg", "(", "Sweden", ")", "beat", "Bernd", "Karbacher", "(", "Germany", ")", "3-6", "6-3", "6-3", "1-0", "retired", "(", "leg", "injury", ")"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 5, 0, 0, 1, 2, 0, 5, 0, 0, 0, 0, 1, 2, 0, 5, 0, 0, 1, 2, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["BASEBALL", "-", "MAJOR", "LEAGUE", "STANDINGS", "AFTER", "THURSDAY", "'S", "GAMES", "."], "ner_tags": [0, 0, 7, 8, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["Major", "League", "Baseball"], "ner_tags": [7, 8, 8]}
 {"tokens": ["standings", "after", "games", "played", "on", "Thursday", "(", "tabulate", "under", "won", ","], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["lost", ",", "winning", "percentage", "and", "games", "behind", ")", ":"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["EASTERN", "DIVISION"], "ner_tags": [7, 8]}
-{"tokens": ["W", "L", "PCT", "GB"], "ner_tags": [0, 0, 0, 0]}
 {"tokens": ["NEW", "YORK", "74", "59", ".556", "-"], "ner_tags": [3, 4, 0, 0, 0, 0]}
 {"tokens": ["BALTIMORE", "70", "63", ".526", "4"], "ner_tags": [3, 0, 0, 0, 0]}
 {"tokens": ["BOSTON", "69", "65", ".515", "5", "1/2"], "ner_tags": [3, 0, 0, 0, 0, 0]}
@@ -219,15 +210,12 @@
 {"tokens": ["CALIFORNIA", "62", "72", ".463", "13", "1/2"], "ner_tags": [3, 0, 0, 0, 0, 0]}
 {"tokens": ["FRIDAY", ",", "AUGUST", "30", "SCHEDULE"], "ner_tags": [0, 0, 0, 0, 0]}
 {"tokens": ["KANSAS", "CITY", "AT", "DETROIT"], "ner_tags": [3, 4, 0, 5]}
-{"tokens": ["CHICAGO", "AT", "TORONTO"], "ner_tags": [3, 0, 5]}
 {"tokens": ["MINNESOTA", "AT", "MILWAUKEE"], "ner_tags": [3, 0, 5]}
 {"tokens": ["CLEVELAND", "AT", "TEXAS"], "ner_tags": [3, 0, 5]}
 {"tokens": ["NEW", "YORK", "AT", "CALIFORNIA"], "ner_tags": [3, 4, 0, 5]}
 {"tokens": ["BOSTON", "AT", "OAKLAND"], "ner_tags": [3, 0, 5]}
 {"tokens": ["BALTIMORE", "AT", "SEATTLE"], "ner_tags": [3, 0, 5]}
-{"tokens": ["NATIONAL", "LEAGUE"], "ner_tags": [7, 8]}
 {"tokens": ["EASTERN", "DIVISION"], "ner_tags": [7, 8]}
-{"tokens": ["W", "L", "PCT", "GB"], "ner_tags": [0, 0, 0, 0]}
 {"tokens": ["ATLANTA", "83", "49", ".629", "-"], "ner_tags": [3, 0, 0, 0, 0]}
 {"tokens": ["MONTREAL", "71", "61", ".538", "12"], "ner_tags": [3, 0, 0, 0, 0]}
 {"tokens": ["FLORIDA", "64", "70", ".478", "20"], "ner_tags": [3, 0, 0, 0, 0]}
@@ -249,10 +237,8 @@
 {"tokens": ["FLORIDA", "AT", "CINCINNATI"], "ner_tags": [3, 0, 5]}
 {"tokens": ["LOS", "ANGELES", "AT", "PHILADELPHIA"], "ner_tags": [3, 4, 0, 5]}
 {"tokens": ["HOUSTON", "AT", "PITTSBURGH"], "ner_tags": [3, 0, 5]}
-{"tokens": ["SAN", "FRANCISCO", "AT", "NEW", "YORK"], "ner_tags": [3, 4, 0, 5, 6]}
 {"tokens": ["COLORADO", "AT", "ST", "LOUIS"], "ner_tags": [3, 0, 5, 6]}
 {"tokens": ["BASEBALL", "-", "MAJOR", "LEAGUE", "RESULTS", "THURSDAY", "."], "ner_tags": [0, 0, 7, 8, 0, 0, 0]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["Results", "of", "Major", "League"], "ner_tags": [0, 0, 7, 8]}
 {"tokens": ["Baseball", "games", "played", "on", "Thursday", "(", "home", "team", "in", "CAPS", ")", ":"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["American", "League"], "ner_tags": [7, 8]}
@@ -260,7 +246,6 @@
 {"tokens": ["Minnesota", "6", "MILWAUKEE", "1"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["CALIFORNIA", "14", "New", "York", "3"], "ner_tags": [3, 0, 3, 4, 0]}
 {"tokens": ["SEATTLE", "9", "Baltimore", "6"], "ner_tags": [3, 0, 3, 0]}
-{"tokens": ["National", "League"], "ner_tags": [7, 8]}
 {"tokens": ["San", "Diego", "3", "NEW", "YORK", "2"], "ner_tags": [3, 4, 0, 3, 4, 0]}
 {"tokens": ["Chicago", "4", "HOUSTON", "3"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Cincinnati", "18", "COLORADO", "7"], "ner_tags": [3, 0, 3, 0]}
@@ -269,7 +254,6 @@
 {"tokens": ["Florida", "10", "ST", "LOUIS", "9"], "ner_tags": [3, 0, 3, 4, 0]}
 {"tokens": ["TENNIS", "-", "TARANGO", ",", "O'BRIEN", "SPRING", "TWIN", "UPSETS", "UNDER", "THE", "LIGHTS", "."], "ner_tags": [0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Larry", "Fine"], "ner_tags": [1, 2]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["Andre", "Agassi", "escaped", "disaster", "on", "Thursday", "but", "Wimbledon", "finalist", "MaliVai", "Washington", "and", "Marcelo", "Rios", "were", "not", "so", "fortunate", "on", "a", "night", "of", "upsets", "at", "the", "U.S.", "Open", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 0, 7, 0, 1, 2, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0]}
 {"tokens": ["The", "11th-seeded", "Washington", "fell", "short", "of", "reprising", "his", "Wimbledon", "miracle", "comeback", "as", "he", "lost", "to", "red-hot", "wildcard", "Alex", "O'Brien", "6-3", "6-4", "5-7", "3-6", "6-3", "in", "a", "two", "hour", "51", "minute", "struggle", "on", "the", "Stadium", "court", "."], "ner_tags": [0, 0, 1, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Next", "door", "on", "the", "grandstand", ",", "10th", "seed", "Rios", "lost", "to", "another", "player", "with", "a", "Wimbledon", "connection", "--", "bad", "boy", "Jeff", "Tarango", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 1, 2, 0]}
@@ -356,7 +340,6 @@
 {"tokens": ["Defending", "champion", "Scott", "Hoch", "shot", "a", "three-under", "68", "and", "was", "six", "strokes", "back", "."], "ner_tags": [0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Phil", "Mickelson", ",", "the", "only", "four-time", "winner", "on", "the", "PGA", "Tour", ",", "skipped", "the", "tournament", "after", "winning", "the", "World", "Series", "of", "Golf", "last", "week", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 8, 0, 0, 0]}
 {"tokens": ["Mark", "Brooks", ",", "Tom", "Lehman", "and", "Mark", "O'Meara", ",", "who", "make", "up", "the", "rest", "of", "the", "top", "four", "on", "the", "money", "list", ",", "also", "took", "the", "week", "off", "."], "ner_tags": [1, 2, 0, 1, 2, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["SOCCER", "-", "SILVA", "'S", "`LOST", "PASSPORT", "'", "EXCUSE", "NOT", "ENOUGH", "FOR", "FIFA", "."], "ner_tags": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0]}
 {"tokens": ["MADRID", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["Spanish", "first", "division", "team", "Deportivo", "Coruna", "will", "be", "without", "key", "midfielder", "Mauro", "Silva", "for", "Saturday", "'s", "game", "with", "Real", "Madrid", "after", "FIFA", ",", "soccer", "'s", "world", "governing", "body", ",", "suspended", "the", "Brazilian", "for", "one", "game", "for", "missing", "his", "national", "side", "'s", "European", "tour", "."], "ner_tags": [7, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["Silva", "excused", "his", "absence", "from", "Brazil", "'s", "game", "against", "Russia", ",", "on", "Wednesday", ",", "and", "Saturday", "'s", "match", "with", "the", "Netherlands", "by", "saying", "he", "had", "lost", "his", "passport", "."], "ner_tags": [1, 0, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -412,7 +395,6 @@
 {"tokens": ["2.", "Claudia", "Mues", "(", "Germany", ")", "18.80"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["3.", "Irina", "Korzhanenko", "(", "Russia", ")", "18.63"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["4.", "Valentina", "Fedyushina", "(", "Russia", ")", "18.55"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
-{"tokens": ["5.", "Stephanie", "Storp", "(", "Germany", ")", "18.41"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["Men", "'s", "mile"], "ner_tags": [0, 0, 0]}
 {"tokens": ["1.", "Noureddine", "Morceli", "(", "Algeria", ")", "3", "minutes", "49.09", "seconds"], "ner_tags": [0, 1, 2, 0, 5, 0, 0, 0, 0, 0]}
 {"tokens": ["2.", "Venuste", "Niyongabo", "(", "Burundi", ")", "3:51.01"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
@@ -426,7 +408,6 @@
 {"tokens": ["1.", "Lars", "Riedel", "(", "Germany", ")", "70.60", "metres"], "ner_tags": [0, 1, 2, 0, 5, 0, 0, 0]}
 {"tokens": ["2.", "Anthony", "Washington", "(", "U.S.", ")", "68.44"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["3.", "Vasily", "Kaptyukh", "(", "Belarus", ")", "66.24"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
-{"tokens": ["4.", "Vladimir", "Dubrovshchik", "(", "Belarus", ")", "65.30"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["5.", "Virgilijus", "Alekna", "(", "Lithuania", ")", "65.00"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["6.", "Juergen", "Schult", "(", "Germany", ")", "64.46"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["7.", "Andreas", "Seelig", "(", "Germany", ")", "62.00"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
@@ -445,7 +426,6 @@
 {"tokens": ["3.", "Rose", "Cheruiyot", "(", "Kenya", ")", "15:05.41"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["4.", "Annemari", "Sandell", "(", "Finland", ")", "15:06.33"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["5.", "Tegla", "Loroupe", "(", "Kenya", ")", "15:08.79"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
-{"tokens": ["6.", "Gunhild", "Halle", "(", "Norway", ")", "15:09.00"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["7.", "Pauline", "Konga", "(", "Kenya", ")", "15:09.74"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["8.", "Sally", "Barsosio", "(", "Kenya", ")", "15:14.34"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["Men", "'s", "400", "metres", "hurdles"], "ner_tags": [0, 0, 0, 0, 0]}
@@ -541,7 +521,6 @@
 {"tokens": ["He", "was", "sent", "off", "for", "insulting", "the", "referee", "and", "then", "urged", "his", "team", "mates", "to", "protest", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Roberto", "Bisconti", "will", "be", "sidelined", "for", "six", "Euro", "ties", "after", "pushing", "the", "referee", "in", "the", "back", "as", "he", "protested", "about", "a", "Karlsruhe", "goal", ",", "while", "Didier", "Ernst", "was", "banned", "for", "four", "matches", "for", "a", "verbal", "attack", "soon", "after", "Bisconti", "was", "also", "dismissed", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]}
 {"tokens": ["Karlsruhe", "won", "the", "August", "20", "match", "3-1", "thanks", "to", "two", "late", "goals", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["They", "took", "the", "tie", "3-2", "on", "aggregate", "and", "qualified", "for", "the", "UEFA", "Cup", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0]}
 {"tokens": ["ATHLETICS", "-", "HARRISON", ",", "EDWARDS", "TO", "MEET", "IN", "SARAJEVO", "."], "ner_tags": [0, 0, 1, 0, 1, 0, 0, 0, 5, 0]}
 {"tokens": ["MONTE", "CARLO", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["Olympic", "champion", "Kenny", "Harrison", "and", "world", "record", "holder", "Jonathan", "Edwards", "will", "both", "take", "part", "in", "a", "triple", "jump", "competition", "at", "the", "Solidarity", "Meeting", "for", "Sarajevo", "on", "September", "9", "."], "ner_tags": [7, 0, 1, 2, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 8, 0, 0, 0, 0]}
@@ -559,7 +538,6 @@
 {"tokens": ["Lentini", ",", "27", ",", "joined", "Milan", "from", "Torino", "in", "a", "$", "12", "million", "deal", "that", "many", "have", "speculated", "involved", "far", "more", "money", "changing", "hands", "and", "which", "has", "subsequently", "been", "investigated", "by", "magistrates", "for", "alleged", "financial", "irregularities", "."], "ner_tags": [1, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "player", "suffered", "severe", "head", "injuries", "in", "a", "near-fatal", "car", "crash", "the", "following", "year", "and", "has", "since", "struggled", "to", "regain", "the", "form", "that", "made", "him", "a", "hero", "in", "Turin", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["The", "move", "to", "Bergamo-based", "Atalanta", "reunites", "Lentini", ",", "who", "fell", "out", "with", "ex-Milan", "coach", "Fabio", "Capello", "last", "season", ",", "with", "his", "former", "coach", "at", "Torino", ",", "Emiliano", "Mondonico", "."], "ner_tags": [0, 0, 0, 7, 3, 0, 1, 0, 0, 0, 0, 0, 7, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 2, 0]}
-{"tokens": ["CRICKET", "-", "SRI", "LANKA", "BEAT", "AUSTRALIA", "BY", "FOUR", "WICKETS", "."], "ner_tags": [0, 0, 5, 6, 0, 5, 0, 0, 0, 0]}
 {"tokens": ["COLOMBO", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["Sri", "Lanka", "beat", "Australia", "by", "four", "wickets", "in", "the", "third", "match", "of", "the", "Singer", "World", "Series", "one-day", "(", "50", "overs", ")", "cricket", "tournament", "on", "Friday", "."], "ner_tags": [5, 6, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Scores", ":", "Australia", "228-9", "in", "50", "overs", ",", "Sri", "Lanka", "232-6", "in", "45.5", "overs", "."], "ner_tags": [0, 0, 5, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0]}
@@ -600,7 +578,6 @@
 {"tokens": ["Total", "(", "six", "wickets", ",", "45.5", "overs", ")", "232"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Fall", "of", "wickets", ":", "1-22", "2-78", "3-78", "4-78", "5-81", "6-196", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Did", "not", "bat", ":", "Dharmasena", ",", "Vaas", ",", "Muralitharan", "."], "ner_tags": [0, 0, 0, 0, 1, 0, 1, 0, 1, 0]}
-{"tokens": ["Bowling", ":", "S.", "Waugh", "5-1-36-1", ",", "Law", "2-0-23-0", ",", "McGrath", "9.5-0-44-1", ","], "ner_tags": [0, 0, 1, 2, 0, 0, 1, 0, 0, 1, 0, 0]}
 {"tokens": ["Fleming", "8-1-26-3", ",", "Gillespie", "6-0-27-0", ",", "M.", "Waugh", "5-0-29-0", ",", "Lehmann"], "ner_tags": [1, 0, 0, 1, 0, 0, 1, 2, 0, 0, 1]}
 {"tokens": ["6-0-26-0", ",", "Bevan", "4-0-18-0", "."], "ner_tags": [0, 0, 1, 0, 0]}
 {"tokens": ["Man", "of", "the", "Match", ":", "Aravinda", "de", "Silva"], "ner_tags": [0, 0, 0, 0, 0, 1, 2, 2]}
@@ -620,20 +597,17 @@
 {"tokens": ["Waugh", "."], "ner_tags": [1, 0]}
 {"tokens": ["Sri", "Lanka", "-", "Arjuna", "Ranatunga", "(", "captain", ")", ",", "Sanath", "Jayasuriya", ","], "ner_tags": [5, 6, 0, 1, 2, 0, 0, 0, 0, 1, 2, 0]}
 {"tokens": ["Romesh", "Kaluwitharana", ",", "Asanka", "Gurusinha", ",", "Aravinda", "de", "Silva", ","], "ner_tags": [1, 2, 0, 1, 2, 0, 1, 2, 2, 0]}
-{"tokens": ["Hashan", "Tillekeratne", ",", "Roshan", "Mahanama", ",", "Kumara", "Dharmasena", ","], "ner_tags": [1, 2, 0, 1, 2, 0, 1, 2, 0]}
 {"tokens": ["Chaminda", "Vaas", ",", "Muthiah", "Muralitharan", ",", "Upul", "Chandana", "."], "ner_tags": [1, 2, 0, 1, 2, 0, 1, 2, 0]}
 {"tokens": ["ROMANIA", "COMELF", "H1", "PROFIT", "RISE", "BELOW", "TARGET", "."], "ner_tags": [5, 3, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["BUCHAREST", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["Romanian", "listed", "state", "engineer", "Comelf", "said", "it", "almost", "doubled", "six-month", "output", ",", "with", "net", "profit", "rising", "by", "33", "percent", "to", "1.069", "billion", "lei", "."], "ner_tags": [7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["But", "the", "company", "complained", "inflation", "and", "the", "artificially", "high", "rate", "of", "the", "leu", "cut", "profit", "margins", "on", "exports", ",", "keeping", "profits", "well", "below", "its", "forecast", "of", "1.4", "billion", "lei", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Comelf", ",", "based", "in", "the", "central", "Transylvanian", "town", "of", "Bistrita", ",", "manufactures", "water", "purification", "equipment", ",", "machinery", "for", "the", "thermal", "power", "sector", "and", "other", "equipment", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 7, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["\"", "In", "the", "first", "six", "months", "of", "1996", "we", "concentrated", "on", "increasing", "the", "volume", "of", "our", "output", "and", "exports", "in", "particular", "and", "improving", "the", "quality", "of", "our", "products", ",", "\"", "the", "report", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["From", "January", "to", "June", "Comelf", "exported", "59", "percent", "of", "its", "output", ",", "up", "from", "37.3", "percent", "in", "the", "same", "period", "last", "year", "."], "ner_tags": [0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "company", "said", "higher", "than", "anticipated", "inflation", "and", "rising", "raw", "materials", "and", "wage", "costs", "also", "hit", "profits", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Year-on-year", "inflation", ",", "initially", "estimated", "at", "20", "percent", "in", "December", ",", "was", "33.8", "percent", "in", "June", ",", "higher", "than", "a", "revised", "end-year", "forecast", "of", "30", "percent", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "12", "month", "figure", "quickened", "to", "40.3", "percent", "in", "July", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "leu", "currency", "has", "slipped", "only", "gradually", "this", "year", ",", "and", "is", "currently", "quoted", "at", "an", "official", "rate", "of", "3,162", "to", "the", "dollar", ",", "well", "below", "the", "3,550", "retail", "price", "that", "exporters", "say", "is", "more", "realistic", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["--", "Luli", "Popescu", ",", "Bucharest", "Newsroom", "40-1", "3120264"], "ner_tags": [0, 1, 2, 0, 3, 4, 0, 0]}
 {"tokens": ["POLISH", "NBP", "REFRAINS", "FROM", "REVERSE", "REPO", "OPERATION", "."], "ner_tags": [7, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["WARSAW", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["The", "National", "Bank", "of", "Poland"], "ner_tags": [0, 3, 4, 4, 4]}
@@ -665,7 +639,6 @@
 {"tokens": ["Daniels", "Pharmaceuticals", "manufactures", "prescription", "pharmaceutical", "products", ",", "the", "largest", "of", "which", "is", "Levoxyl", ",", "a", "synthetic", "thyroid", "hormone", "for", "treating", "hypothyroidism", "."], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["--", "Chicago", "newsdesk", ",", "312", "408-8787"], "ner_tags": [0, 5, 0, 0, 0, 0]}
 {"tokens": ["NYMEX", "heating", "oil", "near", "session", "lows", "in", "pre-close", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["NYMEX", "refined", "product", "prices", "lingered", "at", "session", "lows", "amid", "slim", "volume", "before", "the", "close", "while", "crude", "experienced", "lackluster", "buying", "ahead", "of", "the", "U.S.", "Labor", "Day", "weekend", ",", "traders", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 7, 8, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "There", "was", "some", "profit-taking", "early", "on", ",", "and", "it", "'s", "just", "sitting", "there", ",", "\"", "a", "Texas", "trader", "said", "of", "heating", "oil", "'s", "and", "gasoline", "'s", "losses", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["September", "heating", "oil", "stood", "1.02", "cents", "lower", "at", "62.65", "cents", "a", "gallon", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -700,7 +673,6 @@
 {"tokens": ["Douglas", "&", "Lomason", "shares", "rise", "on", "merger", "."], "ner_tags": [3, 4, 4, 0, 0, 0, 0, 0]}
 {"tokens": ["FARMINGTON", "HILLS", ",", "Mich", "."], "ner_tags": [5, 6, 0, 5, 0]}
 {"tokens": ["1996-08-30"], "ner_tags": [0]}
-{"tokens": ["Shares", "of", "Douglas", "&", "Lomason", "Co", "were", "up", "4-1/2", "at", "30-5/8", "Friday", "afternoon", "after", "Thursday", "'s", "announcement", "that", "the", "vehicle", "seat", "maker", "had", "agreed", "to", "be", "acquired", "by", "Magna", "International", "Inc", "for", "$", "31", "a", "share", ",", "or", "$", "135", "million", "."], "ner_tags": [0, 0, 3, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Magna", "was", "up", "1/8", "to", "48-1/4", "on", "the", "New", "York", "Stock", "Exchange", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 0]}
 {"tokens": ["Douglas", "&", "Lomason", "has", "4.45", "million", "common", "shares", "outstanding", ",", "some", "of", "which", "are", "option", "shares", "to", "be", "purchased", "at", "exercise", "prices", "less", "than", "the", "$", "31", "offered", "price", "."], "ner_tags": [3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "acquisition", "will", "beef", "up", "Markham", ",", "Ontario-based", "Magna", "'s", "North", "American", "car", "and", "truck", "seating", "business", ",", "allowing", "it", "to", "better", "compete", "with", "Johnson", "Controls", "Inc", "and", "Lear", "Corp", "."], "ner_tags": [0, 0, 0, 0, 0, 3, 0, 7, 3, 0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 3, 4, 0]}
@@ -828,13 +800,11 @@
 {"tokens": ["The", "Party", "of", "Democratic", "Action", "(", "SDA", ")", "had", "called", "on", "Wednesday", "for", "its", "followers", "abroad", "to", "boycott", "the", "absentee", "balloting", "because", "of", "voter", "registration", "irregularities", ",", "especially", "among", "Serb", "refugees", "."], "ner_tags": [0, 3, 4, 4, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["The", "Organisation", "for", "Security", "and", "Cooperation", "in", "Europe", "(", "OSCE", ")", "postponed", "municipal", "elections", "as", "a", "result", "of", "the", "irregularities", "but", "decided", "to", "proceed", "with", "voting", "for", "higher", "offices", "."], "ner_tags": [0, 3, 4, 4, 4, 4, 4, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "SDA", ",", "joined", "by", "two", "other", "parties", ",", "has", "been", "demanding", "that", "OSCE", "prohibit", "refugees", "voting", "from", "any", "place", "other", "than", "their", "pre-war", "place", "of", "residence", "as", "a", "means", "to", "prevent", "the", "elections", "from", "ratifying", "the", "results", "of", "ethnic", "cleansing", "."], "ner_tags": [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Belgrade", "airport", "runway", "repairs", "Sept", "21-26-agency", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["BELGRADE", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["Belgrade", "'s", "main", "airport", "Aerodrom", "Beograd", "will", "be", "closed", "to", "traffic", "for", "runway", "maintenance", "and", "modernization", "from", "September", "21", "to", "26", ",", "the", "Yugoslav", "news", "agency", "Tanjug", "reported", "late", "on", "Friday", "."], "ner_tags": [5, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 3, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "During", "the", "works", ",", "all", "flights", "will", "be", "re-routed", "to", "the", "nearby", "airport", "in", "Batajnica", ",", "with", "no", "change", "in", "schedules", ",", "\"", "Tanjug", "quotes", "Belgrade", "airport", "General", "Director", "Ljubomir", "Acimovic", "as", "saying", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 5, 0, 0, 0, 1, 2, 0, 0, 0]}
 {"tokens": ["The", "airport", "in", "Surcin", "will", "continue", "to", "carry", "out", "all", "other", "activities", "and", "has", "secured", "enough", "buses", "to", "transport", "passengers", "to", "Batajnica", ",", "Acimovic", "said", "."], "ner_tags": [0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 0, 0]}
 {"tokens": ["The", "value", "of", "maintenance", "works", ",", "which", "will", "last", "120", "hours", "straight", ",", "is", "20", "million", "dinars", "and", "the", "funds", "have", "been", "secured", "by", "Belgrade", "airport", ",", "Tanjug", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 3, 0, 0]}
-{"tokens": ["The", "Batajnica", "airport", "will", "take", "over", "complete", "air", "traffic", "control", "during", "this", "period", ",", "Federal", "Air", "Traffic", "Control", "Administration", "Director", "Branko", "Bilbija", "said", "."], "ner_tags": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 4, 0, 1, 2, 0, 0]}
 {"tokens": ["--", "Amra", "Kevic", ",", "Belgrade", "newsroom", "+381", "11", "2224305"], "ner_tags": [0, 1, 2, 0, 5, 0, 0, 0, 0]}
 {"tokens": ["Top", "Belarus", "politician", "blasts", "president", "."], "ner_tags": [0, 5, 0, 0, 0, 0]}
 {"tokens": ["Larisa", "Sayenko"], "ner_tags": [1, 2]}
@@ -860,8 +830,6 @@
 {"tokens": ["The", "commander-in-chief", "of", "Tajikistan", "'s", "armed", "forces", ",", "Major-General", "Nikolai", "Sherbatov", ",", "took", "a", "group", "of", "journalists", "by", "helicopter", "to", "the", "remote", ",", "and", "now", "devastated", ",", "town", "to", "show", "that", "his", "forces", "held", "it", "."], "ner_tags": [0, 0, 0, 5, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Sherbatov", "said", "the", "rebels", "were", "located", "about", "three", "km", "(", "two", "miles", ")", "east", "of", "Tavildara", "around", "the", "village", "of", "Layron", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["Tavildara", ",", "200", "km", "(", "120", "miles", ")", "east", "of", "the", "capital", "Dushanbe", ",", "was", "in", "ruins", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0]}
-{"tokens": ["Shells", "had", "smashed", "roofs", "and", "windows", "and", "empty", "shell", "cases", "littered", "the", "streets", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["The", "town", "straddles", "a", "strategically", "important", "road", "linking", "government", "and", "rebel-held", "territory", "and", "has", "fallen", "succesively", "to", "both", "sides", "in", "a", "bloody", "tug-of-war", "which", "began", "last", "February", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Tajikistan", ",", "which", "borders", "Afghanistan", "and", "China", ",", "has", "been", "split", "by", "a", "dragging", "four-year", "conflict", "after", "a", "civil", "war", "between", "communists", "and", "a", "frail", "coalition", "of", "Islamic", "and", "liberal", "groups", "."], "ner_tags": [5, 0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0]}
 {"tokens": ["Tens", "of", "thousands", "of", "people", "have", "been", "killed", "and", "many", "more", "have", "been", "displaced", "in", "the", "fighting", ",", "which", "breached", "a", "shaky", "United", "Nations-sponsored", "ceasefire", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0, 0]}
 {"tokens": ["Fruit", "remained", "on", "the", "trees", "as", "there", "was", "no", "one", "to", "pick", "it", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -895,7 +863,6 @@
 {"tokens": ["Lebed", ",", "who", "flew", "into", "Chechnya", "earlier", "in", "the", "day", ",", "said", "he", "hoped", "to", "sign", "a", "framework", "agreement", "on", "a", "political", "settlement", "of", "the", "20-month", "conflict", "in", "which", "tens", "of", "thousands", "of", "people", "have", "died", "."], "ner_tags": [1, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Neither", "Lebed", "nor", "Maskhadov", "made", "any", "statement", "before", "the", "talks", "."], "ner_tags": [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Russian", "judge", "stabbed", "to", "death", "over", "$", "7", "fine", "."], "ner_tags": [7, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["A", "Moscow", "street", "vendor", "stabbed", "to", "death", "a", "woman", "judge", "in", "a", "city", "court", "on", "Friday", "after", "she", "fined", "him", "the", "equivalent", "of", "seven", "dollars", "for", "trading", "illegally", ",", "Interfax", "news", "agency", "said", "."], "ner_tags": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0]}
 {"tokens": ["Interfax", "said", "Judge", "Olga", "Lavrentyeva", ",", "28", ",", "on", "Thursday", "ordered", "the", "confiscation", "of", "several", "overcoats", ",", "suits", "and", "shirts", "which", "vendor", "Valery", "Ivankov", ",", "41", ",", "was", "illegally", "trading", "on", "Moscow", "streets", "and", "fined", "him", "38,000", "roubles", "(", "seven", "dollars", ")", "."], "ner_tags": [3, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "next", "morning", ",", "Ivankov", "appeared", "in", "the", "courtroom", "and", "stabbed", "Lavrentyeva", "."], "ner_tags": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0]}
 {"tokens": ["The", "judge", "died", "later", "in", "hospital", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
@@ -963,7 +930,6 @@
 {"tokens": ["Dealers", "said", "the", "precious", "metal", "eased", "on", "a", "report", "that", "the", "International", "Monetary", "Fund", "might", "sell", "some", "of", "its", "gold", "to", "reduce", "the", "debts", "of", "the", "poorest", "developing", "countries", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Easier", "silver", "prices", "mid-week", "helped", "keep", "spot", "gold", "locked", "in", "a", "$", "386", "-", "$", "389", "an", "ounce", "range", ",", "dealers", "said", ",", "but", "they", "remained", "optimistic", "that", "the", "usual", "seasonal", "pick-up", "in", "jewellery", "fabrication", "demand", "would", "see", "gold", "at", "$", "395", "by", "end-October", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "I", "still", "think", "we", "'ll", "see", "gold", "at", "$", "395", "by", "the", "end", "of", "October", ",", "in", "a", "retracement", "of", "the", "$", "418", "-", "$", "380", "move", "we", "saw", "at", "the", "start", "of", "the", "year", ",", "\"", "one", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Silver", ",", "basis", "the", "September", "contract", "on", "New", "York", "'s", "Comex", "market", ",", "was", "expected", "to", "find", "support", "at", "between", "$", "5.12", "-", "$", "5.15", "an", "ounce", "and", "meet", "resistance", "from", "$", "5.25", "-", "$", "5.30", ",", "they", "added", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["September", "silver", "closed", "up", "$", "0.004", "in", "New", "York", "on", "Thursday", "at", "$", "5.255", "an", "ounce", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Tripoli", "decks", "out", "for", "coup", "celebrations", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Mona", "Eltahawy"], "ner_tags": [1, 2]}
@@ -982,7 +948,6 @@
 {"tokens": ["Gaddafi", "has", "dismissed", "any", "unrest", "as", "the", "work", "of", "foreigners", ",", "and", "last", "year", "deported", "thousands", "of", "Sudanese", "and", "Egyptian", "workers", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0]}
 {"tokens": ["Twilight", "zone", "for", "Wall", "Street", "as", "political", "race", "heats", "up", "."], "ner_tags": [0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Pierre", "Belec"], "ner_tags": [1, 2]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["For", "Wall", "Street", ",", "this", "is", "the", "season", "to", "be", "cautious", "as", "the", "presidential", "contest", "puts", "the", "stock", "market", "in", "the", "twilight", "zone", "."], "ner_tags": [0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["President", "Clinton", ",", "Bob", "Dole", "and", "Ross", "Perot", "are", "hitting", "the", "road", "now", "that", "the", "partying", "is", "over", ",", "and", "people", "who", "have", "billions", "of", "dollars", "invested", "in", "stocks", "were", "bracing", "for", "political", "promises", "that", "could", "have", "an", "impact", "on", "their", "wealth", "."], "ner_tags": [0, 1, 0, 1, 2, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Analysts", "believe", "that", "the", "candidates", "will", "add", "to", "the", "market", "'s", "list", "of", "uncertainties", ",", "which", "already", "includes", "the", "question", "of", "whether", "the", "Federal", "Reserve", "will", "raise", "interest", "rates", "to", "cool", "economic", "growth", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -1029,14 +994,11 @@
 {"tokens": ["The", "reports", "fanned", "worries", "on", "Wall", "Street", "that", "the", "Fed", ",", "the", "nation", "'s", "central", "bank", ",", "would", "raise", "rates", "next", "month", "in", "a", "bid", "to", "ward", "off", "inflation", ",", "driving", "stock", "and", "bond", "prices", "sharply", "lower", "for", "a", "second", "day", "running", "."], "ner_tags": [0, 0, 0, 0, 0, 5, 6, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "30-year", "Treasury", "fell", "almost", "a", "point", ",", "raising", "its", "yield", ",", "which", "moves", "in", "the", "opposite", "direction", "from", "the", "price", ",", "to", "7.12", "percent", "from", "7.04", "percent", "late", "Thursday", "."], "ner_tags": [0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "Dow", "Jones", "industrial", "average", "fell", "31.44", "points", "to", "5,616.21", "after", "a", "64.73-point", "decline", "Thursday", "."], "ner_tags": [0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["A", "third", "report", "from", "the", "Commerce", "Department", ",", "on", "July", "personal", "income", "and", "spending", ",", "pointed", "to", "a", "potential", "slowdown", "in", "consumer", "spending", "that", "some", "analysts", "said", "may", "help", "moderate", "growth", "in", "the", "second", "half", "."], "ner_tags": [0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["It", "showed", "spending", "rose", "only", "0.2", "percent", "last", "month", "to", "a", "seasonally", "adjusted", "annual", "rate", "of", "$", "5.15", "trillion", "after", "dropping", "a", "revised", "0.4", "percent", "in", "June", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Incomes", "from", "wages", ",", "salaries", "and", "all", "other", "sources", "gained", "0.1", "percent", "to", "a", "rate", "of", "$", "6.47", "trillion", "after", "a", "0.9", "percent", "jump", "in", "June", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["July", "'s", "slight", "gain", "in", "incomes", "was", "the", "weakest", "in", "six", "months", ",", "since", "January", "when", "they", "were", "flat", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Economist", "Joel", "Naroff", "of", "First", "Union", "bank", "in", "Philadelphia", "said", "consumer", "spending", ",", "which", "fuels", "two-thirds", "of", "the", "nation", "'s", "economy", ",", "may", "be", "much", "slower", "in", "the", "third", "quarter", "than", "in", "the", "first", "half", ",", "which", "should", "slow", "economic", "growth", "."], "ner_tags": [0, 1, 2, 0, 3, 4, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "The", "FOMC", "(", "Federal", "Open", "Market", "Committee", ")", "has", "been", "forecasting", "a", "slowing", "in", "economic", "activity", "and", "moderating", "household", "demand", "will", "have", "a", "large", "impact", "on", "overall", "economic", "growth", ",", "\"", "Naroff", "said", "in", "a", "written", "comment", "."], "ner_tags": [0, 0, 3, 0, 3, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "policy-making", "FOMC", "is", "to", "meet", "on", "Sept", "."], "ner_tags": [0, 0, 3, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["It", "already", "has", "adopted", "a", "bias", "toward", "raising", "rates", "to", "keep", "a", "lid", "on", "wage", "and", "price", "rises", "and", "help", "sustain", "the", "5-1", "/", "2-year-old", "economic", "expansion", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["In", "an", "interview", "on", "the", "cable", "television", "network", "CNBC", "Friday", ",", "Federal", "Reserve", "Governor", "Lawrence", "Lindsey", "said", "there", "still", "were", "\"", "mixed", "signals", "\"", "about", "the", "economy", "'s", "direction", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 4, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "I", "think", "that", ",", "on", "balance", ",", "it", "is", "looking", "a", "little", "bit", "on", "the", "strong", "side", ",", "\"", "Lindsey", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]}
 {"tokens": ["He", "added", "that", "with", "expansion", "as", "solid", "as", "it", "is", "and", "with", "unemployment", "so", "low", "\"", "the", "greater", "risks", "are", "clearly", "that", "we", "might", "see", "some", "overheating", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -1044,10 +1006,8 @@
 {"tokens": ["The", "University", "of", "Michigan", "'s", "August", "index", "of", "consumer", "sentiment", ",", "made", "available", "on", "Friday", "to", "paying", "subscribers", ",", "rose", "to", "95.3", "from", "94.7", "in", "July", "."], "ner_tags": [0, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Reaser", "said", "strong", "consumer", "confidence", "coupled", "with", "relatively", "lean", "inventories", "were", "providing", "manufacturers", "with", "a", "reason", "to", "gear", "up", "production", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "The", "economy", "is", "not", "going", "to", "be", "expanding", "at", "the", "4.8", "percent", "(", "annual", ")", "rate", "that", "we", "had", "in", "the", "second", "quarter", "but", "it", "is", "likely", "to", "keep", "expanding", "in", "the", "3", "percent", "range", ",", "\"", "she", "said", ",", "above", "the", "2", "percent", "to", "2-1/4", "percent", "that", "the", "Fed", "considers", "to", "be", "non-inflationary", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0]}
-{"tokens": ["New", "orders", "to", "factories", "were", "strong", "for", "durable", "goods", "like", "new", "cars", "and", "for", "nondurables", "like", "paper", "and", "food", "products", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Orders", "for", "nondurables", "jumped", "1.8", "percent", "following", "a", "1.2", "percent", "decrease", "in", "June", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Mexican", "avocados", "not", "expected", "in", "U.S", "."], "ner_tags": [7, 0, 0, 0, 0, 5, 0]}
-{"tokens": ["Maggie", "McNeil"], "ner_tags": [1, 2]}
 {"tokens": ["WASHINGTON", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["U.S.", "Agriculture", "Department", "officials", "said", "Friday", "that", "Mexican", "avocados", "--", "which", "are", "restricted", "from", "entering", "the", "continental", "United", "States", "--", "will", "not", "likely", "be", "entering", "U.S.", "markets", "any", "time", "soon", ",", "even", "if", "the", "controversial", "ban", "were", "lifted", "today", "."], "ner_tags": [3, 4, 4, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "The", "opportunity", "to", "import", "(", "Mexican", "avocados", ")", "probably", "wo", "n't", "become", "possible", "for", "another", "year", ",", "\"", "said", "Paul", "Drazek", ",", "senior", "trade", "advisor", "to", "Agriculture", "Secretary", "Dan", "Glickman", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0]}
@@ -1056,7 +1016,6 @@
 {"tokens": ["The", "Agriculture", "Department", "proposed", "more", "than", "a", "year", "ago", "to", "significantly", "ease", "an", "82-year", "ban", "on", "Mexican", "avocados", "."], "ner_tags": [0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["Under", "the", "administration", "'s", "proposal", ",", "the", "borders", "to", "the", "Mexican", "produce", "would", "be", "opened", "into", "19", "Northern", "and", "Northeastern", "states", "from", "November", "through", "February", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "plan", "has", "raised", "a", "storm", "of", "protest", "from", "U.S.", "avocado", "growers", ",", "who", "are", "largely", "concentrated", "in", "California", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]}
-{"tokens": ["California", "growers", "have", "charged", "that", "removing", "the", "restrictions", ",", "even", "on", "a", "limited", "basis", ",", "would", "endanger", "the", "$", "1", "billion", "U.S.", "industry", "if", "potentially", "harmful", "Mexican", "insects", "were", "brought", "into", "the", "country", "along", "with", "the", "avocados", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Mexican", "officials", "contend", "that", "there", "is", "no", "scientific", "basis", "for", "the", "ban", ",", "and", "that", "it", "is", "illegal", "under", "international", "trading", "rules", "of", "the", "World", "Trade", "Organisation", "."], "ner_tags": [7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0]}
 {"tokens": ["Proponents", "of", "the", "plan", "discount", "the", "worries", "of", "the", "U.S.", "growers", "and", "say", "the", "plan", "has", "enough", "safeguards", "built", "into", "it", "to", "eliminate", "any", "significant", "threat", "to", "American", "producers", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["Under", "the", "proposal", ",", "only", "imports", "of", "export-quality", "avocados", "growing", "in", "approved", "orchards", "in", "Michoacan", ",", "Mexico", ",", "the", "country", "'s", "main", "avocado", "area", ",", "would", "be", "allowed", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -1124,7 +1083,6 @@
 {"tokens": ["The", "Treasury", "Department", "said", "Libya", "was", "on", "the", "U.S.", "list", "of", "states", "that", "sponsor", "international", "terrorism", "and", "noted", "that", "Tripoli", "has", "refused", "to", "hand", "over", "two", "Libyan", "suspects", "in", "the", "1988", "bombing", "of", "Pan", "Am", "flight", "103", "over", "Lockerbie", ",", "Scotland", "."], "ner_tags": [0, 3, 4, 0, 5, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 7, 8, 8, 8, 0, 5, 0, 5, 0]}
 {"tokens": ["That", "refusal", "led", "to", "the", "imposition", "of", "U.N.", "sanctions", "on", "Libya", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 5, 0]}
 {"tokens": ["U.S.", "Gulf", "rig", "down", "by", "one", "to", "162", "in", "week", "."], "ner_tags": [5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["There", "were", "162", "rigs", "under", "contract", "in", "the", "U.S.", "Gulf", "as", "of", "August", "30", ",", "down", "one", "from", "the", "prior", "week", ",", "Offshore", "Data", "Services", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 0]}
 {"tokens": ["The", "utilization", "rate", "for", "rigs", "working", "in", "the", "Gulf", ",", "based", "on", "a", "total", "fleet", "of", "181", ",", "was", "89.5", "percent", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "number", "of", "working", "rigs", "in", "European", "/", "Mediterranean", "remained", "unchanged", "this", "week", ",", "with", "105", "rigs", "under", "contract", "out", "of", "a", "total", "fleet", "of", "105", ",", "a", "utilization", "rate", "of", "100", "percent", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -1141,14 +1099,12 @@
 {"tokens": ["Carroll", "Campbell", ",", "who", "was", "on", "Dole", "'s", "vice", "presidential", "short", "list", "before", "Dole", "decided", "on", "Jack", "Kemp", ",", "will", "head", "Dole", "'s", "team", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 2, 0, 0, 0, 1, 0, 0, 0]}
 {"tokens": ["A", "decision", "is", "expected", "by", "mid-September", "on", "whether", "Texas", "billionaire", "Ross", "Perot", ",", "the", "Reform", "Party", "candidate", ",", "will", "be", "allowed", "to", "participate", "in", "the", "debates", ",", "which", "are", "sponsored", "by", "the", "Commission", "on", "Presidential", "Debates", ",", "a", "non-profit", ",", "non-partisan", "organisation", "that", "took", "over", "the", "forums", "in", "1988", "from", "the", "League", "of", "Women", "Voters", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 2, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 0]}
 {"tokens": ["Titanic", "recovery", "mission", "is", "scrapped", "."], "ner_tags": [7, 0, 0, 0, 0, 0]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["Equipment", "problems", "and", "mechanical", "failure", "forced", "a", "recovery", "expedition", "to", "give", "up", "efforts", "to", "retrieve", "a", "giant", "slab", "of", "the", "RMS", "Titanic", "from", "the", "ocean", "floor", ",", "a", "spokeswoman", "said", "on", "Friday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["A", "20-ton", "piece", "of", "the", "Titanic", "'s", "steel", "hull", ",", "which", "had", "been", "attached", "by", "cables", "to", "a", "recovery", "ship", "off", "the", "coast", "of", "Newfoundland", ",", "Canada", ",", "fell", "back", "to", "the", "bottom", "of", "the", "sea", ",", "said", "Erin", "Purcell", "of", "Boston-based", "Reagan", "Communications", "that", "represents", "two", "of", "the", "ships", "used", "in", "the", "expedition", "."], "ner_tags": [0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 7, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "piece", "of", "hull", ",", "lifted", "from", "the", "ocean", "floor", "by", "means", "of", "several", "diesel-filled", "bags", ",", "had", "been", "stuck", "about", "200", "feet", "(", "about", "70", "metres", ")", "below", "the", "water", "'s", "surface", "before", "it", "fell", ",", "she", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["It", "fell", "as", "recovery", "crews", "were", "trying", "to", "haul", "the", "piece", "into", "more", "shallow", "water", "and", "several", "of", "the", "bags", "burst", "and", "cables", "snapped", ",", "she", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "steel-hulled", "Titanic", ",", "thought", "to", "be", "unsinkable", ",", "struck", "an", "iceberg", "on", "April", "14", ",", "1912", ",", "and", "sank", ",", "killing", "1,523", "of", "the", "2,200", "passengers", "and", "crew", "on", "board", "."], "ner_tags": [0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Passengers", "who", "had", "paid", "$", "1,500", "and", "up", "to", "accompany", "the", "recovery", "expedition", "on", "two", "cruise", "ships", "had", "returned", "back", "to", "port", "on", "Thursday", ",", "Purcell", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]}
-{"tokens": ["Bonn", "appeals", "for", "Middle", "East", "peace", "."], "ner_tags": [5, 0, 0, 5, 6, 0, 0]}
 {"tokens": ["BONN", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["The", "German", "government", "urged", "Israelis", "and", "Palestinians", "on", "Friday", "to", "avoid", "any", "course", "of", "action", "that", "might", "jeopardise", "the", "peace", "process", "in", "the", "Middle", "East", "."], "ner_tags": [0, 7, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0]}
 {"tokens": ["Israel", "announced", "this", "week", "the", "expansion", "of", "Jewish", "West", "Bank", "settlements", "surrounding", "Jerusalem", "and", "the", "demolition", "of", "an", "Arab", "community", "centre", "in", "East", "Jerusalem", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 7, 5, 6, 0, 0, 5, 0, 0, 0, 0, 0, 7, 0, 0, 0, 5, 6, 0]}
@@ -1168,7 +1124,6 @@
 {"tokens": ["PARIS", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["France", "on", "Friday", "expelled", "another", "African", "man", "seized", "in", "a", "police", "raid", "on", "a", "Paris", "church", "as", "about", "100", "Air", "France", "workers", "denounced", "\"", "charters", "of", "shame", "\"", "used", "to", "fly", "illegal", "immigrants", "home", "."], "ner_tags": [5, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["A", "Guinean", "man", ",", "detained", "in", "a", "round-up", "in", "the", "Saint-Bernard", "church", "a", "week", "ago", ",", "was", "deported", "on", "a", "scheduled", "Air", "France", "flight", "to", "Conakry", "after", "his", "appeals", "failed", ",", "a", "spokesman", "for", "Air", "France", "'s", "pro-Socialist", "CFDT", "union", "said", "."], "ner_tags": [0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 3, 0, 0, 0]}
-{"tokens": ["He", "was", "apparently", "the", "eighth", "African", "deported", "from", "among", "210", "people", "evicted", "from", "the", "church", "after", "a", "50-day", "occupation", "aimed", "at", "securing", "residence", "permits", ",", "unions", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Most", "of", "the", "others", "have", "been", "released", "after", "a", "brief", "stay", "in", "detention", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["About", "100", "people", "from", "the", "CFDT", "and", "the", "Communist-led", "CGT", "unions", "marched", "outside", "Air", "France", "headquarters", "at", "Charles", "de", "Gaulle", "airport", "north", "of", "Paris", "against", "the", "use", "of", "civilian", "jets", "and", "staff", "in", "deporting", "illegal", "immigrants", "."], "ner_tags": [0, 0, 0, 0, 0, 3, 0, 0, 7, 3, 0, 0, 0, 3, 4, 0, 0, 5, 6, 6, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "We", "must", "obtain", "a", "formal", "commitment", "from", "(", "Air", "France", "chairman", ")", "Christian", "Blanc", "that", "no", "plane", ",", "no", "personnel", "be", "used", "to", "transform", "our", "air", "companies", "into", "charters", "of", "shame", ",", "\"", "CFDT", "spokesman", "Francois", "Cabrera", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 2, 0, 0]}
@@ -1233,11 +1188,8 @@
 {"tokens": ["The", "spread", "between", "the", "two", "bonds", "narrowed", "to", "49", "basis", "points", "from", "54", "basis", "points", "at", "the", "close", "of", "trading", "on", "Thursday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "three-month", "cash", "bill", "traded", "at", "4.04", "percent", "against", "the", "U.S.", "three-month", "bill", "at", "5.26", "percent", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["--", "Jeffrey", "Hodgson", "(", "416", ")", "941-8105", ",", "e-mail", ":", "jeffrey.hodgson@reuters.com"], "ner_tags": [0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Aw", "Computer", "Systems", "Inc", "Q2", "loss", "widens", "."], "ner_tags": [0, 3, 4, 4, 0, 0, 0, 0]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["1996", "1995"], "ner_tags": [0, 0]}
 {"tokens": ["Shr", "loss", "$", "0.22", "loss", "$", "0.07"], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Net", "loss", "1,071", "loss", "277"], "ner_tags": [0, 0, 0, 0, 0]}
 {"tokens": ["Revs", "130", "1,279"], "ner_tags": [0, 0, 0]}
 {"tokens": ["Avg", "shrs", "4,841", "3,990"], "ner_tags": [0, 0, 0, 0]}
 {"tokens": ["First", "Half"], "ner_tags": [0, 0]}
@@ -1272,8 +1224,6 @@
 {"tokens": ["The", "radio", "urged", "Arabs", "to", "unify", "their", "ranks", "to", "thwart", "the", "policies", "of", "the", "right-wing", "Israeli", "government", "."], "ner_tags": [0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["\"", "Israel", "could", "not", "confront", "a", "united", "Arab", "stand", "or", "usurp", "their", "rights", "because", "the", "Arab", "rights", "could", "be", "regained", "when", "they", "achieve", "unity", "and", "solidarity", ",", "\"", "Damascus", "radio", "said", "."], "ner_tags": [0, 5, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0]}
 {"tokens": ["It", "welcomed", "the", "international", "criticism", "of", "Israel", "'s", "settlement", "policies", "but", "called", "for", "practical", "steps", "to", "force", "the", "Israeli", "government", "to", "abandon", "this", "policy", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["\"", "It", "is", "important", "to", "translate", "the", "criticism", "into", "pressuring", "action", "to", "prevent", "Israel", "from", "undermining", "the", "big", "international", "efforts", "aimed", "at", "making", "the", "peace", "process", "achieve", "success", ",", "\"", "the", "radio", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Syria", "and", "Arabs", "have", "been", "dismayed", "by", "Netanyahu", "'s", "refusal", "to", "trade", "the", "occupied", "Arab", "lands", "for", "peace", ",", "his", "support", "for", "the", "expansion", "of", "settlements", "and", "his", "insistance", "on", "Jerusalem", "as", "a", "unifed", "capital", "for", "Israel", "."], "ner_tags": [5, 0, 7, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["Syria", "has", "held", "sporadic", "peace", "talks", "with", "Israel", "since", "1991", "without", "achieving", "a", "breakthrough", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Egypt", "police", "detain", "26", "suspected", "Moslem", "militants", "."], "ner_tags": [5, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["CAIRO", "1996-08-30"], "ner_tags": [5, 0]}
@@ -1345,7 +1295,6 @@
 {"tokens": ["WASHINGTON", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["Consumer", "spending", "barely", "edged", "up", "in", "July", ",", "the", "Commerce", "Department", "said", "Friday", ",", "as", "income", "growth", "slowed", "abruptly", "to", "the", "weakest", "pace", "in", "six", "months", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Spending", "rose", "0.2", "percent", "to", "a", "seasonally", "adjusted", "annual", "rate", "of", "$", "5.15", "trillion", "after", "dropping", "a", "revised", "0.4", "percent", "in", "June", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Incomes", "from", "wages", ",", "salaries", "and", "all", "other", "sources", "gained", "0.1", "percent", "to", "a", "rate", "of", "$", "6.47", "trillion", "after", "a", "0.9", "percent", "jump", "in", "June", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Department", "officials", "said", "July", "'s", "slight", "gain", "in", "incomes", "was", "the", "weakest", "for", "any", "month", "since", "January", ",", "when", "they", "were", "flat", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Wages", "and", "salaries", "came", "under", "pressure", "in", "July", "as", "a", "shorter", "average", "workweek", "and", "lower", "hourly", "earnings", "cut", "into", "paychecks", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "department", "said", "wages", "and", "salaries", "decreased", "by", "$", "6.9", "billion", "in", "July", "after", "climbing", "$", "45", "billion", "in", "June", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -1421,7 +1370,6 @@
 {"tokens": ["Dutch", "bond", "futures", "revival", "delayed", "-", "EOE", "."], "ner_tags": [7, 0, 0, 0, 0, 0, 3, 0]}
 {"tokens": ["AMSTERDAM", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["A", "broad", "attempt", "to", "spur", "activity", "in", "Dutch", "bond", "futures", "has", "been", "delayed", "to", "give", "participants", "a", "chance", "to", "become", "familiar", "with", "the", "trading", "system", ",", "the", "European", "Options", "Exchange", "(", "EOE", ")", "said", "on", "Friday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 3, 0, 0, 0, 0, 0]}
-{"tokens": ["\"", "It", "'s", "not", "ready", "yet", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["We", "found", "it", "wise", "to", "take", "some", "time", "between", "the", "commitment", "to", "start", "and", "the", "actual", "start", ",", "\"", "EOE", "spokesman", "Lex", "van", "Drooge", "told", "Reuters", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 2, 2, 0, 3, 0]}
 {"tokens": ["He", "said", "no", "date", "had", "been", "fixed", "yet", "for", "the", "start", "of", "price", "making", "in", "the", "10-year", "contract", ",", "but", "the", "EOE", "had", "agreed", "to", "speak", "again", "to", "the", "participants", "in", "one", "to", "two", "weeks", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Investors", "in", "Dutch", "bonds", "currently", "use", "German", "bond", "futures", "to", "hedge", "their", "portfolios", "because", "the", "FTO", "contract", "is", "so", "illiquid", "."], "ner_tags": [0, 0, 7, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0]}
@@ -1468,7 +1416,6 @@
 {"tokens": ["I", "will", "remember", "it", "for", "the", "rest", "of", "my", "life", ",", "\"", "said", "Stig", "Onarheim", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0]}
 {"tokens": ["He", "was", "one", "of", "a", "handful", "of", "rescuers", "who", "raced", "to", "the", "scene", "of", "the", "crash", "in", "a", "helicopter", "on", "Thursday", ",", "hoping", "in", "vain", "to", "find", "survivors", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "plane", "smashed", "into", "a", "snow-capped", "mountain", "on", "the", "Arctic", "island", "of", "Spitzbergen", "on", "Thursday", ",", "just", "east", "of", "Longyear", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 5, 0, 0, 0, 0, 0, 0, 5, 0]}
-{"tokens": ["\"", "Imagine", "a", "big", "plane", "with", "a", "lot", "of", "luggage", "and", "people", "on", "board", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Think", "of", "all", "that", "mixed", "together", ",", "with", "twisted", ",", "wrecked", "parts", "on", "the", "slope", ",", "\"", "Onarheim", ",", "29", ",", "told", "Reuters", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 0]}
 {"tokens": ["Police", "and", "local", "officials", "have", "sealed", "off", "the", "crash", "site", ",", "protecting", "it", "from", "intrusive", "reporters", "and", "from", "the", "polar", "bears", "that", "roam", "freely", "across", "the", "icy", "expanses", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "dead", "were", "all", "Russians", "and", "Ukrainians", ",", "coming", "to", "work", "in", "the", "mining", "towns", "of", "Barentsburg", "and", "Pyramiden", "."], "ner_tags": [0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0]}
@@ -1497,7 +1444,6 @@
 {"tokens": ["Ericsson", "said", "in", "a", "statement", "the", "order", "was", "from", "the", "Guangdong", "Post", "and", "Telecommunications", "Administration", "(", "GPTA", ")", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 4, 0, 3, 0, 0]}
 {"tokens": ["The", "order", "included", "AXE", "switching", "equipment", ",", "ISDN", "equipment", ",", "Intelligent", "Network", "(", "IN", ")", "products", ",", "broad-band", "multi-media", "communication", "network", "products", ",", "services", "and", "training", ",", "Ericsson", "spokesman", "Per", "Zetterquist", "told", "Reuters", "."], "ner_tags": [0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 7, 8, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 2, 0, 3, 0]}
 {"tokens": ["Deliveries", "are", "due", "to", "be", "completed", "by", "1999", ",", "the", "company", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["--", "Stockholm", "newsroom", "+46-8-700", "1017"], "ner_tags": [0, 5, 0, 0, 0]}
 {"tokens": ["HK", "has", "infrastructure", "in", "place", "for", "post-97", "-", "Tsang", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 0, 1, 0]}
 {"tokens": ["AUCKLAND", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["Hong", "Kong", "Financial", "Secretary", "Donald", "Tsang", "said", "on", "Friday", "that", "the", "territory", "had", "the", "\"", "infrastructural", "hardware", "\"", "to", "make", "a", "success", "of", "its", "future", "under", "Chinese", "sovereignty", "from", "mid-1997", "."], "ner_tags": [5, 6, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0]}
@@ -1510,7 +1456,6 @@
 {"tokens": ["PRESS", "DIGEST", "-", "Indonesian", "newspapers", "-", "August", "30", "."], "ner_tags": [0, 0, 0, 7, 0, 0, 0, 0, 0]}
 {"tokens": ["Following", "is", "a", "summary", "of", "major", "Indonesian", "political", "and", "business", "stories", "in", "leading", "newspapers", ",", "prepared", "by", "Reuters", "in", "Jakarta", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 5, 0]}
 {"tokens": ["Reuters", "has", "not", "checked", "the", "stories", "and", "does", "not", "guarantee", "their", "accuracy", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Telephone", ":", "(", "6221", ")", "384-6364", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Fax", ":", "(", "6221", ")", "344-8404", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["-", "-", "-", "-"], "ner_tags": [0, 0, 0, 0]}
 {"tokens": ["KOMPAS"], "ner_tags": [3]}
@@ -1554,7 +1499,6 @@
 {"tokens": ["Between", "late", "June", "and", "July", ",", "a", "total", "of", "192", "people", "were", "poisoned", "by", "the", "toxic", "liquor", ",", "and", "35", "of", "them", "died", "and", "six", "were", "left", "severely", "handicapped", ",", "it", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Local", "authorities", "launched", "an", "investigation", "after", "they", "received", "reports", "of", "several", "similar", "deaths", "in", "the", "area", ",", "it", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Post-mortem", "examinations", "showed", "they", "were", "all", "caused", "by", "methanol", "poisoning", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Police", "had", "confiscated", "the", "remainder", "of", "the", "poisonous", "liquor", ",", "Xinhua", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0]}
 {"tokens": ["Singapore", "hangs", "Thai", "drug", "trafficker", "."], "ner_tags": [5, 0, 7, 0, 0, 0]}
 {"tokens": ["SINGAPORE", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["Singapore", "hanged", "a", "Thai", "farmer", "at", "Changi", "Prison", "on", "Friday", "for", "drug", "trafficking", ",", "the", "Central", "Narcotics", "Bureau", "(", "CNB", ")", "said", "."], "ner_tags": [5, 0, 0, 7, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 3, 0, 0, 0]}
@@ -1568,7 +1512,6 @@
 {"tokens": ["In", "Jerusalem", ",", "Israeli", "security", "forces", "were", "bracing", "for", "thousands", "of", "Palestinians", "expected", "to", "answer", "Arafat", "'s", "call", "earlier", "this", "week", "to", "come", "to", "the", "city", "holy", "to", "Moslems", ",", "Arabs", "and", "Jews", "to", "pray", "in", "protest", "against", "Israel", "'s", "settlement", "policy", "in", "the", "West", "Bank", "and", "delay", "in", "peace", "negotiations", "."], "ner_tags": [0, 5, 0, 7, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 7, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Palestinians", "want", "Arab", "East", "Jerusalem", "as", "the", "capital", "of", "a", "future", "independent", "state", "."], "ner_tags": [7, 0, 5, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Israel", ",", "which", "captured", "and", "annexed", "East", "Jerusalem", "in", "1967", ",", "says", "it", "will", "never", "cede", "any", "part", "of", "the", "city", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Arafat", ",", "who", "made", "an", "interim", "peace", "deal", "with", "Israel", "in", "1993", "that", "set", "up", "self-rule", ",", "says", "he", "will", "only", "visit", "Jerusalem", "once", "Israeli", "occupation", "has", "ended", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 7, 0, 0, 0, 0]}
 {"tokens": ["U.N.", "Council", "concerned", "about", "Israeli", "bulldozers", "."], "ner_tags": [3, 4, 0, 0, 7, 0, 0]}
 {"tokens": ["UNITED", "NATIONS", "1996-08-29"], "ner_tags": [3, 4, 0]}
 {"tokens": ["Security", "Council", "members", "expressed", "concern", "on", "Thursday", "that", "Israel", "'s", "bulldozing", "of", "a", "Palestinian", "day-care", "centre", "for", "the", "disabled", "might", "further", "injure", "the", "Middle", "East", "peace", "process", "."], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0]}
@@ -1576,7 +1519,6 @@
 {"tokens": ["\"", "The", "members", "expressed", "their", "concern", "about", "the", "maintenance", "of", "the", "peace", "process", "and", "they", "urged", "that", "no", "action", "be", "taken", "that", "would", "have", "a", "negative", "impact", "on", "the", "negotiations", ",", "\"", "Eitel", "said", "after", "an", "informal", "council", "session", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "They", "asked", "me", "to", "call", "in", "the", "Israeli", "charge", "d'affaires", "and", "discuss", "the", "matter", "with", "him", ",", "\"", "he", "added", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "Palestinian", "letter", "from", "Marwan", "Jilani", "said", "the", "destruction", "of", "the", "Jerusalem", "centre", "was", "an", "effort", "by", "Israel", "to", "\"", "alter", "the", "character", ",", "demographic", "composition", "and", "status", "of", "the", "Holy", "City", "of", "Jerusalem", "\"", "and", "violated", "agreements", "between", "Israel", "and", "the", "Palestinian", "Liberation", "Organisation", "."], "ner_tags": [0, 7, 0, 0, 1, 2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 6, 6, 0, 0, 0, 0, 0, 5, 0, 0, 3, 4, 4, 0]}
-{"tokens": ["\"", "This", "most", "recent", "measure", "represents", "a", "revival", "of", "old", ",", "malicious", "plans", "to", "confiscate", "the", "land", "and", "build", "units", "for", "Israeli", "settlers", "within", "the", "walls", "of", "the", "Old", "City", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0]}
 {"tokens": ["\"", "We", "expect", "the", "international", "community", "to", "take", "a", "clear", "and", "firm", "position", ",", "based", "on", "international", "law", "and", "in", "accordance", "with", "U.N.", "resolutions", ",", "against", "all", "such", "Israeli", "violations", "and", "illegal", "practices", ",", "\"", "he", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["On", "Tuesday", ",", "Israeli", "crews", "hoisted", "a", "bulldozer", "over", "the", "walls", "of", "Jerusalem", "'s", "old", "city", "and", "demolished", "the", "centre", ",", "saying", "it", "was", "being", "restored", "without", "a", "building", "permit", "."], "ner_tags": [0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Canada", "had", "recently", "donated", "$", "30", "million", "to", "the", "centre", ",", "called", "the", "Burj", "al-Laqlaq", "Society", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 6, 0]}
@@ -1660,7 +1602,6 @@
 {"tokens": ["9.", "Andersson", "1:34"], "ner_tags": [0, 1, 0]}
 {"tokens": ["10.", "Skibby", "1:45"], "ner_tags": [0, 1, 0]}
 {"tokens": ["CRICKET", "-", "ENGLAND", "V", "PAKISTAN", "ONE-DAY", "SCOREBOARD", "."], "ner_tags": [0, 0, 5, 0, 5, 0, 0, 0]}
-{"tokens": ["Scoreboard", "of", "the", "second", "one-day", "cricket", "match", "between", "England", "and", "Pakistan", "on", "Saturday", ":"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0, 0, 0]}
 {"tokens": ["England"], "ner_tags": [5]}
 {"tokens": ["A.", "Stewart", "b", "Mushtaq", "Ahmed", "46"], "ner_tags": [1, 2, 0, 1, 2, 0]}
 {"tokens": ["M.", "Atherton", "lbw", "b", "Mushtaq", "Ahmed", "1"], "ner_tags": [1, 2, 0, 0, 1, 2, 0]}
@@ -1684,7 +1625,6 @@
 {"tokens": ["Moin", "Khan", "lbw", "b", "Mullally", "0"], "ner_tags": [1, 2, 0, 0, 1, 0]}
 {"tokens": ["Ijaz", "Ahmed", "b", "Croft", "79"], "ner_tags": [1, 2, 0, 1, 0]}
 {"tokens": ["Inzamam-ul-Haq", "c", "Thorpe", "b", "Croft", "6"], "ner_tags": [1, 0, 1, 0, 1, 0]}
-{"tokens": ["Salim", "Malik", "c", "Stewart", "b", "Hollioake", "23"], "ner_tags": [1, 2, 0, 1, 0, 1, 0]}
 {"tokens": ["Wasim", "Akram", "c", "Knight", "b", "Hollioake", "21"], "ner_tags": [1, 2, 0, 1, 0, 1, 0]}
 {"tokens": ["Mushtaq", "Ahmed", "not", "out", "14"], "ner_tags": [1, 2, 0, 0, 0]}
 {"tokens": ["Saqlain", "Mushtaq", "b", "Hollioake", "0"], "ner_tags": [1, 2, 0, 1, 0]}
@@ -1710,7 +1650,6 @@
 {"tokens": ["6.", "Svetlana", "Samokhalova", "(", "Russia", ")", "3:46.216"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["7", "Jane", "Quigley", "(", "U.S.", ")", "3:46.493"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["8.", "Rasa", "Mazeikyte", "(", "Lithuania", ")", "3:46.834"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
-{"tokens": ["9.", "Tatian", "Stiajkina", "(", "Ukraine", ")", "3:52.204"], "ner_tags": [0, 1, 2, 0, 5, 0, 0]}
 {"tokens": ["World", "4,000", "metres", "team", "pursuit", "semifinals", ":"], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Italy", "(", "Adler", "Capelli", ",", "Cristiano", "Citto", ",", "Andrea", "Collinelli", ",", "Mauro", "Trentino", ")", "4:00.958", "(", "world", "record", ")", "beat", "Russia", "(", "Anton", "Chantyr", ",", "Edouard", "Gritsoun", ",", "Nikolai", "Kouznetsov", ")", "4:06.534", "."], "ner_tags": [5, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 0, 0]}
 {"tokens": ["France", "(", "Cyril", "Bos", ",", "Philippe", "Ermenault", ",", "Jean-Michel", "Monin", ",", "Francis", "Moreau", ")", "4:05.104", "beat", "Germany", "(", "Guido", "Fulst", ",", "Danilo", "Hondo", ",", "Thorsten", "Rund", ",", "Heiko", "Szonn", ")", "4:05.463"], "ner_tags": [5, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 0, 0, 5, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 0]}
@@ -1786,7 +1725,6 @@
 {"tokens": ["Baines", "homered", "and", "scored", "three", "runs", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Danny", "Tartabull", "added", "two", "hits", "and", "three", "RBI", "as", "all", "Chicago", "starters", "got", "at", "least", "one", "hit", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 0, 7, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["In", "Oakland", ",", "Dave", "Telgheder", "scattered", "seven", "hits", "over", "eight", "innings", "and", "Mark", "McGwire", "hit", "his", "major-league", "leading", "45th", "homer", "and", "drove", "in", "three", "runs", "as", "the", "Athetlics", "blanked", "the", "Boston", "Red", "Sox", "7-0", "."], "ner_tags": [0, 5, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 4, 4, 0, 0]}
-{"tokens": ["Buddy", "Groom", "pitched", "a", "perfect", "ninth", "inning", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["McGwire", "singled", "home", "a", "run", "to", "spark", "a", "three-run", "sixth", "and", "capped", "the", "scoring", "with", "a", "two-run", "homer", "in", "the", "seventh", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "loss", "was", "Boston", "'s", "seventh", "in", "its", "last", "29", "games", "."], "ner_tags": [0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["In", "Detroit", ",", "Todd", "Van", "Poppel", "pitched", "a", "five-hitter", "for", "his", "first", "career", "shutout", "and", "Tony", "Clark", "homered", "to", "cap", "a", "four-run", "first", "inning", "as", "the", "Tigers", "blanked", "the", "Kansas", "City", "Royals", "4-0", "."], "ner_tags": [0, 5, 0, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 4, 4, 0, 0]}
@@ -1799,7 +1737,6 @@
 {"tokens": ["Matt", "Lawton", "hit", "a", "three-run", "homer", "off", "closer", "Mike", "Fetters", "with", "one", "out", "in", "the", "ninth", "to", "give", "Minnesota", "a", "4-2", "lead", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0]}
 {"tokens": ["But", "Milwaukee", "tied", "it", "up", "in", "the", "bottom", "of", "the", "ninth", "on", "pinch-hitter", "Dave", "Nilsson", "'s", "two-run", "double", "."], "ner_tags": [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0]}
 {"tokens": ["CRICKET", "-", "ESSEX", "AND", "KENT", "MADE", "TO", "SWEAT", "IN", "TITLE", "RACE", "."], "ner_tags": [0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Essex", "and", "Kent", "both", "face", "tense", "finishes", "on", "Monday", "as", "they", "attempt", "to", "keep", "pace", "with", "title", "hopefuls", "Derbyshire", "and", "Surrey", ",", "convincing", "three-day", "victors", "on", "Saturday", ",", "in", "the", "English", "county", "championship", "run-in", "."], "ner_tags": [3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0]}
 {"tokens": ["Essex", "need", "another", "148", "with", "five", "wickets", "in", "hand", "to", "beat", "Yorkshire", "after", "a", "maiden", "first-class", "century", "from", "Richard", "Kettleborough", "transformed", "a", "match", "which", "his", "side", "had", "seemed", "certain", "to", "lose", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Kent", "will", "also", "need", "to", "keep", "their", "nerve", "against", "struggling", "Nottinghamshire", "who", "will", "enter", "the", "final", "day", "137", "ahead", "with", "four", "wickets", "left", "in", "a", "relatively", "low-scoring", "match", "at", "Tunbridge", "Wells", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0]}
@@ -1807,8 +1744,6 @@
 {"tokens": ["Warwickshire", "captain", "Tim", "Munton", "is", "tipping", "Surrey", "to", "emerge", "on", "top", ",", "impressed", "by", "the", "positive", "influence", "of", "Australian", "coach", "Dave", "Gilbert", ",", "but", "Derbyshire", "'s", "Australian", "captain", "Dean", "Jones", "is", "conceding", "nothing", "as", "his", "side", "chase", "their", "first", "title", "for", "60", "years", "."], "ner_tags": [3, 0, 1, 2, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 1, 2, 0, 0, 3, 0, 7, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "We", "took", "three", "absolutely", "brilliant", "catches", "in", "this", "match", "and", "our", "catching", "all", "season", "has", "been", "pretty", "impressive", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Our", "catching", "will", "win", "or", "lose", "us", "the", "championship", ",", "\"", "he", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["GOLF", "-", "LEADING", "MONEY", "WINNERS", "ON", "EUROPEAN", "TOUR", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 7, 8, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["European", "Tour", "after", "the", "British", "Masters", "won", "by", "Robert", "Allenby", "on"], "ner_tags": [7, 8, 0, 0, 7, 8, 0, 0, 1, 2, 0]}
 {"tokens": ["Saturday", "(", "British", "unless", "stated", ")", ":"], "ner_tags": [0, 0, 7, 0, 0, 0, 0]}
 {"tokens": ["1.", "Ian", "Woosnam", "510,258", "pounds", "sterling"], "ner_tags": [0, 1, 2, 0, 0, 0]}
@@ -1831,7 +1766,6 @@
 {"tokens": ["19.", "Jonathan", "Lomas", "181,005"], "ner_tags": [0, 1, 2, 0]}
 {"tokens": ["20.", "Paul", "Broadhurst", "176,780"], "ner_tags": [0, 1, 2, 0]}
 {"tokens": ["RUGBY", "UNION", "-", "ENGLISH", ",", "SCOTTISH", "AND", "WELSH", "RESULTS", "."], "ner_tags": [3, 4, 0, 7, 0, 7, 0, 7, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Results", "of", "English", ",", "Scottish", "and"], "ner_tags": [0, 0, 7, 0, 7, 0]}
 {"tokens": ["Welsh", "rugby", "union", "matches", "on", "Saturday", ":"], "ner_tags": [7, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["English", "National", "League", "one"], "ner_tags": [7, 8, 8, 0]}
@@ -1843,7 +1777,6 @@
 {"tokens": ["Saracens", "25", "Leicester", "23"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Welsh", "division", "one"], "ner_tags": [7, 0, 0]}
 {"tokens": ["Bridgend", "13", "Llanelli", "9"], "ner_tags": [3, 0, 3, 0]}
-{"tokens": ["Dunvant", "21", "Ebbw", "Vale", "10"], "ner_tags": [3, 0, 3, 4, 0]}
 {"tokens": ["Treorchy", "17", "Newbridge", "23"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Newport", "29", "Caerphilly", "10"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Swansea", "49", "Cardiff", "23"], "ner_tags": [3, 0, 3, 0]}
@@ -1863,7 +1796,6 @@
 {"tokens": ["Scorer", ":", "Sergei", "Rebrov", "(", "79th", "minute", ")"], "ner_tags": [0, 0, 1, 2, 0, 0, 0, 0]}
 {"tokens": ["Attendance", ":", "9,358"], "ner_tags": [0, 0, 0]}
 {"tokens": ["RUGBY", "UNION", "-", "LYNAGH", "SEALS", "VICTORY", "OVER", "DWYER", "AND", "LEICESTER", "."], "ner_tags": [3, 4, 0, 1, 0, 0, 0, 3, 0, 3, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Former", "Wallaby", "captain", "Michael", "Lynagh", "began", "his", "career", "in", "English", "club", "rugby", "in", "impeccable", "fashion", "on", "Saturday", "to", "frustrate", "his", "old", "coach", "Bob", "Dwyer", "on", "his", "league", "coaching", "debut", "with", "Leicester", "."], "ner_tags": [0, 3, 0, 1, 2, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["Lynagh", "kicked", "five", "penalties", "and", "a", "conversion", "from", "his", "six", "attempts", "at", "goal", "to", "steer", "his", "multi-national", "Saracens", "side", "to", "a", "25-23", "home", "win", "and", "offer", "millionaire", "backer", "Nigel", "Wray", "an", "early", "return", "on", "his", "big", "investment", "in", "the", "north", "London", "club", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0]}
 {"tokens": ["French", "centre", "Philippe", "Sella", "also", "enjoyed", "a", "good", "game", "alongside", "Lynagh", ",", "although", "the", "home", "team", "scored", "only", "one", "try", "through", "England", "scrum-half", "Kyran", "Bracken", "."], "ner_tags": [7, 0, 1, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 2, 0]}
@@ -1871,7 +1803,6 @@
 {"tokens": ["Former", "England", "captain", "Will", "Carling", ",", "handed", "the", "kicking", "duties", ",", "finished", "with", "20", "points", "."], "ner_tags": [0, 5, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["With", "the", "first", "day", "of", "the", "league", "season", "briefly", "shifting", "the", "spotlight", "away", "from", "the", "discord", "between", "the", "clubs", "and", "the", "Rugby", "Football", "Union", ",", "there", "were", "also", "emphatic", "victories", "for", "champions", "Bath", ",", "56-13", "winners", "over", "Orrell", ",", "and", "Northampton", "and", "narrow", "successes", "for", "Wasps", "and", "Bristol", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 3, 0, 3, 0]}
 {"tokens": ["SOCCER", "-", "SCOTTISH", "LEAGUE", "STANDINGS", "."], "ner_tags": [0, 0, 7, 0, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Scottish", "league", "standings", "after"], "ner_tags": [7, 0, 0, 0]}
 {"tokens": ["Saturday", "'s", "matches", "(", "tabulated", "-", "played", ",", "won", ",", "drawn", ",", "lost", ",", "goals"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["for", ",", "goals", "against", ",", "points", ")", ":"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0]}
@@ -1909,7 +1840,6 @@
 {"tokens": ["East", "Stirling", "3", "0", "2", "1", "3", "4", "2"], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Ross", "County", "3", "0", "0", "3", "3", "7", "0"], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["SOCCER", "-", "ENGLISH", "LEAGUE", "STANDINGS", "."], "ner_tags": [0, 0, 7, 0, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["English", "soccer", "league", "standings"], "ner_tags": [7, 0, 0, 0]}
 {"tokens": ["after", "Saturday", "'s", "matches", "(", "tabulated", "-", "played", ",", "won", ",", "drawn", ",", "lost", ","], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["goals", "for", ",", "goals", "against", ",", "points", ")", ":"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -1927,7 +1857,6 @@
 {"tokens": ["Ipswich", "4", "1", "2", "1", "9", "7", "5"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Crystal", "Palace", "4", "1", "2", "1", "4", "3", "5"], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Port", "Vale", "4", "1", "2", "1", "4", "4", "5"], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Birmingham", "2", "1", "1", "0", "5", "4", "4"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Reading", "4", "1", "1", "2", "5", "10", "4"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Huddersfield", "3", "1", "1", "1", "4", "4", "4"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Oxford", "4", "1", "0", "3", "6", "5", "3"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
@@ -1947,7 +1876,6 @@
 {"tokens": ["Shrewsbury", "4", "2", "1", "1", "6", "6", "7"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Blackpool", "4", "2", "1", "1", "3", "2", "7"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["York", "4", "2", "0", "2", "6", "6", "6"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Burnley", "4", "2", "0", "2", "6", "7", "6"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Bournemouth", "4", "2", "0", "2", "5", "5", "6"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Watford", "4", "2", "0", "2", "4", "5", "6"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Bristol", "Rovers", "3", "1", "2", "0", "2", "1", "5"], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 0]}
@@ -1970,13 +1898,11 @@
 {"tokens": ["Hartlepool", "4", "2", "1", "1", "6", "5", "7"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Torquay", "4", "2", "1", "1", "5", "3", "7"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Cardiff", "4", "2", "1", "1", "3", "2", "7"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Scunthorpe", "4", "2", "1", "1", "3", "3", "7"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Carlisle", "4", "2", "1", "1", "2", "1", "7"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Scarborough", "4", "1", "3", "0", "5", "3", "6"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Northampton", "4", "1", "2", "1", "6", "4", "5"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Lincoln", "4", "1", "2", "1", "5", "5", "5"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Barnet", "4", "1", "2", "1", "4", "2", "5"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Exeter", "4", "1", "2", "1", "4", "5", "5"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Cambridge", "United", "4", "1", "2", "1", "3", "4", "5"], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Darlington", "4", "1", "1", "2", "9", "8", "4"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Chester", "4", "1", "1", "2", "6", "7", "4"], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0]}
@@ -2004,15 +1930,12 @@
 {"tokens": ["Livingston", "1", "Hamilton", "0"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Stenhousemuir", "0", "Stranraer", "1"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Division", "three"], "ner_tags": [0, 0]}
-{"tokens": ["Albion", "2", "Cowdenbeath", "0"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Arbroath", "0", "East", "Stirling", "0"], "ner_tags": [3, 0, 3, 4, 0]}
 {"tokens": ["Inverness", "Thistle", "1", "Alloa", "0"], "ner_tags": [3, 4, 0, 3, 0]}
 {"tokens": ["Montrose", "2", "Ross", "County", "1"], "ner_tags": [3, 0, 3, 4, 0]}
 {"tokens": ["Queen", "'s", "Park", "1", "Forfar", "4"], "ner_tags": [3, 4, 4, 0, 3, 0]}
 {"tokens": ["SOCCER", "-", "ENGLISH", "LEAGUE", "RESULTS", "."], "ner_tags": [0, 0, 7, 0, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Results", "of", "English", "soccer", "matches"], "ner_tags": [0, 0, 7, 0, 0]}
-{"tokens": ["on", "Saturday", ":"], "ner_tags": [0, 0, 0]}
 {"tokens": ["Division", "one"], "ner_tags": [0, 0]}
 {"tokens": ["Bradford", "1", "Tranmere", "0"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Grimsby", "0", "Portsmouth", "1"], "ner_tags": [3, 0, 3, 0]}
@@ -2049,7 +1972,6 @@
 {"tokens": ["Torquay", "2", "Exeter", "0"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Wigan", "4", "Chester", "2"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["CRICKET", "-", "ENGLISH", "COUNTY", "CHAMPIONSHIP", "SCORES", "."], "ner_tags": [0, 0, 7, 8, 8, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Results", "and", "close", "scores", "of", "four-day", "English", "county", "championship", "matches", "on", "Saturday", ":"], "ner_tags": [0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["At", "Portsmouth", ":", "Middlesex", "beat", "Hampshire", "by", "188", "runs", "."], "ner_tags": [0, 5, 0, 3, 0, 3, 0, 0, 0, 0]}
 {"tokens": ["Middlesex", "199", "and", "426", ",", "Hampshire", "232", "and", "205", "(", "A.", "Fraser", "5-79", ",", "P.", "Tufnell", "4-39", ")", "."], "ner_tags": [3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 2, 0, 0, 1, 2, 0, 0, 0]}
@@ -2092,11 +2014,9 @@
 {"tokens": ["Panama", "-", "Jorge", "Luis", "Dely", "Valdes", "(", "50th", ")"], "ner_tags": [5, 0, 1, 2, 2, 2, 0, 0, 0]}
 {"tokens": ["Attendance", ":", "9,402"], "ner_tags": [0, 0, 0]}
 {"tokens": ["RUGBY", "UNION", "-", "SPRINGBOKS", "FINALLY", "BREAK", "ALL", "BLACK", "SPELL", "."], "ner_tags": [3, 4, 0, 3, 0, 0, 3, 4, 0, 0]}
-{"tokens": ["Andy", "Colquhoun"], "ner_tags": [1, 2]}
 {"tokens": ["South", "Africa", "managed", "to", "avoid", "a", "fifth", "successive", "defeat", "in", "1996", "at", "the", "hands", "of", "the", "All", "Blacks", "with", "an", "emphatic", "32-22", "victory", "in", "front", "of", "an", "ecstatic", "Ellis", "Park", "crowd", "on", "Saturday", "."], "ner_tags": [5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0]}
 {"tokens": ["They", "scored", "three", "tries", "in", "recording", "their", "highest", "total", "against", "New", "Zealand", ",", "salvaging", "some", "pride", "in", "a", "season", "in", "which", "the", "world", "champions", "have", "lost", "five", "out", "of", "eight", "tests", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["It", "also", "ended", "a", "run", "of", "nine", "successive", "victories", "this", "year", "for", "New", "Zealand", "but", "arrived", "too", "late", "to", "prevent", "a", "2-1", "series", "defeat", "and", "an", "historic", "first", "All", "Black", "series", "triumph", "on", "South", "African", "soil", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 7, 8, 0, 0]}
-{"tokens": ["Springbok", "scrum-half", "Joost", "van", "der", "Westhuizen", "was", "his", "side", "'s", "inspiration", ",", "scoring", "their", "opening", "try", "and", "making", "the", "third", "for", "flanker", "Andre", "Venter", "from", "a", "quickly", "taken", "penalty", "to", "give", "his", "side", "a", "29-8", "lead", "after", "54", "minutes", "."], "ner_tags": [3, 0, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Fullback", "Andre", "Joubert", "scored", "the", "other", ",", "scorching", "in", "from", "40", "metres", "at", "the", "start", "of", "the", "second", "half", "to", "add", "to", "his", "three", "long-range", "penalties", "."], "ner_tags": [0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "All", "Blacks", "salvaged", "some", "pride", "by", "scoring", "two", "tries", "from", "centre", "Walter", "Little", "and", "scrum-half", "Justin", "Marshall", "in", "the", "final", "five", "minutes", "to", "close", "a", "gap", "which", "at", "one", "point", "stood", "at", "24", "points", "."], "ner_tags": [0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["But", "they", "generally", "endured", "an", "off-day", ",", "highlighted", "by", "recalled", "fly-half", "Andrew", "Mehrtens", "who", "missed", "five", "out", "of", "eight", "kicks", "at", "goal", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -2121,7 +2041,6 @@
 {"tokens": ["Penalties", ":", "Mehrtens", "."], "ner_tags": [0, 0, 1, 0]}
 {"tokens": ["SOCCER", "-", "MAURITANIA", "DISSOLVES", "NATIONAL", "TEAM", "AFTER", "CUP", "EXIT", "."], "ner_tags": [0, 0, 5, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["NOUAKCHOTT", "1996-08-31"], "ner_tags": [5, 0]}
-{"tokens": ["Mauritania", "'s", "soccer", "federation", "dissolved", "the", "national", "team", "and", "suspended", "this", "season", "'s", "domestic", "championship", "on", "Saturday", "in", "the", "wake", "of", "the", "country", "'s", "failure", "to", "qualify", "for", "the", "African", "Nations", "'", "Cup", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 8, 0]}
 {"tokens": ["\"", "Since", "Mauritania", "has", "been", "eliminated", "on", "all", "fronts", "and", "the", "next", "commitments", "are", "not", "for", "another", "two", "years", ",", "we", "have", "reason", "to", "take", "a", "break", ",", "\"", "federation", "president", "Mohamed", "Lemine", "Cheiguer", "said", "."], "ner_tags": [0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 0, 0]}
 {"tokens": ["The", "North", "Africans", "were", "held", "to", "a", "goalless", "draw", "by", "Benin", "on", "Friday", "after", "losing", "the", "first", "leg", "of", "their", "qualifying", "tie", "4-1", "."], "ner_tags": [0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["SOCCER", "-", "MAURITANIA", "DRAW", "WITH", "BENIN", "IN", "AFRICAN", "NATIONS", "CUP", "."], "ner_tags": [0, 0, 5, 0, 0, 5, 0, 7, 8, 8, 0]}
@@ -2129,9 +2048,7 @@
 {"tokens": ["Mauritania", "drew", "0-0", "with", "Benin", "in", "their", "African", "Nations", "Cup", "preliminary", "round", ",", "second", "leg", "soccer", "match", "on", "Friday", "."], "ner_tags": [5, 0, 0, 0, 5, 0, 0, 7, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Benin", "won", "4-1", "on", "aggregate", "."], "ner_tags": [5, 0, 0, 0, 0, 0]}
 {"tokens": ["SOCCER", "-", "YUGOSLAV", "LEAGUE", "RESULTS", "/", "STANDINGS", "."], "ner_tags": [0, 0, 7, 0, 0, 0, 0, 0]}
-{"tokens": ["BELGRADE", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Results", "of", "Yugoslav", "league"], "ner_tags": [0, 0, 7, 0]}
-{"tokens": ["soccer", "matches", "played", "on", "Saturday", ":"], "ner_tags": [0, 0, 0, 0, 0, 0]}
 {"tokens": ["Division", "A"], "ner_tags": [0, 0]}
 {"tokens": ["Hajduk", "2", "Proleter", "(", "Z", ")", "0"], "ner_tags": [3, 0, 3, 4, 4, 4, 0]}
 {"tokens": ["Zemun", "1", "Rad", "(", "B", ")", "0"], "ner_tags": [3, 0, 3, 0, 0, 0, 0]}
@@ -2179,14 +2096,11 @@
 {"tokens": ["Hoddle", ",", "coaching", "the", "side", "for", "the", "first", "time", ",", "declined", "to", "comment", "on", "the", "incident", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["England", "face", "Moldova", "in", "a", "World", "Cup", "qualifier", "in", "the", "same", "stadium", "on", "Sunday", "."], "ner_tags": [5, 0, 5, 0, 0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["BASKETBALL", "-", "TROFEJ", "BEOGRAD", "TOURNAMENT", "RESULTS", "."], "ner_tags": [0, 0, 7, 8, 8, 0, 0]}
-{"tokens": ["BELGRADE", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Results", "in", "the", "Trofej", "Beograd", "96"], "ner_tags": [0, 0, 0, 7, 8, 8]}
 {"tokens": ["Fifth", "place", ":"], "ner_tags": [0, 0, 0]}
 {"tokens": ["Benetton", "(", "Italy", ")", "92", "Dinamo", "(", "Russia", ")", "81", "(", "halftime", "50-28", ")"], "ner_tags": [3, 0, 5, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Third", "place", ":"], "ner_tags": [0, 0, 0]}
 {"tokens": ["Alba", "(", "Germany", ")", "75", "Red", "Star", "(", "Yugoslavia", ")", "70", "(", "42-41", ")"], "ner_tags": [3, 0, 5, 0, 0, 3, 4, 0, 5, 0, 0, 0, 0, 0]}
-{"tokens": ["BASKETBALLSOCCER", "-", "TROFEJ", "BEOGRAD", "TOURNAMENT", "RESULTS", "."], "ner_tags": [0, 0, 7, 8, 8, 0, 0]}
-{"tokens": ["BELGRADE", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Results", "in", "the", "Trofej", "Beograd", "96"], "ner_tags": [0, 0, 0, 7, 8, 8]}
 {"tokens": ["Fifth", "place", ":"], "ner_tags": [0, 0, 0]}
 {"tokens": ["Benetton", "(", "Italy", ")", "92", "Dinamo", "(", "Russia", ")", "81", "(", "halftime", "50-28", ")"], "ner_tags": [3, 0, 5, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0, 0]}
@@ -2199,7 +2113,6 @@
 {"tokens": ["Romania", "-", "Viorel", "Moldovan", "(", "21st", "minute", ")", ",", "Dan", "Petrescu", "(", "65th", ")", ",", "Constantin", "Galca", "(", "77th", ")"], "ner_tags": [5, 0, 1, 2, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 2, 0, 0, 0]}
 {"tokens": ["Attendence", ":", "9,000"], "ner_tags": [0, 0, 0]}
 {"tokens": ["SOCCER", "-", "ARMENIA", "AND", "PORTUGAL", "DRAW", "0-0", "IN", "WORLD", "CUP", "QUALIFIER", "."], "ner_tags": [0, 0, 5, 0, 5, 0, 0, 0, 7, 8, 0, 0]}
-{"tokens": ["YEREVAN", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Armenia", "and", "Portugal", "drew", "0-0", "in", "a", "World", "Cup", "soccer", "European", "group", "9", "qualifier", "on", "Saturday", "."], "ner_tags": [5, 0, 5, 0, 0, 0, 0, 7, 8, 0, 7, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Attendance", ":", "5,000"], "ner_tags": [0, 0, 0]}
 {"tokens": ["SOCCER", "-", "AZERBAIJAN", "BEAT", "SWITZERLAND", "IN", "WORLD", "CUP", "QUALIFIER", "."], "ner_tags": [0, 0, 5, 0, 5, 0, 7, 8, 0, 0]}
@@ -2209,14 +2122,12 @@
 {"tokens": ["Vidadi", "Rzayev", "(", "28th", ")"], "ner_tags": [1, 2, 0, 0, 0]}
 {"tokens": ["Attendance", ":", "20,000"], "ner_tags": [0, 0, 0]}
 {"tokens": ["BASKETBALL", "-", "BENETTON", "BEAT", "DINAMO", "92-81", "."], "ner_tags": [0, 0, 3, 0, 3, 0, 0]}
-{"tokens": ["BELGRADE", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Benetton", "of", "Italy", "beat", "Dinamo", "of", "Russia", "92-81", "(", "halftime", "50-28", ")", "in", "a", "fifth", "place", "play-off", "in", "the", "Trofej", "Beograd", "96", "international", "basketball", "tournament", "on", "Saturday", "."], "ner_tags": [3, 0, 5, 0, 3, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["SOCCER", "-", "SWEDEN", "BEAT", "LATVIA", "IN", "EUROPEAN", "UNDER-21", "QUALIFIER", "."], "ner_tags": [0, 0, 5, 0, 5, 0, 7, 0, 0, 0]}
 {"tokens": ["RIGA", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Sweden", "beat", "Latvia", "2-0", "(", "halftime", "0-0", ")", "in", "a", "European", "under-21", "soccer", "championship", "qualifier", "on", "Saturday", "."], "ner_tags": [5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Scorers", ":", "Joakim", "Persson", "81st", "minute", ",", "Daniel", "Andersson", "(", "89th", ")"], "ner_tags": [0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0]}
 {"tokens": ["Attendance", ":", "300"], "ner_tags": [0, 0, 0]}
-{"tokens": ["MINSK", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Belarus", "beat", "Estonia", "1-0", "(", "halftime", "1-0", ")", "in", "a", "World", "Cup", "soccer", "European", "group", "4", "qualifier", "on", "Saturday", "."], "ner_tags": [5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0, 7, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Scorer", ":", "Vladimir", "Makovsky", "(", "35th", ")"], "ner_tags": [0, 0, 1, 2, 0, 0, 0]}
 {"tokens": ["Attendance", ":", "6,000"], "ner_tags": [0, 0, 0]}
@@ -2240,7 +2151,6 @@
 {"tokens": ["Jansher", "said", "that", "he", "was", "disturbed", "to", "be", "called", "a", "cheat", ".", "\""], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["What", "he", "did", "was", "bad", "for", "squash", ",", "bad", "for", "the", "crowd", "and", "bad", "for", "the", "sponsors", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "We", "are", "trying", "to", "build", "up", "squash", "like", "tennis", "and", "players", "should", "not", "say", "things", "like", "that", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["\"", "I", "think", "the", "Professional", "Squash", "Association", "should", "look", "into", "this", "matter", "and", "deal", "with", "it", "properly", "."], "ner_tags": [0, 0, 0, 0, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["I", "am", "not", "calling", "for", "him", "to", "be", "banned", "but", "they", "have", "to", "take", "some", "action", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Jansher", ",", "bidding", "for", "an", "eighth", "Hong", "Kong", "Open", "title", ",", "plays", "second-seeded", "Australian", "Rodney", "Eyles", "in", "the", "final", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 7, 8, 8, 0, 0, 0, 0, 7, 1, 2, 0, 0, 0, 0]}
 {"tokens": ["Eyles", "played", "his", "best", "squash", "of", "the", "tournament", "to", "beat", "fourth-seeded", "Peter", "Nicol", "of", "Scotland", "15-10", "8-15", "15-10", "15-4", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 5, 0, 0, 0, 0, 0]}
@@ -2303,11 +2213,9 @@
 {"tokens": ["Men", "'s", "singles", ",", "third", "round", "13", "-", "Thomas", "Enqvist", "(", "Sweden", ")", "beat", "Pablo", "Campana", "(", "Ecuador", ")", "6-4", "6-4", "6-2"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 5, 0, 0, 1, 2, 0, 5, 0, 0, 0, 0]}
 {"tokens": ["TENNIS", "-", "DRAW", "FOR", "1997", "FED", "CUP", "WOMEN", "'S", "TEAM", "TOURNAMENT", "."], "ner_tags": [0, 0, 0, 0, 7, 8, 8, 0, 0, 0, 0, 0]}
 {"tokens": ["Draw", "for", "the", "women", "'s", "1997", "Fed", "Cup", "team", "tennis", "championships", ",", "as", "conducted", "at", "the", "U.S.", "Open", "on", "Saturday", ":"], "ner_tags": [0, 0, 0, 0, 0, 7, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0, 0, 0]}
-{"tokens": ["World", "Group", "I", ",", "first", "round", "(", "March", "1-2", ")"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["United", "States", "at", "Netherlands"], "ner_tags": [5, 6, 0, 5]}
 {"tokens": ["Czech", "Republic", "at", "Germany"], "ner_tags": [5, 6, 0, 5]}
 {"tokens": ["France", "at", "Japan"], "ner_tags": [5, 0, 5]}
-{"tokens": ["Spain", "at", "Belgium"], "ner_tags": [5, 0, 5]}
 {"tokens": ["(", "semifinals", "July", "19-20", ",", "and", "finals", "September", "27-28", ")"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["World", "Group", "II", ",", "first", "round", "(", "March", "1-2", ")"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Austria", "at", "Croatia"], "ner_tags": [5, 0, 5]}
@@ -2326,7 +2234,6 @@
 {"tokens": ["standings", "after", "games", "played", "on", "Friday", "(", "tabulate", "under", "won", ","], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["lost", ",", "winning", "percentage", "and", "games", "behind", ")", ":"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["EASTERN", "DIVISION"], "ner_tags": [7, 8]}
-{"tokens": ["W", "L", "PCT", "GB"], "ner_tags": [0, 0, 0, 0]}
 {"tokens": ["NEW", "YORK", "75", "59", ".560", "-"], "ner_tags": [3, 4, 0, 0, 0, 0]}
 {"tokens": ["BALTIMORE", "71", "63", ".530", "4"], "ner_tags": [3, 0, 0, 0, 0]}
 {"tokens": ["TORONTO", "63", "72", ".467", "12", "1/2"], "ner_tags": [3, 0, 0, 0, 0, 0]}
@@ -2345,14 +2252,11 @@
 {"tokens": ["SATURDAY", ",", "AUGUST", "31", "SCHEDULE"], "ner_tags": [0, 0, 0, 0, 0]}
 {"tokens": ["KANSAS", "CITY", "AT", "DETROIT"], "ner_tags": [3, 4, 0, 5]}
 {"tokens": ["BALTIMORE", "AT", "SEATTLE"], "ner_tags": [3, 0, 5]}
-{"tokens": ["CHICAGO", "AT", "TORONTO"], "ner_tags": [3, 0, 5]}
 {"tokens": ["MINNESOTA", "AT", "MILWAUKEE"], "ner_tags": [3, 0, 5]}
 {"tokens": ["CLEVELAND", "AT", "TEXAS"], "ner_tags": [3, 0, 5]}
 {"tokens": ["BOSTON", "AT", "OAKLAND"], "ner_tags": [3, 0, 5]}
 {"tokens": ["NEW", "YORK", "AT", "CALIFORNIA"], "ner_tags": [3, 4, 0, 5]}
-{"tokens": ["NATIONAL", "LEAGUE"], "ner_tags": [7, 8]}
 {"tokens": ["EASTERN", "DIVISION"], "ner_tags": [7, 8]}
-{"tokens": ["W", "L", "PCT", "GB"], "ner_tags": [0, 0, 0, 0]}
 {"tokens": ["ATLANTA", "84", "50", ".627", "-"], "ner_tags": [3, 0, 0, 0, 0]}
 {"tokens": ["MONTREAL", "71", "62", ".534", "12", "1/2"], "ner_tags": [3, 0, 0, 0, 0, 0]}
 {"tokens": ["FLORIDA", "65", "70", ".481", "19", "1/2"], "ner_tags": [3, 0, 0, 0, 0, 0]}
@@ -2363,7 +2267,6 @@
 {"tokens": ["ST", "LOUIS", "70", "65", ".519", "2", "1/2"], "ner_tags": [3, 4, 0, 0, 0, 0, 0]}
 {"tokens": ["CHICAGO", "66", "67", ".496", "5", "1/2"], "ner_tags": [3, 0, 0, 0, 0, 0]}
 {"tokens": ["CINCINNATI", "66", "68", ".493", "6"], "ner_tags": [3, 0, 0, 0, 0]}
-{"tokens": ["PITTSBURGH", "56", "78", ".418", "16"], "ner_tags": [3, 0, 0, 0, 0]}
 {"tokens": ["WESTERN", "DIVISION"], "ner_tags": [7, 8]}
 {"tokens": ["SAN", "DIEGO", "76", "60", ".559", "-"], "ner_tags": [3, 4, 0, 0, 0, 0]}
 {"tokens": ["LOS", "ANGELES", "73", "61", ".545", "2"], "ner_tags": [3, 4, 0, 0, 0, 0]}
@@ -2372,7 +2275,6 @@
 {"tokens": ["SATURDAY", ",", "AUGUST", "31", "SCHEDULE"], "ner_tags": [0, 0, 0, 0, 0]}
 {"tokens": ["ATLANTA", "AT", "CHICAGO"], "ner_tags": [3, 0, 5]}
 {"tokens": ["HOUSTON", "AT", "PITTSBURGH"], "ner_tags": [3, 0, 5]}
-{"tokens": ["SAN", "FRANCISCO", "AT", "NEW", "YORK"], "ner_tags": [3, 4, 0, 5, 6]}
 {"tokens": ["FLORIDA", "AT", "CINCINNATI"], "ner_tags": [3, 0, 5]}
 {"tokens": ["LOS", "ANGELES", "AT", "PHILADELPHIA"], "ner_tags": [3, 4, 0, 5]}
 {"tokens": ["COLORADO", "AT", "ST", "LOUIS"], "ner_tags": [3, 0, 5, 6]}
@@ -2386,7 +2288,6 @@
 {"tokens": ["New", "York", "6", "CALIFORNIA", "2"], "ner_tags": [3, 4, 0, 3, 0]}
 {"tokens": ["OAKLAND", "7", "Boston", "0"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Baltimore", "5", "SEATTLE", "2"], "ner_tags": [3, 0, 3, 0]}
-{"tokens": ["National", "League"], "ner_tags": [7, 8]}
 {"tokens": ["CHICAGO", "3", "Atlanta", "2", "(", "1st", "game", ")"], "ner_tags": [3, 0, 3, 0, 0, 0, 0, 0]}
 {"tokens": ["Atlanta", "6", "CHICAGO", "5", "(", "2nd", "game", ")"], "ner_tags": [3, 0, 3, 0, 0, 0, 0, 0]}
 {"tokens": ["Florida", "3", "CINCINNATI", "1"], "ner_tags": [3, 0, 3, 0]}
@@ -2401,7 +2302,6 @@
 {"tokens": ["Brown", "(", "14-10", ")", "tied", "Todd", "Stottlemyre", "of", "the", "Cardinals", "for", "the", "National", "League", "lead", "with", "his", "fifth", "complete", "game", "and", "lowered", "his", "major", "league-leading", "earned", "run", "average", "from", "1.96", "to", "1.92", "."], "ner_tags": [1, 0, 0, 0, 0, 1, 2, 0, 0, 3, 0, 0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["He", "struck", "out", "eight", "and", "did", "not", "walk", "a", "batter", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Brown", "threw", "119", "pitches", "and", "won", "for", "the", "third", "time", "in", "as", "many", "starts", "against", "the", "Reds", "this", "season", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0]}
-{"tokens": ["\"", "Bolesy", "(", "Florida", "manager", "John", "Boles", ")", "told", "me", "yesterday", ",", "'", "You", "have", "to", "go", "nine", "tomorrow", ",", "'", "\"", "Brown", "said", "."], "ner_tags": [0, 1, 0, 3, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]}
 {"tokens": ["I", "gave", "up", "a", "lot", "of", "hits", "in", "the", "early", "innings", "and", "I", "was", "n't", "thinking", "about", "the", "seventh", ",", "eighth", "or", "ninth", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["I", "was", "n't", "satisfied", "with", "any", "of", "my", "pitches", "and", "I", "did", "a", "better", "job", "of", "moving", "the", "ball", "around", "in", "the", "later", "innings", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "He", "has", "a", "devastating", "sinker", ",", "\"", "observed", "Reds", "manager", "Ray", "Knight", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 2, 0, 0]}
@@ -2439,7 +2339,6 @@
 {"tokens": ["It", "was", "the", "third", "time", "Berry", "had", "six", "RBI", "in", "one", "game", "."], "ner_tags": [0, 0, 0, 0, 0, 1, 0, 0, 7, 0, 0, 0, 0]}
 {"tokens": ["Wall", "(", "9-4", ")", "struck", "out", "four", "and", "walked", "none", "to", "post", "his", "second", "complete", "game", "of", "the", "season", "and", "third", "straight", "win", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["TENNIS", "-", "EDBERG", "REFUSES", "TO", "QO", "QUIETLY", "."], "ner_tags": [0, 0, 1, 0, 0, 0, 0, 0]}
-{"tokens": ["NEW", "YORK", "1996-08-30"], "ner_tags": [5, 6, 0]}
 {"tokens": ["Refusing", "to", "go", "quietly", "in", "the", "night", ",", "Stefan", "Edberg", "extended", "his", "stay", "at", "his", "14th", "and", "last", "U.S.", "Open", "when", "Bernd", "Karbacher", ",", "trailing", "and", "hurting", ",", "quit", "in", "the", "fourth", "set", "of", "their", "second-round", "match", "Friday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "30-year-old", "Edberg", ",", "a", "former", "two-time", "Open", "champion", ",", "had", "wrestled", "control", "of", "the", "match", "away", "from", "Karbacher", "when", "the", "German", ",", "hampered", "by", "a", "left", "hamstring", "injury", ",", "decided", "he", "could", "n't", "continue", "under", "the", "stadium", "lights", "at", "the", "National", "Tennis", "Centre", "."], "ner_tags": [0, 0, 1, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 6, 0]}
 {"tokens": ["\"", "A", "win", "is", "a", "win", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
@@ -2466,7 +2365,6 @@
 {"tokens": ["BOXING", "-", "PRINCE", "NASEEM", "RETAINS", "WBO", "FEATHERWEIGHT", "TITLE", "."], "ner_tags": [0, 0, 0, 1, 0, 0, 0, 0, 0]}
 {"tokens": ["DUBLIN", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Britain", "'s", "Naseem", "Hamed", "retained", "his", "WBO", "featherweight", "title", "on", "Saturday", "when", "Mexico", "'s", "Manuel", "Medina", "was", "retired", "by", "his", "corner", "at", "the", "end", "of", "the", "11th", "round", "."], "ner_tags": [5, 0, 1, 2, 0, 0, 3, 0, 0, 0, 0, 0, 5, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["SOCCER", "-", "AUSTRIA", "DOMINATE", "SCOTLAND", "IN", "WORLD", "CUP", "QUALIFIER", "."], "ner_tags": [0, 0, 5, 0, 5, 0, 7, 8, 0, 0]}
 {"tokens": ["Steve", "Pagani"], "ner_tags": [1, 2]}
 {"tokens": ["VIENNA", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Austria", "dominated", "their", "World", "Cup", "group", "four", "qualifier", "against", "Scotland", "on", "Saturday", "with", "wave", "after", "wave", "of", "attacks", "but", "were", "unable", "to", "penetrate", "the", "visitors", "'", "defence", "and", "had", "to", "settle", "for", "a", "goalless", "draw", "."], "ner_tags": [5, 0, 0, 7, 8, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -2475,7 +2373,6 @@
 {"tokens": ["They", "also", "went", "close", "a", "minute", "before", "the", "interval", "when", "a", "promising", "attack", "saw", "the", "ball", "fall", "to", "Markus", "Schopp", "but", "he", "hit", "his", "shot", "wide", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Everton", "'s", "Duncan", "Ferguson", "went", "close", "for", "Scotland", "in", "the", "65th", "minute", "when", "he", "forced", "Austrian", "goalkeeper", "Michael", "Konsel", "to", "a", "diving", "save", "."], "ner_tags": [3, 0, 1, 2, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 7, 0, 1, 2, 0, 0, 0, 0, 0]}
 {"tokens": ["Two", "Scotland", "players", "were", "shown", "yellow", "cards", ",", "captain", "Gary", "McAllister", "for", "bringing", "down", "Andreas", "Heraf", "and", "Ferguson", "for", "arguing", "against", "the", "referee", "'s", "decision", "."], "ner_tags": [0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["\"", "The", "result", "is", "acceptable", ",", "\"", "Scottish", "coach", "Craig", "Brown", "told", "reporters", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 7, 0, 1, 2, 0, 0, 0, 0]}
 {"tokens": ["We", "'d", "hoped", "not", "to", "lose", "and", "we", "tried", "not", "to", "play", "for", "a", "draw", "but", "the", "Austrian", "defence", "was", "simply", "too", "good", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["SK", "Rapid", "'s", "Dietmar", "Kuehbauer", ",", "who", "gave", "an", "impressive", "performance", ",", "said", "the", "team", "started", "off", "well", "but", "let", "the", "game", "slip", "after", "the", "first", "30", "minutes", "."], "ner_tags": [3, 4, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "Somehow", "it", "seemed", "there", "were", "less", "than", "11", "players", "on", "the", "pitch", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -2519,14 +2416,11 @@
 {"tokens": ["Belgium", "'s", "best", "second-half", "effort", "came", "three", "minutes", "later", "when", "Degryse", "put", "the", "ball", "over", "the", "bar", "from", "close", "range", "with", "Recber", "beaten", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]}
 {"tokens": ["Teams", ":"], "ner_tags": [0, 0]}
 {"tokens": ["Belgium", "-", "1", "-", "Filip", "De", "Wilde", ",", "2", "-", "Bertrand", "Crasson", ",", "3", "-", "Dirk", "Medved", ",", "4", "-", "Pascal", "Renier", ",", "16", "-", "Geoffrey", "Claeys", ",", "6", "-", "Gunther", "Schepens", "(", "15", "-", "Nico", "Van", "Kerckhoven", ",", "81st", ")", ",", "10", "-", "Enzo", "Scifo", ",", "7", "-", "Gert", "Verheyen", "(", "14", "-", "Frederic", "Peiremans", ",", "62nd", ")", ",", "9", "-", "Marc", "Degryse", ",", "8", "-", "Luc", "Nilis", ",", "11-", "Luis", "Oliveira", "(", "18", "-", "Gilles", "De", "Bilde", ",", "88th", ")", "."], "ner_tags": [5, 0, 0, 0, 1, 2, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 2, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 1, 2, 0, 0, 0, 1, 2, 2, 0, 0, 0, 0]}
-{"tokens": ["Turkey", "-", "1", "-", "Rustu", "Recber", ",", "4", "-", "Hakan", "Unsal", "(", "14", "-", "Sergen", "Yalcin", ",", "57th", ")", ",", "2", "-", "Recep", "Cetin", ",", "3", "-", "Ogun", "Temizkanoglu", ",", "5", "-", "Alpay", "Ozalan", ",", "7-", "Abdullah", "Ercan", ",", "6", "-", "Tolunay", "Kafkas", ",", "10", "-", "Oguz", "Cetin", "(", "13", "-", "Arif", "Erdem", ",", "57th", ")", ",", "11", "-", "Tayfun", "Korkut", ",", "9", "-", "Hakan", "Sukur", ",", "8", "-", "Saffet", "Sancakli", "(", "17-", "Orhan", "Cikirikci", ",", "76th", ")", "."], "ner_tags": [5, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 0, 0, 1, 2, 0, 0, 0, 0]}
 {"tokens": ["Belgian", "coach", "Wilfried", "Van", "Moer", "said", "he", "had", "not", "expected", "Turkey", "to", "be", "so", "strong", "and", "fast", "."], "ner_tags": [7, 0, 1, 2, 2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["we", "suffered", ",", "\"", "said", "Van", "Moer", ",", "who", "succeeded", "Paul", "Van", "Himst", "as", "coach", "in", "April", "."], "ner_tags": [0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 2, 2, 0, 0, 0, 0, 0]}
-{"tokens": ["It", "was", "Belgium", "'s", "first", "victory", "under", "Van", "Moer", "after", "two", "draws", "in", "friendlies", "against", "Russia", "and", "Italy", "."], "ner_tags": [0, 0, 5, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0]}
 {"tokens": ["SOCCER", "-", "SUMMARY", "IN", "THE", "SPANISH", "FIRST", "DIVISION", "."], "ner_tags": [0, 0, 0, 0, 0, 7, 0, 0, 0]}
 {"tokens": ["MADRID", "1996-08-30"], "ner_tags": [5, 0]}
 {"tokens": ["Summary", "of", "game", "played", "in", "the", "Spanish", "first", "division", "on", "Saturday", ":", "Deportivo", "Coruna", "1", "(", "Corentine", "Martins", ",", "22nd", "minute", ")", "Real", "Madrid", "1", "(", "Roberto", "Carlos", "79th", ")", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 3, 4, 0, 0, 1, 2, 0, 0, 0, 0, 3, 4, 0, 0, 1, 2, 0, 0, 0]}
-{"tokens": ["Halftime", "1-0", "."], "ner_tags": [0, 0, 0]}
 {"tokens": ["Attendancce", "35,000", "."], "ner_tags": [0, 0, 0]}
 {"tokens": ["SOCCER", "-", "RESULT", "IN", "SPANISH", "FIRST", "DIVISION", "."], "ner_tags": [0, 0, 0, 0, 7, 0, 0, 0]}
 {"tokens": ["MADRID", "1996-08-31"], "ner_tags": [5, 0]}
@@ -2573,7 +2467,6 @@
 {"tokens": ["Britain", "by", "Richard", "Hannon", "."], "ner_tags": [5, 0, 1, 2, 0]}
 {"tokens": ["Value", "to", "the", "winning", "owner", ":", "$", "233,600"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["SOCCER", "-", "KLINSMANN", "TO", "RETIRE", "AFTER", "1998", "WORLD", "CUP", "."], "ner_tags": [0, 0, 1, 0, 0, 0, 7, 8, 8, 0]}
-{"tokens": ["BONN", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["German", "international", "striker", "Juergen", "Klinsmann", "has", "said", "he", "will", "retire", "after", "the", "1998", "World", "Cup", "in", "France", "."], "ner_tags": [7, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0, 5, 0]}
 {"tokens": ["\"", "For", "myself", ",", "personally", ",", "I", "'ve", "planned", "things", "so", "that", "that", "will", "be", "the", "end", "of", "me", ",", "\"", "the", "32-year-old", "national", "team", "captain", "was", "quoted", "as", "saying", "by", "the", "daily", "Sueddeutsche", "Zeitung", "on", "Saturday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0]}
 {"tokens": ["Klinsmann", "said", "he", "believed", "Germany", "could", "win", "in", "France", "with", "the", "same", "nucleus", "of", "players", "which", "won", "the", "European", "championship", "in", "England", "this", "summer", "."], "ner_tags": [1, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 5, 0, 0, 0]}
@@ -2582,7 +2475,6 @@
 {"tokens": ["That", "'s", "what", "we", "'re", "all", "aiming", "for", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Coach", "Berti", "Vogts", "has", "called", "up", "a", "virtually", "identical", "squad", "for", "next", "week", "'s", "friendly", "against", "Poland", "--", "Germany", "'s", "first", "match", "since", "Euro", "96", "."], "ner_tags": [0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 7, 8, 0]}
 {"tokens": ["SOCCER", "-", "GERMAN", "CUP", "SECOND", "ROUND", "RESULTS", "."], "ner_tags": [0, 0, 7, 8, 0, 0, 0, 0]}
-{"tokens": ["BONN", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Results", "of", "German", "Cup", "second", "round"], "ner_tags": [0, 0, 7, 8, 0, 0]}
 {"tokens": ["matches", "on", "Saturday", ":"], "ner_tags": [0, 0, 0, 0]}
 {"tokens": ["Karlsruhe", "2", "Hansa", "Rostock", "0"], "ner_tags": [3, 0, 3, 4, 0]}
@@ -2606,7 +2498,6 @@
 {"tokens": ["Ingram", "was", "quoted", "as", "telling", "the", "newspaper", "he", "thought", "astrology", "was", "\"", "a", "load", "of", "rubbish", "\"", "and", "that", "he", "could", "not", "recall", "asking", "Orr", "to", "keep", "a", "watch", "on", "Thatcher", "'s", "stars", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0]}
 {"tokens": ["Thatcher", ",", "dubbed", "the", "\"", "Iron", "Lady", "\"", "for", "her", "driven", ",", "forceful", "personality", ",", "was", "never", "known", "to", "have", "an", "interest", "in", "the", "occult", "and", "in", "fact", "has", "a", "university", "degree", "in", "chemistry", "."], "ner_tags": [1, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Former", "U.S.", "president", "Ronald", "Reagan", "'s", "wife", ",", "Nancy", ",", "admitted", "in", "her", "biography", "My", "Turn", "that", "she", "regularly", "consulted", "an", "astrologer", "to", "help", "her", "plan", "her", "husband", "'s", "schedule", "."], "ner_tags": [0, 5, 0, 1, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Following", "are", "some", "of", "the", "major", "events", "to", "have", "occurred", "on", "September", "7", "in", "history", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["1533", "-", "Queen", "Elizabeth", "I", "born", "."], "ner_tags": [0, 0, 0, 1, 2, 0, 0]}
 {"tokens": ["Daughter", "of", "Henry", "VIII", "and", "his", "second", "wife", "Anne", "Boleyn", ",", "she", "was", "queen", "of", "England", "1558-1603", "."], "ner_tags": [0, 0, 1, 2, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 5, 0, 0]}
@@ -2644,7 +2535,6 @@
 {"tokens": ["He", "won", "acclaim", "for", "the", "insights", "that", "he", "gave", "into", "the", "events", "which", "shaped", "modern", "Europe", "and", "was", "one", "of", "Europe", "'s", "leading", "authorities", "on", "the", "great", "conflicts", "of", "the", "20th", "century", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["1994", "-", "The", "Stars", "and", "Stripes", "flag", "was", "lowered", "for", "the", "last", "time", "over", "U.S.", "army", "headquarters", "in", "Berlin", ",", "formally", "ending", "the", "American", "presence", "in", "the", "once-divided", "city", "after", "nearly", "half", "a", "century", "."], "ner_tags": [0, 0, 0, 7, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Escaped", "British", "paedophile", "recaptured", "."], "ner_tags": [0, 7, 0, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["A", "convicted", "British", "paedophile", "was", "arrested", "on", "Saturday", ",", "two", "days", "after", "escaping", "from", "custody", "during", "a", "supervised", "day", "trip", "to", "a", "zoo", ",", "police", "said", "."], "ner_tags": [0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Trevor", "Holland", ",", "a", "52", "year-old", "with", "who", "has", "been", "convicted", "twice", "of", "gross", "indecency", "with", "children", ",", "was", "captured", "after", "being", "spotted", "in", "Worthing", ",", "a", "town", "on", "England", "'s", "southern", "coast", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 5, 0, 0, 0, 0]}
 {"tokens": ["\"", "A", "member", "of", "the", "public", "recognised", "Holland", "in", "a", "newsagent", "shop", "as", "he", "was", "reading", "the", "headlines", "about", "himself", ",", "\"", "a", "police", "spokesman", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -2661,7 +2551,6 @@
 {"tokens": ["Prime", "Minister", "John", "Major", "says", "the", "300-year-old", "union", "of", "the", "Scottish", "and", "English", "parliaments", "will", "be", "a", "main", "plank", "in", "his", "Conservative", "Party", "'s", "election", "platform", "."], "ner_tags": [0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0]}
 {"tokens": ["Conservatives", "have", "only", "10", "of", "the", "72", "Scottish", "seats", "in", "parliament", "and", "consistently", "run", "third", "in", "opinion", "polls", "in", "Scotland", "behind", "Labour", "and", "the", "independence-seeking", "Scottish", "National", "Party", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0, 3, 4, 4, 0]}
 {"tokens": ["Britain", "condemns", "Iraq", "involvement", "in", "Arbil", "attack", "."], "ner_tags": [5, 0, 5, 0, 0, 5, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Britain", "on", "Saturday", "condemned", "Iraqi", "involvement", "in", "an", "attack", "on", "the", "Kurdish", "city", "of", "Arbil", "and", "said", "it", "was", "in", "close", "touch", "with", "its", "allies", "."], "ner_tags": [5, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 7, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "We", "condemn", "Iraqi", "involvement", "."], "ner_tags": [0, 0, 0, 7, 0, 0]}
 {"tokens": ["In", "no", "way", "can", "Iraqi", "involvement", "be", "seen", "as", "helpful", ",", "\"", "said", "a", "Foreign", "Office", "spokesman", "."], "ner_tags": [0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0]}
@@ -2670,7 +2559,6 @@
 {"tokens": ["\"", "We", "are", "in", "close", "touch", "with", "all", "our", "allies", ",", "\"", "said", "the", "Foreign", "Office", "spokesman", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0]}
 {"tokens": ["He", "declined", "to", "give", "any", "further", "information", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Seven", "Iraqis", "charged", "with", "hijack", "."], "ner_tags": [0, 7, 0, 0, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Seven", "Iraqi", "men", "appeared", "in", "court", "on", "Saturday", "charged", "with", "air", "piracy", "following", "the", "hijacking", "to", "Britain", "of", "a", "Sudanese", "airliner", "with", "199", "people", "aboard", "."], "ner_tags": [0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 7, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "seven", ",", "including", "a", "carpenter", "and", "a", "businessmen", "and", "whose", "ages", "ranged", "from", "25", "to", "38", "years", "old", ",", "were", "ordered", "to", "be", "held", "in", "jail", "until", "another", "hearing", "next", "week", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["No", "pleas", "were", "entered", "at", "the", "preliminary", "hearing", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -2681,16 +2569,12 @@
 {"tokens": ["Under", "English", "law", "the", "maximum", "sentence", "for", "hijack", "is", "life", "imprisonment", "but", "there", "has", "been", "widespread", "speculation", "that", "the", "seven", "will", "receive", "lesser", "sentences", "."], "ner_tags": [0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["After", "a", "search", "of", "the", "aircraft", "following", "the", "hijack", ",", "police", "found", "only", "knives", "and", "fake", "explosives", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Opposition", "group", "says", "Iraqis", "advance", "in", "north", "Iraq", "."], "ner_tags": [0, 0, 0, 7, 0, 0, 0, 5, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
-{"tokens": ["An", "Iraqi", "opposition", "group", "in", "exile", "said", "on", "Saturday", "it", "had", "received", "reports", "that", "Iraqi", "forces", "were", "shelling", "and", "advancing", "on", "the", "Kurdish", "town", "of", "Arbil", "in", "northern", "Iraq", "."], "ner_tags": [0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 5, 0, 0, 5, 0]}
 {"tokens": ["A", "London-based", "spokesman", "of", "the", "Iraqi", "National", "Congress", "said", "Iraqi", "artillery", "was", "shelling", "the", "city", "and", "Iraqi", "tanks", "had", "advanced", "to", "within", "10", "km", "(", "six", "miles", ")", "of", "Arbil", ",", "the", "administrative", "centre", "of", "the", "Kurdish", "rebel-controlled", "region", "of", "northern", "Iraq", "."], "ner_tags": [0, 7, 0, 0, 0, 3, 4, 4, 0, 7, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["\"", "At", "4.50", "a.m.", "Iraq", "time", "(", "0050", "GMT", ")", "Iraqi", "forces", "began", "an", "artillery", "attack", "on", "the", "outskirts", "of", "Arbil", ",", "\"", "the", "spokesman", ",", "who", "asked", "not", "to", "be", "identified", ",", "told", "Reuters", "in", "a", "telephone", "call", "."], "ner_tags": [0, 0, 0, 0, 5, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0]}
 {"tokens": ["There", "was", "no", "independent", "confirmation", "of", "the", "report", "which", "the", "spokesman", "said", "came", "from", "the", "organisation", "'s", "members", "in", "Arbil", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["He", "said", "damage", "and", "casualties", "in", "the", "city", "were", "heavy", "and", "Kurdish", "forces", "were", "defending", "the", "city", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["President", "Bill", "Clinton", "on", "Friday", "ordered", "the", "U.S.", "military", "to", "ready", "itself", "for", "any", "possible", "action", "as", "Washington", "turned", "up", "the", "heat", "in", "an", "escalating", "crisis", "over", "Iraqi", "troop", "movements", "in", "northern", "Iraq", "."], "ner_tags": [0, 1, 2, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["On", "Thursday", ",", "Iraq", "accused", "Iran", "of", "aggression", "and", "said", "it", "reserved", "the", "right", "to", "retaliate", "for", "Tehran", "'s", "alleged", "deployment", "of", "troops", "into", "northern", "Iraq", ",", "where", "fighting", "broke", "out", "between", "the", "two", "main", "Iraqi", "Kurdish", "rebel", "groups", "two", "weeks", "ago", "."], "ner_tags": [0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Two", "die", "in", "Algeria", "restaurant", "blast", "-", "radio", "."], "ner_tags": [0, 0, 0, 5, 0, 0, 0, 0, 0]}
-{"tokens": ["LONDON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Two", "people", "were", "killed", "when", "a", "hand", "grenade", "exploded", "in", "a", "restaurant", "near", "Algiers", "late", "on", "Friday", ",", "Algerian", "radio", "reported", "on", "Saturday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "report", ",", "monitored", "by", "the", "British", "Broadcasting", "Corporation", "(", "BBC", ")", ",", "quoted", "security", "services", "as", "saying", "six", "other", "people", "were", "injured", "in", "the", "blast", "in", "the", "town", "of", "Staouelli", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["An", "estimated", "50,000", "people", "had", "been", "killed", "in", "political", "violence", "in", "Algeria", "since", "1992", ",", "when", "army-backed", "authorities", "cancelled", "a", "general", "election", "that", "Islamic", "fundamentalists", "had", "been", "expected", "to", "win", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0]}
@@ -2698,7 +2582,6 @@
 {"tokens": ["Results", "of", "South", "Korean", "pro-baseball", "games", "played", "on", "Friday", "."], "ner_tags": [0, 0, 7, 8, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["OB", "5", "Samsung", "0"], "ner_tags": [3, 0, 3, 0]}
 {"tokens": ["Ssangbangwool", "2", "Hyundai", "1"], "ner_tags": [3, 0, 3, 0]}
-{"tokens": ["Standings", "after", "games", "played", "on", "Friday", "(", "tabulate", "under", "won", ",", "drawn", ",", "lost", ",", "winning", "percentage", ",", "games", "behind", "first", "place", ")"], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["W", "D", "L", "PCT", "GB"], "ner_tags": [0, 0, 0, 0, 0]}
 {"tokens": ["Haitai", "64", "2", "43", ".596", "-"], "ner_tags": [3, 0, 0, 0, 0, 0]}
 {"tokens": ["Ssangbangwool", "60", "2", "49", ".550", "5"], "ner_tags": [3, 0, 0, 0, 0, 0]}
@@ -2712,7 +2595,6 @@
 {"tokens": ["CAPE", "TOWN", "1996-08-31"], "ner_tags": [5, 6, 0]}
 {"tokens": ["South", "African", "right-wing", "Afrikaners", "on", "Saturday", "revived", "their", "campaign", "for", "a", "form", "of", "self-rule", ",", "identifying", "a", "sparsely-populated", "area", "in", "Northern", "Cape", "province", "as", "the", "best", "place", "for", "a", "home", "of", "their", "own", "."], "ner_tags": [7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Constand", "Viljoen", ",", "leader", "of", "the", "Freedom", "Front", "party", ",", "told", "a", "news", "conference", "in", "Pretoria", "self-determination", "for", "Afrikaners", "could", "begin", "at", "local", "government", "level", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["\"", "Certain", "powers", "can", "be", "delegated", "from", "the", "provincial", "level", ",", "towards", "the", "sub-regions", ",", "\"", "he", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "We", "think", "that", "the", "Afrikaner", "model", "within", "this", "new", ",", "multi-", "ethnic", "society", "of", "South", "Africa", "will", "have", "to", "develop", "experimentally", "with", "world", "thinking", "in", "this", "regard", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Viljoen", "broke", "with", "other", "right-wing", "whites", "in", "1994", "by", "taking", "part", "in", "the", "country", "'s", "first", "all-race", "elections", "in", "April", "of", "that", "year", ",", "saying", "the", "only", "way", "to", "attain", "self-determination", "was", "by", "cooperating", "with", "President", "Nelson", "Mandela", "'s", "majority", "African", "National", "Congress", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 3, 4, 4, 0]}
 {"tokens": ["Some", "right-wingers", "demanded", "sovereignty", "in", "their", "own", "territory", "in", "the", "run-up", "to", "the", "elections", ",", "saying", "the", "alternative", "was", "war", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -2828,24 +2710,20 @@
 {"tokens": ["Wang", "was", "arrested", "in", "the", "east", "China", "city", "of", "Hangzhou", "by", "security", "officers", "who", "told", "the", "dissident", "'s", "family", "he", "would", "be", "sent", "to", "a", "study", "class", "--", "a", "euphemism", "for", "coercive", "ideological", "reform", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 5, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Wang", ",", "45", ",", "was", "sentenced", "last", "month", "to", "one", "year", "'s", "\"", "re-education", "by", "labour", "\"", "but", "was", "released", "because", "of", "ill-health", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Xiao", "said", "conditions", "in", "the", "labour", "camp", "were", "so", "brutal", "they", "drove", "another", "activist", "sentenced", "with", "Wang", "to", "attempt", "suicide", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]}
-{"tokens": ["Police", "beat", "Wang", "and", "his", "colleague", ",", "Chen", "Longde", ",", "and", "encouraged", "other", "camp", "inmates", "to", "attack", "them", "as", "well", ",", "Xiao", "said", "."], "ner_tags": [0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]}
 {"tokens": ["Manila", "hails", "Indonesia", ",", "OIC", "for", "peace", "deal", "support", "."], "ner_tags": [5, 0, 5, 0, 3, 0, 0, 0, 0, 0]}
 {"tokens": ["MANILA", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Philippine", "president", "Fidel", "Ramos", "expressed", "gratitude", "to", "Indonesian", "president", "Suharto", "and", "the", "Organisation", "of", "Islamic", "Conference", "(", "OIC", ")", "on", "Saturday", "for", "supporting", "talks", "that", "ended", "a", "conflict", "with", "local", "Moslem", "rebels", "."], "ner_tags": [5, 0, 1, 2, 0, 0, 0, 7, 0, 1, 0, 0, 3, 4, 4, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["\"", "I", "extend", "the", "deepest", "gratitude", "...", "to", "your", "excellency", "for", "your", "untiring", "and", "invaluable", "friendship", "and", "support", ",", "\"", "Ramos", "told", "Suharto", "in", "a", "letter", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0]}
 {"tokens": ["The", "full", "text", "of", "the", "letter", "was", "released", "to", "reporters", "on", "Saturday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Jakarta", "served", "as", "the", "host", "to", "the", "series", "of", "negotiations", "which", "culminated", "in", "the", "initialling", "of", "the", "agreement", "last", "Friday", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["The", "formal", "signing", "of", "the", "peace", "agreement", "is", "scheduled", "on", "Monday", "in", "Manila", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["Ramos", "said", "the", "peace", "agreement", "\"", "shall", "bring", "down", "the", "curtain", "on", "a", "long", "and", "storied", "era", "of", "strife", "in", "Philippine", "history", ".", "\""], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0]}
 {"tokens": ["The", "war", "claimed", "more", "than", "125,000", "lives", "in", "the", "southern", "Mindanao", "island", "over", "a", "quarter", "of", "a", "century", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Burma", "'s", "Suu", "Kyi", "says", "military", "rulers", "abuse", "law", "."], "ner_tags": [5, 0, 1, 2, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Deborah", "Charles"], "ner_tags": [1, 2]}
-{"tokens": ["RANGOON", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Burma", "'s", "democracy", "leader", "Aung", "San", "Suu", "Kyi", "hit", "out", "at", "the", "government", "on", "Saturday", "for", "recent", "arrests", "and", "jailing", "of", "activists", ",", "saying", "the", "military", "abused", "the", "law", "to", "try", "to", "crush", "the", "democracy", "movement", "."], "ner_tags": [5, 0, 0, 0, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "The", "main", "purpose", "of", "this", "press", "conference", "is", "to", "make", "it", "known", "to", "the", "world", "that", "the", "authorities", "are", "misusing", "the", "law", "all", "the", "time", "in", "order", "to", "try", "to", "crush", "the", "democracy", "movement", ",", "\"", "Suu", "Kyi", "told", "reporters", "at", "her", "Rangoon", "home", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 5, 0, 0]}
 {"tokens": ["Suu", "Kyi", "said", "at", "least", "61", "democracy", "supporters", "had", "been", "arrested", "since", "May", ",", "and", "about", "30", "of", "them", "had", "been", "sentenced", ",", "most", "to", "long", "prison", "terms", "."], "ner_tags": [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["In", "May", "the", "government", "launched", "a", "sweeping", "crackdown", "on", "the", "democracy", "movement", ",", "detaining", "over", "260", "members", "of", "Suu", "Kyi", "'s", "National", "League", "for", "Democracy", "(", "NLD", ")", "ahead", "of", "a", "party", "congress", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 3, 4, 4, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Most", "were", "released", "but", "several", "dozen", "remain", "in", "custody", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["The", "Burmese", "government", "last", "week", "confirmed", "the", "recent", "sentencing", "of", "nine", "democracy", "activists", "who", "were", "arrested", "in", "the", "May", "crackdown", ",", "including", "Suu", "Kyi", "'s", "assistant", "Win", "Htein", "."], "ner_tags": [0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 1, 2, 0]}
 {"tokens": ["The", "military", "government", ",", "which", "in", "May", "said", "it", "had", "detained", "the", "politicians", "to", "prevent", "anarchy", ",", "said", "the", "activists", "were", "charged", "with", "attempting", "to", "destroy", "the", "peace", "and", "stability", "of", "the", "state", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["But", "Suu", "Kyi", "disagreed", "with", "the", "methods", ",", "saying", "officials", "often", "arrested", "NLD", "supporters", "in", "the", "middle", "of", "the", "night", ",", "then", "did", "not", "give", "them", "the", "opportunity", "to", "defend", "themselves", "in", "trials", "."], "ner_tags": [0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -2934,7 +2812,6 @@
 {"tokens": ["U.S.", "President", "Bill", "Clinton", "has", "authorised", "the", "repositioning", "of", "U.S.", "firepower", "in", "the", "Gulf", "region", "in", "response", "to", "the", "Iraqi", "attacks", "."], "ner_tags": [5, 0, 1, 2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 0, 0, 7, 0, 0]}
 {"tokens": ["The", "KDP", "charges", "that", "the", "rival", "Patriotic", "Union", "of", "Kurdistan", ",", "which", "took", "control", "of", "Arbil", "in", "fighting", "in", "December", "1994", ",", "has", "backing", "from", "Iran", "."], "ner_tags": [0, 3, 0, 0, 0, 0, 3, 4, 4, 4, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["The", "PUK", "accuses", "the", "KDP", "of", "collaborating", "with", "Baghdad", "."], "ner_tags": [0, 3, 0, 0, 3, 0, 0, 0, 5, 0]}
-{"tokens": ["Northern", "Iraq", "has", "been", "under", "Iraqi", "Kurdish", "control", "since", "after", "the", "1991", "Gulf", "War", "."], "ner_tags": [0, 5, 0, 0, 0, 7, 8, 0, 0, 0, 0, 0, 7, 8, 0]}
 {"tokens": ["U.S.-led", "allied", "planes", "based", "in", "Turkey", "are", "intended", "to", "protect", "the", "Kurds", "from", "Baghdad", "."], "ner_tags": [7, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 7, 0, 5, 0]}
 {"tokens": ["Ceasefire", "monitors", "to", "meet", "in", "south", "Lebanon", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["JERUSALEM", "1996-08-31"], "ner_tags": [5, 0]}
@@ -2942,12 +2819,10 @@
 {"tokens": ["Representatives", "of", "the", "five", "nations", "making", "up", "the", "committee", "--", "Israel", ",", "Lebanon", ",", "Syria", ",", "France", "and", "the", "United", "States", "--", "will", "meet", "at", "11", "a.m.", "(", "0800", "GMT", ")", "in", "Naqoura", ",", "the", "coastal", "headquarters", "of", "the", "U.N.", "Interim", "Force", "in", "Lebanon", "(", "UNIFIL", ")", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0, 5, 0, 5, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 5, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 4, 0, 3, 0, 0]}
 {"tokens": ["\"", "The", "committee", "will", "meet", "following", "a", "complaint", "by", "Israel", "over", "an", "incident", "in", "which", "two", "Lebanese", "residents", "were", "injured", "by", "Hizbollah", "fire", "in", "the", "Sikhin", "village", "..."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 3, 0, 0, 0, 5, 0, 0]}
 {"tokens": ["on", "August", "29", ",", "\"", "an", "Israeli", "army", "spokeswoman", "said", "on", "Saturday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["The", "monitoring", "committee", "was", "set", "up", "to", "deal", "with", "violations", "of", "an", "April", "25", "ceasefire", "understanding", "that", "ended", "17", "days", "of", "fighting", "between", "Israel", "and", "the", "guerrillas", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0]}
 {"tokens": ["The", "understandings", "forbid", "firing", "from", "or", "at", "civilian", "targest", "but", "do", "not", "rule", "out", "guerrilla", "attacks", "on", "Israeli", "troops", "and", "their", "local", "militia", "allies", "in", "south", "Lebanon", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["Around", "1,000", "Israeli", "troops", "patrol", "a", "15", "km", "(", "nine-mile", ")", "south", "Lebanon", "occupation", "zone", "which", "the", "Jewish", "state", "carved", "out", "in", "1985", "to", "prevent", "attacks", "on", "its", "northern", "bordder", "."], "ner_tags": [0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Hizbollah", "(", "Party", "of", "God", ")", "gunmen", "have", "waged", "a", "guerrilla", "war", "to", "oust", "Israel", "from", "the", "area", "."], "ner_tags": [3, 0, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0]}
 {"tokens": ["KPD", "confirms", "Iraqi", "military", "aid-U.N.", "official", "."], "ner_tags": [3, 0, 7, 0, 7, 0, 0]}
-{"tokens": ["BAGHDAD", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Kurdistan", "Democratic", "Party", "(", "KDP", ")", "of", "Massoud", "Barzani", "said", "that", "it", "was", "being", "backed", "by", "Iraqi", "heavy", "armour", "and", "artillery", "in", "a", "battle", "with", "rival", "Kurds", "for", "the", "city", "of", "Arbil", ",", "a", "senior", "U.N.", "official", "in", "Baghdad", "said", "."], "ner_tags": [3, 4, 4, 0, 3, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 5, 0, 0, 0, 3, 0, 0, 5, 0, 0]}
 {"tokens": ["\"", "They", "have", "confirmed", "to", "us", "that", "Iraqi", "troops", "are", "taking", "part", "in", "the", "attack", "on", "Arbil", "..."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]}
 {"tokens": ["We", "got", "the", "information", "from", "KDP", "leaders", "in", "KDP", "headquarters", "in", "Saladdin", ",", "\"", "the", "official", ",", "who", "asked", "not", "to", "be", "identified", ",", "told", "Reuters", "."], "ner_tags": [0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0]}
@@ -2958,7 +2833,6 @@
 {"tokens": ["It", "was", "not", "immediately", "clear", "what", "caused", "the", "fire", "or", "if", "there", "were", "any", "casualties", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Government", "officials", "had", "no", "immediate", "comment", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Iraq", "'s", "Aziz", "says", "Baghdad", "aiding", "KDP", "against", "rivals", "."], "ner_tags": [5, 0, 1, 0, 5, 0, 3, 0, 0, 0]}
-{"tokens": ["BAGHDAD", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Iraq", "'s", "Deputy", "Prime", "Minister", "Tareq", "Aziz", "said", "on", "Saturday", "Iraqi", "troops", "were", "fighting", "in", "northern", "Iraq", "to", "aid", "Kurdish", "rebel", "leader", "Massoud", "Barzani", "against", "rival", "forces", "."], "ner_tags": [5, 0, 0, 0, 0, 1, 2, 0, 0, 0, 7, 0, 0, 0, 0, 0, 5, 0, 0, 7, 0, 0, 1, 2, 0, 0, 0, 0]}
 {"tokens": ["\"", "The", "leadership", "has", "decided", "to", "provide", "support", "and", "military", "aid", "to", "Mr", "Massoud", "Barzani", "and", "his", "comrades", "to", "enable", "them", "confront", "the", "vicious", "aggression", "..."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["from", "(", "Patriotic", "Union", "of", "Kurdistan", "chief", ")", "Jalal", "Talabani", ",", "\"", "Aziz", "said", "in", "a", "statement", "carried", "by", "the", "official", "Iraqi", "News", "Agency", "(", "INA", ")", "."], "ner_tags": [0, 0, 3, 4, 4, 4, 0, 0, 1, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 0, 3, 0, 0]}
@@ -2966,7 +2840,6 @@
 {"tokens": ["He", "said", "Barzani", "sent", "a", "message", "to", "Saddam", "on", "August", "22", "in", "which", "he", "said", ":", "\"", "The", "conspiracy", "is", "beyond", "our", "capability", "therefore", "we", "plead", "with", "your", "excellency", "to", "order", "Iraqi", "armed", "forces", "to", "interfere", "to", "help", "us", "to", "evade", "the", "foreign", "threat", "and", "put", "an", "end", "to", "Talabani", "'s", "treason", "and", "conspiracy", ".", "\""], "ner_tags": [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["U.N.", "relief", "officials", "said", "they", "were", "not", "aware", "that", "the", "tanks", "advancing", "on", "Arbil", "were", "manned", "by", "Iraqi", "troops", "as", "they", "advanced", "from", "KDP-controlled", "areas", "and", "raised", "KDP", "flags", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0]}
 {"tokens": ["U.N.", "denies", "reports", "of", "Iraqi", "tank", "assault", "on", "Arbil", "."], "ner_tags": [3, 0, 0, 0, 7, 0, 0, 0, 5, 0]}
-{"tokens": ["BAGHDAD", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["United", "Nations", "relief", "officials", "said", "on", "Saturday", "the", "fighting", "in", "Arbil", "in", "northern", "Iraq", "was", "between", "rival", "Kurdish", "factions", "and", "they", "were", "not", "aware", "of", "any", "Iraqi", "military", "advance", "on", "the", "city", "."], "ner_tags": [3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 5, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "KDP", "(", "Kurdistan", "Democratic", "Party", ")", "is", "trying", "to", "overtake", "the", "city", "."], "ner_tags": [0, 3, 0, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["They", "are", "using", "tanks", "."], "ner_tags": [0, 0, 0, 0, 0]}
@@ -2978,7 +2851,6 @@
 {"tokens": ["Reuters", "has", "not", "verified", "these", "stories", "and", "does", "not", "vouch", "for", "their", "accuracy", "."], "ner_tags": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["LA", "PRESSE"], "ner_tags": [3, 4]}
 {"tokens": ["-", "After", "Tunisia", "called", "on", "France", "to", "respect", "Tunisian", "immigrants", "'", "dignity", ",", "France", "says", "it", "welcomes", "legal", "Tunisian", "residents", "."], "ner_tags": [0, 0, 5, 0, 0, 5, 0, 0, 7, 0, 0, 0, 0, 5, 0, 0, 0, 0, 7, 0, 0]}
-{"tokens": ["-", "Tunisia", "'s", "exports", "of", "spare", "parts", "amounted", "to", "220", "million", "dinars", "in", "1995", "."], "ner_tags": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["LE", "TEMPS"], "ner_tags": [3, 4]}
 {"tokens": ["-", "Trade", "talks", "between", "Tunisia", "and", "the", "Palestinian", "Authority", "."], "ner_tags": [0, 0, 0, 0, 5, 0, 0, 3, 4, 0]}
 {"tokens": ["-", "Speaker", "of", "parliament", "Habib", "Boulares", "arrives", "in", "Tripoli", "to", "represent", "President", "Zine", "al-Abidine", "Ben", "Ali", "at", "the", "Libyan", "revolution", "anniversary", "celebrations", "."], "ner_tags": [0, 0, 0, 0, 1, 2, 0, 0, 5, 0, 0, 0, 1, 2, 2, 2, 0, 0, 7, 0, 0, 0, 0]}
@@ -3002,10 +2874,8 @@
 {"tokens": ["An", "explosion", "leveled", "Rochester", "'s", "one-story", "Lilac", "Falls", "Motel", ",", "killing", "two", "people", ",", "fire", "officials", "said", "Friday", "."], "ner_tags": [0, 0, 0, 5, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "It", "was", "an", "explosion", ",", "and", "then", "it", "got", "involved", "in", "fire", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["As", "far", "as", "I", "know", ",", "it", "'s", "been", "to", "four", "alarms", "--", "more", "trucks", ",", "more", "people", ",", "\"", "said", "Don", "Penney", "of", "the", "Rochester", "Fire", "Department", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 3, 4, 4, 0, 0]}
-{"tokens": ["Eyewitnesses", "told", "Boston", "television", "stations", "they", "saw", "a", "gasoline", "truck", "parked", "behind", "the", "Lilac", "Falls", "Motel", "and", "smelled", "gasoline", "shortly", "before", "the", "explosion", "."], "ner_tags": [0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Fire", "department", "officials", "said", "they", "were", "investigating", "the", "cause", "of", "the", "blast", "and", "searching", "for", "any", "more", "casualties", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Officials", "did", "not", "immediately", "identify", "the", "victims", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Local", "hospital", "officials", "said", "a", "few", "firemen", "were", "treated", "for", "smoke", "inhalation", "but", "there", "were", "no", "other", "injuries", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Car", "kills", "two", "trying", "to", "avoid", "Texas", "drag", "race", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 5, 0, 0, 0]}
 {"tokens": ["DALLAS", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["An", "illegal", "drag", "race", "on", "a", "Dallas", "street", "turned", "deadly", "when", "another", "vehicle", "veered", "into", "the", "crowd", ",", "killing", "two", "people", "and", "injuring", "a", "dozen", "more", ",", "police", "said", "Saturday", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -3028,8 +2898,6 @@
 {"tokens": ["U.S.", "plans", "rely", "heavily", "on", "U.S.", "air", "attacks", "on", "Iraqi", "forces", ",", "but", "there", "are", "also", "23,000", "U.S.", "troops", "in", "the", "region", ",", "according", "to", "defense", "officials", "."], "ner_tags": [5, 0, 0, 0, 0, 5, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["In", "addition", "to", "the", "158", "F", "/", "A-18", ",", "F-14", "and", "other", "fighter", "planes", "on", "the", "aircraft", "carriers", "Vinson", "and", "Enterprise", ",", "the", "Air", "Force", "air", "expeditionary", "force", "of", "30", "to", "40", "F-15", "and", "F-16", "fighter", "planes", "and", "fuel", "tankers", "is", "ready", "to", "fly", "from", "three", "U.S.", "bases", "in", "the", "United", "States", ",", "they", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 7, 8, 8, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5, 6, 0, 0, 0, 0]}
 {"tokens": ["The", "expeditionary", "force", "would", "include", "nearly", "1,000", "Air", "Force", "personnel", "in", "ground", "and", "support", "crews", ",", "they", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["The", "23,000", "U.S.", "military", "people", "already", "in", "the", "Gulf", "consist", "of", "15,000", "sailors", "and", "Marines", ",", "6,000", "U.S.", "servicemen", "based", "primarily", "in", "Saudi", "Arabia", "and", "2,000", "U.S.", "troops", "in", "the", "area", "for", "military", "exercises", "."], "ner_tags": [0, 0, 5, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 7, 0, 0, 5, 0, 0, 0, 0, 5, 6, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["Most", "of", "the", "Marines", "are", "on", "three", "ships", "in", "the", "Tarawa", "Amphibious", "Readiness", "Group", "."], "ner_tags": [0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 0]}
 {"tokens": ["The", "Carl", "Vinson", "leads", "a", "battle", "group", "that", "includes", "seven", "other", "ships", ",", "and", "there", "are", "nine", "other", "U.S.", "ships", "in", "the", "Gulf", "for", "a", "total", "of", "20", "."], "ner_tags": [0, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Two", "missing", "Belgian", "teenagers", "found", "unharmed", "."], "ner_tags": [0, 0, 7, 0, 0, 0, 0]}
 {"tokens": ["Two", "Belgian", "teenage", "girls", "missing", "since", "Thursday", "have", "been", "found", "unharmed", ",", "police", "said", "on", "Saturday", "."], "ner_tags": [0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -3048,7 +2916,6 @@
 {"tokens": ["Newspapers", "said", "it", "killed", "two", "women", "and", "five", "children", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["An", "estimated", "50,000", "people", "have", "died", "in", "Algeria", "'s", "violence", "pitting", "Moslem", "rebels", "against", "government", "forces", "since", "early", "1992", "when", "the", "authorities", "cancelled", "a", "general", "election", "in", "which", "radical", "Islamists", "had", "taken", "a", "commanding", "lead", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Iran", "agents", "stormed", "German", "diplomat", "'s", "home", "--", "Bonn", "."], "ner_tags": [5, 0, 0, 7, 0, 0, 0, 0, 5, 0]}
-{"tokens": ["BONN", "1996-08-31"], "ner_tags": [5, 0]}
 {"tokens": ["Iranian", "security", "forces", "burst", "into", "the", "home", "of", "a", "German", "cultural", "attache", "in", "Tehran", "a", "month", "ago", "and", "seized", "his", "guests", "for", "questioning", ",", "Bonn", "'s", "foreign", "ministry", "said", "on", "Saturday", "."], "ner_tags": [7, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["A", "spokesman", "said", "he", "could", "substantially", "confirm", "a", "report", "in", "the", "news", "weekly", "Der", "Spiegel", ",", "which", "said", "Iranian", "secret", "police", "burst", "in", "while", "attache", "Jens", "Gust", "was", "entertaining", "six", "Iranian", "writers", "and", "their", "wives", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 7, 0, 0, 0, 0, 0]}
 {"tokens": ["Gust", "was", "threatened", "with", "violence", ",", "then", "locked", "into", "a", "room", "to", "be", "interrogated", "on", "suspicion", "of", "\"", "promoting", "activities", "hostile", "to", "the", "state", "\"", "while", "his", "guests", "were", "taken", "away", ",", "the", "magazine", "said", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -3057,7 +2924,6 @@
 {"tokens": ["Iran", "subsequently", "said", "it", "regretted", "the", "incident", ",", "which", "it", "said", "had", "been", "the", "result", "of", "a", "misunderstanding", "."], "ner_tags": [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["All", "those", "detained", "appeared", "to", "have", "been", "freed", ",", "the", "spokesman", "said", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Relations", "between", "the", "two", "countries", "are", "currently", "under", "strain", "because", "of", "the", "testimony", "in", "a", "Berlin", "court", "of", "former", "Iranian", "president", "Abolhassan", "Banisadr", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 7, 0, 1, 2, 0]}
-{"tokens": ["Banisadr", ",", "an", "avowed", "opponent", "of", "the", "Tehran", "government", "who", "now", "lives", "in", "exile", ",", "accused", "top", "Iranian", "leaders", "of", "personally", "ordering", "the", "assassination", "of", "three", "exiled", "Kurdish", "leaders", "in", "a", "Berlin", "restaurant", "in", "1992", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 5, 0, 0, 0, 0]}
 {"tokens": ["Iran", "has", "asked", "Germany", "to", "extradite", "Banisadr", ",", "who", "is", "due", "is", "due", "back", "in", "Berlin", "next", "Thursday", "to", "continue", "his", "testimony", "."], "ner_tags": [5, 0, 0, 5, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Banisadr", ",", "who", "received", "political", "asylum", "in", "France", "after", "fleeing", "there", "in", "1981", ",", "told", "Der", "Spiegel", "he", "did", "not", "plan", "to", "ask", "for", "a", "guarantee", "of", "safe", "conduct", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["If", "Germany", "were", "to", "extradite", "him", ",", "he", "said", ",", "it", "would", "\"", "lose", "face", "before", "the", "whole", "world", "\"", "."], "ner_tags": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -3068,7 +2934,6 @@
 {"tokens": ["Italian", "Foreign", "Minister", "Lamberto", "Dini", "on", "Saturday", "met", "former", "Tanzanian", "president", "Julius", "Nyerere", ",", "the", "international", "negotiator", "for", "Burundi", ",", "the", "ministry", "said", "."], "ner_tags": [7, 0, 0, 1, 2, 0, 0, 0, 0, 7, 0, 1, 2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0]}
 {"tokens": ["Nyerere", "arrived", "in", "Rome", "this", "week", "on", "a", "private", "visit", "and", "held", "talks", "with", "the", "U.S.", "special", "envoy", "to", "Burundi", ",", "Howard", "Wolpe", ",", "and", "the", "Sant", "'", "Egidio", "Community", ",", "an", "Italian", "Roman", "Catholic", "organisation", "which", "has", "been", "monitoring", "Burundi", "closely", "."], "ner_tags": [1, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1, 2, 0, 0, 0, 3, 4, 4, 4, 0, 0, 7, 7, 8, 0, 0, 0, 0, 0, 5, 0, 0]}
 {"tokens": ["\"", "(", "Nyerere", ")", "informed", "Minister", "Dini", "of", "the", "latest", "developments", "in", "the", "(", "Great", "Lakes", ")", "region", ",", "with", "particular", "respect", "to", "Burundi", "following", "the", "military", "coup", "d'etat", "on", "July", "25", ",", "\"", "the", "ministry", "said", "in", "a", "statement", "."], "ner_tags": [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-{"tokens": ["It", "gave", "no", "details", "of", "their", "talks", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Nyerere", "was", "due", "to", "be", "presented", "with", "an", "\"", "Artisans", "for", "Peace", "\"", "prize", "by", "the", "Lay", "Volunteers", "'", "International", "Organisation", "on", "Sunday", "."], "ner_tags": [1, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 8, 0, 0, 0, 0, 3, 4, 4, 4, 4, 0, 0, 0]}
 {"tokens": ["He", "leaves", "Rome", "on", "Monday", "."], "ner_tags": [0, 0, 5, 0, 0, 0]}
 {"tokens": ["The", "U.N.", "Security", "Council", "on", "Friday", "condemned", "the", "coup", "by", "retired", "Tutsi", "major", "Pierre", "Buyoya", "and", "for", "the", "first", "time", "said", "in", "a", "resolution", "it", "intended", "to", "pressure", "Buyoya", "into", "unconditional", "negotiations", "with", "all", "parties", "and", "factions", "\"", "without", "exception", "\"", "."], "ner_tags": [0, 3, 4, 4, 0, 0, 0, 0, 0, 0, 0, 7, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
@@ -3120,7 +2985,6 @@
 {"tokens": ["Shares", "on", "the", "Dhaka", "Stock", "Exchange", "(", "DSE", ")", "may", "remain", "steady", "as", "small", "investors", "are", "expected", "to", "target", "mainly", "blue", "chips", "while", "overseas", "investors", "will", "prefer", "to", "keep", "to", "the", "sidelines", "when", "the", "market", "reopens", "after", "Moslem", "Friday", "weekend", ",", "brokers", "said", "."], "ner_tags": [0, 0, 0, 3, 4, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["\"", "The", "market", "is", "expected", "to", "remain", "steady", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["There", "will", "be", "both", "buying", "and", "selling", "pressure", ",", "\"", "said", "broker", "Shakil", "Rizvi", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0]}
-{"tokens": ["Broker", "Khurshid", "Alam", "said", ":", "\"", "The", "market", "sentiment", "will", "remain", "strong", "."], "ner_tags": [0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["But", "the", "prices", "may", "move", "in", "a", "close", "range", "following", "a", "continued", "market", "uptrend", ".", "\""], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 {"tokens": ["Brokers", "said", "blue", "chips", "like", "IDLC", ",", "Bangladesh", "Lamps", ",", "Chittagong", "Cement", "and", "Atlas", "Bangladesh", "were", "expected", "to", "rise", "."], "ner_tags": [0, 0, 0, 0, 0, 3, 0, 3, 4, 0, 3, 4, 0, 3, 4, 0, 0, 0, 0, 0]}
 {"tokens": ["They", "said", "there", "was", "still", "demand", "for", "blue", "chips", "in", "engineering", "sector", "despite", "their", "persistent", "rise", "over", "the", "past", "several", "sessions", "."], "ner_tags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}

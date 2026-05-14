@@ -1,8 +1,8 @@
 patterns:
-  # 1. Instruction -> Sentence -> Order
-  - id: "pattern_1_instr_SEN_order"
-    template: "List all entities in this sentence: {SEN} Order: {PERM}"
-    type: "instr-SEN-order"
+  # 1. Original OADA pattern: Sentence -> Order
+  - id: "pattern_1_oada_original"
+    template: "Sentence: {SEN} Order: {PERM}"
+    type: "oada-original"
 
   - id: "pattern_2_instr_SEN_order_encapsulated"
     template: "For the text || {SEN} || extract entities using the order: {PERM}"

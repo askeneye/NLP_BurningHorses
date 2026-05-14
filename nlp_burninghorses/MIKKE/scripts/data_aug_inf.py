@@ -33,7 +33,7 @@ else:
 
 
 FIRST_TO_LAST_ORDER = "first to last"
-DEFAULT_INFERENCE_PATTERN_ID = "pattern_1_instr_SEN_order"
+DEFAULT_INFERENCE_PATTERN_ID = "pattern_1_oada_original"
 DEFAULT_INFERENCE_OUTPUT_DIR = "inference/first_to_last"
 DEFAULT_SPLIT_FILES = {
     "mini_val": "data/interim/conll2003_kshot_bert/mini_val.jsonl",
