@@ -16,3 +16,23 @@ training:
   permutations: 24 # Use 24 for CoNLL-2003
   learning_rate: 2e-5
   annealing_steps: 1000 # For OADA-XE tau schedule
+
+bart_oada_xe:
+  loss_type: "oada_xe"
+  kshot_split: "k5_seed242"
+  pattern: "pattern_01"
+  source_pattern_id: "pattern_1_oada_original"
+  train_file: "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k5_seed242/pattern_01.jsonl"
+  output_dir: "models/conll2003_kshot_seq2seq/bart_base/pet_oada/k5_seed242/pattern_01_oada_xe_cap12_fixed3600"
+  train_batch_size: 8 # Good first pass for BART-base OADA-XE on a 24GB RTX 3090.
+  eval_batch_size: 32
+  learning_rate: 2e-5
+  max_steps: 3600
+  eval_steps: 100
+  use_early_stopping: false
+  model_selection_strategy: "final_step"
+  oada_tau_start: 0.0
+  oada_tau_end: 1.0
+  oada_tau_warmup_steps: 3600
+  oada_candidate_cap: 12
+  oada_candidate_seed: 42

@@ -1,0 +1,122 @@
+{
+  "pattern_01": {
+    "source_pattern_id": "pattern_1_oada_original",
+    "source_pattern_type": "oada-original",
+    "source_template": "Sentence: {SEN} Order: {PERM}",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_01.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_02": {
+    "source_pattern_id": "pattern_2_instr_SEN_order_encapsulated",
+    "source_pattern_type": "instr-SEN-order",
+    "source_template": "For the text || {SEN} || extract entities using the order: {PERM}",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_02.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_03": {
+    "source_pattern_id": "pattern_3_instr_order_SEN",
+    "source_pattern_type": "instr-order-SEN",
+    "source_template": "Extract the entities using the following order: {PERM} || Text: {SEN}",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_03.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_04": {
+    "source_pattern_id": "pattern_4_instr_order_SEN_list",
+    "source_pattern_type": "instr-order-SEN",
+    "source_template": "List the entities using the order: {PERM} for the following sentence: {SEN}",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_04.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_05": {
+    "source_pattern_id": "pattern_5_SEN_instr_order",
+    "source_pattern_type": "SEN-instr-order",
+    "source_template": "In this sentence: {SEN} List the entities in the following order: {PERM}",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_05.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_06": {
+    "source_pattern_id": "pattern_6_SEN_instr_order_separator",
+    "source_pattern_type": "SEN-instr-order",
+    "source_template": "{SEN} || List the entities in this order: {PERM}",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_06.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_07": {
+    "source_pattern_id": "pattern_7_SEN_order_instr",
+    "source_pattern_type": "SEN-order-instr",
+    "source_template": "{SEN} || [ Order: {PERM} ] || Extract the entities from the previous text following the specified sequence.",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_07.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_08": {
+    "source_pattern_id": "pattern_8_SEN_order_instr_basic",
+    "source_pattern_type": "SEN-order-instr",
+    "source_template": "Text: {SEN} Order: {PERM} Please list the entities based on the above.",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_08.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_09": {
+    "source_pattern_id": "pattern_9_order_instr_SEN",
+    "source_pattern_type": "order-instr-SEN",
+    "source_template": "Using the order: {PERM}, list the entities in this sentence: {SEN}",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_09.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_10": {
+    "source_pattern_id": "pattern_10_order_instr_SEN_brackets",
+    "source_pattern_type": "order-instr-SEN",
+    "source_template": "[ Order: {PERM} ] Extract entities from the text: {SEN}",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_10.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_11": {
+    "source_pattern_id": "pattern_11_order_SEN_instr",
+    "source_pattern_type": "order-SEN-instr",
+    "source_template": "Order: {PERM} || {SEN} || Based on the requested order and the text provided, list the entities.",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_11.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_12": {
+    "source_pattern_id": "pattern_12_order_SEN_instr_brackets",
+    "source_pattern_type": "order-SEN-instr",
+    "source_template": "[ {PERM} ] || Text: {SEN} || Extract the entities.",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k20_seed242/pattern_12.jsonl",
+    "method": "pet_oada",
+    "source_rows": 39,
+    "generated_rows": 936
+  }
+}

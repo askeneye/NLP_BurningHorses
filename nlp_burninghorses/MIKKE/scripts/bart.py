@@ -29,6 +29,11 @@ PROJECT_ROOT = find_project_root(SCRIPT_DIR)
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from nlp_burninghorses.MIKKE.oada_xe_loss import (  # noqa: E402
+    get_oada_tau,
+    make_capped_same_type_permutation_targets,
+    sequence_cross_entropy,
+)
 from nlp_burninghorses.utils import span_f1  # noqa: E402
 
 MODEL_NAME = "facebook/bart-base"
@@ -50,10 +55,18 @@ MAX_STEPS = 10000
 EVAL_STEPS = 200
 EARLY_STOPPING_PATIENCE = 10
 MIN_STEPS_BEFORE_STOPPING = 1000
+USE_EARLY_STOPPING = True
+MODEL_SELECTION_STRATEGY = "best_mini_val"
 USE_MIXED_PRECISION = True
 USE_TF32 = True
 PIN_MEMORY = True
 NO_REPEAT_NGRAM_SIZE = 0
+DEFAULT_LOSS_TYPE = "xe"
+OADA_TAU_START = 0.0
+OADA_TAU_END = 1.0
+OADA_TAU_WARMUP_STEPS = 1000
+OADA_CANDIDATE_CAP = 12
+OADA_CANDIDATE_SEED = 42
 
 DEFAULT_TRAIN_FILE = (
     "data/interim/conll2003_kshot_seq2seq/train/pet_oada/k5_seed242/pattern_01.jsonl"
@@ -101,11 +114,19 @@ class BartRunConfig:
     eval_steps: int
     early_stopping_patience: int
     min_steps_before_stopping: int
+    use_early_stopping: bool
+    model_selection_strategy: str
     seed: int
     use_mixed_precision: bool
     use_tf32: bool
     pin_memory: bool
     no_repeat_ngram_size: int
+    loss_type: str
+    oada_tau_start: float
+    oada_tau_end: float
+    oada_tau_warmup_steps: int
+    oada_candidate_cap: int
+    oada_candidate_seed: int
 
 
 class JsonlSeq2SeqDataset(Dataset):
@@ -369,6 +390,136 @@ def make_seq2seq_collate_fn(tokenizer, max_source_length: int, max_target_length
     return collate_fn
 
 
+def make_oada_xe_collate_fn(
+    tokenizer,
+    max_source_length: int,
+    max_candidate_count: int,
+    candidate_seed: int,
+):
+    def collate_fn(batch: list[dict[str, str]]) -> dict[str, Any]:
+        input_texts = [row["input_text"] for row in batch]
+        canonical_targets = [row["target_text"] for row in batch]
+        candidate_targets: list[list[str]] = []
+        total_candidate_counts: list[int] = []
+        for row in batch:
+            targets, total_count = make_capped_same_type_permutation_targets(
+                target_text=row["target_text"],
+                max_candidate_count=max_candidate_count,
+                seed=candidate_seed,
+                sample_key=row["input_text"],
+            )
+            candidate_targets.append(targets)
+            total_candidate_counts.append(total_count)
+
+        tokenized = tokenizer(
+            input_texts,
+            max_length=max_source_length,
+            padding=True,
+            truncation=True,
+            return_tensors="pt",
+        )
+        tokenized["canonical_targets"] = canonical_targets
+        tokenized["candidate_targets"] = candidate_targets
+        tokenized["total_candidate_counts"] = total_candidate_counts
+        return tokenized
+
+    return collate_fn
+
+
+def oada_xe_loss_batch(
+    model,
+    tokenizer,
+    batch: dict[str, Any],
+    tau: float,
+    max_target_length: int,
+) -> dict[str, Any]:
+    input_ids = batch["input_ids"]
+    attention_mask = batch["attention_mask"]
+    canonical_targets = batch["canonical_targets"]
+    candidate_targets = batch["candidate_targets"]
+    total_candidate_counts = batch.get(
+        "total_candidate_counts",
+        [len(targets) for targets in candidate_targets],
+    )
+
+    all_targets: list[str] = []
+    source_indices: list[int] = []
+    candidate_counts: list[int] = []
+
+    for example_index, canonical_target in enumerate(canonical_targets):
+        example_targets = [canonical_target] + [
+            target for target in candidate_targets[example_index] if target != canonical_target
+        ]
+        all_targets.extend(example_targets)
+        source_indices.extend([example_index] * len(example_targets))
+        candidate_counts.append(len(example_targets))
+
+    target_tokenized = tokenizer(
+        text_target=all_targets,
+        max_length=max_target_length,
+        padding=True,
+        truncation=True,
+        return_tensors="pt",
+    ).to(input_ids.device)
+    labels = target_tokenized["input_ids"]
+    labels[labels == tokenizer.pad_token_id] = -100
+    source_index_tensor = torch.tensor(source_indices, device=input_ids.device)
+
+    outputs = model(
+        input_ids=input_ids.index_select(0, source_index_tensor),
+        attention_mask=attention_mask.index_select(0, source_index_tensor),
+        labels=labels,
+    )
+    flattened_candidate_losses = sequence_cross_entropy(
+        logits=outputs.logits,
+        labels=labels,
+    )
+
+    clamped_tau = float(max(0.0, min(1.0, tau)))
+    example_losses: list[torch.Tensor] = []
+    normal_xe_values: list[torch.Tensor] = []
+    oada_xe_values: list[torch.Tensor] = []
+    oada_margin_values: list[torch.Tensor] = []
+    activated_count = 0
+    loss_offset = 0
+
+    for candidate_count in candidate_counts:
+        example_candidate_losses = flattened_candidate_losses[
+            loss_offset : loss_offset + candidate_count
+        ]
+        normal_xe = example_candidate_losses[0]
+        oada_xe = example_candidate_losses.min()
+        oada_margin = normal_xe - oada_xe
+        example_loss = (1.0 - clamped_tau) * normal_xe + clamped_tau * oada_xe
+
+        example_losses.append(example_loss)
+        normal_xe_values.append(normal_xe.detach())
+        oada_xe_values.append(oada_xe.detach())
+        oada_margin_values.append(oada_margin.detach())
+        activated_count += int(oada_margin.detach().item() > 1e-6)
+        loss_offset += candidate_count
+
+    example_count = len(canonical_targets)
+
+    return {
+        "loss": torch.stack(example_losses).mean(),
+        "normal_xe": torch.stack(normal_xe_values).mean(),
+        "oada_xe": torch.stack(oada_xe_values).mean(),
+        "oada_margin": torch.stack(oada_margin_values).mean(),
+        "oada_activated_count": activated_count,
+        "oada_activation_rate": activated_count / example_count,
+        "example_count": example_count,
+        "avg_candidate_count": sum(candidate_counts) / len(candidate_counts),
+        "max_candidate_count": float(max(candidate_counts)),
+        "avg_total_candidate_count": sum(total_candidate_counts) / len(total_candidate_counts),
+        "max_total_candidate_count": float(max(total_candidate_counts)),
+        "capped_candidate_count": sum(
+            int(total_count > used_count)
+            for total_count, used_count in zip(total_candidate_counts, candidate_counts)
+        ),
+    }
+
+
 def evaluate_bart_generation(
     model,
     tokenizer,
@@ -426,6 +577,29 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
     validation_gold_rows = read_jsonl(config.validation_gold_file)
     metadata = read_json(config.metadata_file)
 
+    if config.loss_type not in {"xe", "oada_xe"}:
+        raise ValueError("BART_LOSS_TYPE must be one of: xe, oada_xe")
+    if config.model_selection_strategy not in {"best_mini_val", "final_step"}:
+        raise ValueError("BART_MODEL_SELECTION_STRATEGY must be one of: best_mini_val, final_step")
+
+    print(f"Using loss_type={config.loss_type}")
+    print(
+        "Using training policy: "
+        f"max_steps={config.max_steps} eval_steps={config.eval_steps} "
+        f"model_selection={config.model_selection_strategy} "
+        f"early_stopping={config.use_early_stopping}"
+    )
+    if config.loss_type == "oada_xe":
+        print(
+            "Using OADA-XE tau schedule: "
+            f"{config.oada_tau_start} -> {config.oada_tau_end} "
+            f"over {config.oada_tau_warmup_steps} warmup steps"
+        )
+        print(
+            "Using OADA-XE candidate policy: "
+            f"cap={config.oada_candidate_cap} seed={config.oada_candidate_seed}"
+        )
+
     require_columns(train_rows, {"input_text", "target_text"}, str(config.train_file))
     require_columns(mini_val_rows, {"input_text", "target_text"}, str(config.mini_val_file))
     require_columns(validation_rows, {"input_text", "target_text"}, str(config.validation_file))
@@ -469,28 +643,55 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
     scaler = torch.amp.GradScaler("cuda", enabled=use_amp)
 
     train_dataset = JsonlSeq2SeqDataset(train_rows)
+    if config.loss_type == "xe":
+        train_collate_fn = make_seq2seq_collate_fn(
+            tokenizer,
+            config.max_source_length,
+            config.max_target_length,
+        )
+    else:
+        train_collate_fn = make_oada_xe_collate_fn(
+            tokenizer,
+            config.max_source_length,
+            config.oada_candidate_cap,
+            config.oada_candidate_seed,
+        )
+
     train_dataloader = DataLoader(
         train_dataset,
         batch_size=config.train_batch_size,
         shuffle=True,
         pin_memory=config.pin_memory and device.type == "cuda",
-        collate_fn=make_seq2seq_collate_fn(
-            tokenizer,
-            config.max_source_length,
-            config.max_target_length,
-        ),
+        collate_fn=train_collate_fn,
     )
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate)
     config.output_dir.mkdir(parents=True, exist_ok=True)
     best_model_dir = config.output_dir / "best_span_f1"
+    final_model_dir = config.output_dir / "final_step"
     eval_history_path = config.output_dir / "eval_history.jsonl"
+    train_history_path = config.output_dir / "train_history.jsonl"
     eval_history_path.unlink(missing_ok=True)
+    train_history_path.unlink(missing_ok=True)
 
     train_iterator = iter(train_dataloader)
     global_step = 0
     total_loss = 0.0
     last_loss = 0.0
+    last_normal_xe = 0.0
+    last_oada_xe = 0.0
+    last_oada_tau = 0.0
+    last_oada_margin = 0.0
+    last_oada_activated_count = 0
+    last_oada_activation_rate = 0.0
+    last_cumulative_oada_activation_rate = 0.0
+    last_avg_candidate_count = 1.0
+    last_max_candidate_count = 1.0
+    last_avg_total_candidate_count = 1.0
+    last_max_total_candidate_count = 1.0
+    last_capped_candidate_count = 0
+    total_train_examples_seen = 0
+    total_oada_activated_examples = 0
     best_span_f1 = -1.0
     best_step = 0
     patience_left = config.early_stopping_patience
@@ -498,7 +699,13 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
     num_evals = 0
     eval_history: list[dict[str, Any]] = []
 
-    progress_bar = tqdm(total=config.max_steps, desc="BART train", dynamic_ncols=True)
+    progress_bar = tqdm(
+        total=config.max_steps,
+        desc="BART train",
+        dynamic_ncols=True,
+        mininterval=5.0,
+        miniters=max(1, config.eval_steps // 4),
+    )
 
     while global_step < config.max_steps:
         model.train()
@@ -509,12 +716,53 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
             train_iterator = iter(train_dataloader)
             batch = next(train_iterator)
 
-        batch = {key: value.to(device) for key, value in batch.items()}
-
         optimizer.zero_grad()
         with torch.amp.autocast("cuda", enabled=use_amp):
-            outputs = model(**batch)
-            loss = outputs.loss
+            if config.loss_type == "xe":
+                tensor_batch = {key: value.to(device) for key, value in batch.items()}
+                outputs = model(**tensor_batch)
+                loss = outputs.loss
+                last_normal_xe = float(loss.detach().item())
+                last_oada_xe = last_normal_xe
+                last_oada_tau = 0.0
+                last_oada_margin = 0.0
+                last_oada_activated_count = 0
+                last_oada_activation_rate = 0.0
+                last_cumulative_oada_activation_rate = 0.0
+                last_avg_candidate_count = 1.0
+                last_max_candidate_count = 1.0
+                last_avg_total_candidate_count = 1.0
+                last_max_total_candidate_count = 1.0
+                last_capped_candidate_count = 0
+                batch_example_count = int(tensor_batch["input_ids"].shape[0])
+            else:
+                batch["input_ids"] = batch["input_ids"].to(device)
+                batch["attention_mask"] = batch["attention_mask"].to(device)
+                last_oada_tau = get_oada_tau(
+                    global_step=global_step,
+                    tau_start=config.oada_tau_start,
+                    tau_end=config.oada_tau_end,
+                    warmup_steps=config.oada_tau_warmup_steps,
+                )
+                loss_result = oada_xe_loss_batch(
+                    model=model,
+                    tokenizer=tokenizer,
+                    batch=batch,
+                    tau=last_oada_tau,
+                    max_target_length=config.max_target_length,
+                )
+                loss = loss_result["loss"]
+                last_normal_xe = float(loss_result["normal_xe"].detach().item())
+                last_oada_xe = float(loss_result["oada_xe"].detach().item())
+                last_oada_margin = float(loss_result["oada_margin"].detach().item())
+                last_oada_activated_count = int(loss_result["oada_activated_count"])
+                last_oada_activation_rate = float(loss_result["oada_activation_rate"])
+                last_avg_candidate_count = float(loss_result["avg_candidate_count"])
+                last_max_candidate_count = float(loss_result["max_candidate_count"])
+                last_avg_total_candidate_count = float(loss_result["avg_total_candidate_count"])
+                last_max_total_candidate_count = float(loss_result["max_total_candidate_count"])
+                last_capped_candidate_count = int(loss_result["capped_candidate_count"])
+                batch_example_count = int(loss_result["example_count"])
         scaler.scale(loss).backward()
         scaler.step(optimizer)
         scaler.update()
@@ -522,11 +770,38 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         last_loss = loss.item()
         total_loss += last_loss
         global_step += 1
+        total_train_examples_seen += batch_example_count
+        total_oada_activated_examples += last_oada_activated_count
+        if total_train_examples_seen:
+            last_cumulative_oada_activation_rate = (
+                total_oada_activated_examples / total_train_examples_seen
+            )
 
         progress_bar.update(1)
-        progress_bar.set_postfix_str(
-            f"loss={last_loss:.3f} best={best_span_f1:.3f}@{best_step} pat={patience_left}"
-        )
+
+        train_record = {
+            "step": global_step,
+            "loss_type": config.loss_type,
+            "loss": last_loss,
+            "avg_loss_so_far": total_loss / global_step if global_step else 0.0,
+            "oada_tau": last_oada_tau,
+            "normal_xe": last_normal_xe,
+            "oada_xe": last_oada_xe,
+            "oada_margin": last_oada_margin,
+            "batch_examples": batch_example_count,
+            "oada_activated_examples": last_oada_activated_count,
+            "oada_activation_rate": last_oada_activation_rate,
+            "cumulative_examples_seen": total_train_examples_seen,
+            "cumulative_oada_activated_examples": total_oada_activated_examples,
+            "cumulative_oada_activation_rate": last_cumulative_oada_activation_rate,
+            "avg_oada_candidate_count": last_avg_candidate_count,
+            "max_oada_candidate_count": last_max_candidate_count,
+            "avg_total_oada_candidate_count": last_avg_total_candidate_count,
+            "max_total_oada_candidate_count": last_max_total_candidate_count,
+            "capped_oada_examples": last_capped_candidate_count,
+        }
+        with train_history_path.open("a", encoding="utf-8") as output_file:
+            output_file.write(json.dumps(train_record, ensure_ascii=False) + "\n")
 
         if global_step % config.eval_steps != 0:
             continue
@@ -549,15 +824,31 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
             best_span_f1 = span_f1_score
             best_step = global_step
             patience_left = config.early_stopping_patience
-            best_model_dir.mkdir(parents=True, exist_ok=True)
-            model.save_pretrained(best_model_dir)
-            tokenizer.save_pretrained(best_model_dir)
+            if config.model_selection_strategy == "best_mini_val":
+                best_model_dir.mkdir(parents=True, exist_ok=True)
+                model.save_pretrained(best_model_dir)
+                tokenizer.save_pretrained(best_model_dir)
         elif global_step >= config.min_steps_before_stopping:
             patience_left -= 1
 
         eval_record = {
             "step": global_step,
             "eval_index": num_evals,
+            "loss_type": config.loss_type,
+            "oada_tau": last_oada_tau,
+            "normal_xe": last_normal_xe,
+            "oada_xe": last_oada_xe,
+            "oada_margin": last_oada_margin,
+            "oada_activated_examples": last_oada_activated_count,
+            "oada_activation_rate": last_oada_activation_rate,
+            "cumulative_examples_seen": total_train_examples_seen,
+            "cumulative_oada_activated_examples": total_oada_activated_examples,
+            "cumulative_oada_activation_rate": last_cumulative_oada_activation_rate,
+            "avg_oada_candidate_count": last_avg_candidate_count,
+            "max_oada_candidate_count": last_max_candidate_count,
+            "avg_total_oada_candidate_count": last_avg_total_candidate_count,
+            "max_total_oada_candidate_count": last_max_total_candidate_count,
+            "capped_oada_examples": last_capped_candidate_count,
             "last_loss": last_loss,
             "avg_loss_so_far": total_loss / global_step if global_step else 0.0,
             **span_metrics,
@@ -570,12 +861,36 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         with eval_history_path.open("a", encoding="utf-8") as output_file:
             output_file.write(json.dumps(eval_record, ensure_ascii=False) + "\n")
 
-        progress_bar.set_postfix_str(
-            f"loss={last_loss:.3f} miniSF1={span_f1_score:.3f} "
-            f"best={best_span_f1:.3f}@{best_step} pat={patience_left}"
-        )
+        if config.loss_type == "oada_xe":
+            progress_bar.write(
+                "eval "
+                f"step={global_step}/{config.max_steps} "
+                f"mini_strict_f1={span_f1_score:.4f} "
+                f"best={best_span_f1:.4f}@{best_step} "
+                f"loss={last_loss:.4f} "
+                f"tau={last_oada_tau:.2f} "
+                f"act={last_oada_activation_rate:.2f} "
+                f"cum_act={last_cumulative_oada_activation_rate:.4f} "
+                f"cand_avg={last_avg_candidate_count:.1f} "
+                f"cand_max={last_max_candidate_count:.0f}/{last_max_total_candidate_count:.0f} "
+                f"capped={last_capped_candidate_count} "
+                f"pat={patience_left}"
+            )
+        else:
+            progress_bar.write(
+                "eval "
+                f"step={global_step}/{config.max_steps} "
+                f"mini_strict_f1={span_f1_score:.4f} "
+                f"best={best_span_f1:.4f}@{best_step} "
+                f"loss={last_loss:.4f} "
+                f"pat={patience_left}"
+            )
 
-        if global_step >= config.min_steps_before_stopping and patience_left <= 0:
+        if (
+            config.use_early_stopping
+            and global_step >= config.min_steps_before_stopping
+            and patience_left <= 0
+        ):
             early_stopped = True
             break
 
@@ -587,11 +902,21 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         tokenizer.save_pretrained(best_model_dir)
         best_step = global_step
 
-    final_model = AutoModelForSeq2SeqLM.from_pretrained(best_model_dir)
-    final_model.generation_config.no_repeat_ngram_size = config.no_repeat_ngram_size
-    final_model.to(device)
+    if config.model_selection_strategy == "final_step":
+        selected_model_dir = final_model_dir
+        selected_step = global_step
+        final_model_dir.mkdir(parents=True, exist_ok=True)
+        model.save_pretrained(final_model_dir)
+        tokenizer.save_pretrained(final_model_dir)
+    else:
+        selected_model_dir = best_model_dir
+        selected_step = best_step
+
+    selected_model = AutoModelForSeq2SeqLM.from_pretrained(selected_model_dir)
+    selected_model.generation_config.no_repeat_ngram_size = config.no_repeat_ngram_size
+    selected_model.to(device)
     final_metrics = evaluate_bart_generation(
-        model=final_model,
+        model=selected_model,
         tokenizer=tokenizer,
         eval_rows=mini_val_rows,
         eval_gold_rows=mini_val_gold_rows,
@@ -601,7 +926,7 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         device=device,
     )
     validation_metrics = evaluate_bart_generation(
-        model=final_model,
+        model=selected_model,
         tokenizer=tokenizer,
         eval_rows=validation_rows,
         eval_gold_rows=validation_gold_rows,
@@ -624,6 +949,14 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
             "pattern": config.pattern,
             "source_pattern_id": config.source_pattern_id,
             "seed": config.seed,
+            "loss_type": config.loss_type,
+            "oada_tau_start": config.oada_tau_start,
+            "oada_tau_end": config.oada_tau_end,
+            "oada_tau_warmup_steps": config.oada_tau_warmup_steps,
+            "oada_candidate_cap": config.oada_candidate_cap,
+            "oada_candidate_seed": config.oada_candidate_seed,
+            "model_selection_strategy": config.model_selection_strategy,
+            "use_early_stopping": config.use_early_stopping,
         },
         "train_file": repo_relative_path(config.train_file),
         "mini_val_file": repo_relative_path(config.mini_val_file),
@@ -650,10 +983,18 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
             "eval_steps": config.eval_steps,
             "early_stopping_patience": config.early_stopping_patience,
             "min_steps_before_stopping": config.min_steps_before_stopping,
+            "use_early_stopping": config.use_early_stopping,
+            "model_selection_strategy": config.model_selection_strategy,
             "use_mixed_precision": use_amp,
             "use_tf32": config.use_tf32 and device.type == "cuda",
             "pin_memory": config.pin_memory and device.type == "cuda",
             "no_repeat_ngram_size": config.no_repeat_ngram_size,
+            "loss_type": config.loss_type,
+            "oada_tau_start": config.oada_tau_start,
+            "oada_tau_end": config.oada_tau_end,
+            "oada_tau_warmup_steps": config.oada_tau_warmup_steps,
+            "oada_candidate_cap": config.oada_candidate_cap,
+            "oada_candidate_seed": config.oada_candidate_seed,
         },
         "steps_trained": global_step,
         "total_training_seconds": total_training_seconds,
@@ -661,10 +1002,19 @@ def train_one_bart_model(config: BartRunConfig) -> dict[str, Any]:
         "avg_loss": total_loss / global_step if global_step else 0.0,
         "best_step": best_step,
         "best_span_strict_f1": best_span_f1,
+        "selected_step": selected_step,
+        "selected_model_dir": repo_relative_path(selected_model_dir),
+        "model_selection_strategy": config.model_selection_strategy,
         "early_stopped": early_stopped,
         "num_evals": num_evals,
+        "train_history_file": repo_relative_path(train_history_path),
         "eval_history_file": repo_relative_path(eval_history_path),
+        "total_train_examples_seen": total_train_examples_seen,
+        "total_oada_activated_examples": total_oada_activated_examples,
+        "cumulative_oada_activation_rate": last_cumulative_oada_activation_rate,
         "eval_history": eval_history,
+        "selected_model_mini_val_metrics": final_metrics,
+        "selected_model_validation_metrics": validation_metrics,
         "final_best_model_mini_val_metrics": final_metrics,
         "final_best_model_validation_metrics": validation_metrics,
     }
@@ -727,11 +1077,26 @@ def load_config_from_env() -> BartRunConfig:
         min_steps_before_stopping=int(
             os.environ.get("BART_MIN_STEPS_BEFORE_STOPPING", MIN_STEPS_BEFORE_STOPPING)
         ),
+        use_early_stopping=_bool_from_env("BART_USE_EARLY_STOPPING", USE_EARLY_STOPPING),
+        model_selection_strategy=os.environ.get(
+            "BART_MODEL_SELECTION_STRATEGY",
+            MODEL_SELECTION_STRATEGY,
+        ),
         seed=int(os.environ.get("BART_SEED", 42)),
         use_mixed_precision=_bool_from_env("BART_USE_MIXED_PRECISION", USE_MIXED_PRECISION),
         use_tf32=_bool_from_env("BART_USE_TF32", USE_TF32),
         pin_memory=_bool_from_env("BART_PIN_MEMORY", PIN_MEMORY),
         no_repeat_ngram_size=int(os.environ.get("BART_NO_REPEAT_NGRAM_SIZE", NO_REPEAT_NGRAM_SIZE)),
+        loss_type=os.environ.get("BART_LOSS_TYPE", DEFAULT_LOSS_TYPE),
+        oada_tau_start=float(os.environ.get("BART_OADA_TAU_START", OADA_TAU_START)),
+        oada_tau_end=float(os.environ.get("BART_OADA_TAU_END", OADA_TAU_END)),
+        oada_tau_warmup_steps=int(
+            os.environ.get("BART_OADA_TAU_WARMUP_STEPS", OADA_TAU_WARMUP_STEPS)
+        ),
+        oada_candidate_cap=int(os.environ.get("BART_OADA_CANDIDATE_CAP", OADA_CANDIDATE_CAP)),
+        oada_candidate_seed=int(
+            os.environ.get("BART_OADA_CANDIDATE_SEED", OADA_CANDIDATE_SEED)
+        ),
     )
 
 
