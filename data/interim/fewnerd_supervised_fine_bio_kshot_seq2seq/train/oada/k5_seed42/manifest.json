@@ -1,0 +1,12 @@
+{
+  "pattern_01": {
+    "source_pattern_id": "pattern_1_oada_original",
+    "source_pattern_type": "oada-original",
+    "source_template": "Sentence: {SEN} Order: {PERM}",
+    "source_train_file": "data/interim/fewnerd_supervised_fine_bio_kshot_bert/k5_seed42/train.jsonl",
+    "output_file": "data/interim/fewnerd_supervised_fine_bio_kshot_seq2seq/train/oada/k5_seed42/pattern_01.jsonl",
+    "method": "oada",
+    "source_rows": 164,
+    "generated_rows": 3280
+  }
+}

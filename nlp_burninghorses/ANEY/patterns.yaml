@@ -1,0 +1,55 @@
+patterns:
+  # 1. Original OADA pattern: Sentence -> Order
+  - id: "pattern_1_oada_original"
+    template: "Sentence: {SEN} Order: {PERM}"
+    type: "oada-original"
+
+  - id: "pattern_2_instr_SEN_order_encapsulated"
+    template: "For the text || {SEN} || extract entities using the order: {PERM}"
+    type: "instr-SEN-order"
+
+  # 2. Instruction -> Order -> Sentence
+  - id: "pattern_3_instr_order_SEN"
+    template: "Extract the entities using the following order: {PERM} || Text: {SEN}"
+    type: "instr-order-SEN"
+
+  - id: "pattern_4_instr_order_SEN_list"
+    template: "List the entities using the order: {PERM} for the following sentence: {SEN}"
+    type: "instr-order-SEN"
+
+  # 3. Sentence -> Instruction -> Order
+  - id: "pattern_5_SEN_instr_order"
+    template: "In this sentence: {SEN} List the entities in the following order: {PERM}"
+    type: "SEN-instr-order"
+
+  - id: "pattern_6_SEN_instr_order_separator"
+    template: "{SEN} || List the entities in this order: {PERM}"
+    type: "SEN-instr-order"
+
+  # 4. Sentence -> Order -> Instruction (NEW - Fills the gap)
+  - id: "pattern_7_SEN_order_instr"
+    template: "{SEN} || [ Order: {PERM} ] || Extract the entities from the previous text following the specified sequence."
+    type: "SEN-order-instr"
+
+  - id: "pattern_8_SEN_order_instr_basic"
+    template: "Text: {SEN} Order: {PERM} Please list the entities based on the above."
+    type: "SEN-order-instr"
+
+  # 5. Order -> Instruction -> Sentence
+  - id: "pattern_9_order_instr_SEN"
+    template: "Using the order: {PERM}, list the entities in this sentence: {SEN}"
+    type: "order-instr-SEN"
+
+  - id: "pattern_10_order_instr_SEN_brackets"
+    template: "[ Order: {PERM} ] Extract entities from the text: {SEN}"
+    type: "order-instr-SEN"
+
+  # 6. Order -> Sentence -> Instruction (NEW - Fills the gap)
+  - id: "pattern_11_order_SEN_instr"
+    template: "Order: {PERM} || {SEN} || Based on the requested order and the text provided, list the entities."
+    type: "order-SEN-instr"
+
+  - id: "pattern_12_order_SEN_instr_brackets"
+    template: "[ {PERM} ] || Text: {SEN} || Extract the entities."
+    type: "order-SEN-instr"
+

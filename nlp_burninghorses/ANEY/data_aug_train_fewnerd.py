@@ -1,0 +1,421 @@
+from __future__ import annotations
+
+import itertools
+import json
+import os
+from pathlib import Path
+import random
+
+import yaml
+
+PERMUTATION_SAMPLE_SIZE = 20
+DEFAULT_DATASET = "fewnerd"
+DEFAULT_FEWSHOT_DIR = "data/interim/fewnerd_supervised_fine_bio_kshot_bert/k5_seed242"
+DEFAULT_OUTPUT_BASE_DIR = "data/interim/fewnerd_supervised_fine_bio_kshot_seq2seq"
+DEFAULT_TRAIN_METHOD = "pet_oada"
+DEFAULT_PATTERN_SECTION = "patterns"
+OADA_PATTERN_COUNT = 1
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+
+def find_project_root(start_path: Path) -> Path:
+    for path in [start_path, *start_path.parents]:
+        if (path / "pyproject.toml").exists():
+            return path
+
+    raise FileNotFoundError("Could not locate project root containing pyproject.toml.")
+
+
+PROJECT_ROOT = find_project_root(SCRIPT_DIR)
+
+
+def canonical_pattern_id(pattern_index: int) -> str:
+    return f"pattern_{pattern_index:02d}"
+
+
+def repo_relative_path(path: str | Path) -> str:
+    resolved_path = Path(path).resolve()
+    try:
+        return resolved_path.relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return str(resolved_path)
+
+
+def get_oada_permutations(entity_schema: list[str]) -> list[tuple[str, ...]]:
+    """Return OADA permutations from the global entity schema."""
+    if len(entity_schema) <= 4:
+        return list(itertools.permutations(entity_schema))
+
+    permutations = []
+
+    for _ in range(PERMUTATION_SAMPLE_SIZE):
+        shuffled = entity_schema[:]
+        random.shuffle(shuffled)
+        permutations.append(tuple(shuffled))
+
+    return permutations
+
+
+def detokenize_tokens(tokens: list[str]) -> str:
+    """Reconstruct readable text from CoNLL-style tokenized words."""
+    no_space_before = {
+        ".",
+        ",",
+        ":",
+        ";",
+        "?",
+        "!",
+        "%",
+        ")",
+        "]",
+        "}",
+        "'s",
+        "'m",
+        "'re",
+        "'ve",
+        "'ll",
+        "'d",
+        "n't",
+    }
+    no_space_after = {"(", "[", "{", "$", "#"}
+    quote_is_open = False
+    previous_opened_quote = False
+    text = ""
+
+    for token in tokens:
+        if token in {'"', "``", "''"}:
+            if token == "''" or (token == '"' and quote_is_open):
+                text += '"'
+                quote_is_open = False
+                previous_opened_quote = False
+            else:
+                if text and not text.endswith(" "):
+                    text += " "
+                text += '"'
+                quote_is_open = True
+                previous_opened_quote = True
+            continue
+
+        if not text:
+            text = token
+        elif token in no_space_before or token.startswith("'"):
+            text += token
+        elif text[-1] in no_space_after or previous_opened_quote:
+            text += token
+        else:
+            text += f" {token}"
+
+        previous_opened_quote = False
+
+    return text
+
+def _label_to_string(label_id: int | str, id_to_string_map: dict) -> str:
+    if isinstance(label_id, str) and not label_id.isdigit():
+        return label_id
+
+    return id_to_string_map.get(
+        str(label_id),
+        id_to_string_map.get(int(label_id), str(label_id)),
+    )
+
+def extract_and_group_entities(
+    tokens: list[str],
+    ner_tags: list[int],
+    id_to_string_map: dict,
+) -> dict[str, list[str]]:
+    """Extract contiguous BIO entities and group them by coarse entity type."""
+    if len(tokens) != len(ner_tags):
+        raise ValueError("tokens and ner_tags must have the same length.")
+
+    entities_by_type: dict[str, list[str]] = {}
+    current_type: str | None = None
+    current_tokens: list[str] = []
+
+    def flush_current_entity() -> None:
+        nonlocal current_type, current_tokens
+        if current_type is not None and current_tokens:
+            entities_by_type.setdefault(current_type, []).append(detokenize_tokens(current_tokens))
+        current_type = None
+        current_tokens = []
+
+    for token, tag_id in zip(tokens, ner_tags):
+        tag = _label_to_string(tag_id, id_to_string_map)
+
+        if tag == "O" or "-" not in tag:
+            flush_current_entity()
+            continue
+
+        prefix, entity_type = tag.split("-", 1)
+
+        if prefix == "B" or current_type != entity_type:
+            flush_current_entity()
+            current_type = entity_type
+            current_tokens = [token]
+        elif prefix == "I":
+            current_tokens.append(token)
+        else:
+            flush_current_entity()
+
+    flush_current_entity()
+    return entities_by_type
+
+
+def generate_oada_target(
+    entities_by_type: dict[str, list[str]],
+    order: tuple[str, ...],
+) -> str:
+    """Build target text in the requested entity-type order."""
+    target_parts: list[str] = []
+
+    for entity_type in order:
+        for entity_text in entities_by_type.get(entity_type, []):
+            target_parts.append(f"[{entity_text}]{entity_type}")
+
+    return " ".join(target_parts)
+
+
+def apply_pet_wrapper(
+    sentence_text: str,
+    order: tuple[str, ...],
+    pattern_template: str,
+) -> str:
+    """Inject a sentence and OADA order into a PET pattern template."""
+    order_text = ", ".join(order)
+    return pattern_template.format(
+        SEN=sentence_text,
+        PERM=order_text,
+        sentence_text=sentence_text,
+        order=order_text,
+    )
+
+
+def augment_data(
+    input_data: list[dict],
+    pattern_id: str,
+    pattern_template: str,
+    schema: list[str],
+    id_to_string_map: dict,
+    output_filepath: str,
+) -> int:
+    """Write augmented BART JSONL rows for a single PET pattern."""
+    output_path = Path(output_filepath)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    permutations = get_oada_permutations(schema)
+    rows_written = 0
+
+    with output_path.open("w", encoding="utf-8") as output_file:
+        for example in input_data:
+            tokens = example["tokens"]
+            ner_tags = example["ner_tags"]
+            sentence_text = detokenize_tokens(tokens)
+            entities_by_type = extract_and_group_entities(tokens, ner_tags, id_to_string_map)
+
+            for order in permutations:
+                row = {
+                    "input_text": apply_pet_wrapper(sentence_text, order, pattern_template),
+                    "target_text": generate_oada_target(entities_by_type, order),
+                }
+                output_file.write(json.dumps(row, ensure_ascii=False) + "\n")
+                rows_written += 1
+
+    print(f"{pattern_id}: wrote {rows_written} rows to {output_path}")
+    return rows_written
+
+
+def load_jsonl(filepath: str | Path) -> list[dict]:
+    rows: list[dict] = []
+
+    with Path(filepath).open("r", encoding="utf-8") as input_file:
+        for line in input_file:
+            stripped_line = line.strip()
+            if stripped_line:
+                rows.append(json.loads(stripped_line))
+
+    return rows
+
+
+def load_yaml(filepath: str | Path) -> dict:
+    with Path(filepath).open("r", encoding="utf-8") as input_file:
+        return yaml.safe_load(input_file)
+
+
+def _iter_pattern_bank(
+    pattern_bank: dict | list[dict[str, str]],
+    pattern_section: str = DEFAULT_PATTERN_SECTION,
+) -> list[dict[str, str]]:
+    if isinstance(pattern_bank, list):
+        patterns = pattern_bank
+    else:
+        patterns = pattern_bank.get(
+            pattern_section,
+            pattern_bank.get(DEFAULT_PATTERN_SECTION, pattern_bank),
+        )
+
+    if isinstance(patterns, dict):
+        return [
+            {"id": pattern_id, "template": pattern_template}
+            for pattern_id, pattern_template in patterns.items()
+        ]
+
+    return patterns
+
+
+def main_orchestrator(
+    input_dir: str,
+    output_dir: str,
+    pattern_bank: dict,
+    schema: list[str],
+    id_to_string_map: dict,
+    train_method: str,
+    pattern_section: str = DEFAULT_PATTERN_SECTION,
+) -> dict[str, int]:
+    """Run augmentation for every PET pattern in the pattern bank."""
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+    train_input_path = Path(input_dir) / "train.jsonl"
+    input_data = load_jsonl(train_input_path)
+    rows_by_pattern: dict[str, int] = {}
+    manifest: dict[str, dict[str, object]] = {}
+    patterns = _iter_pattern_bank(pattern_bank, pattern_section)
+    if train_method == "oada":
+        patterns = patterns[:OADA_PATTERN_COUNT]
+
+    for pattern_index, pattern in enumerate(patterns, start=1):
+        pattern_id = canonical_pattern_id(pattern_index)
+        source_pattern_id = pattern["id"]
+        pattern_output_path = output_path / f"{pattern_id}.jsonl"
+        rows_by_pattern[pattern_id] = augment_data(
+            input_data=input_data,
+            pattern_id=pattern_id,
+            pattern_template=pattern["template"],
+            schema=schema,
+            id_to_string_map=id_to_string_map,
+            output_filepath=str(pattern_output_path),
+        )
+        manifest[pattern_id] = {
+            "source_pattern_id": source_pattern_id,
+            "source_pattern_type": pattern.get("type"),
+            "source_template": pattern["template"],
+            "source_train_file": repo_relative_path(train_input_path),
+            "output_file": repo_relative_path(pattern_output_path),
+            "method": train_method,
+            "source_rows": len(input_data),
+            "generated_rows": rows_by_pattern[pattern_id],
+        }
+
+    manifest_path = output_path / "manifest.json"
+    with manifest_path.open("w", encoding="utf-8") as output_file:
+        json.dump(manifest, output_file, indent=2, ensure_ascii=False)
+    print(f"Wrote manifest to {manifest_path}")
+
+    return rows_by_pattern
+
+def load_fewnerd_schema_from_metadata(input_dir: Path) -> tuple[list[str], dict]:
+    top_metadata_path = input_dir.parent / "metadata.json"
+
+    with top_metadata_path.open("r", encoding="utf-8") as f:
+        metadata = json.load(f)
+
+    id_to_label = metadata["id_to_label"]
+
+    entity_types = sorted(
+        {
+            label[2:]
+            for label in id_to_label.values()
+            if label.startswith("B-")
+        }
+    )
+
+    return entity_types, id_to_label
+
+
+def _default_output_dir(input_dir: Path, train_method: str) -> Path:
+    return PROJECT_ROOT / DEFAULT_OUTPUT_BASE_DIR / "train" / train_method / input_dir.name
+
+
+def main() -> None:
+    seed = os.environ.get("AUG_RANDOM_SEED")
+    if seed is not None:
+        random.seed(int(seed))
+
+    train_method = os.environ.get("AUG_TRAIN_METHOD", DEFAULT_TRAIN_METHOD)
+
+    if train_method not in {"pet_oada", "oada"}:
+        raise ValueError("AUG_TRAIN_METHOD must be one of: pet_oada, oada")
+
+    patterns_path = Path(
+        os.environ.get(
+            "AUG_PATTERNS_PATH",
+            SCRIPT_DIR / "patterns.yaml",
+        )
+    )
+
+    dataset_name = os.environ.get("AUG_DATASET", DEFAULT_DATASET)
+
+    pattern_section = os.environ.get(
+        "AUG_PATTERN_SECTION",
+        DEFAULT_PATTERN_SECTION,
+    )
+
+    pattern_bank = load_yaml(patterns_path)
+
+    fewshot_root = PROJECT_ROOT / "data/interim/fewnerd_supervised_fine_bio_kshot_bert"
+
+    split_dirs = sorted(
+        [
+            p
+            for p in fewshot_root.iterdir()
+            if p.is_dir() and p.name.startswith("k")
+        ]
+    )
+
+    print(f"Found {len(split_dirs)} split folders")
+
+    for input_dir in split_dirs:
+        print(f"\n=== Processing {input_dir.name} ===")
+
+        output_dir = (
+            PROJECT_ROOT
+            / DEFAULT_OUTPUT_BASE_DIR
+            / "train"
+            / train_method
+            / input_dir.name
+        )
+
+        if dataset_name == "fewnerd":
+            schema, id_to_string_map = load_fewnerd_schema_from_metadata(
+                input_dir
+            )
+        else:
+            mapping_path = Path(
+                os.environ.get(
+                    "AUG_MAPPING_PATH",
+                    SCRIPT_DIR.parent / "mapping.yaml",
+                )
+            )
+
+            dataset_mapping = load_yaml(mapping_path)[dataset_name]
+
+            schema = dataset_mapping["entity_types"]
+            id_to_string_map = dataset_mapping["id_to_label"]
+
+        rows_by_pattern = main_orchestrator(
+            input_dir=str(input_dir),
+            output_dir=str(output_dir),
+            pattern_bank=pattern_bank,
+            schema=schema,
+            id_to_string_map=id_to_string_map,
+            train_method=train_method,
+            pattern_section=pattern_section,
+        )
+
+        total_rows = sum(rows_by_pattern.values())
+
+        print(
+            f"Finished {input_dir.name}: "
+            f"{total_rows} rows across {len(rows_by_pattern)} pattern files."
+        )
+
+if __name__ == "__main__":
+    main()
