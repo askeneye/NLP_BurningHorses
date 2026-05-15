@@ -1,0 +1,13 @@
+dataset,config,label_level,tagging_scheme,split_name,k,seed,train_sentences,covered_entity_types,num_entity_types,min_mentions,max_mentions,total_entity_mentions
+conll2003,standard,coarse,BIO,k10_seed142,10,142,22,4,4,10,12,43
+conll2003,standard,coarse,BIO,k10_seed242,10,242,21,4,4,11,12,47
+conll2003,standard,coarse,BIO,k10_seed42,10,42,17,4,4,10,12,44
+conll2003,standard,coarse,BIO,k20_seed142,20,142,40,4,4,20,30,99
+conll2003,standard,coarse,BIO,k20_seed242,20,242,39,4,4,20,25,93
+conll2003,standard,coarse,BIO,k20_seed42,20,42,37,4,4,20,26,94
+conll2003,standard,coarse,BIO,k50_seed142,50,142,95,4,4,50,59,221
+conll2003,standard,coarse,BIO,k50_seed242,50,242,95,4,4,50,67,241
+conll2003,standard,coarse,BIO,k50_seed42,50,42,86,4,4,51,60,223
+conll2003,standard,coarse,BIO,k5_seed142,5,142,10,4,4,5,9,29
+conll2003,standard,coarse,BIO,k5_seed242,5,242,9,4,4,5,6,21
+conll2003,standard,coarse,BIO,k5_seed42,5,42,10,4,4,5,9,28

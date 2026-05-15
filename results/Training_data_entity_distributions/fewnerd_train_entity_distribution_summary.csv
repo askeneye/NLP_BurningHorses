@@ -1,0 +1,13 @@
+dataset,config,label_level,tagging_scheme,split_name,k,seed,train_sentences,covered_entity_types,num_entity_types,min_mentions,max_mentions,total_entity_mentions
+fewnerd,supervised,fine,BIO,k10_seed142,10,142,295,66,66,10,153,1002
+fewnerd,supervised,fine,BIO,k10_seed242,10,242,308,66,66,10,161,1027
+fewnerd,supervised,fine,BIO,k10_seed42,10,42,314,66,66,10,172,1118
+fewnerd,supervised,fine,BIO,k20_seed142,20,142,579,66,66,20,372,2054
+fewnerd,supervised,fine,BIO,k20_seed242,20,242,582,66,66,20,372,2124
+fewnerd,supervised,fine,BIO,k20_seed42,20,42,588,66,66,20,327,2064
+fewnerd,supervised,fine,BIO,k50_seed142,50,142,1392,66,66,50,801,4862
+fewnerd,supervised,fine,BIO,k50_seed242,50,242,1421,66,66,50,818,4901
+fewnerd,supervised,fine,BIO,k50_seed42,50,42,1395,66,66,50,781,4989
+fewnerd,supervised,fine,BIO,k5_seed142,5,142,159,66,66,5,74,524
+fewnerd,supervised,fine,BIO,k5_seed242,5,242,173,66,66,5,89,567
+fewnerd,supervised,fine,BIO,k5_seed42,5,42,164,66,66,5,71,552
