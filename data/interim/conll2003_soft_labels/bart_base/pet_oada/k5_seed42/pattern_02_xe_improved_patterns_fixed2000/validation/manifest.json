@@ -1,0 +1,33 @@
+{
+  "dataset": "conll2003",
+  "method": "pet_oada",
+  "model_family": "bart_base",
+  "kshot_split": "k5_seed42",
+  "pattern": "pattern_02",
+  "source_pattern_id": "pattern_2_text_order_entities",
+  "source_pattern_type": "sentence-order-entity-cue",
+  "source_template": "Text: {SEN} Following the entity order: {PERM} Entities:",
+  "inference_order": "first to last",
+  "input_file": "data/interim/conll2003_kshot_bert/validation.jsonl",
+  "metadata_file": "data/interim/conll2003_kshot_bert/metadata.json",
+  "model_dir": "models/conll2003_kshot_seq2seq/bart_base/pet_oada/k5_seed42/pattern_02_xe_improved_patterns_fixed2000",
+  "checkpoint_dir": "models/conll2003_kshot_seq2seq/bart_base/pet_oada/k5_seed42/pattern_02_xe_improved_patterns_fixed2000/final_step",
+  "output_dir": "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed42/pattern_02_xe_improved_patterns_fixed2000/validation",
+  "soft_label_file": "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed42/pattern_02_xe_improved_patterns_fixed2000/validation/soft_labels.jsonl",
+  "hard_prediction_file": "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed42/pattern_02_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+  "label_list": [
+    "O",
+    "B-PER",
+    "I-PER",
+    "B-ORG",
+    "I-ORG",
+    "B-LOC",
+    "I-LOC",
+    "B-MISC",
+    "I-MISC"
+  ],
+  "temperature": 2.0,
+  "rows_written": 2992,
+  "elapsed_seconds": 104.20062804222107,
+  "score_projection": "BART generation-step vocabulary logits projected onto BIO labels. Tokens not aligned to a generated entity receive the O-class score."
+}

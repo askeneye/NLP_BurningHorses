@@ -84,7 +84,14 @@ DEFAULT_OUTPUT_DIR = (
     "models/conll2003_kshot_seq2seq/bart_base/pet_oada/k5_seed242/pattern_01"
 )
 
-BRACKETED_ENTITY_RE = re.compile(r"\[([^\]]+)\]\s*([A-Za-z][A-Za-z0-9_-]*)")
+BRACKETED_ENTITY_RE = re.compile(r"\[([^\]]+)\]\s*([A-Za-z][A-Za-z0-9_/-]*)")
+DEFAULT_ENTITY_TYPE_ALIASES = {
+    "person": "PER",
+    "location": "LOC",
+    "organisation": "ORG",
+    "organization": "ORG",
+    "other": "MISC",
+}
 
 
 @dataclass(frozen=True)
@@ -255,10 +262,19 @@ def find_entity_span(tokens: list[str], entity_text: str, occupied_indices: set[
     return None
 
 
+def normalize_entity_type(
+    entity_type: str,
+    entity_type_aliases: dict[str, str] | None = None,
+) -> str:
+    aliases = entity_type_aliases or DEFAULT_ENTITY_TYPE_ALIASES
+    return aliases.get(entity_type, aliases.get(entity_type.lower(), entity_type))
+
+
 def generated_text_to_bio_tags(
     generated_text: str,
     tokens: list[str],
     entity_types: set[str],
+    entity_type_aliases: dict[str, str] | None = None,
 ) -> list[str]:
     """Convert generated bracket syntax into BIO tags aligned with source tokens."""
     tags = ["O"] * len(tokens)
@@ -266,7 +282,7 @@ def generated_text_to_bio_tags(
 
     for match in BRACKETED_ENTITY_RE.finditer(generated_text):
         entity_text = match.group(1).strip()
-        entity_type = match.group(2).strip()
+        entity_type = normalize_entity_type(match.group(2).strip(), entity_type_aliases)
         if entity_type not in entity_types:
             continue
 

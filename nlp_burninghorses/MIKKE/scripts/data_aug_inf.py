@@ -11,10 +11,13 @@ if __package__:
         SCRIPT_DIR,
         _iter_pattern_bank,
         _label_to_string,
+        bool_from_env,
         detokenize_tokens,
         load_jsonl,
         load_yaml,
+        parse_label_verbalizer,
         repo_relative_path,
+        surface_entity_type,
     )
 else:
     from data_aug_train import (
@@ -25,10 +28,13 @@ else:
         SCRIPT_DIR,
         _iter_pattern_bank,
         _label_to_string,
+        bool_from_env,
         detokenize_tokens,
         load_jsonl,
         load_yaml,
+        parse_label_verbalizer,
         repo_relative_path,
+        surface_entity_type,
     )
 
 
@@ -84,10 +90,15 @@ def extract_entities_left_to_right(
     return sequential_entities
 
 
-def generate_inference_target(sequential_entities: list[tuple[str, str]]) -> str:
+def generate_inference_target(
+    sequential_entities: list[tuple[str, str]],
+    label_verbalizer: dict[str, str] | None = None,
+    label_separator: str = "",
+) -> str:
     """Build the dense bracket target in left-to-right entity order."""
     return " ".join(
-        f"[{entity_text}]{entity_type}" for entity_text, entity_type in sequential_entities
+        f"[{entity_text}]{label_separator}{surface_entity_type(entity_type, label_verbalizer)}"
+        for entity_text, entity_type in sequential_entities
     )
 
 
@@ -119,6 +130,8 @@ def augment_inference_split(
     pattern: dict[str, str],
     id_to_string_map: dict,
     base_output_dir: str,
+    label_verbalizer: dict[str, str] | None = None,
+    label_separator: str = "",
 ) -> dict[str, object]:
     """Write one shared first-to-last inference JSONL file for a split."""
     input_data = load_jsonl(input_filepath)
@@ -142,7 +155,11 @@ def augment_inference_split(
                     sentence_text,
                     pattern["template"],
                 ),
-                "target_text": generate_inference_target(sequential_entities),
+                "target_text": generate_inference_target(
+                    sequential_entities,
+                    label_verbalizer,
+                    label_separator,
+                ),
             }
             output_file.write(json.dumps(row, ensure_ascii=False) + "\n")
             rows_written += 1
@@ -162,6 +179,8 @@ def main_orchestrator(
     pattern_bank: dict,
     id_to_string_map: dict,
     pattern_section: str = DEFAULT_PATTERN_SECTION,
+    label_verbalizer: dict[str, str] | None = None,
+    label_separator: str = "",
 ) -> dict[str, dict[str, object]]:
     """Run inference augmentation for each configured evaluation split."""
     pattern_id = os.environ.get("AUG_INF_PATTERN_ID", DEFAULT_INFERENCE_PATTERN_ID)
@@ -171,6 +190,8 @@ def main_orchestrator(
         "source_pattern_id": pattern["id"],
         "source_pattern_type": pattern.get("type"),
         "source_template": pattern["template"],
+        "label_verbalizer": label_verbalizer,
+        "label_separator": label_separator,
         "splits": {},
     }
 
@@ -181,6 +202,8 @@ def main_orchestrator(
             pattern=pattern,
             id_to_string_map=id_to_string_map,
             base_output_dir=base_output_dir,
+            label_verbalizer=label_verbalizer,
+            label_separator=label_separator,
         )
 
     manifest_path = Path(base_output_dir) / "manifest.json"
@@ -212,6 +235,9 @@ def main() -> None:
     dataset_name = os.environ.get("AUG_DATASET", DEFAULT_DATASET)
     pattern_section = os.environ.get("AUG_PATTERN_SECTION", DEFAULT_PATTERN_SECTION)
     output_dir = Path(os.environ.get("AUG_INF_OUTPUT_DIR", _default_output_dir()))
+    use_label_verbalizer = bool_from_env("AUG_USE_LABEL_VERBALIZER", default=False)
+    label_verbalizer = parse_label_verbalizer(os.environ.get("AUG_LABEL_VERBALIZER")) if use_label_verbalizer else None
+    label_separator = os.environ.get("AUG_LABEL_SEPARATOR", " " if use_label_verbalizer else "")
 
     pattern_bank = load_yaml(patterns_path)
     id_to_string_map = load_yaml(mapping_path)[dataset_name]["id_to_label"]
@@ -221,6 +247,8 @@ def main() -> None:
         pattern_bank=pattern_bank,
         id_to_string_map=id_to_string_map,
         pattern_section=pattern_section,
+        label_verbalizer=label_verbalizer,
+        label_separator=label_separator,
     )
 
     total_rows = sum(split_record["generated_rows"] for split_record in rows_by_split.values())

@@ -1,0 +1,22 @@
+{
+  "split": "k5_seed42",
+  "eval_split": "unlabeled_pool",
+  "patterns": [
+    "pattern_01",
+    "pattern_02",
+    "pattern_03"
+  ],
+  "member_count": 3,
+  "source_suffix": "xe_verbalized_pilot1000",
+  "source_dirs": [
+    "data/interim/conll2003_true_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_01_xe_verbalized_pilot1000/unlabeled_pool",
+    "data/interim/conll2003_true_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_02_xe_verbalized_pilot1000/unlabeled_pool",
+    "data/interim/conll2003_true_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_03_xe_verbalized_pilot1000/unlabeled_pool"
+  ],
+  "outputs": {
+    "verbalized_true_soft": "data/interim/conll2003_ensemble_teachers/bart_base/pet_oada_verbalized_true_soft/k5_seed42/unlabeled_pool/members_3/ensemble_verbalized_true_soft.jsonl",
+    "verbalized_hard_argmax": "data/interim/conll2003_ensemble_teachers/bart_base/pet_oada_verbalized_true_soft/k5_seed42/unlabeled_pool/members_3/ensemble_verbalized_hard_argmax.jsonl"
+  },
+  "rows_written": 14031,
+  "elapsed_seconds": 4.688587665557861
+}

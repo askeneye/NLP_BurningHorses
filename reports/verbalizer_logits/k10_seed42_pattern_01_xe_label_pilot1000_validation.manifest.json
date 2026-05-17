@@ -1,0 +1,53 @@
+{
+  "model_checkpoint": "models/conll2003_kshot_seq2seq/bart_base/pet_oada_label_baseline/k10_seed42/pattern_01_xe_label_pilot1000/final_step",
+  "input_file": "data/interim/conll2003_kshot_seq2seq/inference/first_to_last/validation.jsonl",
+  "gold_file": "data/interim/conll2003_kshot_bert/validation.jsonl",
+  "output_file": "reports/verbalizer_logits/k10_seed42_pattern_01_xe_label_pilot1000_validation.jsonl",
+  "label_verbalizer": {
+    "PER": "PER",
+    "LOC": "LOC",
+    "ORG": "ORG",
+    "MISC": "MISC"
+  },
+  "candidate_token_ids": {
+    "PER": [
+      [
+        21260
+      ],
+      [
+        18578
+      ]
+    ],
+    "LOC": [
+      [
+        45002
+      ],
+      [
+        27560
+      ]
+    ],
+    "ORG": [
+      [
+        3411,
+        534
+      ],
+      [
+        6532,
+        534
+      ]
+    ],
+    "MISC": [
+      [
+        448,
+        32953
+      ],
+      [
+        256,
+        32953
+      ]
+    ]
+  },
+  "rows_written": 200,
+  "matched_entities": 524,
+  "elapsed_seconds": 4.620942831039429
+}

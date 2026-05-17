@@ -1,55 +1,43 @@
 patterns:
-  # 1. Original OADA pattern: Sentence -> Order
+  # Core set for k > 10; use all 10 patterns for k <= 10.
+  # Pattern 1 restores the original OADA wording from the paper.
   - id: "pattern_1_oada_original"
-    template: "Sentence: {SEN} Order: {PERM}"
-    type: "oada-original"
+    template: "Sentence: {SEN} Following the order: {PERM} Entity:"
+    type: "sentence-order-entity-cue"
 
-  - id: "pattern_2_instr_SEN_order_encapsulated"
-    template: "For the text || {SEN} || extract entities using the order: {PERM}"
-    type: "instr-SEN-order"
+  - id: "pattern_2_text_order_entities"
+    template: "Text: {SEN} Following the entity order: {PERM} Entities:"
+    type: "sentence-order-entity-cue"
 
-  # 2. Instruction -> Order -> Sentence
-  - id: "pattern_3_instr_order_SEN"
-    template: "Extract the entities using the following order: {PERM} || Text: {SEN}"
-    type: "instr-order-SEN"
+  - id: "pattern_3_extract_sentence_order"
+    template: "Extract entities from the sentence: {SEN} Follow this order: {PERM} Entities:"
+    type: "instruction-sentence-order"
 
-  - id: "pattern_4_instr_order_SEN_list"
-    template: "List the entities using the order: {PERM} for the following sentence: {SEN}"
-    type: "instr-order-SEN"
+  - id: "pattern_4_order_sentence_entity"
+    template: "Following the order: {PERM}, extract entities from this sentence: {SEN} Entity:"
+    type: "order-sentence-entity-cue"
 
-  # 3. Sentence -> Instruction -> Order
-  - id: "pattern_5_SEN_instr_order"
-    template: "In this sentence: {SEN} List the entities in the following order: {PERM}"
-    type: "SEN-instr-order"
+  - id: "pattern_5_sentence_list_order"
+    template: "Sentence: {SEN} List the entities following this order: {PERM} Entities:"
+    type: "sentence-instruction-order"
 
-  - id: "pattern_6_SEN_instr_order_separator"
-    template: "{SEN} || List the entities in this order: {PERM}"
-    type: "SEN-instr-order"
+  # Natural-language diversity set for k <= 10.
+  - id: "pattern_6_given_text_order"
+    template: "Given the text: {SEN} Use the order {PERM} to list the entities. Entities:"
+    type: "sentence-instruction-order"
 
-  # 4. Sentence -> Order -> Instruction (NEW - Fills the gap)
-  - id: "pattern_7_SEN_order_instr"
-    template: "{SEN} || [ Order: {PERM} ] || Extract the entities from the previous text following the specified sequence."
-    type: "SEN-order-instr"
+  - id: "pattern_7_entity_order_then_sentence"
+    template: "Entity order: {PERM}. Sentence: {SEN} Extract the entities:"
+    type: "order-sentence-entity-cue"
 
-  - id: "pattern_8_SEN_order_instr_basic"
-    template: "Text: {SEN} Order: {PERM} Please list the entities based on the above."
-    type: "SEN-order-instr"
+  - id: "pattern_8_sentence_entities_in_order"
+    template: "Sentence: {SEN} Entities in the following order, {PERM}:"
+    type: "sentence-order-entity-cue"
 
-  # 5. Order -> Instruction -> Sentence
-  - id: "pattern_9_order_instr_SEN"
-    template: "Using the order: {PERM}, list the entities in this sentence: {SEN}"
-    type: "order-instr-SEN"
+  - id: "pattern_9_find_entities_order"
+    template: "Find the entities in this text: {SEN} Use this order: {PERM} Entities:"
+    type: "instruction-sentence-order"
 
-  - id: "pattern_10_order_instr_SEN_brackets"
-    template: "[ Order: {PERM} ] Extract entities from the text: {SEN}"
-    type: "order-instr-SEN"
-
-  # 6. Order -> Sentence -> Instruction (NEW - Fills the gap)
-  - id: "pattern_11_order_SEN_instr"
-    template: "Order: {PERM} || {SEN} || Based on the requested order and the text provided, list the entities."
-    type: "order-SEN-instr"
-
-  - id: "pattern_12_order_SEN_instr_brackets"
-    template: "[ {PERM} ] || Text: {SEN} || Extract the entities."
-    type: "order-SEN-instr"
-
+  - id: "pattern_10_order_guided_extraction"
+    template: "Use the entity order {PERM} for the sentence: {SEN} Entity:"
+    type: "order-sentence-entity-cue"

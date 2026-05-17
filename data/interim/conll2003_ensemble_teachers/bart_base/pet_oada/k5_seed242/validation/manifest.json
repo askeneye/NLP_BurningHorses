@@ -1,0 +1,52 @@
+{
+  "dataset": "conll2003",
+  "model_family": "bart_base",
+  "method": "pet_oada",
+  "kshot_split": "k5_seed242",
+  "eval_split": "validation",
+  "patterns": [
+    "pattern_01",
+    "pattern_02",
+    "pattern_03",
+    "pattern_04",
+    "pattern_05",
+    "pattern_06",
+    "pattern_07",
+    "pattern_08",
+    "pattern_09",
+    "pattern_10"
+  ],
+  "member_count": 10,
+  "source_suffix": "xe_improved_patterns_fixed2000",
+  "source_files": [
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_01_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_02_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_03_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_04_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_05_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_06_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_07_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_08_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_09_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada/k5_seed242/pattern_10_xe_improved_patterns_fixed2000/validation/hard_predictions.jsonl"
+  ],
+  "label_list": [
+    "O",
+    "B-PER",
+    "I-PER",
+    "B-ORG",
+    "I-ORG",
+    "B-LOC",
+    "I-LOC",
+    "B-MISC",
+    "I-MISC"
+  ],
+  "temperature": 2.0,
+  "rows_written": 2992,
+  "outputs": {
+    "vote_normalized": "data/interim/conll2003_ensemble_teachers/bart_base/pet_oada/k5_seed242/validation/ensemble_vote_normalized.jsonl",
+    "vote_temp2": "data/interim/conll2003_ensemble_teachers/bart_base/pet_oada/k5_seed242/validation/ensemble_vote_temp2.jsonl",
+    "hard_argmax": "data/interim/conll2003_ensemble_teachers/bart_base/pet_oada/k5_seed242/validation/ensemble_hard_argmax.jsonl"
+  },
+  "elapsed_seconds": 1.3169033527374268
+}

@@ -15,6 +15,12 @@ DEFAULT_OUTPUT_BASE_DIR = "data/interim/conll2003_kshot_seq2seq"
 DEFAULT_TRAIN_METHOD = "pet_oada"
 DEFAULT_PATTERN_SECTION = "patterns"
 OADA_PATTERN_COUNT = 1
+DEFAULT_LABEL_VERBALIZER = {
+    "PER": "person",
+    "LOC": "location",
+    "ORG": "organization",
+    "MISC": "other",
+}
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -49,6 +55,34 @@ def get_oada_permutations(entity_schema: list[str]) -> list[tuple[str, ...]]:
 
     all_permutations = list(itertools.permutations(entity_schema))
     return random.sample(all_permutations, PERMUTATION_SAMPLE_SIZE)
+
+
+def bool_from_env(name: str, default: bool = False) -> bool:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def parse_label_verbalizer(raw_value: str | None) -> dict[str, str]:
+    if raw_value is None:
+        return DEFAULT_LABEL_VERBALIZER.copy()
+
+    verbalizer: dict[str, str] = {}
+    for item in raw_value.split(","):
+        if not item.strip():
+            continue
+        source, separator, target = item.partition("=")
+        if not separator:
+            raise ValueError("Label verbalizer entries must use TYPE=word syntax.")
+        verbalizer[source.strip()] = target.strip()
+    return verbalizer
+
+
+def surface_entity_type(entity_type: str, label_verbalizer: dict[str, str] | None) -> str:
+    if label_verbalizer is None:
+        return entity_type
+    return label_verbalizer.get(entity_type, entity_type)
 
 
 def _label_to_string(label_id: int | str, id_to_string_map: dict) -> str:
@@ -157,13 +191,17 @@ def extract_and_group_entities(
 def generate_oada_target(
     entities_by_type: dict[str, list[str]],
     order: tuple[str, ...],
+    label_verbalizer: dict[str, str] | None = None,
+    label_separator: str = "",
 ) -> str:
     """Build target text in the requested entity-type order."""
     target_parts: list[str] = []
 
     for entity_type in order:
         for entity_text in entities_by_type.get(entity_type, []):
-            target_parts.append(f"[{entity_text}]{entity_type}")
+            target_parts.append(
+                f"[{entity_text}]{label_separator}{surface_entity_type(entity_type, label_verbalizer)}"
+            )
 
     return " ".join(target_parts)
 
@@ -172,9 +210,10 @@ def apply_pet_wrapper(
     sentence_text: str,
     order: tuple[str, ...],
     pattern_template: str,
+    label_verbalizer: dict[str, str] | None = None,
 ) -> str:
     """Inject a sentence and OADA order into a PET pattern template."""
-    order_text = ", ".join(order)
+    order_text = ", ".join(surface_entity_type(entity_type, label_verbalizer) for entity_type in order)
     return pattern_template.format(
         SEN=sentence_text,
         PERM=order_text,
@@ -190,6 +229,8 @@ def augment_data(
     schema: list[str],
     id_to_string_map: dict,
     output_filepath: str,
+    label_verbalizer: dict[str, str] | None = None,
+    label_separator: str = "",
 ) -> int:
     """Write augmented BART JSONL rows for a single PET pattern."""
     output_path = Path(output_filepath)
@@ -206,8 +247,13 @@ def augment_data(
 
             for order in permutations:
                 row = {
-                    "input_text": apply_pet_wrapper(sentence_text, order, pattern_template),
-                    "target_text": generate_oada_target(entities_by_type, order),
+                    "input_text": apply_pet_wrapper(sentence_text, order, pattern_template, label_verbalizer),
+                    "target_text": generate_oada_target(
+                        entities_by_type,
+                        order,
+                        label_verbalizer,
+                        label_separator,
+                    ),
                 }
                 output_file.write(json.dumps(row, ensure_ascii=False) + "\n")
                 rows_written += 1
@@ -262,6 +308,9 @@ def main_orchestrator(
     id_to_string_map: dict,
     train_method: str,
     pattern_section: str = DEFAULT_PATTERN_SECTION,
+    label_verbalizer: dict[str, str] | None = None,
+    label_separator: str = "",
+    pattern_limit: int | None = None,
 ) -> dict[str, int]:
     """Run augmentation for every PET pattern in the pattern bank."""
     output_path = Path(output_dir)
@@ -273,6 +322,8 @@ def main_orchestrator(
     patterns = _iter_pattern_bank(pattern_bank, pattern_section)
     if train_method == "oada":
         patterns = patterns[:OADA_PATTERN_COUNT]
+    if pattern_limit is not None:
+        patterns = patterns[:pattern_limit]
 
     for pattern_index, pattern in enumerate(patterns, start=1):
         pattern_id = canonical_pattern_id(pattern_index)
@@ -285,6 +336,8 @@ def main_orchestrator(
             schema=schema,
             id_to_string_map=id_to_string_map,
             output_filepath=str(pattern_output_path),
+            label_verbalizer=label_verbalizer,
+            label_separator=label_separator,
         )
         manifest[pattern_id] = {
             "source_pattern_id": source_pattern_id,
@@ -293,6 +346,8 @@ def main_orchestrator(
             "source_train_file": repo_relative_path(train_input_path),
             "output_file": repo_relative_path(pattern_output_path),
             "method": train_method,
+            "label_verbalizer": label_verbalizer,
+            "label_separator": label_separator,
             "source_rows": len(input_data),
             "generated_rows": rows_by_pattern[pattern_id],
         }
@@ -324,6 +379,11 @@ def main() -> None:
     mapping_path = Path(os.environ.get("AUG_MAPPING_PATH", SCRIPT_DIR.parent / "mapping.yaml"))
     dataset_name = os.environ.get("AUG_DATASET", DEFAULT_DATASET)
     pattern_section = os.environ.get("AUG_PATTERN_SECTION", DEFAULT_PATTERN_SECTION)
+    use_label_verbalizer = bool_from_env("AUG_USE_LABEL_VERBALIZER", default=False)
+    label_verbalizer = parse_label_verbalizer(os.environ.get("AUG_LABEL_VERBALIZER")) if use_label_verbalizer else None
+    label_separator = os.environ.get("AUG_LABEL_SEPARATOR", " " if use_label_verbalizer else "")
+    raw_pattern_limit = os.environ.get("AUG_PATTERN_LIMIT")
+    pattern_limit = int(raw_pattern_limit) if raw_pattern_limit is not None else None
 
     pattern_bank = load_yaml(patterns_path)
     dataset_mapping = load_yaml(mapping_path)[dataset_name]
@@ -338,6 +398,9 @@ def main() -> None:
         id_to_string_map=id_to_string_map,
         train_method=train_method,
         pattern_section=pattern_section,
+        label_verbalizer=label_verbalizer,
+        label_separator=label_separator,
+        pattern_limit=pattern_limit,
     )
 
     total_rows = sum(rows_by_pattern.values())

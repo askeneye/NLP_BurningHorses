@@ -29,10 +29,22 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 if __package__:
-    from .bart import BRACKETED_ENTITY_RE, detokenize_tokens, find_entity_span, read_jsonl
+    from .bart import (
+        BRACKETED_ENTITY_RE,
+        detokenize_tokens,
+        find_entity_span,
+        generated_text_to_bio_tags,
+        read_jsonl,
+    )
     from .data_aug_train import _iter_pattern_bank, repo_relative_path
 else:
-    from bart import BRACKETED_ENTITY_RE, detokenize_tokens, find_entity_span, read_jsonl
+    from bart import (
+        BRACKETED_ENTITY_RE,
+        detokenize_tokens,
+        find_entity_span,
+        generated_text_to_bio_tags,
+        read_jsonl,
+    )
     from data_aug_train import _iter_pattern_bank, repo_relative_path
 
 
@@ -71,13 +83,16 @@ class MemberSoftLabelConfig:
     metadata_file: Path
     model_dir: Path
     checkpoint_dir: Path
-    output_file: Path
+    output_dir: Path
+    soft_label_file: Path
+    hard_prediction_file: Path
     patterns_path: Path
     pattern_section: str
     source_pattern_id: str | None
     inference_order: str
     batch_size: int
     temperature: float
+    hard_only: bool
     max_source_length: int
     max_generation_length: int
     no_repeat_ngram_size: int
@@ -225,6 +240,22 @@ def scores_to_tags(label_scores: list[list[float]], label_list: list[str]) -> li
     return tags
 
 
+def gold_tags_from_row(row: dict[str, Any], label_list: list[str]) -> list[str] | None:
+    ner_tags = row.get("ner_tags")
+    if ner_tags is None:
+        return None
+
+    gold_tags: list[str] = []
+    for tag in ner_tags:
+        if isinstance(tag, int):
+            gold_tags.append(label_list[tag])
+        elif isinstance(tag, str) and tag.isdigit():
+            gold_tags.append(label_list[int(tag)])
+        else:
+            gold_tags.append(str(tag))
+    return gold_tags
+
+
 def generation_to_label_scores(
     tokens: list[str],
     generated_text: str,
@@ -305,9 +336,12 @@ def write_manifest(
         "metadata_file": repo_relative_path(config.metadata_file),
         "model_dir": repo_relative_path(config.model_dir),
         "checkpoint_dir": repo_relative_path(config.checkpoint_dir),
-        "output_file": repo_relative_path(config.output_file),
+        "output_dir": repo_relative_path(config.output_dir),
+        "soft_label_file": repo_relative_path(config.soft_label_file),
+        "hard_prediction_file": repo_relative_path(config.hard_prediction_file),
         "label_list": label_list,
         "temperature": config.temperature,
+        "hard_only": config.hard_only,
         "rows_written": rows_written,
         "elapsed_seconds": elapsed_seconds,
         "score_projection": (
@@ -352,7 +386,8 @@ def generate_member_soft_labels(config: MemberSoftLabelConfig) -> dict[str, Any]
     model.eval()
 
     entity_type_token_ids = build_entity_type_token_map(tokenizer, entity_types)
-    output_rows: list[dict[str, Any]] = []
+    soft_label_rows: list[dict[str, Any]] = []
+    hard_prediction_rows: list[dict[str, Any]] = []
 
     for batch_start in tqdm(
         range(0, len(rows), config.batch_size),
@@ -383,63 +418,80 @@ def generate_member_soft_labels(config: MemberSoftLabelConfig) -> dict[str, Any]
                 max_length=config.max_generation_length,
                 no_repeat_ngram_size=config.no_repeat_ngram_size,
                 return_dict_in_generate=True,
-                output_scores=True,
+                output_scores=not config.hard_only,
             )
 
         sequences = generated.sequences.detach().cpu()
-        score_tensors = [score.detach().cpu() for score in generated.scores]
+        score_tensors = [] if config.hard_only else [score.detach().cpu() for score in generated.scores]
 
         for batch_index, row in enumerate(batch):
+            sequence_ids = sequences[batch_index].tolist()
+            score_step_count = len(score_tensors) if score_tensors else max(0, len(sequence_ids) - 1)
             generated_ids = generated_ids_for_scores(
-                sequences[batch_index].tolist(),
-                len(score_tensors),
+                sequence_ids,
+                score_step_count,
             )
             generated_text = tokenizer.decode(
                 generated_ids,
                 skip_special_tokens=True,
                 clean_up_tokenization_spaces=False,
             )
-            step_offsets = generation_step_offsets(tokenizer, generated_ids)
-            token_step_scores = [
-                score_tensor[batch_index] for score_tensor in score_tensors[: len(generated_ids)]
-            ]
-            label_scores = generation_to_label_scores(
-                tokens=row["tokens"],
-                generated_text=generated_text,
-                step_offsets=step_offsets,
-                step_scores=token_step_scores,
-                label_list=label_list,
-                entity_types=entity_types,
-                entity_type_token_ids=entity_type_token_ids,
-            )
-            soft_labels = [
-                softmax(token_scores, config.temperature) for token_scores in label_scores
-            ]
-
-            output_rows.append(
-                {
-                    "id": row.get("id", f"unlabeled-{batch_start + batch_index:06d}"),
-                    "tokens": row["tokens"],
-                    "soft_labels": soft_labels,
-                    "predicted_tags": scores_to_tags(label_scores, label_list),
-                    "generated_text": generated_text.strip(),
-                }
+            row_id = row.get("id", f"row-{batch_start + batch_index:06d}")
+            generated_tags = generated_text_to_bio_tags(
+                generated_text,
+                row["tokens"],
+                set(entity_types),
             )
 
-    write_jsonl(config.output_file, output_rows)
+            hard_prediction_row: dict[str, Any] = {
+                "id": row_id,
+                "tokens": row["tokens"],
+                "predicted_tags": generated_tags,
+                "generated_text": generated_text.strip(),
+            }
+            if not config.hard_only:
+                step_offsets = generation_step_offsets(tokenizer, generated_ids)
+                token_step_scores = [
+                    score_tensor[batch_index] for score_tensor in score_tensors[: len(generated_ids)]
+                ]
+                label_scores = generation_to_label_scores(
+                    tokens=row["tokens"],
+                    generated_text=generated_text,
+                    step_offsets=step_offsets,
+                    step_scores=token_step_scores,
+                    label_list=label_list,
+                    entity_types=entity_types,
+                    entity_type_token_ids=entity_type_token_ids,
+                )
+                soft_labels = [
+                    softmax(token_scores, config.temperature) for token_scores in label_scores
+                ]
+                soft_label_rows.append(
+                    {"id": row_id, "tokens": row["tokens"], "soft_labels": soft_labels}
+                )
+                hard_prediction_row["score_argmax_tags"] = scores_to_tags(label_scores, label_list)
+            if "ner_tags" in row:
+                hard_prediction_row["ner_tags"] = row["ner_tags"]
+                hard_prediction_row["gold_tags"] = gold_tags_from_row(row, label_list)
+            hard_prediction_rows.append(hard_prediction_row)
+
+    if not config.hard_only:
+        write_jsonl(config.soft_label_file, soft_label_rows)
+    write_jsonl(config.hard_prediction_file, hard_prediction_rows)
     elapsed_seconds = time.time() - started_at
     write_manifest(
-        config.output_file.parent / "manifest.json",
+        config.output_dir / "manifest.json",
         config,
         pattern,
         label_list,
-        len(output_rows),
+        len(hard_prediction_rows),
         elapsed_seconds,
     )
 
     return {
-        "rows_written": len(output_rows),
-        "output_file": repo_relative_path(config.output_file),
+        "rows_written": len(hard_prediction_rows),
+        "soft_label_file": repo_relative_path(config.soft_label_file),
+        "hard_prediction_file": repo_relative_path(config.hard_prediction_file),
         "elapsed_seconds": elapsed_seconds,
     }
 
@@ -451,13 +503,30 @@ def _path_from_env(name: str, default_relative_path: str) -> Path:
     return PROJECT_ROOT / default_relative_path
 
 
+def bool_from_env(name: str, default: bool = False) -> bool:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
 def load_config_from_env() -> MemberSoftLabelConfig:
     model_dir = _path_from_env("SOFT_LABEL_MODEL_DIR", DEFAULT_MODEL_DIR)
     checkpoint_dir = Path(
         os.environ.get("SOFT_LABEL_CHECKPOINT_DIR", model_dir / DEFAULT_CHECKPOINT_SUBDIR)
     ).expanduser().resolve()
-    output_file = Path(
-        os.environ.get("SOFT_LABEL_OUTPUT_FILE", model_dir / "soft_labels" / "unlabeled_pool.jsonl")
+    legacy_output_file = os.environ.get("SOFT_LABEL_OUTPUT_FILE")
+    if legacy_output_file is not None:
+        soft_label_file = Path(legacy_output_file).expanduser().resolve()
+        output_dir = soft_label_file.parent
+    else:
+        output_dir = Path(
+            os.environ.get("SOFT_LABEL_OUTPUT_DIR", model_dir / "soft_labels" / "unlabeled_pool")
+        ).expanduser().resolve()
+        soft_label_file = output_dir / "soft_labels.jsonl"
+
+    hard_prediction_file = Path(
+        os.environ.get("SOFT_LABEL_HARD_PREDICTION_FILE", output_dir / "hard_predictions.jsonl")
     ).expanduser().resolve()
 
     return MemberSoftLabelConfig(
@@ -470,13 +539,16 @@ def load_config_from_env() -> MemberSoftLabelConfig:
         metadata_file=_path_from_env("SOFT_LABEL_METADATA_FILE", DEFAULT_METADATA_FILE),
         model_dir=model_dir,
         checkpoint_dir=checkpoint_dir,
-        output_file=output_file,
+        output_dir=output_dir,
+        soft_label_file=soft_label_file,
+        hard_prediction_file=hard_prediction_file,
         patterns_path=_path_from_env("SOFT_LABEL_PATTERNS_PATH", DEFAULT_PATTERNS_PATH),
         pattern_section=os.environ.get("SOFT_LABEL_PATTERN_SECTION", DEFAULT_PATTERN_SECTION),
         source_pattern_id=os.environ.get("SOFT_LABEL_SOURCE_PATTERN_ID"),
         inference_order=os.environ.get("SOFT_LABEL_INFERENCE_ORDER", DEFAULT_INFERENCE_ORDER),
         batch_size=int(os.environ.get("SOFT_LABEL_BATCH_SIZE", DEFAULT_BATCH_SIZE)),
         temperature=float(os.environ.get("SOFT_LABEL_TEMPERATURE", DEFAULT_TEMPERATURE)),
+        hard_only=bool_from_env("SOFT_LABEL_HARD_ONLY", default=False),
         max_source_length=int(os.environ.get("SOFT_LABEL_MAX_SOURCE_LENGTH", DEFAULT_MAX_SOURCE_LENGTH)),
         max_generation_length=int(
             os.environ.get("SOFT_LABEL_MAX_GENERATION_LENGTH", DEFAULT_MAX_GENERATION_LENGTH)
@@ -493,7 +565,8 @@ def main() -> None:
     print(
         "Finished BART member soft-label generation: "
         f"rows={summary['rows_written']} "
-        f"output={summary['output_file']} "
+        f"soft={summary['soft_label_file']} "
+        f"hard={summary['hard_prediction_file']} "
         f"time_min={summary['elapsed_seconds'] / 60:.2f}"
     )
 

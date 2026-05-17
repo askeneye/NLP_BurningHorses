@@ -1,0 +1,172 @@
+{
+  "pattern_01": {
+    "source_pattern_id": "pattern_1_oada_original",
+    "source_pattern_type": "sentence-order-entity-cue",
+    "source_template": "Sentence: {SEN} Following the order: {PERM} Entity:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_01.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_02": {
+    "source_pattern_id": "pattern_2_text_order_entities",
+    "source_pattern_type": "sentence-order-entity-cue",
+    "source_template": "Text: {SEN} Following the entity order: {PERM} Entities:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_02.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_03": {
+    "source_pattern_id": "pattern_3_extract_sentence_order",
+    "source_pattern_type": "instruction-sentence-order",
+    "source_template": "Extract entities from the sentence: {SEN} Follow this order: {PERM} Entities:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_03.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_04": {
+    "source_pattern_id": "pattern_4_order_sentence_entity",
+    "source_pattern_type": "order-sentence-entity-cue",
+    "source_template": "Following the order: {PERM}, extract entities from this sentence: {SEN} Entity:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_04.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_05": {
+    "source_pattern_id": "pattern_5_sentence_list_order",
+    "source_pattern_type": "sentence-instruction-order",
+    "source_template": "Sentence: {SEN} List the entities following this order: {PERM} Entities:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_05.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_06": {
+    "source_pattern_id": "pattern_6_given_text_order",
+    "source_pattern_type": "sentence-instruction-order",
+    "source_template": "Given the text: {SEN} Use the order {PERM} to list the entities. Entities:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_06.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_07": {
+    "source_pattern_id": "pattern_7_entity_order_then_sentence",
+    "source_pattern_type": "order-sentence-entity-cue",
+    "source_template": "Entity order: {PERM}. Sentence: {SEN} Extract the entities:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_07.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_08": {
+    "source_pattern_id": "pattern_8_sentence_entities_in_order",
+    "source_pattern_type": "sentence-order-entity-cue",
+    "source_template": "Sentence: {SEN} Entities in the following order, {PERM}:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_08.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_09": {
+    "source_pattern_id": "pattern_9_find_entities_order",
+    "source_pattern_type": "instruction-sentence-order",
+    "source_template": "Find the entities in this text: {SEN} Use this order: {PERM} Entities:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_09.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  },
+  "pattern_10": {
+    "source_pattern_id": "pattern_10_order_guided_extraction",
+    "source_pattern_type": "order-sentence-entity-cue",
+    "source_template": "Use the entity order {PERM} for the sentence: {SEN} Entity:",
+    "source_train_file": "data/interim/conll2003_kshot_bert/k20_seed242/train.jsonl",
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized/k20_seed242/pattern_10.jsonl",
+    "method": "pet_oada",
+    "label_verbalizer": {
+      "PER": "person",
+      "LOC": "location",
+      "ORG": "organization",
+      "MISC": "other"
+    },
+    "label_separator": " ",
+    "source_rows": 39,
+    "generated_rows": 936
+  }
+}

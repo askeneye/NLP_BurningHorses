@@ -1,0 +1,50 @@
+{
+  "model_checkpoint": "models/conll2003_kshot_seq2seq/bart_base/pet_oada_verbalized/k10_seed142/pattern_01_xe_verbalized_pilot1000/final_step",
+  "input_file": "data/interim/conll2003_kshot_seq2seq/inference/first_to_last_verbalized/validation.jsonl",
+  "gold_file": "data/interim/conll2003_kshot_bert/validation.jsonl",
+  "output_file": "reports/verbalizer_logits/k10_seed142_pattern_01_xe_verbalized_pilot1000_validation.jsonl",
+  "label_verbalizer": {
+    "PER": "person",
+    "LOC": "location",
+    "ORG": "organization",
+    "MISC": "other"
+  },
+  "candidate_token_ids": {
+    "PER": [
+      [
+        5970
+      ],
+      [
+        621
+      ]
+    ],
+    "LOC": [
+      [
+        41829
+      ],
+      [
+        2259
+      ]
+    ],
+    "ORG": [
+      [
+        17247,
+        1938
+      ],
+      [
+        1651
+      ]
+    ],
+    "MISC": [
+      [
+        7443
+      ],
+      [
+        97
+      ]
+    ]
+  },
+  "rows_written": 200,
+  "matched_entities": 309,
+  "elapsed_seconds": 3.578077793121338
+}
