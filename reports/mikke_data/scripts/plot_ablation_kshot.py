@@ -22,7 +22,7 @@ FONT_FAMILY = "Inter, Arial, sans-serif"
 
 METHOD_ORDER = [
     "bert",
-    "pat_perm_bart_val",
+    "pat_perm_bart",
     "pat_perm_bart_ensemble_vote",
     "pat_perm_bart_ensemble_to_bert",
     "seed_perm_bart_ensemble_vote",
@@ -31,7 +31,7 @@ METHOD_ORDER = [
 
 METHOD_COLORS = {
     "bert": "#4C78A8",
-    "pat_perm_bart_val": "#F58518",
+    "pat_perm_bart": "#F58518",
     "pat_perm_bart_ensemble_vote": "#B279A2",
     "pat_perm_bart_ensemble_to_bert": "#E45756",
     "seed_perm_bart_ensemble_vote": "#54A24B",
@@ -40,7 +40,7 @@ METHOD_COLORS = {
 
 METHOD_STYLES = {
     "bert": "single",
-    "pat_perm_bart_val": "single",
+    "pat_perm_bart": "single",
     "pat_perm_bart_ensemble_vote": "ensemble",
     "pat_perm_bart_ensemble_to_bert": "distilled",
     "seed_perm_bart_ensemble_vote": "ensemble",
@@ -56,7 +56,9 @@ def read_mean_rows() -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     with MEAN_SOURCE.open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
-            if row["row_type"] != "mean" or row["plot_group"] not in {"main", "supporting"}:
+            if row["row_type"] != "mean":
+                continue
+            if not row["metric_value_percent"]:
                 continue
             rows.append(
                 {

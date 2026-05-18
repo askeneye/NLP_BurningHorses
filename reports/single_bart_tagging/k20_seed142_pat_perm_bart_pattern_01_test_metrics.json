@@ -1,0 +1,11 @@
+{
+  "input_file": "C:\\Users\\meatl\\Documents\\ITU\\nlp\\fire_horses\\nlp_burninghorses\\data\\interim\\conll2003_soft_labels\\bart_base\\pet_oada_verbalized\\k20_seed142\\pattern_01_xe_verbalized_final2000\\test\\hard_predictions.jsonl",
+  "metrics": {
+    "Token_Accuracy": 0.9098524819640358,
+    "Span_Strict_Precision": 0.7330498464446019,
+    "Span_Strict_Recall": 0.5493980169971672,
+    "Span_Strict_F1": 0.6280740815706912,
+    "rows": 3453,
+    "tokens": 46435
+  }
+}

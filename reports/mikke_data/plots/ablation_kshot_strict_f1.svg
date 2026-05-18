@@ -25,13 +25,13 @@
 <circle cx="630.0" cy="144.2" r="3.6" fill="#4C78A8" stroke="#4C78A8" stroke-width="1.5"/>
 <line x1="665" y1="58" x2="695" y2="58" stroke="#4C78A8" stroke-width="1.6" stroke-dasharray="7 5"/>
 <text x="704" y="62" font-family="Inter, Arial, sans-serif" font-size="12">BERT</text>
-<path d="M 90.0 237.5 L 270.0 213.4 L 450.0 184.0 L 630.0 145.9" fill="none" stroke="#F58518" stroke-width="1.6" stroke-opacity="0.62" stroke-dasharray="7 5"/>
-<circle cx="90.0" cy="237.5" r="3.6" fill="white" stroke="#F58518" stroke-width="1.5"/>
-<circle cx="270.0" cy="213.4" r="3.6" fill="white" stroke="#F58518" stroke-width="1.5"/>
-<circle cx="450.0" cy="184.0" r="3.6" fill="white" stroke="#F58518" stroke-width="1.5"/>
-<circle cx="630.0" cy="145.9" r="3.6" fill="white" stroke="#F58518" stroke-width="1.5"/>
+<path d="M 90.0 233.9 L 270.0 211.2 L 450.0 184.9 L 630.0 149.5" fill="none" stroke="#F58518" stroke-width="1.6" stroke-opacity="0.95" stroke-dasharray="7 5"/>
+<circle cx="90.0" cy="233.9" r="3.6" fill="#F58518" stroke="#F58518" stroke-width="1.5"/>
+<circle cx="270.0" cy="211.2" r="3.6" fill="#F58518" stroke="#F58518" stroke-width="1.5"/>
+<circle cx="450.0" cy="184.9" r="3.6" fill="#F58518" stroke="#F58518" stroke-width="1.5"/>
+<circle cx="630.0" cy="149.5" r="3.6" fill="#F58518" stroke="#F58518" stroke-width="1.5"/>
 <line x1="665" y1="82" x2="695" y2="82" stroke="#F58518" stroke-width="1.6" stroke-dasharray="7 5"/>
-<text x="704" y="86" font-family="Inter, Arial, sans-serif" font-size="12">Pat+Perm BART (VAL) (placeholder validation)</text>
+<text x="704" y="86" font-family="Inter, Arial, sans-serif" font-size="12">Pat+Perm BART</text>
 <path d="M 90.0 236.3 L 270.0 208.6 L 450.0 175.7 L 630.0 145.5" fill="none" stroke="#B279A2" stroke-width="4.2" stroke-opacity="0.95"/>
 <path d="M 90.0 236.3 L 270.0 208.6 L 450.0 175.7 L 630.0 145.5" fill="none" stroke="white" stroke-width="1.8" stroke-opacity="0.95"/>
 <path d="M 90.0 236.3 L 270.0 208.6 L 450.0 175.7 L 630.0 145.5" fill="none" stroke="#B279A2" stroke-width="1.6" stroke-opacity="0.95"/>
