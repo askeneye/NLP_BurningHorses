@@ -1,0 +1,130 @@
+{
+  "splits": [
+    "k5_seed42",
+    "k10_seed42",
+    "k20_seed42",
+    "k50_seed42"
+  ],
+  "member_sizes": [
+    3,
+    5,
+    7
+  ],
+  "draws_per_size_excluding_deterministic": 5,
+  "subset_size": 1000,
+  "seed": 42,
+  "summaries": [
+    {
+      "split": "k5_seed42",
+      "full_member_count": 10,
+      "subset_size": 1000,
+      "candidate_draws": 18,
+      "by_member_size": {
+        "3": {
+          "draws": 6,
+          "mean_row_overlap": 417.6666666666667,
+          "mean_row_jaccard": 0.2651323539276835,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        },
+        "5": {
+          "draws": 6,
+          "mean_row_overlap": 634.5,
+          "mean_row_jaccard": 0.46683406586320936,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        },
+        "7": {
+          "draws": 6,
+          "mean_row_overlap": 857.1666666666666,
+          "mean_row_jaccard": 0.7516843524310813,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        }
+      }
+    },
+    {
+      "split": "k10_seed42",
+      "full_member_count": 10,
+      "subset_size": 1000,
+      "candidate_draws": 18,
+      "by_member_size": {
+        "3": {
+          "draws": 6,
+          "mean_row_overlap": 452.6666666666667,
+          "mean_row_jaccard": 0.29308082585602035,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        },
+        "5": {
+          "draws": 6,
+          "mean_row_overlap": 658.1666666666666,
+          "mean_row_jaccard": 0.49276466085444354,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        },
+        "7": {
+          "draws": 6,
+          "mean_row_overlap": 791.0,
+          "mean_row_jaccard": 0.6566505829711687,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        }
+      }
+    },
+    {
+      "split": "k20_seed42",
+      "full_member_count": 5,
+      "subset_size": 1000,
+      "candidate_draws": 7,
+      "by_member_size": {
+        "3": {
+          "draws": 6,
+          "mean_row_overlap": 680.1666666666666,
+          "mean_row_jaccard": 0.5180421713674845,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        },
+        "5": {
+          "draws": 1,
+          "mean_row_overlap": 1000.0,
+          "mean_row_jaccard": 1.0,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        }
+      }
+    },
+    {
+      "split": "k50_seed42",
+      "full_member_count": 5,
+      "subset_size": 1000,
+      "candidate_draws": 7,
+      "by_member_size": {
+        "3": {
+          "draws": 6,
+          "mean_row_overlap": 747.0,
+          "mean_row_jaccard": 0.5980927625823674,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        },
+        "5": {
+          "draws": 1,
+          "mean_row_overlap": 1000.0,
+          "mean_row_jaccard": 1.0,
+          "mean_token_agreement_on_overlap": 1.0,
+          "mean_span_f1_on_overlap": 1.0,
+          "mean_entity_confidence": 1.0
+        }
+      }
+    }
+  ]
+}

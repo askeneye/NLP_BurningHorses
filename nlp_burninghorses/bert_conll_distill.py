@@ -336,6 +336,13 @@ def load_config_from_env() -> DistillConfig:
     )
 
 
+def experiment_note(config: DistillConfig) -> str:
+    train_path_text = config.train_file.as_posix()
+    if "unlabeled_pool" in config.teacher_split or "unlabeled_pool" in train_path_text:
+        return "Report-grade no-leakage run; teacher_train_file is unlabeled-pool-derived."
+    return "Method-validation run; current teacher_train_file is validation-derived."
+
+
 def main() -> None:
     hf_logging.set_verbosity_error()
     config = load_config_from_env()
@@ -436,11 +443,7 @@ def main() -> None:
             "teacher_split": config.teacher_split,
             "teacher_variant": config.teacher_variant,
             "seed": config.seed,
-            "note": (
-                "Report-grade no-leakage run; teacher_train_file is unlabeled-pool-derived."
-                if "unlabeled_pool" in config.teacher_split
-                else "Method-validation run; current teacher_train_file is validation-derived."
-            ),
+            "note": experiment_note(config),
         },
         "paths": {
             "train_file": str(config.train_file),

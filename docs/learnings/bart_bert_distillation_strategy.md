@@ -11,7 +11,8 @@ This is not the final paper headline, but it captures the experiment logic. The 
 ## Current Decisions
 
 - Stop using OADA-XE loss for report-grade runs. The completed pilots did not show consistent benefit over standard XE.
-- Keep OADA as a data/ordering mechanism, not as the OADA-XE objective.
+- Keep OADA-style ordering augmentation as a data/ordering mechanism, not as the OADA-XE objective.
+- Use careful report terminology: `PET-style prompt pattern diversity` and `OADA-style ordering augmentation`. The project borrows useful mechanisms from PET and OADA, but does not reproduce full PET PVP/MLM training or the full OADA objective.
 - Treat BART seq2seq generation as a structured hard-label teacher.
 - Build student soft labels from ensemble disagreement/votes, not from projected decoder logits.
 - Keep hard predictions and ensemble soft labels as separate artifacts.

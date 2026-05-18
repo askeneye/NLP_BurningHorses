@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="460" viewBox="0 0 1050 460">
+<title>Our results vs OADA</title>
+<style>text { font-family: Inter, Arial, sans-serif; }</style>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="30" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Our results vs OADA</text>
+<text x="24" y="225" font-family="Inter, Arial, sans-serif" font-size="16" transform="rotate(-90 24 225)">Strict span F1</text>
+<line x1="90" y1="390.0" x2="690" y2="390.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="52" y="394.0" font-family="Inter, Arial, sans-serif" font-size="12">0</text>
+<line x1="90" y1="307.0" x2="690" y2="307.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="52" y="311.0" font-family="Inter, Arial, sans-serif" font-size="12">25</text>
+<line x1="90" y1="224.0" x2="690" y2="224.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="52" y="228.0" font-family="Inter, Arial, sans-serif" font-size="12">50</text>
+<line x1="90" y1="141.0" x2="690" y2="141.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="52" y="145.0" font-family="Inter, Arial, sans-serif" font-size="12">75</text>
+<line x1="90" y1="58.0" x2="690" y2="58.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="52" y="62.0" font-family="Inter, Arial, sans-serif" font-size="12">100</text>
+<text x="78.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">k=5</text>
+<text x="278.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">k=10</text>
+<text x="478.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">k=20</text>
+<text x="678.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">k=50</text>
+<path d="M 90.0 269.1 L 290.0 222.9 L 490.0 187.0 L 690.0 144.2" fill="none" stroke="#7B61FF" stroke-width="1.6" stroke-opacity="0.95" stroke-dasharray="7 5"/>
+<circle cx="90.0" cy="269.1" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="290.0" cy="222.9" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="490.0" cy="187.0" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="690.0" cy="144.2" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<path d="M 90.0 251.0 L 290.0 191.1 L 490.0 162.0 L 690.0 147.0" fill="none" stroke="#8F8F8F" stroke-width="1.6" stroke-opacity="0.95" stroke-dasharray="7 5"/>
+<circle cx="90.0" cy="251.0" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="290.0" cy="191.1" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="490.0" cy="162.0" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="690.0" cy="147.0" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<path d="M 90.0 191.9 L 290.0 163.1 L 490.0 143.4 L 690.0 133.5" fill="none" stroke="#7B61FF" stroke-width="1.6" stroke-opacity="0.95"/>
+<circle cx="90.0" cy="191.9" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="290.0" cy="163.1" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="490.0" cy="143.4" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="690.0" cy="133.5" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<path d="M 90.0 201.6 L 290.0 163.0 L 490.0 148.8 L 690.0 136.1" fill="none" stroke="#8F8F8F" stroke-width="1.6" stroke-opacity="0.95"/>
+<circle cx="90.0" cy="201.6" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="290.0" cy="163.0" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="490.0" cy="148.8" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="690.0" cy="136.1" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<text x="725" y="62" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#7B61FF">Ours</text>
+<line x1="725" y1="82" x2="755" y2="82" stroke="#7B61FF" stroke-width="1.6"/>
+<text x="764" y="86" font-family="Inter, Arial, sans-serif" font-size="12">Pat+Perm BART ensemble → BERT</text>
+<line x1="725" y1="106" x2="755" y2="106" stroke="#7B61FF" stroke-width="1.6" stroke-dasharray="7 5"/>
+<text x="764" y="110" font-family="Inter, Arial, sans-serif" font-size="12">BERT baseline</text>
+<text x="725" y="146" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#8F8F8F">OADA best performer</text>
+<line x1="725" y1="166" x2="755" y2="166" stroke="#8F8F8F" stroke-width="1.6"/>
+<text x="764" y="170" font-family="Inter, Arial, sans-serif" font-size="12">PromptNER+OADA</text>
+<line x1="725" y1="190" x2="755" y2="190" stroke="#8F8F8F" stroke-width="1.6" stroke-dasharray="7 5"/>
+<text x="764" y="194" font-family="Inter, Arial, sans-serif" font-size="12">BERT-tagger baseline</text>
+</svg>

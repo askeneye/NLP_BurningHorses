@@ -1,0 +1,52 @@
+{
+  "dataset": "conll2003",
+  "model_family": "bart_base",
+  "method": "pet_oada",
+  "kshot_split": "k5_seed42",
+  "eval_split": "test",
+  "patterns": [
+    "pattern_01",
+    "pattern_02",
+    "pattern_03",
+    "pattern_04",
+    "pattern_05",
+    "pattern_06",
+    "pattern_07",
+    "pattern_08",
+    "pattern_09",
+    "pattern_10"
+  ],
+  "member_count": 10,
+  "source_suffix": "xe_verbalized_final2000",
+  "source_files": [
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_01_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_02_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_03_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_04_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_05_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_06_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_07_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_08_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_09_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_10_xe_verbalized_final2000/test/hard_predictions.jsonl"
+  ],
+  "label_list": [
+    "O",
+    "B-PER",
+    "I-PER",
+    "B-ORG",
+    "I-ORG",
+    "B-LOC",
+    "I-LOC",
+    "B-MISC",
+    "I-MISC"
+  ],
+  "temperature": 2.0,
+  "rows_written": 3453,
+  "outputs": {
+    "vote_normalized": "data/interim/conll2003_ensemble_teachers/bart_base/pet_oada_verbalized_final2000/k5_seed42/test/ensemble_vote_normalized.jsonl",
+    "vote_temp2": "data/interim/conll2003_ensemble_teachers/bart_base/pet_oada_verbalized_final2000/k5_seed42/test/ensemble_vote_temp2.jsonl",
+    "hard_argmax": "data/interim/conll2003_ensemble_teachers/bart_base/pet_oada_verbalized_final2000/k5_seed42/test/ensemble_hard_argmax.jsonl"
+  },
+  "elapsed_seconds": 1.1711301803588867
+}

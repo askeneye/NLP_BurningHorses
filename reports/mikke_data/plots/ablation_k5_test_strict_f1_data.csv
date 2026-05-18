@@ -1,0 +1,6 @@
+figure_id,method_id,method_label,plot_order,metric_label,metric_value,score_source,status,is_placeholder,color,annotation,source_path
+ablation_k5_test_strict_f1,standard_bert,Standard BERT,1,Test strict span F1,0.3426322491029054,test,ready_for_draft,false,#4C78A8,seed42 only,results/bert_conll2003_standard_report/BERT_kshot_standard_report.csv
+ablation_k5_test_strict_f1,bart_pattern_learner,BART pattern learner,2,Validation strict span F1,0.4655,pilot_validation,placeholder,true,#F58518,pilot validation,reports/oada_xe_pilot_findings.md
+ablation_k5_test_strict_f1,verbalized_ensemble_majority,Verbalized ensemble majority,3,Test strict span F1,0.484077841662981,test,ready_for_draft,false,#72B7B2,seed42 only,reports/ensemble_tagging/k5_seed42_pet_oada_verbalized_final2000_test_metrics.json
+ablation_k5_test_strict_f1,orders_patterns_ensemble_majority,Orders + Patterns ensemble majority,4,Test strict span F1,0.5099199824619094,test,ready_for_draft,false,#B279A2,seed42 only,reports/ensemble_tagging/k5_seed42_oada_style_seed_ensemble_verbalized_final2000_test_metrics.json
+ablation_k5_test_strict_f1,orders_patterns_distilled_bert,Orders + Patterns distilled BERT,5,Test strict span F1,0.6640,test,placeholder,true,#E45756,pilot top_1000,docs/learnings/agreement_filtered_distillation.md

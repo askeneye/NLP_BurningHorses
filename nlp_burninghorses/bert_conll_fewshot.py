@@ -86,6 +86,19 @@ def find_split_dirs(data_root: Path) -> List[Path]:
     )
 
 
+def csv_from_env(name: str, default: List[str]) -> List[str]:
+    raw_value = os.environ.get(name)
+    if raw_value is None:
+        return default
+    return [item.strip() for item in raw_value.split(",") if item.strip()]
+
+
+def write_json(path: Path, data: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as output_file:
+        json.dump(data, output_file, indent=2, ensure_ascii=False)
+
+
 # ---------------------------------------------------------------------
 # Training
 # ---------------------------------------------------------------------
@@ -224,8 +237,13 @@ def main() -> None:
 
     hf_datasets.disable_progress_bars()
 
-    RESULTS_ROOT.mkdir(parents=True, exist_ok=True)
-    MODELS_ROOT.mkdir(parents=True, exist_ok=True)
+    results_root = Path(os.environ.get("BERT_KSHOT_RESULTS_ROOT", RESULTS_ROOT)).resolve()
+    models_root = Path(os.environ.get("BERT_KSHOT_MODELS_ROOT", MODELS_ROOT)).resolve()
+    results_filename = os.environ.get("BERT_KSHOT_RESULTS_FILENAME", RESULTS_FILENAME)
+    requested_splits = csv_from_env("BERT_KSHOT_SPLITS", [])
+
+    results_root.mkdir(parents=True, exist_ok=True)
+    models_root.mkdir(parents=True, exist_ok=True)
 
     top_metadata = read_metadata(DATA_ROOT / "metadata.json")
 
@@ -245,6 +263,9 @@ def main() -> None:
     test_ds = dataset_from_jsonl(DATA_ROOT / "test.jsonl")
 
     split_dirs = find_split_dirs(DATA_ROOT)
+    if requested_splits:
+        requested = set(requested_splits)
+        split_dirs = [split_dir for split_dir in split_dirs if split_dir.name in requested]
 
     print(f"Found {len(split_dirs)} K-shot split folders")
     print(f"Mini eval size: {len(mini_eval_ds)}")
@@ -287,7 +308,7 @@ def main() -> None:
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Device: {device}")
 
-    csv_path = RESULTS_ROOT / RESULTS_FILENAME
+    csv_path = results_root / results_filename
 
     for run_index, split_dir in enumerate(split_dirs):
         split_metadata = read_metadata(split_dir / "metadata.json")
@@ -295,6 +316,12 @@ def main() -> None:
         k_shot = int(split_metadata["k"])
         split_seed = int(split_metadata["seed"])
         split_name = split_dir.name
+
+        model_dir = models_root / split_name
+        summary_path = model_dir / "training_summary.json"
+        if summary_path.exists() and os.environ.get("BERT_KSHOT_OVERWRITE", "0") != "1":
+            print(f"\n=== Skipping existing {split_name}: {summary_path} ===")
+            continue
 
         print(f"\n=== Training {split_name} ===")
 
@@ -331,7 +358,6 @@ def main() -> None:
 
         optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
 
-        model_dir = MODELS_ROOT / split_name
         best_ckpt_dir = model_dir / "best_span_f1"
 
         train_summary = train_with_early_stopping(
@@ -365,6 +391,7 @@ def main() -> None:
             "validation": (validation_dataloader, len(validation_ds)),
             "test": (test_dataloader, len(test_ds)),
         }
+        eval_results: Dict[str, Dict[str, float]] = {}
 
         for eval_split, (loader, n_eval) in eval_loaders.items():
             token_metrics, span_metrics = evaluate_model(
@@ -393,12 +420,51 @@ def main() -> None:
             )
 
             append_result_row(csv_path, row)
+            eval_results[eval_split] = {**token_metrics, **span_metrics}
 
             print(
                 f"{eval_split}: "
                 f"HF F1={token_metrics['HF_Token_F1']:.4f} | "
                 f"Span strict F1={span_metrics['Span_Strict_F1']:.4f}"
             )
+
+        summary = {
+            "experiment": {
+                "dataset": "conll2003",
+                "model_name": MODEL_NAME,
+                "split": split_name,
+                "k_shot": k_shot,
+                "split_seed": split_seed,
+                "seed": split_seed,
+                "note": "Standard BERT k-shot baseline with shared mini-val selection and validation/test scoring.",
+            },
+            "paths": {
+                "train_file": str(split_dir / "train.jsonl"),
+                "mini_eval_file": str(DATA_ROOT / "mini_val.jsonl"),
+                "validation_file": str(DATA_ROOT / "validation.jsonl"),
+                "test_file": str(DATA_ROOT / "test.jsonl"),
+                "output_dir": str(model_dir),
+                "results_csv": str(csv_path),
+            },
+            "runtime_config": {
+                "max_steps": MAX_TRAIN_STEPS,
+                "eval_every": EARLY_STOPPING_EVAL_EVERY,
+                "patience": EARLY_STOPPING_PATIENCE,
+                "min_steps_before_eval": EARLY_STOPPING_MIN_STEPS_BEFORE_EVAL,
+                "train_batch_size": TRAIN_BATCH_SIZE,
+                "eval_batch_size": EVAL_BATCH_SIZE,
+                "learning_rate": LEARNING_RATE,
+            },
+            "data_stats": {
+                "train_rows": len(train_ds),
+                "mini_eval_rows": len(mini_eval_ds),
+                "validation_rows": len(validation_ds),
+                "test_rows": len(test_ds),
+            },
+            "train_summary": train_summary,
+            "eval_results": eval_results,
+        }
+        write_json(summary_path, summary)
 
     print(f"\nDone. Results written to: {csv_path}")
 
