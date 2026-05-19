@@ -2,42 +2,65 @@
 <title>Our results vs OADA</title>
 <style>text { font-family: Inter, Arial, sans-serif; }</style>
 <rect width="100%" height="100%" fill="white"/>
-<text x="24" y="30" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Our results vs OADA</text>
-<text x="24" y="225" font-family="Inter, Arial, sans-serif" font-size="16" transform="rotate(-90 24 225)">Strict span F1</text>
+<text x="390.0" y="30" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Our results vs OADA</text>
+<text x="24" y="260" font-family="Inter, Arial, sans-serif" font-size="16" transform="rotate(-90 24 260)">Strict span F1</text>
 <line x1="90" y1="390.0" x2="690" y2="390.0" stroke="#DDDDDD" stroke-width="1"/>
-<text x="52" y="394.0" font-family="Inter, Arial, sans-serif" font-size="12">0</text>
+<text x="72" y="395.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">0</text>
 <line x1="90" y1="307.0" x2="690" y2="307.0" stroke="#DDDDDD" stroke-width="1"/>
-<text x="52" y="311.0" font-family="Inter, Arial, sans-serif" font-size="12">25</text>
+<text x="72" y="312.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">25</text>
 <line x1="90" y1="224.0" x2="690" y2="224.0" stroke="#DDDDDD" stroke-width="1"/>
-<text x="52" y="228.0" font-family="Inter, Arial, sans-serif" font-size="12">50</text>
+<text x="72" y="229.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">50</text>
 <line x1="90" y1="141.0" x2="690" y2="141.0" stroke="#DDDDDD" stroke-width="1"/>
-<text x="52" y="145.0" font-family="Inter, Arial, sans-serif" font-size="12">75</text>
+<text x="72" y="146.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">75</text>
 <line x1="90" y1="58.0" x2="690" y2="58.0" stroke="#DDDDDD" stroke-width="1"/>
-<text x="52" y="62.0" font-family="Inter, Arial, sans-serif" font-size="12">100</text>
-<text x="78.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">k=5</text>
-<text x="278.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">k=10</text>
-<text x="478.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">k=20</text>
-<text x="678.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">k=50</text>
-<path d="M 90.0 269.1 L 290.0 222.9 L 490.0 187.0 L 690.0 144.2" fill="none" stroke="#7B61FF" stroke-width="1.6" stroke-opacity="0.95" stroke-dasharray="7 5"/>
-<circle cx="90.0" cy="269.1" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
-<circle cx="290.0" cy="222.9" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
-<circle cx="490.0" cy="187.0" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
-<circle cx="690.0" cy="144.2" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
-<path d="M 90.0 251.0 L 290.0 191.1 L 490.0 162.0 L 690.0 147.0" fill="none" stroke="#8F8F8F" stroke-width="1.6" stroke-opacity="0.95" stroke-dasharray="7 5"/>
-<circle cx="90.0" cy="251.0" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
-<circle cx="290.0" cy="191.1" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
-<circle cx="490.0" cy="162.0" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
-<circle cx="690.0" cy="147.0" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
-<path d="M 90.0 191.9 L 290.0 163.1 L 490.0 143.4 L 690.0 133.5" fill="none" stroke="#7B61FF" stroke-width="1.6" stroke-opacity="0.95"/>
-<circle cx="90.0" cy="191.9" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
-<circle cx="290.0" cy="163.1" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
-<circle cx="490.0" cy="143.4" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
-<circle cx="690.0" cy="133.5" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
-<path d="M 90.0 201.6 L 290.0 163.0 L 490.0 148.8 L 690.0 136.1" fill="none" stroke="#8F8F8F" stroke-width="1.6" stroke-opacity="0.95"/>
-<circle cx="90.0" cy="201.6" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
-<circle cx="290.0" cy="163.0" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
-<circle cx="490.0" cy="148.8" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
-<circle cx="690.0" cy="136.1" r="3.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<text x="72" y="63.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">100</text>
+<line x1="90" y1="58" x2="90" y2="390" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="690" y1="58" x2="690" y2="390" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="122.4" y1="390" x2="122.4" y2="382" stroke="#111111" stroke-width="1.8"/>
+<text x="122.4" y="410" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=5</text>
+<line x1="284.6" y1="390" x2="284.6" y2="382" stroke="#111111" stroke-width="1.8"/>
+<text x="284.6" y="410" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=10</text>
+<line x1="446.8" y1="390" x2="446.8" y2="382" stroke="#111111" stroke-width="1.8"/>
+<text x="446.8" y="410" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=20</text>
+<line x1="608.9" y1="390" x2="608.9" y2="382" stroke="#111111" stroke-width="1.8"/>
+<text x="608.9" y="410" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=50</text>
+<text x="390.0" y="442" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">Few-shot gold labels</text>
+<path d="M 122.4 269.1 L 284.6 222.9 L 446.8 187.0 L 608.9 144.2" fill="none" stroke="#7B61FF" stroke-width="1.6" stroke-opacity="0.95" stroke-dasharray="7 5"/>
+<circle cx="122.4" cy="269.1" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="284.6" cy="222.9" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="446.8" cy="187.0" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="608.9" cy="144.2" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<text x="122.4" y="259.1" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#7B61FF" text-anchor="middle">36.42</text>
+<text x="284.6" y="212.9" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#7B61FF" text-anchor="middle">50.32</text>
+<text x="446.8" y="177.0" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#7B61FF" text-anchor="middle">61.14</text>
+<path d="M 122.4 267.9 L 284.6 246.4 L 446.8 188.9 L 608.9 157.1" fill="none" stroke="#8F8F8F" stroke-width="1.6" stroke-opacity="0.95" stroke-dasharray="7 5"/>
+<circle cx="122.4" cy="267.9" r="2.8" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="284.6" cy="246.4" r="2.8" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="446.8" cy="188.9" r="2.8" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="608.9" cy="157.1" r="2.8" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<text x="122.4" y="285.9" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#8F8F8F" text-anchor="middle">36.79</text>
+<text x="284.6" y="264.4" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#8F8F8F" text-anchor="middle">43.25</text>
+<text x="446.8" y="206.9" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#8F8F8F" text-anchor="middle">60.57</text>
+<path d="M 122.4 191.9 L 284.6 163.1 L 446.8 143.4 L 608.9 133.5" fill="none" stroke="#7B61FF" stroke-width="1.6" stroke-opacity="0.95"/>
+<circle cx="122.4" cy="191.9" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="284.6" cy="163.1" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="446.8" cy="143.4" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<circle cx="608.9" cy="133.5" r="3.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="1.5"/>
+<text x="122.4" y="181.9" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#7B61FF" text-anchor="middle">59.67</text>
+<text x="284.6" y="153.1" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#7B61FF" text-anchor="middle">68.35</text>
+<text x="446.8" y="133.4" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#7B61FF" text-anchor="middle">74.28</text>
+<path d="M 122.4 201.6 L 284.6 163.0 L 446.8 148.8 L 608.9 136.1" fill="none" stroke="#8F8F8F" stroke-width="1.6" stroke-opacity="0.95"/>
+<circle cx="122.4" cy="201.6" r="2.8" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="284.6" cy="163.0" r="2.8" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="446.8" cy="148.8" r="2.8" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<circle cx="608.9" cy="136.1" r="2.8" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1.5"/>
+<text x="122.4" y="219.6" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#8F8F8F" text-anchor="middle">56.76</text>
+<text x="284.6" y="181.0" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#8F8F8F" text-anchor="middle">68.38</text>
+<text x="446.8" y="166.8" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#8F8F8F" text-anchor="middle">72.64</text>
+<text x="626.9" y="124.4" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#7B61FF" text-anchor="start">77.25</text>
+<text x="626.9" y="142.7" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#8F8F8F" text-anchor="start">76.49</text>
+<text x="626.9" y="160.9" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#7B61FF" text-anchor="start">74.03</text>
+<text x="626.9" y="179.2" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#8F8F8F" text-anchor="start">70.15</text>
 <text x="725" y="62" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#7B61FF">Ours</text>
 <line x1="725" y1="82" x2="755" y2="82" stroke="#7B61FF" stroke-width="1.6"/>
 <text x="764" y="86" font-family="Inter, Arial, sans-serif" font-size="12">Pat+Perm BART ensemble → BERT</text>
@@ -47,5 +70,5 @@
 <line x1="725" y1="166" x2="755" y2="166" stroke="#8F8F8F" stroke-width="1.6"/>
 <text x="764" y="170" font-family="Inter, Arial, sans-serif" font-size="12">PromptNER+OADA</text>
 <line x1="725" y1="190" x2="755" y2="190" stroke="#8F8F8F" stroke-width="1.6" stroke-dasharray="7 5"/>
-<text x="764" y="194" font-family="Inter, Arial, sans-serif" font-size="12">BERT-tagger baseline</text>
+<text x="764" y="194" font-family="Inter, Arial, sans-serif" font-size="12">BERT baseline</text>
 </svg>

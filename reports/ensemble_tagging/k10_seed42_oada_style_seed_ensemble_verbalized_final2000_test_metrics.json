@@ -1,0 +1,11 @@
+{
+  "input_file": "C:\\Users\\meatl\\Documents\\ITU\\nlp\\fire_horses\\nlp_burninghorses\\data\\interim\\conll2003_ensemble_teachers\\bart_base\\oada_style_seed_ensemble_verbalized_final2000\\k10_seed42\\test\\ensemble_hard_argmax.jsonl",
+  "metrics": {
+    "Token_Accuracy": 0.8963282007106709,
+    "Span_Strict_Precision": 0.6647216143933868,
+    "Span_Strict_Recall": 0.4840651558073654,
+    "Span_Strict_F1": 0.5601885052760988,
+    "rows": 3453,
+    "tokens": 46435
+  }
+}

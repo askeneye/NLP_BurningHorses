@@ -1,0 +1,31 @@
+{
+  "dataset": "conll2003",
+  "source_method": "pet_oada",
+  "source_suffix": "xe_verbalized_final2000",
+  "kshot_split": "k20_seed242",
+  "eval_split": "unlabeled_pool",
+  "subset_name": "top_1000",
+  "source_manifest": "data/interim/conll2003_ensemble_teachers/bart_base/oada_style_seed_ensemble_verbalized_final2000/k20_seed242/unlabeled_pool/manifest.json",
+  "source_rows": 14002,
+  "member_count": 5,
+  "patterns": [
+    "seed_01",
+    "seed_02",
+    "seed_03",
+    "seed_04",
+    "seed_05"
+  ],
+  "outputs": {
+    "hard_argmax": "data/interim/conll2003_ensemble_teachers/bart_base/oada_style_seed_ensemble_verbalized_final2000_filtered/k20_seed242/unlabeled_pool/top_1000/ensemble_hard_argmax.jsonl",
+    "vote_normalized": "data/interim/conll2003_ensemble_teachers/bart_base/oada_style_seed_ensemble_verbalized_final2000_filtered/k20_seed242/unlabeled_pool/top_1000/ensemble_vote_normalized.jsonl",
+    "vote_temp2": "data/interim/conll2003_ensemble_teachers/bart_base/oada_style_seed_ensemble_verbalized_final2000_filtered/k20_seed242/unlabeled_pool/top_1000/ensemble_vote_temp2.jsonl"
+  },
+  "requested_subset_size": 1000,
+  "selected_rows": 1000,
+  "selected_with_entities": 900,
+  "selected_without_entities": 100,
+  "mean_entity_confidence": 1.0,
+  "mean_token_confidence": 1.0,
+  "selection_policy": "Rank entity-containing examples first by min entity-token vote confidence, then mean entity confidence and mean token confidence. Reserve up to 10% for high-confidence no-entity rows. Restore original row order before writing.",
+  "elapsed_seconds": 1.8023672103881836
+}

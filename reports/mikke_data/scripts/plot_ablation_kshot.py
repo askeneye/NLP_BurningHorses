@@ -21,29 +21,35 @@ SVG_PATH = ROOT / "plots" / "ablation_kshot_strict_f1.svg"
 FONT_FAMILY = "Inter, Arial, sans-serif"
 
 METHOD_ORDER = [
-    "bert",
     "pat_perm_bart",
+    "pat_perm_bart_to_bert",
+    "pat_bart_ensemble_to_bert",
     "pat_perm_bart_ensemble_vote",
     "pat_perm_bart_ensemble_to_bert",
     "seed_perm_bart_ensemble_vote",
     "seed_perm_bart_ensemble_to_bert",
+    "bert",
 ]
 
 METHOD_COLORS = {
-    "bert": "#4C78A8",
-    "pat_perm_bart": "#F58518",
-    "pat_perm_bart_ensemble_vote": "#B279A2",
-    "pat_perm_bart_ensemble_to_bert": "#E45756",
-    "seed_perm_bart_ensemble_vote": "#54A24B",
-    "seed_perm_bart_ensemble_to_bert": "#72B7B2",
+    "bert": "#8F8F8F",
+    "pat_perm_bart": "#8F8F8F",
+    "pat_perm_bart_to_bert": "#F58518",
+    "pat_bart_ensemble_to_bert": "#F58518",
+    "pat_perm_bart_ensemble_vote": "#7B61FF",
+    "pat_perm_bart_ensemble_to_bert": "#7B61FF",
+    "seed_perm_bart_ensemble_vote": "#4C78A8",
+    "seed_perm_bart_ensemble_to_bert": "#4C78A8",
 }
 
 METHOD_STYLES = {
     "bert": "single",
     "pat_perm_bart": "single",
-    "pat_perm_bart_ensemble_vote": "ensemble",
+    "pat_perm_bart_to_bert": "distilled",
+    "pat_bart_ensemble_to_bert": "distilled",
+    "pat_perm_bart_ensemble_vote": "vote",
     "pat_perm_bart_ensemble_to_bert": "distilled",
-    "seed_perm_bart_ensemble_vote": "ensemble",
+    "seed_perm_bart_ensemble_vote": "vote",
     "seed_perm_bart_ensemble_to_bert": "distilled",
 }
 
@@ -158,13 +164,15 @@ def write_plot_data(rows: list[dict[str, object]]) -> None:
 def line_style(method_id: str, is_placeholder: bool) -> str:
     if is_placeholder or METHOD_STYLES.get(method_id) == "single":
         return "--"
+    if METHOD_STYLES.get(method_id) == "vote":
+        return ":"
     return "-"
 
 
 def marker_size(method_id: str) -> float:
-    if METHOD_STYLES.get(method_id) == "ensemble":
-        return 4.0
-    return 3.6
+    if METHOD_STYLES.get(method_id) == "vote":
+        return 3.0
+    return 2.8
 
 
 def svg_path(points: list[tuple[float, float]]) -> str:
@@ -241,6 +249,7 @@ def render_with_matplotlib(rows: list[dict[str, object]]) -> None:
 
     ax.set_xticks([5, 10, 20, 50])
     ax.set_xticklabels(["k=5", "k=10", "k=20", "k=50"], fontweight="bold")
+    ax.tick_params(axis="both", labelsize=12)
     ax.set_ylim(0, 100)
     ax.set_ylabel("Strict span F1", fontsize=14)
     ax.set_title("CoNLL2003 ablation by k-shot setting")
@@ -262,7 +271,9 @@ def render_svg(rows: list[dict[str, object]]) -> None:
     plot_width = width - left - right
     plot_height = height - top - bottom
     k_values = [5, 10, 20, 50]
-    x_lookup = {k: left + index * (plot_width / (len(k_values) - 1)) for index, k in enumerate(k_values)}
+    edge_inset_fraction = 0.2
+    tick_width = plot_width / (len(k_values) - 1 + 2 * edge_inset_fraction)
+    x_lookup = {k: left + (index + edge_inset_fraction) * tick_width for index, k in enumerate(k_values)}
 
     def y_pos(value: float) -> float:
         return top + plot_height - (value / 100) * plot_height
@@ -276,18 +287,21 @@ def render_svg(rows: list[dict[str, object]]) -> None:
         "<title>CoNLL2003 ablation by k-shot setting</title>",
         "<style>text { font-family: Inter, Arial, sans-serif; }</style>",
         '<rect width="100%" height="100%" fill="white"/>',
-        f'<text x="24" y="30" font-family="{FONT_FAMILY}" font-size="18" font-weight="700">CoNLL2003 ablation by k-shot setting</text>',
+        f'<text x="{left + plot_width / 2:.1f}" y="30" font-family="{FONT_FAMILY}" font-size="18" font-weight="700" text-anchor="middle">CoNLL2003 ablation by k-shot setting</text>',
         f'<text x="24" y="225" font-family="{FONT_FAMILY}" font-size="16" transform="rotate(-90 24 225)">Strict span F1</text>',
     ]
 
     for tick in [0, 25, 50, 75, 100]:
         y = y_pos(tick)
         parts.append(f'<line x1="{left}" y1="{y:.1f}" x2="{left + plot_width}" y2="{y:.1f}" stroke="#DDDDDD" stroke-width="1"/>')
-        parts.append(f'<text x="52" y="{y + 4:.1f}" font-family="{FONT_FAMILY}" font-size="12">{tick}</text>')
+        parts.append(f'<text x="72" y="{y + 5:.1f}" font-family="{FONT_FAMILY}" font-size="14" text-anchor="end">{tick}</text>')
+    parts.append(f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_height}" stroke="#DDDDDD" stroke-width="1"/>')
+    parts.append(f'<line x1="{left + plot_width}" y1="{top}" x2="{left + plot_width}" y2="{top + plot_height}" stroke="#DDDDDD" stroke-width="1"/>')
 
     for k in k_values:
         x = x_lookup[k]
-        parts.append(f'<text x="{x - 12:.1f}" y="410" font-family="{FONT_FAMILY}" font-size="12" font-weight="700">k={k}</text>')
+        parts.append(f'<line x1="{x:.1f}" y1="{top + plot_height}" x2="{x:.1f}" y2="{top + plot_height - 8}" stroke="#111111" stroke-width="1.8"/>')
+        parts.append(f'<text x="{x:.1f}" y="410" font-family="{FONT_FAMILY}" font-size="14" font-weight="700" text-anchor="middle">k={k}</text>')
 
     legend_y = top
     for method_id in METHOD_ORDER:
@@ -297,7 +311,13 @@ def render_svg(rows: list[dict[str, object]]) -> None:
         method_rows = sorted(method_rows, key=lambda row: int(row["k_shot"]))
         color = str(method_rows[0]["color"])
         placeholder = method_rows[0]["is_placeholder"] == "true"
-        dash = ' stroke-dasharray="7 5"' if line_style(method_id, placeholder) == "--" else ""
+        style = line_style(method_id, placeholder)
+        if style == "--":
+            dash = ' stroke-dasharray="7 5"'
+        elif style == ":":
+            dash = ' stroke-dasharray="1 5" stroke-linecap="round"'
+        else:
+            dash = ""
         opacity = "0.62" if placeholder else "0.95"
         stroke_width = "1.6"
         dot_radius = marker_size(method_id)

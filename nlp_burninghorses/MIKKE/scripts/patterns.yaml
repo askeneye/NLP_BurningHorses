@@ -41,3 +41,44 @@ patterns:
   - id: "pattern_10_order_guided_extraction"
     template: "Use the entity order {PERM} for the sentence: {SEN} Entity:"
     type: "order-sentence-entity-cue"
+
+no_perm_patterns:
+  - id: "pattern_1_no_perm_sentence_entity"
+    template: "Sentence: {SEN} Entity:"
+    type: "sentence-entity-cue"
+
+  - id: "pattern_2_no_perm_text_entities"
+    template: "Text: {SEN} Entities:"
+    type: "sentence-entity-cue"
+
+  - id: "pattern_3_no_perm_extract_sentence"
+    template: "Extract entities from the sentence: {SEN} Entities:"
+    type: "instruction-sentence"
+
+  - id: "pattern_4_no_perm_extract_entity"
+    template: "Extract entities from this sentence: {SEN} Entity:"
+    type: "instruction-sentence-entity-cue"
+
+  - id: "pattern_5_no_perm_sentence_list"
+    template: "Sentence: {SEN} List the entities. Entities:"
+    type: "sentence-instruction"
+
+  - id: "pattern_6_no_perm_given_text"
+    template: "Given the text: {SEN} List the entities. Entities:"
+    type: "sentence-instruction"
+
+  - id: "pattern_7_no_perm_sentence_extract"
+    template: "Sentence: {SEN} Extract the entities:"
+    type: "sentence-entity-cue"
+
+  - id: "pattern_8_no_perm_sentence_entities"
+    template: "Sentence: {SEN} Entities:"
+    type: "sentence-entity-cue"
+
+  - id: "pattern_9_no_perm_find_entities"
+    template: "Find the entities in this text: {SEN} Entities:"
+    type: "instruction-sentence"
+
+  - id: "pattern_10_no_perm_sentence_entity"
+    template: "For the sentence: {SEN} Entity:"
+    type: "sentence-entity-cue"

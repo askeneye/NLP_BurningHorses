@@ -3,10 +3,10 @@ ours,ours_bert,BERT,baseline,5,span_strict_f1,Strict span F1,0.3642,36.42,test,r
 ours,ours_bert,BERT,baseline,10,span_strict_f1,Strict span F1,0.5032,50.32,test,ready_for_draft,#7B61FF,Mean over our three CoNLL2003 k-shot split seeds.
 ours,ours_bert,BERT,baseline,20,span_strict_f1,Strict span F1,0.6114,61.14,test,ready_for_draft,#7B61FF,Mean over our three CoNLL2003 k-shot split seeds.
 ours,ours_bert,BERT,baseline,50,span_strict_f1,Strict span F1,0.7403,74.03,test,ready_for_draft,#7B61FF,Mean over our three CoNLL2003 k-shot split seeds.
-oada_paper,oada_bert,BERT-tagger baseline,baseline,5,span_strict_f1,Strict span F1,0.4187,41.87,test,reference,#8F8F8F,BERT-tagger baseline reported by the OADA paper.
-oada_paper,oada_bert,BERT-tagger baseline,baseline,10,span_strict_f1,Strict span F1,0.5991,59.91,test,reference,#8F8F8F,BERT-tagger baseline reported by the OADA paper.
-oada_paper,oada_bert,BERT-tagger baseline,baseline,20,span_strict_f1,Strict span F1,0.6866,68.66,test,reference,#8F8F8F,BERT-tagger baseline reported by the OADA paper.
-oada_paper,oada_bert,BERT-tagger baseline,baseline,50,span_strict_f1,Strict span F1,0.7320,73.2,test,reference,#8F8F8F,BERT-tagger baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,baseline,5,span_strict_f1,Strict span F1,0.3679,36.79,test,reference,#8F8F8F,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,baseline,10,span_strict_f1,Strict span F1,0.4325,43.25,test,reference,#8F8F8F,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,baseline,20,span_strict_f1,Strict span F1,0.6057,60.57,test,reference,#8F8F8F,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,baseline,50,span_strict_f1,Strict span F1,0.7015,70.15,test,reference,#8F8F8F,BERT baseline reported by the OADA paper.
 ours,ours_distilled,Pat+Perm BART ensemble → BERT,hero,5,span_strict_f1,Strict span F1,0.5967,59.67,test,ready_for_draft,#7B61FF,Our best distilled top_1000 hard-argmax model.
 ours,ours_distilled,Pat+Perm BART ensemble → BERT,hero,10,span_strict_f1,Strict span F1,0.6835,68.35,test,ready_for_draft,#7B61FF,Our best distilled top_1000 hard-argmax model.
 ours,ours_distilled,Pat+Perm BART ensemble → BERT,hero,20,span_strict_f1,Strict span F1,0.7428,74.28,test,ready_for_draft,#7B61FF,Our best distilled top_1000 hard-argmax model.

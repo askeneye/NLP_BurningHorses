@@ -1,0 +1,28 @@
+{
+  "dataset": "conll2003",
+  "source_method": "pet_oada_verbalized_single_teacher",
+  "source_suffix": "xe_verbalized_final2000",
+  "kshot_split": "k5_seed42",
+  "eval_split": "unlabeled_pool",
+  "subset_name": "top_20",
+  "source_prediction_file": "data/interim/conll2003_soft_labels/bart_base/pet_oada_verbalized/k5_seed42/pattern_01_xe_verbalized_final2000/unlabeled_pool/hard_predictions.jsonl",
+  "source_model_dir": "models/conll2003_kshot_seq2seq/bart_base/pet_oada_verbalized/k5_seed42/pattern_01_xe_verbalized_final2000",
+  "source_pattern": "pattern_01",
+  "source_pattern_id": "pattern_1_oada_original",
+  "source_template": "Sentence: {SEN} Following the order: {PERM} Entity:",
+  "inference_order": "first to last",
+  "outputs": {
+    "hard_argmax": "data/interim/_smoke_single_teacher_confidence/k5_seed42/unlabeled_pool/top_20/ensemble_hard_argmax.jsonl"
+  },
+  "requested_subset_size": 20,
+  "selected_rows": 20,
+  "valid_rows": 4340,
+  "valid_with_entities": 4305,
+  "valid_without_entities": 35,
+  "selected_with_entities": 18,
+  "selected_without_entities": 2,
+  "mean_avg_token_logprob": -0.0037291930243100067,
+  "mean_min_token_logprob": -0.027483615696746712,
+  "selection_policy": "Teacher-force score the already generated single-teacher output. Keep parse-valid rows, rank entity-containing rows by average target-token log probability, reserve up to 10% for confident no-entity rows, then restore source order.",
+  "elapsed_seconds": 38.53677487373352
+}

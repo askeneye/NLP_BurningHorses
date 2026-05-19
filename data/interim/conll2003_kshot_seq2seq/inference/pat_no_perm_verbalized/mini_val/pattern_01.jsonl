@@ -1,0 +1,200 @@
+{"input_text": "Sentence: \"We started panicking a bit after the Turkish goal ... Entity:", "target_text": "[Turkish] other"}
+{"input_text": "Sentence: 2. Merlene Ottey (Jamaica) 10.94 Entity:", "target_text": "[Merlene Ottey] person [Jamaica] location"}
+{"input_text": "Sentence: MOSCOW 1996-08-30 Entity:", "target_text": "[MOSCOW] location"}
+{"input_text": "Sentence: It gave no further details. Entity:", "target_text": ""}
+{"input_text": "Sentence: Death does have some sad dimensions to it but I am a man of faith, \"he said.\" Entity:", "target_text": ""}
+{"input_text": "Sentence: \"I was shocked to see these offers coming in again, though there's been no indication of price or volume. Entity:", "target_text": ""}
+{"input_text": "Sentence: Poland's Foreign Minister Dariusz Rosati will visit Yugoslavia on September 3 and 4 to revive a dialogue between the two governments which was effectively frozen in 1992, PAP news agency reported on Friday. Entity:", "target_text": "[Poland] location [Dariusz Rosati] person [Yugoslavia] location [PAP] organization"}
+{"input_text": "Sentence: Atlanta Games silver medal winner Edwards has called on other leading athletes to take part in the Sarajevo meeting -- a goodwill gesture towards Bosnia as it recovers from the war in the Balkans -- two days after the grand prix final in Milan. Entity:", "target_text": "[Atlanta Games] other [Edwards] person [Sarajevo] location [Bosnia] location [Balkans] location [Milan] location"}
+{"input_text": "Sentence: The pressure group said Wang would be sent to a study class, often a euphemism in China for ideological reform. Entity:", "target_text": "[Wang] person [China] location"}
+{"input_text": "Sentence: 7. Frank Busemann (Germany) 13.58 Entity:", "target_text": "[Frank Busemann] person [Germany] location"}
+{"input_text": "Sentence: The area is patrolled by U.S., French and British planes. Entity:", "target_text": "[U.S.] location [French] other [British] other"}
+{"input_text": "Sentence: The city's industrial and commercial departments would confiscate disposable plastic containers and police would prevent new ones from entering the city, it said. Entity:", "target_text": ""}
+{"input_text": "Sentence: Buducnost (V) 0 OFK Beograd 1 Entity:", "target_text": "[Buducnost (V)] organization [OFK Beograd] organization"}
+{"input_text": "Sentence: It was a perfect start. Entity:", "target_text": ""}
+{"input_text": "Sentence: BOSTON 69 66 .511 6 1/2 Entity:", "target_text": "[BOSTON] organization"}
+{"input_text": "Sentence: BIRMINGHAM, England 1996-08-31 Entity:", "target_text": "[BIRMINGHAM] organization [England] location"}
+{"input_text": "Sentence: Results of South Korean pro-soccer Entity:", "target_text": "[South Korean] other"}
+{"input_text": "Sentence: SQUASH - HONG KONG OPEN QUARTER-FINAL RESULTS. Entity:", "target_text": "[HONG KONG OPEN] other"}
+{"input_text": "Sentence: Jamaica's Michael Green was second with 10.09 with Bailey finishing in 10.13. Entity:", "target_text": "[Jamaica] location [Michael Green] person [Bailey] person"}
+{"input_text": "Sentence: He said his troops took Tavildara without casualties on August 23, but the crack of sniper and machinegun fire revealed the presence of opposition fighters in the surrounding mountains. Entity:", "target_text": "[Tavildara] location"}
+{"input_text": "Sentence: Cofinec, the first foreign company to list on the Budapest bourse, released its consolidated first half figures (IAS) this morning. Entity:", "target_text": "[Cofinec] organization [Budapest] location"}
+{"input_text": "Sentence: Stirling 1 Dundee 1 Entity:", "target_text": "[Stirling] organization [Dundee] organization"}
+{"input_text": "Sentence: SAN DIEGO AT MONTREAL Entity:", "target_text": "[SAN DIEGO] organization [MONTREAL] location"}
+{"input_text": "Sentence: BOXING - PANAMA'S ROBERTO DURAN FIGHTS THE SANDS OF TIME. Entity:", "target_text": "[PANAMA] location [ROBERTO DURAN] person"}
+{"input_text": "Sentence: SOCCER - BELARUS BEAT ESTONIA IN WORLD CUP QUALIFIER. Entity:", "target_text": "[BELARUS] location [ESTONIA] location [WORLD CUP] other"}
+{"input_text": "Sentence: Workers at Driefontein Consolidated Ltd's east gold mine have failed to report for work since Wednesday night, mine managers Gold Fields of South Africa Ltd said on Friday. Entity:", "target_text": "[Driefontein Consolidated Ltd] organization [Gold Fields of South Africa Ltd] organization"}
+{"input_text": "Sentence: The authorities are apparently extremely afraid of any political and social discontent, \"said Xiao, in Manila to attend an Amnesty International conference on human rights in China. Entity:", "target_text": "[Xiao] person [Manila] location [Amnesty International] organization [China] location"}
+{"input_text": "Sentence: American Nate Miller successfully defended his WBA cruiserweight title when he knocked out compatriot James Heath in the seventh round of their bout on Saturday. Entity:", "target_text": "[American] other [Nate Miller] person [WBA] organization [James Heath] person"}
+{"input_text": "Sentence: . Entity:", "target_text": ""}
+{"input_text": "Sentence: Sloboda 4 Mladost (BJ) 0 Entity:", "target_text": "[Sloboda] organization [Mladost (BJ)] organization"}
+{"input_text": "Sentence: 2. Lance Armstrong (U.S.) Motorola 2 seconds behind Entity:", "target_text": "[Lance Armstrong] person [U.S.] location [Motorola] organization"}
+{"input_text": "Sentence: Tavildara is now apparently inhabited only by a few old men, women and their grubby, barefoot children. Entity:", "target_text": "[Tavildara] location"}
+{"input_text": "Sentence: Cleveland's lead over the White Sox in the American League Central dropped to nine games. Entity:", "target_text": "[Cleveland] organization [White Sox] organization [American League Central] other"}
+{"input_text": "Sentence: AMERICAN LEAGUE Entity:", "target_text": "[AMERICAN LEAGUE] other"}
+{"input_text": "Sentence: Previously, he was instrumental in drafting church policy on war, peace and nuclear arms, and for seven years he headed the bishops' anti-abortion policy committee, espousing a policy describing human life as a \"seamless garment.\" Entity:", "target_text": ""}
+{"input_text": "Sentence: Portsmouth: Middlesex 199 and 426 (J. Pooley 111, M. Ramprakash 108, M. Gatting 83), Hampshire 232 and 109-5. Entity:", "target_text": "[Portsmouth] location [Middlesex] organization [J. Pooley] person [M. Ramprakash] person [M. Gatting] person [Hampshire] organization"}
+{"input_text": "Sentence: A child's chances of being killed in a car accident, whether the vehicle was equipped with an air bag or not, is reduced by 29 percent when they are in the rear seat, she said. Entity:", "target_text": ""}
+{"input_text": "Sentence: Comelf's six-month output rose to 4,378 tonnes of equipment from 2,684 tonnes in the equivalent period in 1995, the company report to the Bucharest stock exchange showed. Entity:", "target_text": "[Comelf] organization [Bucharest] location"}
+{"input_text": "Sentence: But the people in the crowd on Saturday, who had turned out in support of the rebels, did not seem sure that the war was over. Entity:", "target_text": ""}
+{"input_text": "Sentence: N. Knight st Moin Khan b Saqlain Mushtaq 113 Entity:", "target_text": "[N. Knight] person [Moin Khan] person [Saqlain Mushtaq] person"}
+{"input_text": "Sentence: 2009 95,000 Entity:", "target_text": ""}
+{"input_text": "Sentence: This month, he announced that he would oversee a series of conferences to find \"common ground\" among American Catholics. Entity:", "target_text": "[American Catholics] other"}
+{"input_text": "Sentence: Australia won the toss and Entity:", "target_text": "[Australia] location"}
+{"input_text": "Sentence: \"The people have asked us to establish order and that's our main aim.\" Entity:", "target_text": ""}
+{"input_text": "Sentence: Organisers tried to block off traffic while preparing the drag race late on Friday, but an allegedly drunk driver was unable to slow down in time and ran into a group of spectators as he swerved to avoid one of the cars that was to take part in the race. Entity:", "target_text": ""}
+{"input_text": "Sentence: LAST SALE: None Entity:", "target_text": ""}
+{"input_text": "Sentence: 6. Steve Brown (U.S.) 13.53 Entity:", "target_text": "[Steve Brown] person [U.S.] location"}
+{"input_text": "Sentence: BERLIN 1996-08-30 Entity:", "target_text": "[BERLIN] location"}
+{"input_text": "Sentence: Only Russia has chosen to do so. Entity:", "target_text": "[Russia] location"}
+{"input_text": "Sentence: 1. Michelle Freeman (Jamaica) 12.71 seconds Entity:", "target_text": "[Michelle Freeman] person [Jamaica] location"}
+{"input_text": "Sentence: Pirelli shares reacted favourable even though talks had been underway for some time and news about a venture had been widely expected. Entity:", "target_text": "[Pirelli] organization"}
+{"input_text": "Sentence: That was the highest savings rate since October last year, when 5.5 cents out of each dollar earned was being saved. Entity:", "target_text": ""}
+{"input_text": "Sentence: DETROIT 4 Kansas City 0 Entity:", "target_text": "[DETROIT] organization [Kansas City] organization"}
+{"input_text": "Sentence: 24 to plot interest-rate strategy. Entity:", "target_text": ""}
+{"input_text": "Sentence: Sjeng Schalken (Netherlands) beat David Rikl (Czech Republic) 6 - 2 6-4 6-4 Entity:", "target_text": "[Sjeng Schalken] person [Netherlands] location [David Rikl] person [Czech Republic] location"}
+{"input_text": "Sentence: It gave no further details. Entity:", "target_text": ""}
+{"input_text": "Sentence: Leading money winners on the Entity:", "target_text": ""}
+{"input_text": "Sentence: New Zealand win test series 2-1. Entity:", "target_text": "[New Zealand] location"}
+{"input_text": "Sentence: 4. Tim Lobinger (Germany) 5.80 Entity:", "target_text": "[Tim Lobinger] person [Germany] location"}
+{"input_text": "Sentence: Winter is in the air. Entity:", "target_text": ""}
+{"input_text": "Sentence: PHILADELPHIA 1996-08-29 Entity:", "target_text": "[PHILADELPHIA] location"}
+{"input_text": "Sentence: international basketball tournament on Saturday: Entity:", "target_text": ""}
+{"input_text": "Sentence: The wreck was located in 1985. Entity:", "target_text": ""}
+{"input_text": "Sentence: We have lost two points. Entity:", "target_text": ""}
+{"input_text": "Sentence: Richard Finn Entity:", "target_text": "[Richard Finn] person"}
+{"input_text": "Sentence: Market-making in the rarely-traded FTO contract was expected to begin today, but an EOE spokesman said the 10 banks and brokers involved in the initiative needed time to get accustomed to changes in the electronic trading system. Entity:", "target_text": "[FTO] organization [EOE] organization"}
+{"input_text": "Sentence: NEW YORK 1996-08-31 Entity:", "target_text": "[NEW YORK] location"}
+{"input_text": "Sentence: The Briton, who lost his World Boxing Council (WBC) title to Mike Tyson in March, said: \"I was in shock as soon as he told me and it still hasn't really sunk in. Entity:", "target_text": "[Briton] other [World Boxing Council] organization [WBC] organization [Mike Tyson] person"}
+{"input_text": "Sentence: Zycie Warszawy said the new, open consortium, which also included several listed Polish firms, would on Monday inform Privatisation Minister Wieslaw Kaczmarek of its plans. Entity:", "target_text": "[Zycie Warszawy] organization [Polish] other [Wieslaw Kaczmarek] person"}
+{"input_text": "Sentence: The temperamental left-hander defeated the Chilean 6-4 4-6 7-6 6-2. Entity:", "target_text": "[Chilean] other"}
+{"input_text": "Sentence: Add Women's singles, third round Linda Wild (U.S.) beat Barbara Rittner (Germany) 6-4 4-6 7-5 Asa Carlsson (Sweden) beat 15 - Gabriela Sabatini (Argentina) 7-5 3-6 6-2 Entity:", "target_text": "[Linda Wild] person [U.S.] location [Barbara Rittner] person [Germany] location [Asa Carlsson] person [Sweden] location [Gabriela Sabatini] person [Argentina] location"}
+{"input_text": "Sentence: Reuters historical calendar - September 7. Entity:", "target_text": "[Reuters] organization"}
+{"input_text": "Sentence: Russian peacemaker Alexander Lebed and Chechen separatist military leader Aslan Maskhadov started a new round of peace talks on Friday in this settlement just outside the rebel region. Entity:", "target_text": "[Russian] other [Alexander Lebed] person [Chechen] other [Aslan Maskhadov] person"}
+{"input_text": "Sentence: Algerian newspapers quoted the Human Rights National Observatory (ONDH), a government-appointed watchdog, as saying earlier in August that about 1,400 civilians had been killed in bomb attacks blamed on Moslem guerrillas in the past two years. Entity:", "target_text": "[Algerian] other [Human Rights National Observatory] organization [ONDH] organization [Moslem] other"}
+{"input_text": "Sentence: The Dole campaign released a letter Friday inviting their Clinton counterparts to meet with Dole campaign manager Scott Reed to discuss particulars of the televised debates. Entity:", "target_text": "[Dole] person [Clinton] person [Dole] person [Scott Reed] person"}
+{"input_text": "Sentence: \"I would like to thank the Eagles organisation and the wonderful fans of Philadelphia for supporting me throughout my career,\" Cunningham said. Entity:", "target_text": "[Eagles] organization [Philadelphia] organization [Cunningham] person"}
+{"input_text": "Sentence: In the conference call, Frater said he regarded Cofinec GDRs -- which are trading below their issue price of 6,425 forints -- as a buying opportunity. Entity:", "target_text": "[Frater] person [Cofinec] organization"}
+{"input_text": "Sentence: 1. Mark Crear (U.S.) 13.26 seconds Entity:", "target_text": "[Mark Crear] person [U.S.] location"}
+{"input_text": "Sentence: Telgheder (2-5) snapped a personal three-game losing streak. Entity:", "target_text": "[Telgheder] person"}
+{"input_text": "Sentence: BRUSSELS 1996-08-31 Entity:", "target_text": "[BRUSSELS] location"}
+{"input_text": "Sentence: Our mission in Chechnya has done all it can within the given limitations. \" Entity:", "target_text": "[Chechnya] location"}
+{"input_text": "Sentence: bank said. Entity:", "target_text": ""}
+{"input_text": "Sentence: \"The main subject (of the talks) was the search for a peaceful solution for Nagorno-Karabakh,\" the source said. Entity:", "target_text": "[Nagorno-Karabakh] location"}
+{"input_text": "Sentence: The dollar slipped to 108.40 yen from 108.45. Entity:", "target_text": ""}
+{"input_text": "Sentence: But the radio report did not specify what guarantees, if any, the U.S. envoy had provided. Entity:", "target_text": "[U.S.] location"}
+{"input_text": "Sentence: 1993 - Six former Soviet republics, Russia, Belarus, Kazakhstan, Uzbekistan, Armenia and Tajikistan, signed framework agreement to keep the Russian rouble as their common currency. Entity:", "target_text": "[Soviet] other [Russia] location [Belarus] location [Kazakhstan] location [Uzbekistan] location [Armenia] location [Tajikistan] location [Russian] other"}
+{"input_text": "Sentence: Orders for durable goods, meant to last three years or more, rose a revised 1.7 percent in July after falling 0.2 percent in June. Entity:", "target_text": ""}
+{"input_text": "Sentence: \"The war has ended if everything works out, if there is law there will be power. Entity:", "target_text": ""}
+{"input_text": "Sentence: Baseball-Results of S. Korean pro-baseball games. Entity:", "target_text": "[S. Korean] other"}
+{"input_text": "Sentence: Brazil (half-time 0-1) in a soccer friendly on Saturday. Entity:", "target_text": "[Brazil] location"}
+{"input_text": "Sentence: The fifth set stayed on serve until the sixth game, when Washington, after saving one break point with a forehand winner down the line, netted a backhand to give O'Brien a 4-2 lead. Entity:", "target_text": "[Washington] person [O'Brien] person"}
+{"input_text": "Sentence: \"In the early innings, I was struggling, I was just trying to make it from pitch to pitch. Entity:", "target_text": ""}
+{"input_text": "Sentence: Attendance: 18,000 Entity:", "target_text": ""}
+{"input_text": "Sentence: September gasoline stood 0.87 cent lower at 62.85 cents a gallon. Entity:", "target_text": ""}
+{"input_text": "Sentence: JOHANNESBURG 1996-08-31 Entity:", "target_text": "[JOHANNESBURG] location"}
+{"input_text": "Sentence: Caltex Petroleum Corp plans to build a lubricants blender in a bonded zone in Tianjin, the newspaper said. Entity:", "target_text": "[Caltex Petroleum Corp] organization [Tianjin] location"}
+{"input_text": "Sentence: Singapore dealers said they were concerned that there had been a marked revival in offers to sell gold by South Korean traders, following the distress sales of recent months after the Seoul government's crackdown on bullion arbitrage trade. Entity:", "target_text": "[Singapore] location [South Korean] other [Seoul] location"}
+{"input_text": "Sentence: OTTAWA 1996-08-30 Entity:", "target_text": "[OTTAWA] location"}
+{"input_text": "Sentence: 10. Paul Lawrie 211,420 Entity:", "target_text": "[Paul Lawrie] person"}
+{"input_text": "Sentence: The terrain is mountainous, the only roads are dirt tracks. Entity:", "target_text": ""}
+{"input_text": "Sentence: California growers have charged that removing the restrictions, even on a limited basis, would endanger the $1 billion U.S. industry if potentially harmful Mexican insects were brought into the country along with the avocados. Entity:", "target_text": "[California] location [U.S.] location [Mexican] other"}
+{"input_text": "Sentence: It was Belgium's first victory under Van Moer after two draws in friendlies against Russia and Italy. Entity:", "target_text": "[Belgium] location [Van Moer] person [Russia] location [Italy] location"}
+{"input_text": "Sentence: \"Certain powers can be delegated from the provincial level, towards the sub-regions,\" he said. Entity:", "target_text": ""}
+{"input_text": "Sentence: YEREVAN 1996-08-31 Entity:", "target_text": "[YEREVAN] location"}
+{"input_text": "Sentence: The town straddles a strategically important road linking government and rebel-held territory and has fallen succesively to both sides in a bloody tug-of-war which began last February. Entity:", "target_text": ""}
+{"input_text": "Sentence: Standings after games played on Friday (tabulate under won, drawn, lost, winning percentage, games behind first place) Entity:", "target_text": ""}
+{"input_text": "Sentence: Syria and Arabs have been dismayed by Netanyahu's refusal to trade the occupied Arab lands for peace, his support for the expansion of settlements and his insistance on Jerusalem as a unifed capital for Israel. Entity:", "target_text": "[Syria] location [Arabs] other [Netanyahu] person [Arab] other [Jerusalem] location [Israel] location"}
+{"input_text": "Sentence: The 23,000 U.S. military people already in the Gulf consist of 15,000 sailors and Marines, 6,000 U.S. servicemen based primarily in Saudi Arabia and 2,000 U.S. troops in the area for military exercises. Entity:", "target_text": "[U.S.] location [Gulf] location [Marines] other [U.S.] location [Saudi Arabia] location [U.S.] location"}
+{"input_text": "Sentence: Banisadr, an avowed opponent of the Tehran government who now lives in exile, accused top Iranian leaders of personally ordering the assassination of three exiled Kurdish leaders in a Berlin restaurant in 1992. Entity:", "target_text": "[Banisadr] person [Tehran] location [Iranian] other [Kurdish] other [Berlin] location"}
+{"input_text": "Sentence: CHICAGO AT TORONTO Entity:", "target_text": "[CHICAGO] organization [TORONTO] location"}
+{"input_text": "Sentence: A Moscow street vendor stabbed to death a woman judge in a city court on Friday after she fined him the equivalent of seven dollars for trading illegally, Interfax news agency said. Entity:", "target_text": "[Moscow] location [Interfax] organization"}
+{"input_text": "Sentence: games played on Thursday. Entity:", "target_text": ""}
+{"input_text": "Sentence: Net loss 1,071 loss 277 Entity:", "target_text": ""}
+{"input_text": "Sentence: \"This most recent measure represents a revival of old, malicious plans to confiscate the land and build units for Israeli settlers within the walls of the Old City.\" Entity:", "target_text": "[Israeli] other [Old City] location"}
+{"input_text": "Sentence: Maggie McNeil Entity:", "target_text": "[Maggie McNeil] person"}
+{"input_text": "Sentence: National League Entity:", "target_text": "[National League] other"}
+{"input_text": "Sentence: Belgrade airport runway repairs Sept 21-26-agency. Entity:", "target_text": "[Belgrade] location"}
+{"input_text": "Sentence: \"I think the Professional Squash Association should look into this matter and deal with it properly. Entity:", "target_text": "[Professional Squash Association] organization"}
+{"input_text": "Sentence: Police beat Wang and his colleague, Chen Longde, and encouraged other camp inmates to attack them as well, Xiao said. Entity:", "target_text": "[Wang] person [Chen Longde] person [Xiao] person"}
+{"input_text": "Sentence: Aw Computer Systems Inc Q2 loss widens. Entity:", "target_text": "[Computer Systems Inc] organization"}
+{"input_text": "Sentence: The Batajnica airport will take over complete air traffic control during this period, Federal Air Traffic Control Administration Director Branko Bilbija said. Entity:", "target_text": "[Batajnica] location [Federal Air Traffic Control Administration] organization [Branko Bilbija] person"}
+{"input_text": "Sentence: BONN 1996-08-31 Entity:", "target_text": "[BONN] location"}
+{"input_text": "Sentence: Scunthorpe 4 2 1 1 3 3 7 Entity:", "target_text": "[Scunthorpe] organization"}
+{"input_text": "Sentence: Police had confiscated the remainder of the poisonous liquor, Xinhua said. Entity:", "target_text": "[Xinhua] organization"}
+{"input_text": "Sentence: BRUSSELS 1996-08-31 Entity:", "target_text": "[BRUSSELS] location"}
+{"input_text": "Sentence: GOLF - LEADING MONEY WINNERS ON EUROPEAN TOUR. Entity:", "target_text": "[EUROPEAN TOUR] other"}
+{"input_text": "Sentence: CRICKET - SRI LANKA BEAT AUSTRALIA BY FOUR WICKETS. Entity:", "target_text": "[SRI LANKA] location [AUSTRALIA] location"}
+{"input_text": "Sentence: It already has adopted a bias toward raising rates to keep a lid on wage and price rises and help sustain the 5-1 / 2-year-old economic expansion. Entity:", "target_text": ""}
+{"input_text": "Sentence: Silver, basis the September contract on New York's Comex market, was expected to find support at between $5.12 - $5.15 an ounce and meet resistance from $5.25 - $5.30, they added. Entity:", "target_text": "[New York] location"}
+{"input_text": "Sentence: Northern Iraq has been under Iraqi Kurdish control since after the 1991 Gulf War. Entity:", "target_text": "[Iraq] location [Iraqi Kurdish] other [Gulf War] other"}
+{"input_text": "Sentence: MINSK 1996-08-31 Entity:", "target_text": "[MINSK] location"}
+{"input_text": "Sentence: BELGRADE 1996-08-31 Entity:", "target_text": "[BELGRADE] location"}
+{"input_text": "Sentence: A third report from the Commerce Department, on July personal income and spending, pointed to a potential slowdown in consumer spending that some analysts said may help moderate growth in the second half. Entity:", "target_text": "[Commerce Department] organization"}
+{"input_text": "Sentence: The monitoring committee was set up to deal with violations of an April 25 ceasefire understanding that ended 17 days of fighting between Israel and the guerrillas. Entity:", "target_text": "[Israel] location"}
+{"input_text": "Sentence: Spain at Belgium Entity:", "target_text": "[Spain] location [Belgium] location"}
+{"input_text": "Sentence: Salim Malik c Stewart b Hollioake 23 Entity:", "target_text": "[Salim Malik] person [Stewart] person [Hollioake] person"}
+{"input_text": "Sentence: World Group I, first round (March 1-2) Entity:", "target_text": ""}
+{"input_text": "Sentence: Arafat, who made an interim peace deal with Israel in 1993 that set up self-rule, says he will only visit Jerusalem once Israeli occupation has ended. Entity:", "target_text": "[Arafat] person [Israel] location [Jerusalem] location [Israeli] other"}
+{"input_text": "Sentence: \"It's not ready yet. Entity:", "target_text": ""}
+{"input_text": "Sentence: Shells had smashed roofs and windows and empty shell cases littered the streets. Entity:", "target_text": ""}
+{"input_text": "Sentence: They took the tie 3-2 on aggregate and qualified for the UEFA Cup. Entity:", "target_text": "[UEFA Cup] other"}
+{"input_text": "Sentence: on Saturday: Entity:", "target_text": ""}
+{"input_text": "Sentence: Burnley 4 2 0 2 6 7 6 Entity:", "target_text": "[Burnley] organization"}
+{"input_text": "Sentence: SOCCER - SILVA'S `LOST PASSPORT' EXCUSE NOT ENOUGH FOR FIFA. Entity:", "target_text": "[SILVA] person [FIFA] organization"}
+{"input_text": "Sentence: - Tunisia's exports of spare parts amounted to 220 million dinars in 1995. Entity:", "target_text": "[Tunisia] location"}
+{"input_text": "Sentence: Hendrik Dreekmann (Germany) beat Thomas Johansson (Sweden) Entity:", "target_text": "[Hendrik Dreekmann] person [Germany] location [Thomas Johansson] person [Sweden] location"}
+{"input_text": "Sentence: 4. Vladimir Dubrovshchik (Belarus) 65.30 Entity:", "target_text": "[Vladimir Dubrovshchik] person [Belarus] location"}
+{"input_text": "Sentence: Bowling: S. Waugh 5-1-36-1, Law 2-0-23-0, McGrath 9.5-0-44-1, Entity:", "target_text": "[S. Waugh] person [Law] person [McGrath] person"}
+{"input_text": "Sentence: \"The result is acceptable,\" Scottish coach Craig Brown told reporters. \" Entity:", "target_text": "[Scottish] other [Craig Brown] person"}
+{"input_text": "Sentence: \"In the first six months of 1996 we concentrated on increasing the volume of our output and exports in particular and improving the quality of our products,\" the report said. Entity:", "target_text": ""}
+{"input_text": "Sentence: Broker Khurshid Alam said: \"The market sentiment will remain strong. Entity:", "target_text": "[Khurshid Alam] person"}
+{"input_text": "Sentence: An Iraqi opposition group in exile said on Saturday it had received reports that Iraqi forces were shelling and advancing on the Kurdish town of Arbil in northern Iraq. Entity:", "target_text": "[Iraqi] other [Iraqi] other [Kurdish] other [Arbil] location [Iraq] location"}
+{"input_text": "Sentence: Scoreboard of the second one-day cricket match between England and Pakistan on Saturday: Entity:", "target_text": "[England] location [Pakistan] location"}
+{"input_text": "Sentence: W L PCT GB Entity:", "target_text": ""}
+{"input_text": "Sentence: SAN FRANCISCO AT NEW YORK Entity:", "target_text": "[SAN FRANCISCO] organization [NEW YORK] location"}
+{"input_text": "Sentence: Telephone: (6221) 384-6364. Entity:", "target_text": ""}
+{"input_text": "Sentence: -- Stockholm newsroom +46-8-700 1017 Entity:", "target_text": "[Stockholm] location"}
+{"input_text": "Sentence: NATIONAL LEAGUE Entity:", "target_text": "[NATIONAL LEAGUE] other"}
+{"input_text": "Sentence: Dunvant 21 Ebbw Vale 10 Entity:", "target_text": "[Dunvant] organization [Ebbw Vale] organization"}
+{"input_text": "Sentence: Andy Colquhoun Entity:", "target_text": "[Andy Colquhoun] person"}
+{"input_text": "Sentence: NEW YORK 1996-08-30 Entity:", "target_text": "[NEW YORK] location"}
+{"input_text": "Sentence: BASKETBALLSOCCER - TROFEJ BEOGRAD TOURNAMENT RESULTS. Entity:", "target_text": "[TROFEJ BEOGRAD TOURNAMENT] other"}
+{"input_text": "Sentence: May 18 v Worcestershire Entity:", "target_text": "[Worcestershire] organization"}
+{"input_text": "Sentence: LONDON 1996-08-31 Entity:", "target_text": "[LONDON] location"}
+{"input_text": "Sentence: RANGOON 1996-08-31 Entity:", "target_text": "[RANGOON] location"}
+{"input_text": "Sentence: 6. Gunhild Halle (Norway) 15:09.00 Entity:", "target_text": "[Gunhild Halle] person [Norway] location"}
+{"input_text": "Sentence: President Bill Clinton on Friday ordered the U.S. military to ready itself for any possible action as Washington turned up the heat in an escalating crisis over Iraqi troop movements in northern Iraq. Entity:", "target_text": "[Bill Clinton] person [U.S.] location [Washington] location [Iraqi] other [Iraq] location"}
+{"input_text": "Sentence: Mauritania's soccer federation dissolved the national team and suspended this season's domestic championship on Saturday in the wake of the country's failure to qualify for the African Nations' Cup. Entity:", "target_text": "[Mauritania] location [African Nations' Cup] other"}
+{"input_text": "Sentence: BAGHDAD 1996-08-31 Entity:", "target_text": "[BAGHDAD] location"}
+{"input_text": "Sentence: New orders to factories were strong for durable goods like new cars and for nondurables like paper and food products. Entity:", "target_text": ""}
+{"input_text": "Sentence: Most of the Marines are on three ships in the Tarawa Amphibious Readiness Group. Entity:", "target_text": "[Marines] other [Tarawa Amphibious Readiness Group] organization"}
+{"input_text": "Sentence: Halftime 1-0. Entity:", "target_text": ""}
+{"input_text": "Sentence: Bonn appeals for Middle East peace. Entity:", "target_text": "[Bonn] location [Middle East] location"}
+{"input_text": "Sentence: 9. Tatian Stiajkina (Ukraine) 3:52.204 Entity:", "target_text": "[Tatian Stiajkina] person [Ukraine] location"}
+{"input_text": "Sentence: Hashan Tillekeratne, Roshan Mahanama, Kumara Dharmasena, Entity:", "target_text": "[Hashan Tillekeratne] person [Roshan Mahanama] person [Kumara Dharmasena] person"}
+{"input_text": "Sentence: Buddy Groom pitched a perfect ninth inning. Entity:", "target_text": "[Buddy Groom] person"}
+{"input_text": "Sentence: After the frustration of seeing the opening day of their match badly affected by the weather, Kent stepped up a gear to dismiss Nottinghamshire for 214. Entity:", "target_text": "[Kent] organization [Nottinghamshire] organization"}
+{"input_text": "Sentence: Most were released but several dozen remain in custody. Entity:", "target_text": ""}
+{"input_text": "Sentence: The formal signing of the peace agreement is scheduled on Monday in Manila. Entity:", "target_text": "[Manila] location"}
+{"input_text": "Sentence: Incomes from wages, salaries and all other sources gained 0.1 percent to a rate of $6.47 trillion after a 0.9 percent jump in June. Entity:", "target_text": ""}
+{"input_text": "Sentence: Exeter 4 1 2 1 4 5 5 Entity:", "target_text": "[Exeter] organization"}
+{"input_text": "Sentence: Eyewitnesses told Boston television stations they saw a gasoline truck parked behind the Lilac Falls Motel and smelled gasoline shortly before the explosion. Entity:", "target_text": "[Boston] location [Lilac Falls Motel] location"}
+{"input_text": "Sentence: Shares of Douglas & Lomason Co were up 4-1/2 at 30-5/8 Friday afternoon after Thursday's announcement that the vehicle seat maker had agreed to be acquired by Magna International Inc for $31 a share, or $135 million. Entity:", "target_text": "[Douglas & Lomason Co] organization [Magna International Inc] organization"}
+{"input_text": "Sentence: Albion 2 Cowdenbeath 0 Entity:", "target_text": "[Albion] organization [Cowdenbeath] organization"}
+{"input_text": "Sentence: 5. Stephanie Storp (Germany) 18.41 Entity:", "target_text": "[Stephanie Storp] person [Germany] location"}
+{"input_text": "Sentence: SOCCER - AUSTRIA DOMINATE SCOTLAND IN WORLD CUP QUALIFIER. Entity:", "target_text": "[AUSTRIA] location [SCOTLAND] location [WORLD CUP] other"}
+{"input_text": "Sentence: He was apparently the eighth African deported from among 210 people evicted from the church after a 50-day occupation aimed at securing residence permits, unions said. Entity:", "target_text": "[African] other"}
+{"input_text": "Sentence: Turkey - 1 - Rustu Recber, 4 - Hakan Unsal (14 - Sergen Yalcin, 57th), 2 - Recep Cetin, 3 - Ogun Temizkanoglu, 5 - Alpay Ozalan, 7- Abdullah Ercan, 6 - Tolunay Kafkas, 10 - Oguz Cetin (13 - Arif Erdem, 57th), 11 - Tayfun Korkut, 9 - Hakan Sukur, 8 - Saffet Sancakli (17- Orhan Cikirikci, 76th). Entity:", "target_text": "[Turkey] location [Rustu Recber] person [Hakan Unsal] person [Sergen Yalcin] person [Recep Cetin] person [Ogun Temizkanoglu] person [Alpay Ozalan] person [Abdullah Ercan] person [Tolunay Kafkas] person [Oguz Cetin] person [Arif Erdem] person [Tayfun Korkut] person [Hakan Sukur] person [Saffet Sancakli] person [Orhan Cikirikci] person"}
+{"input_text": "Sentence: \"Bolesy (Florida manager John Boles) told me yesterday,' You have to go nine tomorrow,'\" Brown said. Entity:", "target_text": "[Bolesy] person [Florida] organization [John Boles] person [Brown] person"}
+{"input_text": "Sentence: \"Imagine a big plane with a lot of luggage and people on board. Entity:", "target_text": ""}
+{"input_text": "Sentence: Local hospital officials said a few firemen were treated for smoke inhalation but there were no other injuries. Entity:", "target_text": ""}
+{"input_text": "Sentence: -- Luli Popescu, Bucharest Newsroom 40-1 3120264 Entity:", "target_text": "[Luli Popescu] person [Bucharest Newsroom] organization"}
+{"input_text": "Sentence: soccer matches played on Saturday: Entity:", "target_text": ""}
+{"input_text": "Sentence: It gave no details of their talks. Entity:", "target_text": ""}
+{"input_text": "Sentence: Springbok scrum-half Joost van der Westhuizen was his side's inspiration, scoring their opening try and making the third for flanker Andre Venter from a quickly taken penalty to give his side a 29-8 lead after 54 minutes. Entity:", "target_text": "[Springbok] organization [Joost van der Westhuizen] person [Andre Venter] person"}
+{"input_text": "Sentence: West Indian all-rounder Phil Simmons took four for 38 on Friday as Leicestershire beat Somerset by an innings and 39 runs in two days to take over at the head of the county championship. Entity:", "target_text": "[West Indian] other [Phil Simmons] person [Leicestershire] organization [Somerset] organization"}
+{"input_text": "Sentence: PITTSBURGH 56 78 .418 16 Entity:", "target_text": "[PITTSBURGH] organization"}
+{"input_text": "Sentence: \"It is important to translate the criticism into pressuring action to prevent Israel from undermining the big international efforts aimed at making the peace process achieve success,\" the radio said. Entity:", "target_text": "[Israel] location"}
+{"input_text": "Sentence: Birmingham 2 1 1 0 5 4 4 Entity:", "target_text": "[Birmingham] organization"}
+{"input_text": "Sentence: The 26-year-old, who joined Newcastle for 15 million pounds sterling ($23.4 million), takes over from Tony Adams, who led the side during the European championship in June, and former captain David Platt. Entity:", "target_text": "[Newcastle] organization [Tony Adams] person [European] other [David Platt] person"}

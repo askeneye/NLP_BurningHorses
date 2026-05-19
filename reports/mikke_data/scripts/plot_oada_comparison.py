@@ -38,7 +38,7 @@ LEGEND_ITEMS = [
     {"kind": "gap"},
     {"kind": "heading", "label": "OADA best performer", "color": COLORS["oada_paper"]},
     {"kind": "method", "method_id": "oada_best", "label": "PromptNER+OADA"},
-    {"kind": "method", "method_id": "oada_bert", "label": "BERT-tagger baseline"},
+    {"kind": "method", "method_id": "oada_bert", "label": "BERT baseline"},
 ]
 
 
@@ -113,15 +113,18 @@ def render_with_matplotlib(rows: list[dict[str, object]]) -> None:
             linestyle=line_style(first),
             linewidth=1.6,
             marker="o",
-            markersize=3.6,
+            markersize=2.8 if first["source"] == "oada_paper" else 3.6,
             label=label_for_legend(method_id, str(first["method_label"])),
         )
 
     ax.set_xticks([5, 10, 20, 50])
     ax.set_xticklabels(["k=5", "k=10", "k=20", "k=50"], fontweight="bold")
+    ax.tick_params(axis="both", labelsize=12)
+    ax.set_xlim(-4, 59)
     ax.set_ylim(0, 100)
     ax.set_ylabel("Strict span F1", fontsize=14)
-    ax.set_title("Our results vs OADA")
+    ax.set_xlabel("Few-shot gold labels", fontsize=14)
+    ax.set_title("Our results vs OADA", loc="center")
     ax.grid(axis="y", color="#DDDDDD", linewidth=0.6)
     handles, labels = ax.get_legend_handles_labels()
     handle_by_label = dict(zip(labels, handles))
@@ -146,6 +149,7 @@ def render_with_matplotlib(rows: list[dict[str, object]]) -> None:
     fig.tight_layout()
     fig.savefig(PNG_PATH, bbox_inches="tight")
     fig.savefig(PDF_PATH, bbox_inches="tight")
+    fig.savefig(SVG_PATH, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -163,7 +167,10 @@ def render_svg(rows: list[dict[str, object]]) -> None:
     plot_width = width - left - right
     plot_height = height - top - bottom
     k_values = [5, 10, 20, 50]
-    x_lookup = {k: left + index * (plot_width / (len(k_values) - 1)) for index, k in enumerate(k_values)}
+    left_inset_fraction = 0.2
+    right_inset_fraction = 0.5
+    tick_width = plot_width / (len(k_values) - 1 + left_inset_fraction + right_inset_fraction)
+    x_lookup = {k: left + (index + left_inset_fraction) * tick_width for index, k in enumerate(k_values)}
 
     def y_pos(value: float) -> float:
         return top + plot_height - (value / 100) * plot_height
@@ -171,30 +178,41 @@ def render_svg(rows: list[dict[str, object]]) -> None:
     by_method: dict[str, list[dict[str, object]]] = defaultdict(list)
     for row in rows:
         by_method[str(row["method_id"])].append(row)
+    k50_label_y = {
+        "ours_distilled": y_pos(80.0),
+        "oada_best": y_pos(74.5),
+        "ours_bert": y_pos(69.0),
+        "oada_bert": y_pos(63.5),
+    }
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         "<title>Our results vs OADA</title>",
         "<style>text { font-family: Inter, Arial, sans-serif; }</style>",
         '<rect width="100%" height="100%" fill="white"/>',
-        f'<text x="24" y="30" font-family="{FONT_FAMILY}" font-size="18" font-weight="700">Our results vs OADA</text>',
-        f'<text x="24" y="225" font-family="{FONT_FAMILY}" font-size="16" transform="rotate(-90 24 225)">Strict span F1</text>',
+        f'<text x="{left + plot_width / 2:.1f}" y="30" font-family="{FONT_FAMILY}" font-size="18" font-weight="700" text-anchor="middle">Our results vs OADA</text>',
+        f'<text x="24" y="260" font-family="{FONT_FAMILY}" font-size="16" transform="rotate(-90 24 260)">Strict span F1</text>',
     ]
 
     for tick in [0, 25, 50, 75, 100]:
         y = y_pos(tick)
         parts.append(f'<line x1="{left}" y1="{y:.1f}" x2="{left + plot_width}" y2="{y:.1f}" stroke="#DDDDDD" stroke-width="1"/>')
-        parts.append(f'<text x="52" y="{y + 4:.1f}" font-family="{FONT_FAMILY}" font-size="12">{tick}</text>')
+        parts.append(f'<text x="72" y="{y + 5:.1f}" font-family="{FONT_FAMILY}" font-size="14" text-anchor="end">{tick}</text>')
+    parts.append(f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_height}" stroke="#DDDDDD" stroke-width="1"/>')
+    parts.append(f'<line x1="{left + plot_width}" y1="{top}" x2="{left + plot_width}" y2="{top + plot_height}" stroke="#DDDDDD" stroke-width="1"/>')
 
     for k in k_values:
         x = x_lookup[k]
-        parts.append(f'<text x="{x - 12:.1f}" y="410" font-family="{FONT_FAMILY}" font-size="12" font-weight="700">k={k}</text>')
+        parts.append(f'<line x1="{x:.1f}" y1="{top + plot_height}" x2="{x:.1f}" y2="{top + plot_height - 8}" stroke="#111111" stroke-width="1.8"/>')
+        parts.append(f'<text x="{x:.1f}" y="410" font-family="{FONT_FAMILY}" font-size="14" font-weight="700" text-anchor="middle">k={k}</text>')
+    parts.append(f'<text x="{left + plot_width / 2:.1f}" y="442" font-family="{FONT_FAMILY}" font-size="16" text-anchor="middle">Few-shot gold labels</text>')
 
     legend_x1 = left + plot_width + 35
     legend_x2 = left + plot_width + 65
     legend_text_x = left + plot_width + 74
     legend_y = top
     legend_methods: dict[str, dict[str, object]] = {}
+    k50_labels: dict[str, dict[str, object]] = {}
     for method_id in METHOD_ORDER:
         method_rows = sorted(by_method[method_id], key=lambda row: int(row["k_shot"]))
         first = method_rows[0]
@@ -207,8 +225,20 @@ def render_svg(rows: list[dict[str, object]]) -> None:
         ]
         path = svg_path(points)
         parts.append(f'<path d="{path}" fill="none" stroke="{color}" stroke-width="1.6" stroke-opacity="0.95"{dash}/>')
+        dot_radius = "2.8" if first["source"] == "oada_paper" else "3.6"
         for x, y in points:
-            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.6" fill="{color}" stroke="{color}" stroke-width="1.5"/>')
+            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{dot_radius}" fill="{color}" stroke="{color}" stroke-width="1.5"/>')
+        value_offset = -10 if first["source"] == "ours" else 18
+        for row, (x, y) in zip(method_rows, points):
+            value_label = html.escape(f'{float(row["metric_value_percent"]):.2f}')
+            if int(row["k_shot"]) == 50:
+                k50_labels[method_id] = {"label": value_label, "x": x + 18, "color": color}
+                continue
+            parts.append(f'<text x="{x:.1f}" y="{y + value_offset:.1f}" font-family="{FONT_FAMILY}" font-size="10.5" fill="{color}" text-anchor="middle">{value_label}</text>')
+
+    for method_id in ["ours_distilled", "oada_best", "ours_bert", "oada_bert"]:
+        label = k50_labels[method_id]
+        parts.append(f'<text x="{float(label["x"]):.1f}" y="{k50_label_y[method_id]:.1f}" font-family="{FONT_FAMILY}" font-size="10.5" fill="{label["color"]}" text-anchor="start">{label["label"]}</text>')
 
 
     legend_y = top

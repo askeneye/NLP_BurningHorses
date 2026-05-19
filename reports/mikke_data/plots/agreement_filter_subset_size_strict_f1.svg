@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+<title>Distilled BERT performance from teacher set size</title>
+<style>text { font-family: Inter, Arial, sans-serif; }</style>
+<rect width="100%" height="100%" fill="white"/>
+<text x="308.0" y="34" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Distilled BERT performance from teacher set size</text>
+<text x="34" y="398" font-family="Inter, Arial, sans-serif" font-size="15" transform="rotate(-90 34 398)">Distilled BERT student strict span F1</text>
+<line x1="96" y1="452.0" x2="524" y2="452.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="84" y="457.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">0</text>
+<line x1="96" y1="358.5" x2="524" y2="358.5" stroke="#DDDDDD" stroke-width="1"/>
+<text x="84" y="363.5" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">25</text>
+<line x1="96" y1="265.0" x2="524" y2="265.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="84" y="270.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">50</text>
+<line x1="96" y1="171.5" x2="524" y2="171.5" stroke="#DDDDDD" stroke-width="1"/>
+<text x="84" y="176.5" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">75</text>
+<line x1="96" y1="78.0" x2="524" y2="78.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="84" y="83.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">100</text>
+<line x1="96" y1="78" x2="96" y2="452" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="524" y1="78" x2="524" y2="452" stroke="#DDDDDD" stroke-width="1"/>
+<path d="M 121.2 238.7 L 247.1 202.7 L 372.9 215.3 L 498.8 236.0" fill="none" stroke="#E45756" stroke-width="1.6" stroke-opacity="0.95"/>
+<circle cx="121.2" cy="238.7" r="3.8" fill="#E45756" stroke="#E45756" stroke-width="1.5"/>
+<text x="121.2" y="228.7" font-family="Inter, Arial, sans-serif" font-size="11" fill="#444444" text-anchor="middle">57.02</text>
+<circle cx="247.1" cy="202.7" r="3.8" fill="#E45756" stroke="#E45756" stroke-width="1.5"/>
+<text x="247.1" y="192.7" font-family="Inter, Arial, sans-serif" font-size="11" fill="#444444" text-anchor="middle">66.65</text>
+<circle cx="372.9" cy="215.3" r="3.8" fill="#E45756" stroke="#E45756" stroke-width="1.5"/>
+<text x="372.9" y="205.3" font-family="Inter, Arial, sans-serif" font-size="11" fill="#444444" text-anchor="middle">63.30</text>
+<circle cx="498.8" cy="236.0" r="3.8" fill="#E45756" stroke="#E45756" stroke-width="1.5"/>
+<text x="498.8" y="226.0" font-family="Inter, Arial, sans-serif" font-size="11" fill="#444444" text-anchor="middle">57.76</text>
+<line x1="121.2" y1="452" x2="121.2" y2="444" stroke="#111111" stroke-width="1.8"/>
+<text x="121.2" y="482" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">top 500</text>
+<line x1="247.1" y1="452" x2="247.1" y2="444" stroke="#111111" stroke-width="1.8"/>
+<text x="247.1" y="482" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">top 1000</text>
+<line x1="372.9" y1="452" x2="372.9" y2="444" stroke="#111111" stroke-width="1.8"/>
+<text x="372.9" y="482" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">top 2000</text>
+<line x1="498.8" y1="452" x2="498.8" y2="444" stroke="#111111" stroke-width="1.8"/>
+<text x="498.8" y="482" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">top 5000</text>
+<text x="310.0" y="522" font-family="Inter, Arial, sans-serif" font-size="15" text-anchor="middle">Teacher labels agreement based set size</text>
+</svg>

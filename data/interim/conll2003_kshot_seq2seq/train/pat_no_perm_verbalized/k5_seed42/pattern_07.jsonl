@@ -1,0 +1,10 @@
+{"input_text": "Sentence: Italians hold HIV-pensioner for harassing hookers. Extract the entities:", "target_text": "[Italians] other [HIV-pensioner] other"}
+{"input_text": "Sentence: Promising 10th-ranked American Chanda Rubin has pulled out of the U.S. Open Tennis Championships with a wrist injury, tournament officials announced. Extract the entities:", "target_text": "[American] other [Chanda Rubin] person [U.S. Open Tennis Championships] other"}
+{"input_text": "Sentence: Hever Golf Rose (11-4), last year's Prix de l' Abbaye winner at Longchamp, finished third, a further one and a quarter lengths away with the 7-4 favourite Mind Games in fourth. Extract the entities:", "target_text": "[Hever Golf Rose] person [Prix de l' Abbaye] other [Longchamp] location [Mind Games] person"}
+{"input_text": "Sentence: ZTE 1 Debrecen 5 Extract the entities:", "target_text": "[ZTE] organization [Debrecen] organization"}
+{"input_text": "Sentence: It quoted an Interior Ministry statement as saying Shabir Ahmad Muhammad Jalil was executed in Mecca. Extract the entities:", "target_text": "[Interior Ministry] organization [Shabir Ahmad Muhammad Jalil] person [Mecca] location"}
+{"input_text": "Sentence: St. Gallen 9 4 4 1 6 5 16 Extract the entities:", "target_text": "[St.] organization"}
+{"input_text": "Sentence: FLORIDA 8 Cincinnati 3 (2ND GM) Extract the entities:", "target_text": "[FLORIDA] organization [Cincinnati] organization"}
+{"input_text": "Sentence: 6. Davidson Ezinwa (Nigeria) 10.15 Extract the entities:", "target_text": "[Davidson Ezinwa] person [Nigeria] location"}
+{"input_text": "Sentence: Chesterfield: Worcestershire 238 (W. Weston 100 not out, V. Solanki 58; A. Harris 4-31), Derbyshire 166-1 (K. Barnett 83 not out) Extract the entities:", "target_text": "[Chesterfield] location [Worcestershire] organization [W. Weston] person [V. Solanki] person [A. Harris] person [Derbyshire] organization [K. Barnett] person"}
+{"input_text": "Sentence: At the age of 18 she became a Loretto nun, hoping to work at the Order's Calcutta mission. Extract the entities:", "target_text": "[Loretto] other [Calcutta] location"}

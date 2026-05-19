@@ -1,0 +1,42 @@
+{
+  "dataset": "conll2003",
+  "model_family": "bart_base",
+  "method": "pet_oada",
+  "kshot_split": "k20_seed142",
+  "eval_split": "test",
+  "patterns": [
+    "seed_01",
+    "seed_02",
+    "seed_03",
+    "seed_04",
+    "seed_05"
+  ],
+  "member_count": 5,
+  "source_suffix": "xe_verbalized_final2000",
+  "source_files": [
+    "data/interim/conll2003_soft_labels/bart_base/oada_style_seed_ensemble_verbalized/k20_seed142/seed_01_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/oada_style_seed_ensemble_verbalized/k20_seed142/seed_02_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/oada_style_seed_ensemble_verbalized/k20_seed142/seed_03_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/oada_style_seed_ensemble_verbalized/k20_seed142/seed_04_xe_verbalized_final2000/test/hard_predictions.jsonl",
+    "data/interim/conll2003_soft_labels/bart_base/oada_style_seed_ensemble_verbalized/k20_seed142/seed_05_xe_verbalized_final2000/test/hard_predictions.jsonl"
+  ],
+  "label_list": [
+    "O",
+    "B-PER",
+    "I-PER",
+    "B-ORG",
+    "I-ORG",
+    "B-LOC",
+    "I-LOC",
+    "B-MISC",
+    "I-MISC"
+  ],
+  "temperature": 2.0,
+  "rows_written": 3453,
+  "outputs": {
+    "vote_normalized": "data/interim/conll2003_ensemble_teachers/bart_base/oada_style_seed_ensemble_verbalized_final2000/k20_seed142/test/ensemble_vote_normalized.jsonl",
+    "vote_temp2": "data/interim/conll2003_ensemble_teachers/bart_base/oada_style_seed_ensemble_verbalized_final2000/k20_seed142/test/ensemble_vote_temp2.jsonl",
+    "hard_argmax": "data/interim/conll2003_ensemble_teachers/bart_base/oada_style_seed_ensemble_verbalized_final2000/k20_seed142/test/ensemble_hard_argmax.jsonl"
+  },
+  "elapsed_seconds": 0.8630757331848145
+}

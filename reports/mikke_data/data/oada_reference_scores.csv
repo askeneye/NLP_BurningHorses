@@ -1,8 +1,8 @@
 source,method_id,method_label,k_shot,metric_name,metric_label,metric_value,metric_value_percent,score_source,status,notes
-oada_paper,oada_bert,BERT-tagger baseline,5,span_strict_f1,Strict span F1,0.4187,41.87,test,reference,BERT-tagger baseline reported by the OADA paper.
-oada_paper,oada_bert,BERT-tagger baseline,10,span_strict_f1,Strict span F1,0.5991,59.91,test,reference,BERT-tagger baseline reported by the OADA paper.
-oada_paper,oada_bert,BERT-tagger baseline,20,span_strict_f1,Strict span F1,0.6866,68.66,test,reference,BERT-tagger baseline reported by the OADA paper.
-oada_paper,oada_bert,BERT-tagger baseline,50,span_strict_f1,Strict span F1,0.7320,73.20,test,reference,BERT-tagger baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,5,span_strict_f1,Strict span F1,0.3679,36.79,test,reference,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,10,span_strict_f1,Strict span F1,0.4325,43.25,test,reference,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,20,span_strict_f1,Strict span F1,0.6057,60.57,test,reference,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,50,span_strict_f1,Strict span F1,0.7015,70.15,test,reference,BERT baseline reported by the OADA paper.
 oada_paper,oada_best,PromptNER+OADA,5,span_strict_f1,Strict span F1,0.5676,56.76,test,reference,Best PromptNER+OADA score reported by the OADA paper.
 oada_paper,oada_best,PromptNER+OADA,10,span_strict_f1,Strict span F1,0.6838,68.38,test,reference,Best PromptNER+OADA score reported by the OADA paper.
 oada_paper,oada_best,PromptNER+OADA,20,span_strict_f1,Strict span F1,0.7264,72.64,test,reference,Best PromptNER+OADA score reported by the OADA paper.
