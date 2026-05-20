@@ -111,10 +111,12 @@ def render_with_matplotlib(rows: list[dict[str, object]]) -> None:
     ax.set_ylabel("Distilled BERT student strict span F1", fontsize=13)
     ax.set_title("Distilled BERT performance from teacher set size", loc="center")
     ax.grid(axis="y", color="#DDDDDD", linewidth=0.6)
+    for spine in ax.spines.values():
+        spine.set_color("#111111")
+        spine.set_linewidth(1)
     fig.tight_layout()
     fig.savefig(PNG_PATH, bbox_inches="tight")
     fig.savefig(PDF_PATH, bbox_inches="tight")
-    fig.savefig(SVG_PATH, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -159,8 +161,12 @@ def render_svg(rows: list[dict[str, object]]) -> None:
         y = y_pos(tick)
         parts.append(f'<line x1="{left}" y1="{y:.1f}" x2="{left + plot_width}" y2="{y:.1f}" stroke="#DDDDDD" stroke-width="1"/>')
         parts.append(f'<text x="84" y="{y + 5:.1f}" font-family="{FONT_FAMILY}" font-size="14" text-anchor="end">{tick}</text>')
-    parts.append(f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_height}" stroke="#DDDDDD" stroke-width="1"/>')
-    parts.append(f'<line x1="{left + plot_width}" y1="{top}" x2="{left + plot_width}" y2="{top + plot_height}" stroke="#DDDDDD" stroke-width="1"/>')
+    plot_right = left + plot_width
+    plot_bottom = top + plot_height
+    parts.append(f'<line x1="{left}" y1="{top}" x2="{left}" y2="{plot_bottom}" stroke="#111111" stroke-width="1"/>')
+    parts.append(f'<line x1="{plot_right}" y1="{top}" x2="{plot_right}" y2="{plot_bottom}" stroke="#111111" stroke-width="1"/>')
+    parts.append(f'<line x1="{left}" y1="{top}" x2="{plot_right}" y2="{top}" stroke="#111111" stroke-width="1"/>')
+    parts.append(f'<line x1="{left}" y1="{plot_bottom}" x2="{plot_right}" y2="{plot_bottom}" stroke="#111111" stroke-width="1"/>')
 
     path = svg_path(points)
     parts.append(f'<path d="{path}" fill="none" stroke="{LINE_COLOR}" stroke-width="1.6" stroke-opacity="0.95"/>')
@@ -183,10 +189,9 @@ def render_svg(rows: list[dict[str, object]]) -> None:
 def main() -> None:
     rows = read_validation_rows()
     write_plot_data(rows)
+    render_svg(rows)
     if plt is not None:
         render_with_matplotlib(rows)
-    else:
-        render_svg(rows)
 
 
 if __name__ == "__main__":

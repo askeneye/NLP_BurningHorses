@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="613" height="460" viewBox="0 0 613 460">
+<title>Main ablation ladder</title>
+<style>text { font-family: Inter, Arial, sans-serif; }</style>
+<rect width="100%" height="100%" fill="white"/>
+<text x="327.5" y="30" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Main ablation ladder</text>
+<text x="24" y="224.0" font-family="Inter, Arial, sans-serif" font-size="16" transform="rotate(-90 24 224.0)">Strict span F1</text>
+<line x1="90" y1="390.0" x2="565" y2="390.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="395.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">30</text>
+<line x1="90" y1="323.6" x2="565" y2="323.6" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="328.6" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">40</text>
+<line x1="90" y1="257.2" x2="565" y2="257.2" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="262.2" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">50</text>
+<line x1="90" y1="190.8" x2="565" y2="190.8" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="195.8" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">60</text>
+<line x1="90" y1="124.4" x2="565" y2="124.4" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="129.4" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">70</text>
+<line x1="90" y1="58.0" x2="565" y2="58.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="63.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">80</text>
+<rect x="90" y="58" width="475" height="332" fill="none" stroke="#111111" stroke-width="1.5"/>
+<line x1="117.9" y1="390" x2="117.9" y2="382" stroke="#111111" stroke-width="1.8"/>
+<text x="117.9" y="408.0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=5</text>
+<line x1="257.6" y1="390" x2="257.6" y2="382" stroke="#111111" stroke-width="1.8"/>
+<text x="257.6" y="408.0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=10</text>
+<line x1="397.4" y1="390" x2="397.4" y2="382" stroke="#111111" stroke-width="1.8"/>
+<text x="397.4" y="408.0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=20</text>
+<line x1="537.1" y1="390" x2="537.1" y2="382" stroke="#111111" stroke-width="1.8"/>
+<text x="537.1" y="408.0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=50</text>
+<text x="327.5" y="430.0" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">Few-shot gold labels</text>
+<path d="M 117.9 337.0 L 257.6 249.7 L 397.4 168.6 L 537.1 96.9" fill="none" stroke="#8F8F8F" stroke-width="1.7" stroke-opacity="0.95" stroke-dasharray="7 5"/>
+<circle cx="117.9" cy="337.0" r="3.0" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1"/>
+<circle cx="257.6" cy="249.7" r="3.0" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1"/>
+<circle cx="397.4" cy="168.6" r="3.0" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1"/>
+<circle cx="537.1" cy="96.9" r="3.0" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="1"/>
+<path d="M 117.9 277.0 L 257.6 231.6 L 397.4 179.1 L 537.1 108.2" fill="none" stroke="#F58518" stroke-width="1.7" stroke-opacity="0.95"/>
+<circle cx="117.9" cy="277.0" r="3.0" fill="#F58518" stroke="#F58518" stroke-width="1"/>
+<circle cx="257.6" cy="231.6" r="3.0" fill="#F58518" stroke="#F58518" stroke-width="1"/>
+<circle cx="397.4" cy="179.1" r="3.0" fill="#F58518" stroke="#F58518" stroke-width="1"/>
+<circle cx="537.1" cy="108.2" r="3.0" fill="#F58518" stroke="#F58518" stroke-width="1"/>
+<path d="M 117.9 242.1 L 257.6 188.2 L 397.4 143.8 L 537.1 115.3" fill="none" stroke="#54A24B" stroke-width="1.9" stroke-opacity="0.95"/>
+<circle cx="117.9" cy="242.1" r="3.0" fill="#54A24B" stroke="#54A24B" stroke-width="1"/>
+<circle cx="257.6" cy="188.2" r="3.0" fill="#54A24B" stroke="#54A24B" stroke-width="1"/>
+<circle cx="397.4" cy="143.8" r="3.0" fill="#54A24B" stroke="#54A24B" stroke-width="1"/>
+<circle cx="537.1" cy="115.3" r="3.0" fill="#54A24B" stroke="#54A24B" stroke-width="1"/>
+<path d="M 117.9 214.5 L 257.6 139.5 L 397.4 104.7 L 537.1 78.3" fill="none" stroke="#7B61FF" stroke-width="2.2" stroke-opacity="0.95"/>
+<circle cx="117.9" cy="214.5" r="3.0" fill="#7B61FF" stroke="#7B61FF" stroke-width="1"/>
+<circle cx="257.6" cy="139.5" r="3.0" fill="#7B61FF" stroke="#7B61FF" stroke-width="1"/>
+<circle cx="397.4" cy="104.7" r="3.0" fill="#7B61FF" stroke="#7B61FF" stroke-width="1"/>
+<circle cx="537.1" cy="78.3" r="3.0" fill="#7B61FF" stroke="#7B61FF" stroke-width="1"/>
+<text x="117.9" y="202.5" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#7B61FF">56.4</text>
+<text x="257.6" y="127.5" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#7B61FF">67.7</text>
+<text x="397.4" y="92.7" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#7B61FF">73.0</text>
+<text x="537.1" y="66.3" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#7B61FF">76.9</text>
+<rect x="233.0" y="288.0" width="322.0" height="68.0" fill="white" fill-opacity="0.93" stroke="#E6E6E6" stroke-width="1"/>
+<line x1="245" y1="300" x2="275" y2="300" stroke="#7B61FF" stroke-width="2.2"/>
+<text x="285" y="304" font-family="Inter, Arial, sans-serif" font-size="13">OADA BART ensemble agreement → BERT</text>
+<line x1="245" y1="315" x2="275" y2="315" stroke="#54A24B" stroke-width="1.9"/>
+<text x="285" y="319" font-family="Inter, Arial, sans-serif" font-size="13">OADA BART single teacher confidence → BERT</text>
+<line x1="245" y1="330" x2="275" y2="330" stroke="#F58518" stroke-width="1.7"/>
+<text x="285" y="334" font-family="Inter, Arial, sans-serif" font-size="13">OADA BART single teacher</text>
+<line x1="245" y1="345" x2="275" y2="345" stroke="#8F8F8F" stroke-width="1.7" stroke-dasharray="7 5"/>
+<text x="285" y="349" font-family="Inter, Arial, sans-serif" font-size="13">BERT</text>
+</svg>

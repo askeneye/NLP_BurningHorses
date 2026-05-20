@@ -88,7 +88,7 @@ COLORS = {
 
 LEGEND_ITEMS = [
     {"kind": "heading", "label": "Ours", "color": COLORS["ours"]},
-    {"kind": "method", "method_id": "ours_distilled", "label": "Pat+Perm BART ensemble \u2192 BERT"},
+    {"kind": "method", "method_id": "ours_distilled", "label": "Pat+OADA BART \u2192 BERT"},
     {"kind": "method", "method_id": "ours_bert", "label": "BERT baseline"},
     {"kind": "gap"},
     {"kind": "heading", "label": "OADA best performer", "color": COLORS["oada_paper"]},

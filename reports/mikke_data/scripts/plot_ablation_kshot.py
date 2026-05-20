@@ -89,7 +89,11 @@ METHOD_STYLES = {
 
 
 def display_label(label: str) -> str:
-    return label.replace("->", "\u2192")
+    label = label.replace("Seed+Perm", "OADA").replace("+Perm", "+OADA")
+    label = label.replace("->", "\u2192")
+    if label == "Pat+OADA BART \u2192 BERT":
+        return "OADA BART (single teacher) \u2192 BERT"
+    return label
 
 
 def read_mean_rows(bundle: PlotBundle) -> list[dict[str, object]]:

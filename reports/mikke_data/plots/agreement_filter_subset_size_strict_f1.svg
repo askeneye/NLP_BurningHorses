@@ -14,8 +14,10 @@
 <text x="84" y="176.5" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">75</text>
 <line x1="96" y1="78.0" x2="524" y2="78.0" stroke="#DDDDDD" stroke-width="1"/>
 <text x="84" y="83.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">100</text>
-<line x1="96" y1="78" x2="96" y2="452" stroke="#DDDDDD" stroke-width="1"/>
-<line x1="524" y1="78" x2="524" y2="452" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="96" y1="78" x2="96" y2="452" stroke="#111111" stroke-width="1"/>
+<line x1="524" y1="78" x2="524" y2="452" stroke="#111111" stroke-width="1"/>
+<line x1="96" y1="78" x2="524" y2="78" stroke="#111111" stroke-width="1"/>
+<line x1="96" y1="452" x2="524" y2="452" stroke="#111111" stroke-width="1"/>
 <path d="M 121.2 238.7 L 247.1 202.7 L 372.9 215.3 L 498.8 236.0" fill="none" stroke="#E45756" stroke-width="1.6" stroke-opacity="0.95"/>
 <circle cx="121.2" cy="238.7" r="3.8" fill="#E45756" stroke="#E45756" stroke-width="1.5"/>
 <text x="121.2" y="228.7" font-family="Inter, Arial, sans-serif" font-size="11" fill="#444444" text-anchor="middle">57.02</text>

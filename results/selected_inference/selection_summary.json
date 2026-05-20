@@ -1,0 +1,25 @@
+{
+  "selection": {
+    "reported_model": "pat_perm_bart_ensemble_to_bert",
+    "k_shot": 5,
+    "median_split": "k5_seed242",
+    "median_split_basis": {
+      "k5_seed142_test_span_strict_f1": 0.4570973521799721,
+      "k5_seed242_test_span_strict_f1": 0.5717602363866611,
+      "k5_seed42_test_span_strict_f1": 0.6639934384398067
+    }
+  },
+  "files": {
+    "bert_student_predictions_eval128": "bert_student_ensemble_hard_argmax_k5_seed242_test_predictions_eval128.jsonl",
+    "bert_student_predictions_max512": "bert_student_ensemble_hard_argmax_k5_seed242_test_predictions_max512.jsonl",
+    "bart_single_predictions": "bart_single_pattern_01_k5_seed242_test_predictions.jsonl",
+    "bart_ensemble_predictions": "bart_ensemble_hard_argmax_k5_seed242_test_predictions.jsonl",
+    "span_stats": "span_strict_stats_by_entity_type.csv",
+    "token_stats": "token_label_precision_recall.csv"
+  },
+  "row_format": {
+    "tokens": "Original CoNLL tokens.",
+    "gold_tags": "Gold BIO labels.",
+    "predicted_tags": "Model output BIO labels."
+  }
+}

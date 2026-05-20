@@ -1,0 +1,92 @@
+{
+  "experiment": {
+    "dataset": "conll2003",
+    "model_name": "google-bert/bert-base-cased",
+    "split": "k5_seed242",
+    "teacher_split": "fixed600_final_pat_perm_bart_ensemble_to_bert",
+    "teacher_variant": "hard_argmax",
+    "seed": 42,
+    "note": "Report-grade no-leakage run; teacher_train_file is unlabeled-pool-derived."
+  },
+  "paths": {
+    "train_file": "C:\\Users\\meatl\\Documents\\ITU\\nlp\\fire_horses\\nlp_burninghorses\\data\\interim\\conll2003_ensemble_teachers\\bart_base\\pet_oada_verbalized_final2000_filtered\\k5_seed242\\unlabeled_pool\\top_1000\\ensemble_hard_argmax.jsonl",
+    "mini_eval_file": "C:\\Users\\meatl\\Documents\\ITU\\nlp\\fire_horses\\nlp_burninghorses\\data\\interim\\conll2003_kshot_bert\\mini_val.jsonl",
+    "validation_file": "C:\\Users\\meatl\\Documents\\ITU\\nlp\\fire_horses\\nlp_burninghorses\\data\\interim\\conll2003_kshot_bert\\validation.jsonl",
+    "test_file": "C:\\Users\\meatl\\Documents\\ITU\\nlp\\fire_horses\\nlp_burninghorses\\data\\interim\\conll2003_kshot_bert\\test.jsonl",
+    "output_dir": "C:\\Users\\meatl\\Documents\\ITU\\nlp\\fire_horses\\nlp_burninghorses\\models\\bert_conll_distilled_fixed_final600_report\\k5_seed242\\pat_perm_bart_ensemble_to_bert\\hard_argmax"
+  },
+  "runtime_config": {
+    "max_steps": 600,
+    "eval_every": 100,
+    "patience": 5,
+    "min_steps_before_eval": 100,
+    "train_batch_size": 16,
+    "eval_batch_size": 16,
+    "learning_rate": 2e-05,
+    "max_length": 128,
+    "enable_early_stopping": false,
+    "use_best_checkpoint": false
+  },
+  "data_stats": {
+    "train_rows": 1000,
+    "mini_eval_rows": 200,
+    "validation_rows": 2992,
+    "test_rows": 3453
+  },
+  "train_summary": {
+    "steps_trained": 600,
+    "avg_loss": 0.09097771375236334,
+    "best_span_strict_f1": 0.5286506469500923,
+    "best_step": 600,
+    "early_stopped": false,
+    "num_evals": 6,
+    "elapsed_seconds": 96.83881330490112
+  },
+  "eval_results": {
+    "mini_eval": {
+      "HF_Token_Precision": 0.6425339366515838,
+      "HF_Token_Recall": 0.42900302114803623,
+      "HF_Token_F1": 0.5144927536231884,
+      "HF_Token_Accuracy": 0.911504424778761,
+      "Span_Strict_Precision": 0.680952380952381,
+      "Span_Strict_Recall": 0.43202416918429004,
+      "Span_Strict_F1": 0.5286506469500923,
+      "Span_Unlabeled_Precision": 0.8714285714285714,
+      "Span_Unlabeled_Recall": 0.552870090634441,
+      "Span_Unlabeled_F1": 0.6765249537892791,
+      "Span_Loose_Precision": 0.7571428571428571,
+      "Span_Loose_Recall": 0.48338368580060426,
+      "Span_Loose_F1": 0.5900567094596946
+    },
+    "validation": {
+      "HF_Token_Precision": 0.7069148936170213,
+      "HF_Token_Recall": 0.4787463976945245,
+      "HF_Token_F1": 0.5708762886597938,
+      "HF_Token_Accuracy": 0.9109666124796799,
+      "Span_Strict_Precision": 0.7428092711533091,
+      "Span_Strict_Recall": 0.47910662824207495,
+      "Span_Strict_F1": 0.5825030110587978,
+      "Span_Unlabeled_Precision": 0.8843898352415527,
+      "Span_Unlabeled_Recall": 0.5704250720461095,
+      "Span_Unlabeled_F1": 0.6935289609109822,
+      "Span_Loose_Precision": 0.7919575537559341,
+      "Span_Loose_Recall": 0.506664265129683,
+      "Span_Loose_F1": 0.6179729712719305
+    },
+    "test": {
+      "HF_Token_Precision": 0.667819214620894,
+      "HF_Token_Recall": 0.47909284195605956,
+      "HF_Token_F1": 0.5579284019395441,
+      "HF_Token_Accuracy": 0.9091496649934291,
+      "Span_Strict_Precision": 0.7069415448851775,
+      "Span_Strict_Recall": 0.47997873848334516,
+      "Span_Strict_F1": 0.5717602363866611,
+      "Span_Unlabeled_Precision": 0.8843945720250522,
+      "Span_Unlabeled_Recall": 0.6004606661941885,
+      "Span_Unlabeled_F1": 0.715280709159983,
+      "Span_Loose_Precision": 0.7429540709812108,
+      "Span_Loose_Recall": 0.5044294826364281,
+      "Span_Loose_F1": 0.6008864499788941
+    }
+  }
+}

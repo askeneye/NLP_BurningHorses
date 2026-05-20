@@ -60,7 +60,7 @@
 <rect x="303.0" y="253.0" width="252.0" height="103.0" fill="white" fill-opacity="0.93" stroke="#E6E6E6" stroke-width="1"/>
 <text x="315" y="269.0" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#7B61FF">Ours</text>
 <line x1="315" y1="280.0" x2="345" y2="280.0" stroke="#7B61FF" stroke-width="1.6"/>
-<text x="355" y="284.0" font-family="Inter, Arial, sans-serif" font-size="11">Pat+Perm BART ensemble → BERT</text>
+<text x="355" y="284.0" font-family="Inter, Arial, sans-serif" font-size="11">Pat+OADA BART → BERT</text>
 <line x1="315" y1="295.0" x2="345" y2="295.0" stroke="#7B61FF" stroke-width="1.6" stroke-dasharray="7 5"/>
 <text x="355" y="299.0" font-family="Inter, Arial, sans-serif" font-size="11">BERT baseline</text>
 <text x="315" y="319.0" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#8F8F8F">OADA best performer</text>

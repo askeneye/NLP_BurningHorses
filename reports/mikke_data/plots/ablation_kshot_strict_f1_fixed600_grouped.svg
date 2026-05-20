@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="560" viewBox="0 0 1160 560">
+<title>CoNLL2003 ablation by k-shot setting</title>
+<style>text { font-family: Inter, Arial, sans-serif; }</style>
+<rect width="100%" height="100%" fill="white"/>
+<text x="405.0" y="30" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">CoNLL2003 ablation by k-shot setting</text>
+<text x="24" y="268.0" font-family="Inter, Arial, sans-serif" font-size="16" transform="rotate(-90 24 268.0)">Strict span F1</text>
+<line x1="90" y1="478.0" x2="720" y2="478.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="483.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">30</text>
+<line x1="90" y1="394.0" x2="720" y2="394.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="399.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">40</text>
+<line x1="90" y1="310.0" x2="720" y2="310.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="315.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">50</text>
+<line x1="90" y1="226.0" x2="720" y2="226.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="231.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">60</text>
+<line x1="90" y1="142.0" x2="720" y2="142.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="147.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">70</text>
+<line x1="90" y1="58.0" x2="720" y2="58.0" stroke="#DDDDDD" stroke-width="1"/>
+<text x="72" y="63.0" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="end">80</text>
+<rect x="90" y="58" width="630" height="420" fill="none" stroke="#111111" stroke-width="1.5"/>
+<line x1="127.1" y1="478" x2="127.1" y2="470" stroke="#111111" stroke-width="1.8"/>
+<text x="127.1" y="498.0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=5</text>
+<line x1="312.4" y1="478" x2="312.4" y2="470" stroke="#111111" stroke-width="1.8"/>
+<text x="312.4" y="498.0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=10</text>
+<line x1="497.6" y1="478" x2="497.6" y2="470" stroke="#111111" stroke-width="1.8"/>
+<text x="497.6" y="498.0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=20</text>
+<line x1="682.9" y1="478" x2="682.9" y2="470" stroke="#111111" stroke-width="1.8"/>
+<text x="682.9" y="498.0" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">k=50</text>
+<text x="405.0" y="526.0" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">Few-shot gold labels</text>
+<path d="M 127.1 256.0 L 312.4 161.1 L 497.6 117.1 L 682.9 83.7" fill="none" stroke="#7B61FF" stroke-width="2.2" stroke-opacity="0.95"/>
+<circle cx="127.1" cy="256.0" r="2.0" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.8"/>
+<circle cx="312.4" cy="161.1" r="2.0" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.8"/>
+<circle cx="497.6" cy="117.1" r="2.0" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.8"/>
+<circle cx="682.9" cy="83.7" r="2.0" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.8"/>
+<path d="M 127.1 341.1 L 312.4 270.9 L 497.6 187.7 L 682.9 111.3" fill="none" stroke="#7B61FF" stroke-width="1.1" stroke-opacity="0.95"/>
+<circle cx="127.1" cy="341.1" r="1.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.8"/>
+<circle cx="312.4" cy="270.9" r="1.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.8"/>
+<circle cx="497.6" cy="187.7" r="1.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.8"/>
+<circle cx="682.9" cy="111.3" r="1.6" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.8"/>
+<path d="M 127.1 245.7 L 312.4 171.1 L 497.6 134.8 L 682.9 74.7" fill="none" stroke="#54A24B" stroke-width="1.9" stroke-opacity="0.95"/>
+<circle cx="127.1" cy="245.7" r="1.6" fill="#54A24B" stroke="#54A24B" stroke-width="0.8"/>
+<circle cx="312.4" cy="171.1" r="1.6" fill="#54A24B" stroke="#54A24B" stroke-width="0.8"/>
+<circle cx="497.6" cy="134.8" r="1.6" fill="#54A24B" stroke="#54A24B" stroke-width="0.8"/>
+<circle cx="682.9" cy="74.7" r="1.6" fill="#54A24B" stroke="#54A24B" stroke-width="0.8"/>
+<path d="M 127.1 336.4 L 312.4 263.5 L 497.6 183.3 L 682.9 104.2" fill="none" stroke="#54A24B" stroke-width="1.1" stroke-opacity="0.95"/>
+<circle cx="127.1" cy="336.4" r="1.6" fill="#54A24B" stroke="#54A24B" stroke-width="0.8"/>
+<circle cx="312.4" cy="263.5" r="1.6" fill="#54A24B" stroke="#54A24B" stroke-width="0.8"/>
+<circle cx="497.6" cy="183.3" r="1.6" fill="#54A24B" stroke="#54A24B" stroke-width="0.8"/>
+<circle cx="682.9" cy="104.2" r="1.6" fill="#54A24B" stroke="#54A24B" stroke-width="0.8"/>
+<path d="M 127.1 250.0 L 312.4 161.7 L 497.6 118.8 L 682.9 82.0" fill="none" stroke="#F58518" stroke-width="1.9" stroke-opacity="0.95"/>
+<circle cx="127.1" cy="250.0" r="1.6" fill="#F58518" stroke="#F58518" stroke-width="0.8"/>
+<circle cx="312.4" cy="161.7" r="1.6" fill="#F58518" stroke="#F58518" stroke-width="0.8"/>
+<circle cx="497.6" cy="118.8" r="1.6" fill="#F58518" stroke="#F58518" stroke-width="0.8"/>
+<circle cx="682.9" cy="82.0" r="1.6" fill="#F58518" stroke="#F58518" stroke-width="0.8"/>
+<path d="M 127.1 325.8 L 312.4 230.0 L 497.6 165.9 L 682.9 83.7" fill="none" stroke="#F58518" stroke-width="1.1" stroke-opacity="0.95"/>
+<circle cx="127.1" cy="325.8" r="1.6" fill="#F58518" stroke="#F58518" stroke-width="0.8"/>
+<circle cx="312.4" cy="230.0" r="1.6" fill="#F58518" stroke="#F58518" stroke-width="0.8"/>
+<circle cx="497.6" cy="165.9" r="1.6" fill="#F58518" stroke="#F58518" stroke-width="0.8"/>
+<circle cx="682.9" cy="83.7" r="1.6" fill="#F58518" stroke="#F58518" stroke-width="0.8"/>
+<path d="M 127.1 290.9 L 312.4 222.7 L 497.6 166.5 L 682.9 130.4" fill="none" stroke="#8F8F8F" stroke-width="1.9" stroke-opacity="0.95"/>
+<circle cx="127.1" cy="290.9" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="312.4" cy="222.7" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="497.6" cy="166.5" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="682.9" cy="130.4" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<path d="M 127.1 335.0 L 312.4 277.7 L 497.6 211.2 L 682.9 121.5" fill="none" stroke="#8F8F8F" stroke-width="1.9" stroke-opacity="0.95" stroke-dasharray="7 5"/>
+<circle cx="127.1" cy="335.0" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="312.4" cy="277.7" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="497.6" cy="211.2" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="682.9" cy="121.5" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<path d="M 127.1 411.0 L 312.4 300.5 L 497.6 197.9 L 682.9 107.3" fill="none" stroke="#8F8F8F" stroke-width="1.9" stroke-opacity="0.95" stroke-dasharray="1 5" stroke-linecap="round"/>
+<circle cx="127.1" cy="411.0" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="312.4" cy="300.5" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="497.6" cy="197.9" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<circle cx="682.9" cy="107.3" r="1.6" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.8"/>
+<text x="758" y="66.0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">Pat+OADA BART ensemble</text>
+<line x1="758" y1="84.0" x2="792" y2="84.0" stroke="#7B61FF" stroke-width="2.2"/>
+<text x="804" y="88.0" font-family="Inter, Arial, sans-serif" font-size="12">Distilled -&gt; BERT</text>
+<line x1="758" y1="102.0" x2="792" y2="102.0" stroke="#7B61FF" stroke-width="1.1"/>
+<text x="804" y="106.0" font-family="Inter, Arial, sans-serif" font-size="12">Majority vote</text>
+<text x="758" y="132.0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">OADA BART ensemble</text>
+<line x1="758" y1="150.0" x2="792" y2="150.0" stroke="#54A24B" stroke-width="1.9"/>
+<text x="804" y="154.0" font-family="Inter, Arial, sans-serif" font-size="12">Distilled -&gt; BERT</text>
+<line x1="758" y1="168.0" x2="792" y2="168.0" stroke="#54A24B" stroke-width="1.1"/>
+<text x="804" y="172.0" font-family="Inter, Arial, sans-serif" font-size="12">Majority vote</text>
+<text x="758" y="198.0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">Pat BART ensemble</text>
+<line x1="758" y1="216.0" x2="792" y2="216.0" stroke="#F58518" stroke-width="1.9"/>
+<text x="804" y="220.0" font-family="Inter, Arial, sans-serif" font-size="12">Distilled -&gt; BERT</text>
+<line x1="758" y1="234.0" x2="792" y2="234.0" stroke="#F58518" stroke-width="1.1"/>
+<text x="804" y="238.0" font-family="Inter, Arial, sans-serif" font-size="12">Majority vote</text>
+<text x="758" y="264.0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">Single models</text>
+<line x1="758" y1="282.0" x2="792" y2="282.0" stroke="#8F8F8F" stroke-width="1.9"/>
+<text x="804" y="286.0" font-family="Inter, Arial, sans-serif" font-size="12">OADA BART (single teacher) -&gt; BERT</text>
+<line x1="758" y1="300.0" x2="792" y2="300.0" stroke="#8F8F8F" stroke-width="1.9" stroke-dasharray="7 5"/>
+<text x="804" y="304.0" font-family="Inter, Arial, sans-serif" font-size="12">OADA BART (single teacher)</text>
+<line x1="758" y1="318.0" x2="792" y2="318.0" stroke="#8F8F8F" stroke-width="1.9" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="804" y="322.0" font-family="Inter, Arial, sans-serif" font-size="12">BERT baseline</text>
+</svg>
