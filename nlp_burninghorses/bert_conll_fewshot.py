@@ -38,7 +38,7 @@ except ImportError:
 MODEL_NAME = "google-bert/bert-base-cased"
 
 LEARNING_RATE = 2e-5
-MAX_TRAIN_STEPS = 1000
+MAX_TRAIN_STEPS = 600
 TRAIN_BATCH_SIZE = 16
 EVAL_BATCH_SIZE = 16
 
@@ -93,6 +93,13 @@ def csv_from_env(name: str, default: List[str]) -> List[str]:
     return [item.strip() for item in raw_value.split(",") if item.strip()]
 
 
+def bool_from_env(name: str, default: bool) -> bool:
+    raw_value = os.environ.get(name)
+    if raw_value is None:
+        return default
+    return raw_value.strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
 def write_json(path: Path, data: Dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as output_file:
@@ -116,6 +123,7 @@ def train_with_early_stopping(
     patience: int,
     min_steps_before_eval: int,
     best_model_save_dir: Path,
+    enable_early_stopping: bool,
 ) -> Dict[str, Any]:
     train_iter = iter(train_dataloader)
 
@@ -196,7 +204,7 @@ def train_with_early_stopping(
             f"best={best_span_f1:.3f}@{best_step} pat={patience_left}"
         )
 
-        if patience_left <= 0:
+        if enable_early_stopping and patience_left <= 0:
             early_stopped = True
             break
 
@@ -241,6 +249,14 @@ def main() -> None:
     models_root = Path(os.environ.get("BERT_KSHOT_MODELS_ROOT", MODELS_ROOT)).resolve()
     results_filename = os.environ.get("BERT_KSHOT_RESULTS_FILENAME", RESULTS_FILENAME)
     requested_splits = csv_from_env("BERT_KSHOT_SPLITS", [])
+    max_train_steps = int(os.environ.get("BERT_KSHOT_MAX_STEPS", MAX_TRAIN_STEPS))
+    eval_every = int(os.environ.get("BERT_KSHOT_EVAL_EVERY", EARLY_STOPPING_EVAL_EVERY))
+    patience = int(os.environ.get("BERT_KSHOT_PATIENCE", EARLY_STOPPING_PATIENCE))
+    min_steps_before_eval = int(
+        os.environ.get("BERT_KSHOT_MIN_STEPS_BEFORE_EVAL", EARLY_STOPPING_MIN_STEPS_BEFORE_EVAL)
+    )
+    enable_early_stopping = bool_from_env("BERT_KSHOT_EARLY_STOPPING", False)
+    use_best_checkpoint = bool_from_env("BERT_KSHOT_USE_BEST_CHECKPOINT", False)
 
     results_root.mkdir(parents=True, exist_ok=True)
     models_root.mkdir(parents=True, exist_ok=True)
@@ -367,11 +383,12 @@ def main() -> None:
             optimizer,
             device,
             label_list,
-            max_steps=MAX_TRAIN_STEPS,
-            eval_every=EARLY_STOPPING_EVAL_EVERY,
-            patience=EARLY_STOPPING_PATIENCE,
-            min_steps_before_eval=EARLY_STOPPING_MIN_STEPS_BEFORE_EVAL,
+            max_steps=max_train_steps,
+            eval_every=eval_every,
+            patience=patience,
+            min_steps_before_eval=min_steps_before_eval,
             best_model_save_dir=best_ckpt_dir,
+            enable_early_stopping=enable_early_stopping,
         )
 
         print(
@@ -380,8 +397,9 @@ def main() -> None:
             f"best mini Span Strict F1={train_summary['best_span_strict_f1']:.4f}"
         )
 
-        model = AutoModelForTokenClassification.from_pretrained(best_ckpt_dir)
-        model.to(device)
+        if use_best_checkpoint:
+            model = AutoModelForTokenClassification.from_pretrained(best_ckpt_dir)
+            model.to(device)
 
         tokenizer.save_pretrained(model_dir)
         model.save_pretrained(model_dir)
@@ -410,7 +428,7 @@ def main() -> None:
                 eval_split=eval_split,
                 n_train=len(train_ds),
                 n_eval=n_eval,
-                max_train_steps=MAX_TRAIN_STEPS,
+                max_train_steps=max_train_steps,
                 train_batch_size=TRAIN_BATCH_SIZE,
                 eval_batch_size=EVAL_BATCH_SIZE,
                 learning_rate=LEARNING_RATE,
@@ -436,7 +454,10 @@ def main() -> None:
                 "k_shot": k_shot,
                 "split_seed": split_seed,
                 "seed": split_seed,
-                "note": "Standard BERT k-shot baseline with shared mini-val selection and validation/test scoring.",
+                "note": (
+                    "Standard BERT k-shot baseline with fixed final-checkpoint evaluation. "
+                    "Mini-val is logged for diagnostics only unless checkpoint selection is explicitly enabled."
+                ),
             },
             "paths": {
                 "train_file": str(split_dir / "train.jsonl"),
@@ -447,13 +468,15 @@ def main() -> None:
                 "results_csv": str(csv_path),
             },
             "runtime_config": {
-                "max_steps": MAX_TRAIN_STEPS,
-                "eval_every": EARLY_STOPPING_EVAL_EVERY,
-                "patience": EARLY_STOPPING_PATIENCE,
-                "min_steps_before_eval": EARLY_STOPPING_MIN_STEPS_BEFORE_EVAL,
+                "max_steps": max_train_steps,
+                "eval_every": eval_every,
+                "patience": patience,
+                "min_steps_before_eval": min_steps_before_eval,
                 "train_batch_size": TRAIN_BATCH_SIZE,
                 "eval_batch_size": EVAL_BATCH_SIZE,
                 "learning_rate": LEARNING_RATE,
+                "enable_early_stopping": enable_early_stopping,
+                "use_best_checkpoint": use_best_checkpoint,
             },
             "data_stats": {
                 "train_rows": len(train_ds),

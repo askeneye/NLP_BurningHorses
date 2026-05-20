@@ -1,0 +1,16 @@
+method,metric,bin,count,share,span_strict_f1_in_bin,entity_rows_total,source
+Canonical Pat+Perm 10-member,min_entity_vote_confidence,0.50-0.59,3062,0.1060506355,0.3738455855,28873,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Canonical Pat+Perm 10-member,min_entity_vote_confidence,0.60-0.69,5082,0.1760121913,0.4628664495,28873,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Canonical Pat+Perm 10-member,min_entity_vote_confidence,0.70-0.79,4245,0.1470231704,0.4893704007,28873,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Canonical Pat+Perm 10-member,min_entity_vote_confidence,0.80-0.89,4041,0.1399577460,0.5179668305,28873,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Canonical Pat+Perm 10-member,min_entity_vote_confidence,0.90-1.00,11309,0.3916808091,0.6095369298,28873,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Pat+Perm+Verb 10-member,min_entity_vote_confidence,0.50-0.59,3418,0.1238585302,0.3905601660,27596,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Pat+Perm+Verb 10-member,min_entity_vote_confidence,0.60-0.69,4970,0.1800985650,0.4771293375,27596,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Pat+Perm+Verb 10-member,min_entity_vote_confidence,0.70-0.79,4129,0.1496231338,0.4981148182,27596,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Pat+Perm+Verb 10-member,min_entity_vote_confidence,0.80-0.89,3920,0.1420495724,0.5414554247,27596,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Pat+Perm+Verb 10-member,min_entity_vote_confidence,0.90-1.00,9414,0.3411363966,0.6486546752,27596,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Combined 20-member,min_entity_vote_confidence,0.50-0.59,4735,0.1667899539,0.4377542718,28389,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Combined 20-member,min_entity_vote_confidence,0.60-0.69,4772,0.1680932756,0.4797173977,28389,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Combined 20-member,min_entity_vote_confidence,0.70-0.79,4077,0.1436119624,0.4966522839,28389,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Combined 20-member,min_entity_vote_confidence,0.80-0.89,3894,0.1371658037,0.5581395349,28389,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax
+Combined 20-member,min_entity_vote_confidence,0.90-1.00,8412,0.2963119518,0.6653709942,28389,k5_seed42;k5_seed142;k5_seed242 unlabeled_pool ensemble_hard_argmax

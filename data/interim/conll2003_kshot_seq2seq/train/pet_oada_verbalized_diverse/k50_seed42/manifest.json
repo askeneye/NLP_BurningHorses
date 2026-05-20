@@ -1,0 +1,132 @@
+{
+  "pattern_01": {
+    "source_pattern_id": "pattern_1_oada_original",
+    "source_template": "Sentence: {SEN} Following the order: {PERM} Entity:",
+    "label_verbalizer": {
+      "ORG": "organization",
+      "PER": "individual",
+      "LOC": "region",
+      "MISC": "term"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_01.jsonl"
+  },
+  "pattern_02": {
+    "source_pattern_id": "pattern_2_text_order_entities",
+    "source_template": "Text: {SEN} Following the entity order: {PERM} Entities:",
+    "label_verbalizer": {
+      "ORG": "organisation",
+      "PER": "human",
+      "LOC": "area",
+      "MISC": "category"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_02.jsonl"
+  },
+  "pattern_03": {
+    "source_pattern_id": "pattern_3_extract_sentence_order",
+    "source_template": "Extract entities from the sentence: {SEN} Follow this order: {PERM} Entities:",
+    "label_verbalizer": {
+      "ORG": "company",
+      "PER": "someone",
+      "LOC": "site",
+      "MISC": "label"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_03.jsonl"
+  },
+  "pattern_04": {
+    "source_pattern_id": "pattern_4_order_sentence_entity",
+    "source_template": "Following the order: {PERM}, extract entities from this sentence: {SEN} Entity:",
+    "label_verbalizer": {
+      "ORG": "institution",
+      "PER": "name",
+      "LOC": "territory",
+      "MISC": "entity"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_04.jsonl"
+  },
+  "pattern_05": {
+    "source_pattern_id": "pattern_5_sentence_list_order",
+    "source_template": "Sentence: {SEN} List the entities following this order: {PERM} Entities:",
+    "label_verbalizer": {
+      "ORG": "corporation",
+      "PER": "identity",
+      "LOC": "venue",
+      "MISC": "object"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_05.jsonl"
+  },
+  "pattern_06": {
+    "source_pattern_id": "pattern_6_given_text_order",
+    "source_template": "Given the text: {SEN} Use the order {PERM} to list the entities. Entities:",
+    "label_verbalizer": {
+      "ORG": "agency",
+      "PER": "figure",
+      "LOC": "country",
+      "MISC": "event"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_06.jsonl"
+  },
+  "pattern_07": {
+    "source_pattern_id": "pattern_7_entity_order_then_sentence",
+    "source_template": "Entity order: {PERM}. Sentence: {SEN} Extract the entities:",
+    "label_verbalizer": {
+      "ORG": "group",
+      "PER": "subject",
+      "LOC": "city",
+      "MISC": "item"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_07.jsonl"
+  },
+  "pattern_08": {
+    "source_pattern_id": "pattern_8_sentence_entities_in_order",
+    "source_template": "Sentence: {SEN} Entities in the following order, {PERM}:",
+    "label_verbalizer": {
+      "ORG": "association",
+      "PER": "character",
+      "LOC": "destination",
+      "MISC": "other"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_08.jsonl"
+  },
+  "pattern_09": {
+    "source_pattern_id": "pattern_9_find_entities_order",
+    "source_template": "Find the entities in this text: {SEN} Use this order: {PERM} Entities:",
+    "label_verbalizer": {
+      "ORG": "body",
+      "PER": "being",
+      "LOC": "location",
+      "MISC": "concept"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_09.jsonl"
+  },
+  "pattern_10": {
+    "source_pattern_id": "pattern_10_order_guided_extraction",
+    "source_template": "Use the entity order {PERM} for the sentence: {SEN} Entity:",
+    "label_verbalizer": {
+      "ORG": "organization",
+      "PER": "person",
+      "LOC": "place",
+      "MISC": "thing"
+    },
+    "source_rows": 86,
+    "generated_rows": 2064,
+    "output_file": "data/interim/conll2003_kshot_seq2seq/train/pet_oada_verbalized_diverse/k50_seed42/pattern_10.jsonl"
+  }
+}

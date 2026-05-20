@@ -26,7 +26,7 @@ from bert_eval import evaluate_model, make_dataloader, tokenize_and_align_labels
 
 MODEL_NAME = "google-bert/bert-base-cased"
 LEARNING_RATE = 2e-5
-MAX_TRAIN_STEPS = 1000
+MAX_TRAIN_STEPS = 600
 TRAIN_BATCH_SIZE = 16
 EVAL_BATCH_SIZE = 16
 EVAL_EVERY = 100
@@ -65,11 +65,20 @@ class DistillConfig:
     learning_rate: float
     seed: int
     max_length: int
+    enable_early_stopping: bool
+    use_best_checkpoint: bool
 
 
 def read_json(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as input_file:
         return json.load(input_file)
+
+
+def bool_from_env(name: str, default: bool) -> bool:
+    raw_value = os.environ.get(name)
+    if raw_value is None:
+        return default
+    return raw_value.strip().lower() in {"1", "true", "yes", "y", "on"}
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -285,7 +294,7 @@ def train_distilled_model(
             patience_left -= 1
 
         pbar.set_postfix_str(f"miniSF1={span_f1:.4f} best={best_span_f1:.4f}@{best_step} pat={patience_left}")
-        if patience_left <= 0:
+        if config.enable_early_stopping and patience_left <= 0:
             early_stopped = True
             break
 
@@ -333,6 +342,8 @@ def load_config_from_env() -> DistillConfig:
         learning_rate=float(os.environ.get("DISTILL_LEARNING_RATE", LEARNING_RATE)),
         seed=int(os.environ.get("DISTILL_SEED", 42)),
         max_length=int(os.environ.get("DISTILL_MAX_LENGTH", MAX_LENGTH)),
+        enable_early_stopping=bool_from_env("DISTILL_EARLY_STOPPING", False),
+        use_best_checkpoint=bool_from_env("DISTILL_USE_BEST_CHECKPOINT", False),
     )
 
 
@@ -402,7 +413,9 @@ def main() -> None:
     print(
         "Distilled BERT run: "
         f"split={config.split} teacher_split={config.teacher_split} teacher={config.teacher_variant} "
-        f"rows={len(train_rows)} max_steps={config.max_steps} device={device}"
+        f"rows={len(train_rows)} max_steps={config.max_steps} "
+        f"early_stopping={config.enable_early_stopping} "
+        f"use_best_checkpoint={config.use_best_checkpoint} device={device}"
     )
     train_summary = train_distilled_model(
         model,
@@ -415,7 +428,7 @@ def main() -> None:
     )
 
     best_dir = config.output_dir / "best_span_f1"
-    if best_dir.exists():
+    if config.use_best_checkpoint and best_dir.exists():
         model = AutoModelForTokenClassification.from_pretrained(best_dir)
         model.to(device)
 
@@ -461,6 +474,8 @@ def main() -> None:
             "eval_batch_size": config.eval_batch_size,
             "learning_rate": config.learning_rate,
             "max_length": config.max_length,
+            "enable_early_stopping": config.enable_early_stopping,
+            "use_best_checkpoint": config.use_best_checkpoint,
         },
         "data_stats": {
             "train_rows": len(train_rows),

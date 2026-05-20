@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import argparse
 import csv
 import html
 from collections import defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 
 try:
@@ -12,13 +14,39 @@ except ModuleNotFoundError:
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MEAN_SOURCE = ROOT / "data" / "main_ablation_mean_scores.csv"
-CURATED_PATH = ROOT / "curated" / "ablation_kshot_results.csv"
-PLOT_DATA_PATH = ROOT / "plots" / "ablation_kshot_strict_f1_data.csv"
-PNG_PATH = ROOT / "plots" / "ablation_kshot_strict_f1.png"
-PDF_PATH = ROOT / "plots" / "ablation_kshot_strict_f1.pdf"
-SVG_PATH = ROOT / "plots" / "ablation_kshot_strict_f1.svg"
 FONT_FAMILY = "Inter, Arial, sans-serif"
+
+
+@dataclass(frozen=True)
+class PlotBundle:
+    figure_id: str
+    mean_source: Path
+    curated_path: Path
+    plot_data_path: Path
+    png_path: Path
+    pdf_path: Path
+    svg_path: Path
+
+
+DEFAULT_BUNDLE = PlotBundle(
+    figure_id="ablation_kshot_strict_f1",
+    mean_source=ROOT / "data" / "main_ablation_mean_scores.csv",
+    curated_path=ROOT / "curated" / "ablation_kshot_results.csv",
+    plot_data_path=ROOT / "plots" / "ablation_kshot_strict_f1_data.csv",
+    png_path=ROOT / "plots" / "ablation_kshot_strict_f1.png",
+    pdf_path=ROOT / "plots" / "ablation_kshot_strict_f1.pdf",
+    svg_path=ROOT / "plots" / "ablation_kshot_strict_f1.svg",
+)
+
+FIXED600_BUNDLE = PlotBundle(
+    figure_id="ablation_kshot_strict_f1_fixed600",
+    mean_source=ROOT / "data" / "main_ablation_mean_scores_fixed600_final.csv",
+    curated_path=ROOT / "curated" / "ablation_kshot_strict_f1_fixed600_results.csv",
+    plot_data_path=ROOT / "plots" / "ablation_kshot_strict_f1_fixed600_data.csv",
+    png_path=ROOT / "plots" / "ablation_kshot_strict_f1_fixed600.png",
+    pdf_path=ROOT / "plots" / "ablation_kshot_strict_f1_fixed600.pdf",
+    svg_path=ROOT / "plots" / "ablation_kshot_strict_f1_fixed600.svg",
+)
 
 METHOD_ORDER = [
     "pat_perm_bart",
@@ -26,6 +54,8 @@ METHOD_ORDER = [
     "pat_bart_ensemble_to_bert",
     "pat_perm_bart_ensemble_vote",
     "pat_perm_bart_ensemble_to_bert",
+    "pat_perm_verb_bart_ensemble_vote",
+    "pat_perm_verb_bart_ensemble_to_bert",
     "seed_perm_bart_ensemble_vote",
     "seed_perm_bart_ensemble_to_bert",
     "bert",
@@ -38,6 +68,8 @@ METHOD_COLORS = {
     "pat_bart_ensemble_to_bert": "#F58518",
     "pat_perm_bart_ensemble_vote": "#7B61FF",
     "pat_perm_bart_ensemble_to_bert": "#7B61FF",
+    "pat_perm_verb_bart_ensemble_vote": "#B279A2",
+    "pat_perm_verb_bart_ensemble_to_bert": "#B279A2",
     "seed_perm_bart_ensemble_vote": "#4C78A8",
     "seed_perm_bart_ensemble_to_bert": "#4C78A8",
 }
@@ -49,6 +81,8 @@ METHOD_STYLES = {
     "pat_bart_ensemble_to_bert": "distilled",
     "pat_perm_bart_ensemble_vote": "vote",
     "pat_perm_bart_ensemble_to_bert": "distilled",
+    "pat_perm_verb_bart_ensemble_vote": "vote",
+    "pat_perm_verb_bart_ensemble_to_bert": "distilled",
     "seed_perm_bart_ensemble_vote": "vote",
     "seed_perm_bart_ensemble_to_bert": "distilled",
 }
@@ -58,9 +92,9 @@ def display_label(label: str) -> str:
     return label.replace("->", "\u2192")
 
 
-def read_mean_rows() -> list[dict[str, object]]:
+def read_mean_rows(bundle: PlotBundle) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
-    with MEAN_SOURCE.open(newline="", encoding="utf-8") as handle:
+    with bundle.mean_source.open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             if row["row_type"] != "mean":
                 continue
@@ -78,7 +112,7 @@ def read_mean_rows() -> list[dict[str, object]]:
     return rows
 
 
-def write_curated(rows: list[dict[str, object]]) -> None:
+def write_curated(bundle: PlotBundle, rows: list[dict[str, object]]) -> None:
     fieldnames = [
         "row_type",
         "plot_group",
@@ -107,19 +141,19 @@ def write_curated(rows: list[dict[str, object]]) -> None:
         "notes",
         "last_updated",
     ]
-    with CURATED_PATH.open("w", newline="", encoding="utf-8") as handle:
+    with bundle.curated_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
 
-def make_plot_rows(rows: list[dict[str, object]]) -> list[dict[str, object]]:
+def make_plot_rows(bundle: PlotBundle, rows: list[dict[str, object]]) -> list[dict[str, object]]:
     method_rank = {method_id: index for index, method_id in enumerate(METHOD_ORDER)}
     output = []
     for row in sorted(rows, key=lambda item: (method_rank[str(item["method_id"])], int(item["k_shot"]))):
         output.append(
             {
-                "figure_id": "ablation_kshot_strict_f1",
+                "figure_id": bundle.figure_id,
                 "method_id": row["method_id"],
                 "method_label": row["method_label"],
                 "k_shot": row["k_shot"],
@@ -138,7 +172,7 @@ def make_plot_rows(rows: list[dict[str, object]]) -> list[dict[str, object]]:
     return output
 
 
-def write_plot_data(rows: list[dict[str, object]]) -> None:
+def write_plot_data(bundle: PlotBundle, rows: list[dict[str, object]]) -> None:
     fieldnames = [
         "figure_id",
         "method_id",
@@ -155,7 +189,7 @@ def write_plot_data(rows: list[dict[str, object]]) -> None:
         "color",
         "source_path",
     ]
-    with PLOT_DATA_PATH.open("w", newline="", encoding="utf-8") as handle:
+    with bundle.plot_data_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
@@ -179,7 +213,7 @@ def svg_path(points: list[tuple[float, float]]) -> str:
     return " ".join(("M" if index == 0 else "L") + f" {x:.1f} {y:.1f}" for index, (x, y) in enumerate(points))
 
 
-def render_with_matplotlib(rows: list[dict[str, object]]) -> None:
+def render_with_matplotlib(bundle: PlotBundle, rows: list[dict[str, object]]) -> None:
     if plt is None:
         raise RuntimeError("matplotlib is not available")
 
@@ -256,12 +290,12 @@ def render_with_matplotlib(rows: list[dict[str, object]]) -> None:
     ax.grid(axis="y", color="#DDDDDD", linewidth=0.6)
     ax.legend(frameon=False, fontsize=8)
     fig.tight_layout()
-    fig.savefig(PNG_PATH, bbox_inches="tight")
-    fig.savefig(PDF_PATH, bbox_inches="tight")
+    fig.savefig(bundle.png_path, bbox_inches="tight")
+    fig.savefig(bundle.pdf_path, bbox_inches="tight")
     plt.close(fig)
 
 
-def render_svg(rows: list[dict[str, object]]) -> None:
+def render_svg(bundle: PlotBundle, rows: list[dict[str, object]]) -> None:
     width = 1050
     height = 460
     left = 90
@@ -364,21 +398,34 @@ def render_svg(rows: list[dict[str, object]]) -> None:
         legend_y += 24
 
     parts.append("</svg>")
-    SVG_PATH.write_text("\n".join(parts), encoding="utf-8")
+    bundle.svg_path.write_text("\n".join(parts), encoding="utf-8")
 
 
-def main() -> None:
-    curated_rows = read_mean_rows()
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Plot CoNLL2003 k-shot ablation lines.")
+    parser.add_argument(
+        "--fixed600",
+        action="store_true",
+        help="Use fixed-600-step BERT checkpoint scores and write *_fixed600 plot outputs.",
+    )
+    return parser.parse_args()
+
+
+def main(bundle: PlotBundle = DEFAULT_BUNDLE) -> None:
+    curated_rows = read_mean_rows(bundle)
     method_rank = {method_id: index for index, method_id in enumerate(METHOD_ORDER)}
     curated_rows = sorted(curated_rows, key=lambda row: (method_rank[str(row["method_id"])], int(row["k_shot"])))
-    write_curated(curated_rows)
-    plot_rows = make_plot_rows(curated_rows)
-    write_plot_data(plot_rows)
+    write_curated(bundle, curated_rows)
+    plot_rows = make_plot_rows(bundle, curated_rows)
+    write_plot_data(bundle, plot_rows)
     if plt is None:
-        render_svg(plot_rows)
+        render_svg(bundle, plot_rows)
     else:
-        render_with_matplotlib(plot_rows)
+        render_with_matplotlib(bundle, plot_rows)
+        if bundle is FIXED600_BUNDLE:
+            render_svg(bundle, plot_rows)
 
 
 if __name__ == "__main__":
-    main()
+    args = parse_args()
+    main(FIXED600_BUNDLE if args.fixed600 else DEFAULT_BUNDLE)

@@ -1,0 +1,9 @@
+{
+  "split": "k5_seed142",
+  "policy": "combined_20member_cross_exact_top_1000",
+  "selected_rows": 1000,
+  "selected_with_entities": 900,
+  "cross_group_exact_rows": 1000,
+  "cross_group_span_rows": 1000,
+  "mean_token_vote_confidence": 1.0
+}

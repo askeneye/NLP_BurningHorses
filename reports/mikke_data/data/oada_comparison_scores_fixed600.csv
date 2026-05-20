@@ -1,0 +1,17 @@
+source,method_id,method_label,model_family,k_shot,metric_name,metric_label,metric_value,metric_value_percent,score_source,status,notes
+ours,ours_bert,BERT,baseline,5,span_strict_f1,Strict span F1,0.3798,37.98,test,final_fixed600,Mean over our three CoNLL2003 k-shot split seeds; fixed-600-step final checkpoint.
+ours,ours_bert,BERT,baseline,10,span_strict_f1,Strict span F1,0.5113,51.13,test,final_fixed600,Mean over our three CoNLL2003 k-shot split seeds; fixed-600-step final checkpoint.
+ours,ours_bert,BERT,baseline,20,span_strict_f1,Strict span F1,0.6335,63.35,test,final_fixed600,Mean over our three CoNLL2003 k-shot split seeds; fixed-600-step final checkpoint.
+ours,ours_bert,BERT,baseline,50,span_strict_f1,Strict span F1,0.7414,74.14,test,final_fixed600,Mean over our three CoNLL2003 k-shot split seeds; fixed-600-step final checkpoint.
+oada_paper,oada_bert,OADA BERT baseline,baseline,5,span_strict_f1,Strict span F1,0.3679,36.79,test,reference,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,baseline,10,span_strict_f1,Strict span F1,0.4325,43.25,test,reference,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,baseline,20,span_strict_f1,Strict span F1,0.6057,60.57,test,reference,BERT baseline reported by the OADA paper.
+oada_paper,oada_bert,OADA BERT baseline,baseline,50,span_strict_f1,Strict span F1,0.7015,70.15,test,reference,BERT baseline reported by the OADA paper.
+ours,ours_distilled,Pat+Perm BART ensemble → BERT,hero,5,span_strict_f1,Strict span F1,0.5643,56.43,test,final_fixed600,Our best distilled top_1000 hard-argmax model; fixed-600-step final checkpoint.
+ours,ours_distilled,Pat+Perm BART ensemble → BERT,hero,10,span_strict_f1,Strict span F1,0.6772,67.72,test,final_fixed600,Our best distilled top_1000 hard-argmax model; fixed-600-step final checkpoint.
+ours,ours_distilled,Pat+Perm BART ensemble → BERT,hero,20,span_strict_f1,Strict span F1,0.7297,72.97,test,final_fixed600,Our best distilled top_1000 hard-argmax model; fixed-600-step final checkpoint.
+ours,ours_distilled,Pat+Perm BART ensemble → BERT,hero,50,span_strict_f1,Strict span F1,0.7694,76.94,test,final_fixed600,Our best distilled top_1000 hard-argmax model; fixed-600-step final checkpoint.
+oada_paper,oada_best,PromptNER+OADA,hero,5,span_strict_f1,Strict span F1,0.5676,56.76,test,reference,Best PromptNER+OADA score reported by the OADA paper.
+oada_paper,oada_best,PromptNER+OADA,hero,10,span_strict_f1,Strict span F1,0.6838,68.38,test,reference,Best PromptNER+OADA score reported by the OADA paper.
+oada_paper,oada_best,PromptNER+OADA,hero,20,span_strict_f1,Strict span F1,0.7264,72.64,test,reference,Best PromptNER+OADA score reported by the OADA paper.
+oada_paper,oada_best,PromptNER+OADA,hero,50,span_strict_f1,Strict span F1,0.7649,76.49,test,reference,Best PromptNER+OADA score reported by the OADA paper.

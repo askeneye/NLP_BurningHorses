@@ -1,0 +1,13 @@
+{
+  "dataset": "conll2003",
+  "kshot_split": "k5_seed42",
+  "eval_split": "unlabeled_pool",
+  "subset_name": "intersection_reduced",
+  "source_canonical_top1000": "data\\interim\\conll2003_ensemble_teachers\\bart_base\\pet_oada_verbalized_final2000_filtered\\k5_seed42\\unlabeled_pool\\top_1000\\manifest.json",
+  "source_diverse_top1000": "data\\interim\\conll2003_ensemble_teachers\\bart_base\\pet_oada_verbalized_diverse_final2000_filtered\\k5_seed42\\unlabeled_pool\\top_1000\\manifest.json",
+  "selected_rows": 584,
+  "intersection_rows_available": 584,
+  "union_rows_available": 1416,
+  "policy": "Rows selected by both canonical and verbalizer-diverse top_1000 filters.",
+  "output": "data\\interim\\conll2003_ensemble_teachers\\bart_base\\pet_oada_verbalized_dual_stability_filtered\\k5_seed42\\unlabeled_pool\\intersection_reduced\\ensemble_hard_argmax.jsonl"
+}
