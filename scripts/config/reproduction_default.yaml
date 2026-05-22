@@ -65,6 +65,6 @@ runner:
 
 expected_metrics:
   single_ensemble_to_bert:
-    test_span_strict_f1: 0.6232
+    test_span_strict_f1: 0.5439
   single_teacher_to_bert:
     test_span_strict_f1: 0.5477

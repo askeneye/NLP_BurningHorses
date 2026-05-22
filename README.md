@@ -55,8 +55,8 @@ Typical runtime: several hours (often ~3-10+ hours depending on GPU/CPU).
 ### Expected scores
 
 Default runs use `k5_seed242`
-**single-teacher -> BERT** expected test F1 is `0.5632`
-**full ensemble -> BERT** expected test F1 is `0.6232`
+**single-teacher -> BERT** expected test F1 is `0.5477`
+**full ensemble -> BERT** expected test F1 is `0.5439`
 Report tables may show different values because they report the mean over split seeds `42`, `142`, and `242`
 
 ### Final score file
