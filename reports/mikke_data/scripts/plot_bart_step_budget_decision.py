@@ -242,6 +242,8 @@ def write_csv() -> None:
         )
         writer.writeheader()
         for curve in CURVES:
+            if curve["series"] != "XE fixed-2000":
+                continue
             for step, value in zip(STEPS, curve["values"]):
                 writer.writerow(
                     {
@@ -261,44 +263,31 @@ def plot() -> None:
     plt.rcParams["font.family"] = ["Inter", "Arial", "sans-serif"]
     plt.rcParams["svg.fonttype"] = "none"
 
-    fig, axes = plt.subplots(2, 2, figsize=(7.0, 5.25), dpi=300, sharex=True, sharey=True)
-    colors = {"XE fixed-2000": "#4C78A8", "OADA-XE cap24 fixed-2000": "#F58518"}
-    markers = {"XE fixed-2000": "o", "OADA-XE cap24 fixed-2000": "^"}
+    fig, ax = plt.subplots(figsize=(5.0, 3.0), dpi=300)
+    colors = {"k=5": "#4C78A8", "k=10": "#F58518", "k=20": "#54A24B", "k=50": "#B279A2"}
 
-    for ax, k_shot in zip(axes.flat, ["k=5", "k=10", "k=20", "k=50"]):
-        for curve in [curve for curve in CURVES if curve["k"] == k_shot]:
-            ax.plot(
-                STEPS,
-                curve["values"],
-                label=curve["series"],
-                color=colors[curve["series"]],
-                linewidth=1.7,
-                marker=markers[curve["series"]],
-                markersize=2.5,
-                markevery=2,
-            )
-        ax.axvline(2000, color="#111111", linewidth=1.0, linestyle="--", alpha=0.85)
-        ax.set_title(k_shot, fontsize=11, fontweight="bold")
-        ax.grid(axis="y", color="#DDDDDD", linewidth=0.6)
-        ax.set_xlim(100, 2050)
-        ax.set_ylim(0.18, 0.75)
-
-    axes[0, 0].set_ylabel("Mini-val strict F1")
-    axes[1, 0].set_ylabel("Mini-val strict F1")
-    axes[1, 0].set_xlabel("Training step")
-    axes[1, 1].set_xlabel("Training step")
-
-    handles, labels = axes[0, 0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(0.5, 0.98))
-    fig.suptitle("BART Step-Budget Pilot Fitness Curves", y=1.04, fontsize=14, fontweight="bold")
-    fig.text(
-        0.5,
-        0.01,
-        "Dashed vertical line marks the fixed 2000-step budget selected for report-grade BART teacher runs.",
-        ha="center",
-        fontsize=9,
-    )
-    fig.tight_layout(rect=(0, 0.04, 1, 0.93))
+    for curve in [curve for curve in CURVES if curve["series"] == "XE fixed-2000"]:
+        k_shot = curve["k"]
+        ax.plot(
+            STEPS,
+            curve["values"],
+            label=k_shot,
+            color=colors[k_shot],
+            linewidth=1.7,
+            marker="o",
+            markersize=2.6,
+            markevery=2,
+        )
+    ax.set_title("BART fitness curve", fontsize=12, fontweight="bold")
+    ax.set_xlabel("Training step")
+    ax.set_ylabel("Mini-val strict F1")
+    ax.grid(axis="y", color="#DDDDDD", linewidth=0.6)
+    ax.set_xlim(0, 2100)
+    ax.set_ylim(0.18, 0.75)
+    ax.set_xticks([100, 500, 1000, 1500, 2000])
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles[::-1], labels[::-1], loc="lower right", frameon=True, framealpha=0.92, fontsize=8)
+    fig.tight_layout()
 
     SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(SVG_PATH, bbox_inches="tight")
@@ -312,93 +301,71 @@ def svg_path(points: list[tuple[float, float]]) -> str:
 
 
 def render_svg() -> None:
-    width = 700
-    height = 525
-    margin_left = 70
-    margin_right = 28
-    margin_top = 78
-    margin_bottom = 58
-    panel_gap_x = 42
-    panel_gap_y = 48
-    title_y = 24
-    plot_width = (width - margin_left - margin_right - panel_gap_x) / 2
-    plot_height = (height - margin_top - margin_bottom - panel_gap_y) / 2
+    width = 500
+    height = 300
+    margin_left = 58
+    margin_right = 22
+    margin_top = 45
+    margin_bottom = 44
+    title_y = 22
+    plot_width = width - margin_left - margin_right
+    plot_height = height - margin_top - margin_bottom
     y_min = 0.18
     y_max = 0.75
-    colors = {"XE fixed-2000": "#4C78A8", "OADA-XE cap24 fixed-2000": "#F58518"}
-    markers = {"XE fixed-2000": "circle", "OADA-XE cap24 fixed-2000": "triangle"}
+    colors = {"k=5": "#4C78A8", "k=10": "#F58518", "k=20": "#54A24B", "k=50": "#B279A2"}
 
-    def x_pos(step: int, left: float) -> float:
-        return left + ((step - 100) / (2000 - 100)) * plot_width
+    def x_pos(step: int) -> float:
+        return margin_left + (step / 2100) * plot_width
 
-    def y_pos(value: float, top: float) -> float:
-        return top + plot_height - ((value - y_min) / (y_max - y_min)) * plot_height
+    def y_pos(value: float) -> float:
+        return margin_top + plot_height - ((value - y_min) / (y_max - y_min)) * plot_height
 
-    def marker(series: str, x: float, y: float) -> str:
-        color = colors[series]
-        if markers[series] == "triangle":
-            points = f"{x:.1f},{y - 3:.1f} {x - 3:.1f},{y + 2.6:.1f} {x + 3:.1f},{y + 2.6:.1f}"
-            return f'<polygon points="{points}" fill="{color}" stroke="{color}" stroke-width="1"/>'
+    def marker(k_shot: str, x: float, y: float) -> str:
+        color = colors[k_shot]
         return f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.4" fill="{color}" stroke="{color}" stroke-width="1"/>'
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
-        "<title>BART Step-Budget Pilot Fitness Curves</title>",
+        "<title>BART fitness curve</title>",
         f"<style>text {{ font-family: {FONT_FAMILY}; }}</style>",
         '<rect width="100%" height="100%" fill="white"/>',
-        f'<text x="{width / 2:.1f}" y="{title_y}" font-size="16" font-weight="700" text-anchor="middle">BART Step-Budget Pilot Fitness Curves</text>',
+        f'<text x="{width / 2:.1f}" y="{title_y}" font-size="14" font-weight="700" text-anchor="middle">BART fitness curve</text>',
     ]
 
-    legend_x = margin_left
-    legend_y = 50
-    for index, series in enumerate(["XE fixed-2000", "OADA-XE cap24 fixed-2000"]):
-        y = legend_y
-        x1 = legend_x + index * 175
-        x2 = x1 + 30
-        color = colors[series]
-        parts.append(f'<line x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" stroke="{color}" stroke-width="1.7"/>')
-        parts.append(marker(series, (x1 + x2) / 2, y))
-        parts.append(f'<text x="{x2 + 8}" y="{y + 4}" font-size="11">{html.escape(series)}</text>')
+    for tick in [0.2, 0.4, 0.6]:
+        y = y_pos(tick)
+        parts.append(f'<line x1="{margin_left}" y1="{y:.1f}" x2="{margin_left + plot_width}" y2="{y:.1f}" stroke="#DDDDDD" stroke-width="1"/>')
+        parts.append(f'<text x="{margin_left - 8}" y="{y + 4:.1f}" font-size="10" text-anchor="end">{tick:.1f}</text>')
+    parts.append(f'<rect x="{margin_left}" y="{margin_top}" width="{plot_width:.1f}" height="{plot_height:.1f}" fill="none" stroke="#111111" stroke-width="1.2"/>')
+    for step in [100, 500, 1000, 1500, 2000]:
+        x = x_pos(step)
+        parts.append(f'<line x1="{x:.1f}" y1="{margin_top + plot_height:.1f}" x2="{x:.1f}" y2="{margin_top + plot_height + 5:.1f}" stroke="#111111" stroke-width="1"/>')
+        parts.append(f'<text x="{x:.1f}" y="{margin_top + plot_height + 18:.1f}" font-size="10" text-anchor="middle">{step}</text>')
 
-    panel_positions = {
-        "k=5": (margin_left, margin_top),
-        "k=10": (margin_left + plot_width + panel_gap_x, margin_top),
-        "k=20": (margin_left, margin_top + plot_height + panel_gap_y),
-        "k=50": (margin_left + plot_width + panel_gap_x, margin_top + plot_height + panel_gap_y),
-    }
+    for curve in [curve for curve in CURVES if curve["series"] == "XE fixed-2000"]:
+        k_shot = curve["k"]
+        points = [(x_pos(step), y_pos(value)) for step, value in zip(STEPS, curve["values"])]
+        parts.append(
+            f'<path d="{svg_path(points)}" fill="none" stroke="{colors[k_shot]}" stroke-width="1.7" stroke-opacity="0.95"/>'
+        )
+        for x, y in points[::2]:
+            parts.append(marker(k_shot, x, y))
 
-    for k_shot, (left, top) in panel_positions.items():
-        parts.append(f'<text x="{left + plot_width / 2:.1f}" y="{top - 10:.1f}" font-size="12" font-weight="700" text-anchor="middle">{k_shot}</text>')
-        for tick in [0.2, 0.4, 0.6]:
-            y = y_pos(tick, top)
-            parts.append(f'<line x1="{left}" y1="{y:.1f}" x2="{left + plot_width}" y2="{y:.1f}" stroke="#DDDDDD" stroke-width="1"/>')
-            if left == margin_left:
-                parts.append(f'<text x="{left - 8}" y="{y + 4:.1f}" font-size="10" text-anchor="end">{tick:.1f}</text>')
-        parts.append(f'<rect x="{left}" y="{top}" width="{plot_width:.1f}" height="{plot_height:.1f}" fill="none" stroke="#111111" stroke-width="1.2"/>')
-        x_2000 = x_pos(2000, left)
-        parts.append(f'<line x1="{x_2000:.1f}" y1="{top}" x2="{x_2000:.1f}" y2="{top + plot_height:.1f}" stroke="#111111" stroke-width="1" stroke-dasharray="5 4"/>')
-        for step in [100, 1000, 2000]:
-            x = x_pos(step, left)
-            parts.append(f'<line x1="{x:.1f}" y1="{top + plot_height:.1f}" x2="{x:.1f}" y2="{top + plot_height + 5:.1f}" stroke="#111111" stroke-width="1"/>')
-            if top > margin_top:
-                parts.append(f'<text x="{x:.1f}" y="{top + plot_height + 18:.1f}" font-size="10" text-anchor="middle">{step}</text>')
+    legend_width = 82
+    legend_height = 58
+    legend_x = margin_left + plot_width - legend_width - 9
+    legend_y = margin_top + plot_height - legend_height - 9
+    parts.append(f'<rect x="{legend_x}" y="{legend_y}" width="{legend_width}" height="{legend_height}" fill="white" opacity="0.92" stroke="#BBBBBB" stroke-width="0.8"/>')
+    for index, k_shot in enumerate(["k=50", "k=20", "k=10", "k=5"]):
+        y = legend_y + 13 + index * 11
+        x1 = legend_x + 9
+        x2 = x1 + 18
+        parts.append(f'<line x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" stroke="{colors[k_shot]}" stroke-width="1.7"/>')
+        parts.append(marker(k_shot, (x1 + x2) / 2, y))
+        parts.append(f'<text x="{x2 + 7}" y="{y + 3.5:.1f}" font-size="9">{html.escape(k_shot)}</text>')
 
-        for curve in [curve for curve in CURVES if curve["k"] == k_shot]:
-            series = curve["series"]
-            points = [(x_pos(step, left), y_pos(value, top)) for step, value in zip(STEPS, curve["values"])]
-            parts.append(
-                f'<path d="{svg_path(points)}" fill="none" stroke="{colors[series]}" stroke-width="1.7" stroke-opacity="0.95"/>'
-            )
-            for x, y in points[::2]:
-                parts.append(marker(series, x, y))
-
-    parts.append(f'<text x="22" y="{height / 2:.1f}" font-size="13" transform="rotate(-90 22 {height / 2:.1f})">Mini-val strict F1</text>')
-    parts.append(f'<text x="{width / 2:.1f}" y="{height - 24}" font-size="13" text-anchor="middle">Training step</text>')
-    parts.append(
-        f'<text x="{width / 2:.1f}" y="{height - 7}" font-size="9" text-anchor="middle">'
-        "Dashed vertical line marks the fixed 2000-step BART budget selected for report-grade teacher runs."
-        "</text>"
-    )
+    parts.append(f'<text x="19" y="{margin_top + plot_height / 2:.1f}" font-size="11" transform="rotate(-90 19 {margin_top + plot_height / 2:.1f})">Mini-val strict F1</text>')
+    parts.append(f'<text x="{width / 2:.1f}" y="{height - 7}" font-size="11" text-anchor="middle">Training step</text>')
     parts.append("</svg>")
 
     SVG_PATH.parent.mkdir(parents=True, exist_ok=True)

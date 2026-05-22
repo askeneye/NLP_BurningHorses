@@ -1,0 +1,66 @@
+# Neutral default config for the clean reproduction pipeline.
+# The filename stays stable while concrete defaults are values below.
+
+run:
+  name: "single_ensemble_to_bert"
+  dataset: "conll2003"
+  task: "ner"
+
+default_profile:
+  k_shot: 5
+  split_seed: 242
+  split_name: "k5_seed242"
+
+paths:
+  # Read-only legacy source locations
+  raw_data_root: "data/raw/conll2003"
+
+  # All new generated artifacts must stay under reproduction/
+  reproduction_root: "reproduction"
+  data_root: "reproduction/data"
+  interim_root: "reproduction/interim"
+  models_root: "reproduction/models"
+  logs_root: "reproduction/logs"
+  reports_root: "reproduction/reports"
+
+teacher_ensemble:
+  model_name: "facebook/bart-base"
+  ensemble_size: 10
+  pattern_ids:
+    - "pattern_01"
+    - "pattern_02"
+    - "pattern_03"
+    - "pattern_04"
+    - "pattern_05"
+    - "pattern_06"
+    - "pattern_07"
+    - "pattern_08"
+    - "pattern_09"
+    - "pattern_10"
+  permutations_per_example: 24
+  train:
+    learning_rate: 2.0e-5
+    batch_size: 8
+    eval_batch_size: 32
+    max_steps: 2000
+    eval_steps: 100
+    model_selection_strategy: "final_step"
+    use_early_stopping: false
+
+teacher_outputs:
+  # Primary promoted student target; can be changed in one place.
+  soft_label_variant: "vote_normalized"  # Options: vote_normalized, vote_temp2, hard_argmax
+  temperature: 2.0
+
+student:
+  model_name: "google-bert/bert-base-cased"
+  max_steps: 600
+  train_batch_size: 32
+  eval_batch_size: 64
+  learning_rate: 5.0e-5
+  model_selection_strategy: "final_step"
+  use_early_stopping: false
+
+runner:
+  overwrite_existing: false
+  dry_run: false

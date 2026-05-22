@@ -1,0 +1,40 @@
+patterns:
+  - id: "pattern_1_oada_original"
+    template: "Sentence: {SEN} Following the order: {PERM} Entity:"
+    type: "sentence-order-entity-cue"
+
+  - id: "pattern_2_text_order_entities"
+    template: "Text: {SEN} Following the entity order: {PERM} Entities:"
+    type: "sentence-order-entity-cue"
+
+  - id: "pattern_3_extract_sentence_order"
+    template: "Extract entities from the sentence: {SEN} Follow this order: {PERM} Entities:"
+    type: "instruction-sentence-order"
+
+  - id: "pattern_4_order_sentence_entity"
+    template: "Following the order: {PERM}, extract entities from this sentence: {SEN} Entity:"
+    type: "order-sentence-entity-cue"
+
+  - id: "pattern_5_sentence_list_order"
+    template: "Sentence: {SEN} List the entities following this order: {PERM} Entities:"
+    type: "sentence-instruction-order"
+
+  - id: "pattern_6_given_text_order"
+    template: "Given the text: {SEN} Use the order {PERM} to list the entities. Entities:"
+    type: "sentence-instruction-order"
+
+  - id: "pattern_7_entity_order_then_sentence"
+    template: "Entity order: {PERM}. Sentence: {SEN} Extract the entities:"
+    type: "order-sentence-entity-cue"
+
+  - id: "pattern_8_sentence_entities_in_order"
+    template: "Sentence: {SEN} Entities in the following order, {PERM}:"
+    type: "sentence-order-entity-cue"
+
+  - id: "pattern_9_find_entities_order"
+    template: "Find the entities in this text: {SEN} Use this order: {PERM} Entities:"
+    type: "instruction-sentence-order"
+
+  - id: "pattern_10_order_guided_extraction"
+    template: "Use the entity order {PERM} for the sentence: {SEN} Entity:"
+    type: "order-sentence-entity-cue"

@@ -1,61 +1,68 @@
-# NLP_BurningHorses
+# Fire Horses
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+All generated artifacts are written to `reproduction/`, so you can delete that folder and rerun from a clean state.
 
-Does order-agnostic supervision improve BERT-based NER performance?
+## 1) Environment setup
 
-## Project Organization
+From repository root:
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         nlp_burninghorses and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── nlp_burninghorses   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes nlp_burninghorses a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+### Windows (PowerShell)
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
---------
+### macOS / Linux
 
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+If your shell does not resolve `python` after activation, use `python3` for the same commands.
+
+Quick check:
+
+```bash
+python --version
+```
+
+Expected: `Python 3.11.x`.
+
+## 2) Run reproduction
+
+### A) Single-teacher -> BERT (faster)
+
+```bash
+python scripts/run_single_teacher_to_bert.py
+```
+
+Typical runtime: usually shorter than full ensemble (hardware dependent).
+
+### B) Full ensemble -> BERT (promoted best performer)
+
+```bash
+python scripts/run_single_ensemble_to_bert.py
+```
+
+Typical runtime: several hours (often ~3-10+ hours depending on GPU/CPU).
+
+### Expected scores
+
+Default runs use `k5_seed242`
+**single-teacher -> BERT** expected test F1 is `0.5632`
+**full ensemble -> BERT** expected test F1 is `0.6232`
+Report tables may show different values because they report the mean over split seeds `42`, `142`, and `242`
+
+### Final score file
+
+After step `07`, check:
+
+`reproduction/logs/step07_score_bert_manifest.json`
+
+This manifest includes `report_file`, which points to the final metrics JSON for the run.
