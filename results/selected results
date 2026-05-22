@@ -1,0 +1,15 @@
+Analysis and Discussion
+
+To better understand how the models behaved in the few-shot setting, we performed a label-level analysis on the K=5 experiments. The purpose of this analysis was to compare how the single BART teacher and the distilled BERT student handled different entity types, and to investigate whether there were any unusual patterns in the data that could have influenced the final results.
+
+Overall, the distilled BERT model performed noticeably better than the vanilla BERT baseline and achieved competitive performance compared to the original OADA setup. The largest improvements were observed for PER and LOC entities, suggesting that the generated labels from the BART ensemble helped the BERT model learn more reliable entity boundaries even with very limited training data.
+
+At the same time, some entity types remained difficult across all models. In particular, ORG entities proved challenging, as organization names were often either missed completely or confused with locations. This was especially common for sports teams and institutions, where the names can closely resemble geographic locations. Interestingly, the single BART teacher occasionally performed slightly better than the BERT student on ORG predictions, which may indicate that some detailed information is lost when transferring knowledge from the ensemble to the lightweight BERT model.
+
+We also observed that the distilled BERT model behaved more conservatively than the BART models. The student achieved relatively high precision but lower recall, meaning that its predictions were often correct when it identified an entity, but it still failed to detect many gold entities. This behavior is understandable in the extremely low-resource K=5 setting, where the amount of labeled training data is very limited.
+
+Another clear pattern was that MISC entities remained difficult for every model. The scores for this category were consistently lower than for PER and LOC, likely because MISC contains a broad mix of unrelated entity types with fewer consistent linguistic patterns.
+
+Finally, we performed a small sanity check on the evaluation setup to determine whether sequence truncation affected the reported scores. Only two test examples were truncated under the \texttt{max\_length=128} setting, and both examples mainly consisted of long sports-related entity lists. Because so few examples were affected, truncation does not appear to have had any meaningful impact on the final performance.
+
+Overall, the analysis suggests that our BART-to-BERT knowledge transfer approach improves few-shot NER performance while still maintaining the efficiency of lightweight BERT inference during deployment. At the same time, the experiments show that certain entity types, especially ORG and MISC, remain challenging in extremely low-resource settings.
